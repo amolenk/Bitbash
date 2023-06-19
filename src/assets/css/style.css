@@ -154,18 +154,20 @@ section {
   }
 
 
-.section-header p {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 500;
-    color: #9195a2;
-}
+
 
 .section-content {
-    background-color: black;
+    background-color: #4E2A8C;
+}
+
+.section-content p {
+    font-size: 18px;
+    color: white !important;
     min-height: 250px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -921,14 +923,14 @@ section {
 }
 
 #venue .venue-info {
-    background: url("../img/venue/ordina.jpg") top center no-repeat;
-    background-size: cover;
+    background: linear-gradient(111.3deg, #269BB9 10%, #C248D6 90%);
+    /* background-size: cover; */
     position: relative;
     padding-top: 120px;
     padding-bottom: 60px;
 }
 
-#venue .venue-info:before {
+/* #venue .venue-info:before {
     content: "";
     background: rgba(13, 20, 41, 0.7);
     position: absolute;
@@ -936,7 +938,7 @@ section {
     top: 0;
     left: 0;
     right: 0;
-}
+} */
 
 #venue .venue-info h3 {
     font-size: 36px;
