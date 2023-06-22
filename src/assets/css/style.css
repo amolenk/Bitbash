@@ -9,8 +9,8 @@
 --------------------------------------------------------------*/
 
 body {
-    background: #fff;
-    color: #2f3138;
+    background-color: #4E2A8C;
+    color: white;
     font-family: "Open Sans", sans-serif;
     min-height: 500px;
 }
@@ -56,12 +56,12 @@ h6 {
 
 #main {
     /* width: 100%; */
-    background-image: url("../img/galaxy.png");
+    /* background-image: url("../img/galaxy.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     /* overflow: hidden; */
     /* position: relative; */
     /* min-height: 350px; */
@@ -106,38 +106,16 @@ h6 {
 
 /* Sections Header
 --------------------------------*/
-section {
-    /* background-color: red; */
-    margin: 0px !important;
-    padding: 0px !important;
-}
 
 .section-header {
-    /* margin-bottom: 60px; */
-    position: relative;
-    padding-bottom: 35px;
-    padding-top: 20px;
-}
-
-/* .section-header::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 5px;
-    background: linear-gradient(#E459BB; black);
-    bottom: 20px;
-    left: calc(50% - 25px);
-} */
-
-.section-header span {
+    margin-bottom: 60px;
+    padding-bottom: 20px;
     text-align: center;
 }
 
 .section-header h2 {
     display: inline;
     position: relative;
-    /* background-color: yellow; */
     font-size: 36px;
     text-transform: uppercase;
     text-align: center;
@@ -151,23 +129,8 @@ section {
     left: -10px;
     height: 5px;
     background: linear-gradient(111.3deg, #269BB9 10%, #C248D6 90%);
-  }
-
-
-
-
-.section-content {
-    background-color: #4E2A8C;
-}
-
-.section-content p {
-    font-size: 18px;
-    color: white !important;
-    min-height: 250px;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 20px;
     text-align: center;
+    justify-content: center;
 }
 
 /*--------------------------------------------------------------
@@ -268,8 +231,13 @@ section {
 */
 .navbar {
     padding: 0;
-    /* background-color: red; */
     justify-content: center;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        justify-content: right;
+    }
 }
 
 .navbar ul {
@@ -296,13 +264,16 @@ section {
     align-items: center;
     justify-content: space-between;
     color: white;
-    /* color: rgba(202, 206, 221, 0.8); */
     font-family: "Arial", sans-serif;
     font-size: 16px;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
     padding: 6px 4px;
+}
+
+.navbar a:hover {
+    color: #269BB9;
 }
 
 .navbar a i,
@@ -371,7 +342,7 @@ section {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-    color: #E74C3C;
+    color: #E459BB;
 }
 
 .navbar .dropdown:hover>ul {
@@ -437,6 +408,10 @@ section {
     z-index: 999;
 }
 
+.navbar-mobile .logo {
+    display: none;
+}
+
 .navbar-mobile .mobile-nav-toggle {
     position: absolute;
     top: 15px;
@@ -476,7 +451,7 @@ section {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-    color: #E74C3C;
+    color: #E459BB;
 }
 
 .navbar-mobile .getstarted,
@@ -511,7 +486,7 @@ section {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-    color: #E74C3C;
+    color: #E459BB;
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
@@ -524,6 +499,7 @@ section {
 #hero {
     width: 100%;
     height: 100vh;
+    background-attachment: fixed;
     background-image: url("../img/hero-galaxy.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -534,11 +510,11 @@ section {
     min-height: 350px;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     #hero {
         background-attachment: fixed;
     }
-}
+} */
 
 #hero:before {
     content: "";
@@ -571,6 +547,7 @@ section {
 @media (max-width: 991px) {
     #hero .hero-container {
         top: 70px;
+        background-size: contain;
     }
 }
 
@@ -583,7 +560,7 @@ section {
 }
 
 #hero h1 span {
-    color: #E74C3C;
+    color: #E459BB;
 }
 
 @media (max-width: 991px) {
@@ -611,32 +588,14 @@ section {
     top: 15%;
 }
 
+@media (max-width: 991px) {
+    #hero .logo {
+    }
+}
+
 #hero .banner {
     width: 50vmin;
     margin-top: -200px;
-}
-
-#hero .about-btn {
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 12px 32px;
-    border-radius: 50px;
-    transition: 0.5s;
-    line-height: 1;
-    margin: 10px;
-    color: #fff;
-    -webkit-animation-delay: 0.8s;
-    animation-delay: 0.8s;
-    border: 2px solid #2980B9;
-    background: #3498DB;
-}
-
-#hero .about-btn:hover {
-    background: #2980B9;
-    color: #fff;
 }
 
 @-webkit-keyframes pulsate-btn {
@@ -705,8 +664,6 @@ section {
 #about p {
     font-size: 16px;
     margin-bottom: 20px;
-    /* color: #fff; */
-    color: black;
 }
 
 /*--------------------------------------------------------------
@@ -766,7 +723,7 @@ section {
 }
 
 #speakers .speaker .details a:hover {
-    color: #E74C3C;
+    color: #E459BB;
 }
 
 #speakers .speaker:hover .details {
@@ -803,7 +760,7 @@ section {
 }
 
 #speakers-details .details .social a:hover {
-    background: #E74C3C;
+    background: #E459BB;
     color: #fff;
 }
 
@@ -889,7 +846,7 @@ section {
 }
 
 #schedule .schedule-item h4 a:hover {
-    color: #E74C3C;
+    color: #E459BB;
 }
 
 #schedule .schedule-item h4 span {
@@ -1070,13 +1027,13 @@ section {
     border-radius: 50px;
     padding: 10px 40px;
     transition: all 0.2s;
-    background-color: #E74C3C;
+    background-color: #E459BB;
     border: 0;
     color: #fff;
 }
 
 #buy-tickets .card .btn:hover {
-    background-color: #e0072f;
+    background-color: #E459BB;
 }
 
 #buy-tickets #buy-ticket-modal input,
@@ -1089,13 +1046,13 @@ section {
     border-radius: 50px;
     padding: 10px 40px;
     transition: all 0.2s;
-    background-color: #E74C3C;
+    background-color: #E459BB;
     border: 0;
     color: #fff;
 }
 
 #buy-tickets #buy-ticket-modal .btn:hover {
-    background-color: #e0072f;
+    background-color: #E459BB;
 }
 
 /*--------------------------------------------------------------
