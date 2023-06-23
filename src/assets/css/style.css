@@ -593,6 +593,38 @@ h6 {
     }
 }
 
+#hero .countdown-container {
+    position: absolute;
+    display: inline-block;
+    bottom: 0px;
+    left: 0px;
+    width: 45vw;
+}
+  
+#hero .countdown-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+#hero .countdown-text {
+    position: absolute;
+    top: 75%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    font-size: 6vw;
+    color: black;
+  }
+  
+
+
+
+
+
+
+
+
+
 #hero .banner {
     width: 50vmin;
     margin-top: -200px;

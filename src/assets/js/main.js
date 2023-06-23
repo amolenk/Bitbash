@@ -228,4 +228,29 @@
     })
   });
 
+  /**
+   * Countdown
+   */
+  // Target date for the countdown
+  var targetDate = new Date('2024-01-26');
+
+  // Function to calculate remaining days
+  function calculateDays() {
+    var currentDate = new Date();
+    var timeDifference = targetDate.getTime() - currentDate.getTime();
+    var daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    return daysRemaining;
+  }
+
+  // Function to update countdown text
+  function updateCountdown() {
+    var daysElement = document.getElementById('days');
+    var daysRemaining = calculateDays();
+    daysElement.textContent = daysRemaining;
+  }
+
+  // Call the updateCountdown function initially and update it every 5 seconds
+  updateCountdown();
+  setInterval(updateCountdown, 5000);
+
 })()
