@@ -137,7 +137,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-    height: 90px;
+    /* height: 90px; */
     position: fixed;
     /* background-color: yellow; */
     left: 0;
@@ -153,43 +153,42 @@ h6 {
     /* height: 70px; */
 }
 
-#header #logo h1 {
+/* #header #logo h1 {
     font-size: 36px;
     margin: 0;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-}
+} */
 
-#header #logo h1 span {
+/* #header #logo h1 span {
     color: #E459BB;
-}
+} */
 
-#header #logo h1 a,
+/* #header #logo h1 a,
 #header #logo h1 a:hover {
     color: #fff;
-}
+} */
 
-#header #logo img {
+/* #header #logo img {
     /* padding: 0;
     margin: 0; */
-    /* display: none; */
+    /* display: none;
     display: block;
     height: 70px;
-}
+} */
 
-#header.header-fixed #logo img,
+/* #header.header-fixed #logo img,
     #header.header-scrolled #logo img {
     display: block;
-    /* height: 70px; */
-}
+} */
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
     #header #logo img {
         max-height: 30px;
     }
-}
+} */
 
 /*--------------------------------------------------------------
 # Buy Tickets
@@ -246,7 +245,15 @@ h6 {
     display: flex;
     list-style: none;
     align-items: center;
-    /* background-color: blue; */
+    /* background-color: yellow; */
+}
+
+.navbar .logo img {
+    width: calc(100vw / 4);
+}
+
+#header.header-scrolled .navbar .logo img {
+    width: 20vw;
 }
 
 .navbar li {
@@ -374,6 +381,10 @@ h6 {
     }
 }
 
+/* .navbar .logo img {
+    width: 300px;
+} */
+
 /**
 * Mobile Navigation 
 */
@@ -499,6 +510,7 @@ h6 {
 #hero {
     width: 100%;
     height: 100vh;
+    max-width: 2150px;
     background-attachment: fixed;
     background-image: url("../img/hero-galaxy.png");
     background-repeat: no-repeat;
@@ -507,14 +519,15 @@ h6 {
     background-position-y: center;
     overflow: hidden;
     position: relative;
-    min-height: 350px;
+    min-height: 1000px;
+    max-height: 1600px;
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 2150px) {
     #hero {
-        background-attachment: fixed;
+        left: calc((100% - 2150px) / 2);
     }
-} */
+}
 
 #hero:before {
     content: "";
@@ -597,8 +610,8 @@ h6 {
     position: absolute;
     display: inline-block;
     bottom: 0px;
-    left: 0px;
-    width: 45vw;
+    left: 75px;
+    width: 650px;
 }
   
 #hero .countdown-image-bottom {
@@ -618,9 +631,9 @@ h6 {
   
 #hero .countdown-text {
     position: absolute;
-    top: 62%;
-    left: 40.5%;
-    font-size: 5.5vw;
+    bottom: 46px;
+    left: 260px;
+    font-size: 85px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     display: inline-block;
@@ -637,6 +650,7 @@ h6 {
     right: 0px;
     margin-right: 2vw;
     margin-bottom: 3vh;
+    max-width: 400px;
 }
 
 #hero .banner {
