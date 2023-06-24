@@ -249,12 +249,12 @@ h6 {
 }
 
 .navbar .logo img {
-    width: calc(100vw / 4);
+    width: 400px;
 }
 
-#header.header-scrolled .navbar .logo img {
+/* #header.header-scrolled .navbar .logo img {
     width: 20vw;
-}
+} */
 
 .navbar li {
     position: relative;
@@ -594,15 +594,15 @@ h6 {
     }
 }
 
-#hero .logo {
-    width: 70vmin;
+#hero .banner {
+    width: 850px;
     position: absolute;
     left: 5%;
-    top: 15%;
+    top: 200px;
 }
 
 @media (max-width: 991px) {
-    #hero .logo {
+    #hero .banner {
     }
 }
 
@@ -652,11 +652,11 @@ h6 {
     margin-bottom: 3vh;
     max-width: 400px;
 }
-
+/* 
 #hero .banner {
     width: 50vmin;
     margin-top: -200px;
-}
+} */
 
 @-webkit-keyframes pulsate-btn {
     0% {
