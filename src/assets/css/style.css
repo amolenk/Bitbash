@@ -601,29 +601,34 @@ h6 {
     width: 45vw;
 }
   
-#hero .countdown-container img {
+#hero .countdown-image-bottom {
     display: block;
     width: 100%;
     height: auto;
   }
+
+  #hero .countdown-image-top {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    left: 0px;
+  }
   
 #hero .countdown-text {
     position: absolute;
-    top: 75%;
-    left: 51%;
-    transform: translate(-50%, -50%);
-    font-size: 6vw;
+    top: 62%;
+    left: 40.5%;
+    font-size: 5.5vw;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
-  }
-  
-
-
-
-
-
-
-
-
+    display: inline-block;
+    transform: scale(1, 2.5);
+    -webkit-transform: scale(1, 2.5);
+    -moz-transform: scale(1, 2.5);
+    -o-transform: scale(1, 2.5);
+}
 
 #hero .banner {
     width: 50vmin;
