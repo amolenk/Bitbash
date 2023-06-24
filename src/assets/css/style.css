@@ -630,6 +630,15 @@ h6 {
     -o-transform: scale(1, 2.5);
 }
 
+#hero .info-support-logo {
+    width: 25vw;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 2vw;
+    margin-bottom: 3vh;
+}
+
 #hero .banner {
     width: 50vmin;
     margin-top: -200px;
