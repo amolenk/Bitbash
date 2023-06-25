@@ -54,9 +54,17 @@ h6 {
     color: #0e1b4d;
 }
 
-.main-page {
-    margin-top: 70px;
+#main {
+    min-width: 320px;
 }
+
+#footer {
+    min-width: 320px;
+}
+
+/* .main-page {
+    margin-top: 70px;
+} */
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -124,7 +132,6 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-    /* height: 90px; */
     position: fixed;
     /* background-color: yellow; */
     left: 0;
@@ -234,6 +241,12 @@ h6 {
     list-style: none;
     align-items: center;
     /* background-color: yellow; */
+}
+
+.navbar .mobile-nav-toggle {
+    position: absolute;
+    top: -30px;
+    right: 3px;
 }
 
 .navbar .logo img {
@@ -394,8 +407,14 @@ header .logo-mobile {
 
 @media (max-width: 991px) {
     .mobile-nav-toggle {
-        /* display: block; */
+        display: block;
     }
+}
+
+@media (max-width: 991px) {
+    /* .mobile-nav-toggle {
+        display: block;
+    } */
 
     .navbar ul {
         display: none;
@@ -535,18 +554,19 @@ header .logo-mobile {
     background-position-y: center;
     overflow: hidden;
     position: relative;
-    min-height: 1000px; /* necessary? */
+    min-height: 1000px; 
     max-height: 1600px;
 }
 
-#hero:before {
+/* TODO: Re-enable??? */
+/* #hero:before {
     content: "";
     position: absolute;
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
-}
+} */
 
 #hero .hero-container {
     background-image: url("../img/hero-foreground.png");
@@ -669,10 +689,13 @@ header .logo-mobile {
         /* max-width: 2150px; */
         /* min-height: 1000px;
         max-height: 1600px; */
+        height: 667px;
+        /* min-height: 200px;  */
+        max-height: 667px;
+        min-height: 667px;
     }
 
     #hero .hero-container {
-        background-image: none;
         background-image: url("../img/hero-foreground-mobile.png");
         background-size: 414px 457px;
         height: 667px;
@@ -699,14 +722,25 @@ header .logo-mobile {
     }
 
     #hero .countdown .date {
-        /* display: none; */
         font-size: 35px;
         top: 80px;
         right: 38px;
     }
 
     #hero .countdown-text {
-        display: none;
+        /* display: none; */
+
+        /* position: absolute; */
+        bottom: 30px;
+        left: 140px;
+        font-size: 40px;
+        /* font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        transform: scale(1, 2.5);
+        -webkit-transform: scale(1, 2.5);
+        -moz-transform: scale(1, 2.5);
+        -o-transform: scale(1, 2.5); */
+        width: 78px;
     }
 
 
@@ -714,7 +748,15 @@ header .logo-mobile {
     #hero .info-support-logo {
         display: none;
     }
+}
 
+@media (max-width: 991px) {
+    #header {
+        /* background-color: red; */
+        height: 90px;
+        position: fixed;
+        /* background-color: yellow; */
+    }
 }
 
 @media (min-width: 2150px) {
