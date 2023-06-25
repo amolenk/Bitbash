@@ -611,7 +611,7 @@ h6 {
     display: inline-block;
     bottom: 0px;
     left: 75px;
-    width: 650px;
+    width: 550px;
 }
   
 #hero .countdown-image-bottom {
@@ -632,24 +632,25 @@ h6 {
 #hero .countdown-text {
     position: absolute;
     bottom: 46px;
-    left: 260px;
-    font-size: 85px;
+    left: 220px;
+    font-size: 65px;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-    display: inline-block;
     transform: scale(1, 2.5);
     -webkit-transform: scale(1, 2.5);
     -moz-transform: scale(1, 2.5);
     -o-transform: scale(1, 2.5);
+    width: 122px;
+    /* background-color: yellow; */
 }
 
 #hero .countdown .date {
     display: block;
     position: absolute;
     font-family: "Lampoon", sans-serif;
-    font-size: 60px;
-    top: 20px;
-    right: 70px;
+    font-size: 55px;
+    top: 40px;
+    right: 58px;
 }
 
 #hero .countdown .highlight {
