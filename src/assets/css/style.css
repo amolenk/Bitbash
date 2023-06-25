@@ -54,19 +54,6 @@ h6 {
     color: #0e1b4d;
 }
 
-#main {
-    /* width: 100%; */
-    /* background-image: url("../img/galaxy.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: center;
-    background-attachment: fixed; */
-    /* overflow: hidden; */
-    /* position: relative; */
-    /* min-height: 350px; */
-}
-
 .main-page {
     margin-top: 70px;
 }
@@ -189,6 +176,7 @@ h6 {
         max-height: 30px;
     }
 } */
+
 
 /*--------------------------------------------------------------
 # Buy Tickets
@@ -371,6 +359,15 @@ h6 {
     visibility: visible;
 }
 
+header .logo-mobile {
+    display: none;
+}
+
+.mobile-only {
+    display: none;
+}
+
+
 @media (max-width: 1366px) {
     .navbar .dropdown .dropdown ul {
         left: -90%;
@@ -381,9 +378,7 @@ h6 {
     }
 }
 
-/* .navbar .logo img {
-    width: 300px;
-} */
+
 
 /**
 * Mobile Navigation 
@@ -399,11 +394,31 @@ h6 {
 
 @media (max-width: 991px) {
     .mobile-nav-toggle {
-        display: block;
+        /* display: block; */
     }
 
     .navbar ul {
         display: none;
+    }
+
+    header .logo-mobile {
+        display: block;
+        position: absolute;
+        /* background-color: yellow; */
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        text-align: center;
+    }
+
+    header .logo-mobile img {
+        /* display: block;
+        position: absolute; */
+        /* top: 0px; */
+        /* left: 0px; */
+        /* width: 300px; */
+        /* background-color: yellow; */
+        width: 250px;
     }
 }
 
@@ -510,6 +525,7 @@ h6 {
 #hero {
     width: 100%;
     height: 100vh;
+    min-width: 320px;
     max-width: 2150px;
     background-attachment: fixed;
     background-image: url("../img/hero-galaxy.png");
@@ -519,14 +535,8 @@ h6 {
     background-position-y: center;
     overflow: hidden;
     position: relative;
-    min-height: 1000px;
+    min-height: 1000px; /* necessary? */
     max-height: 1600px;
-}
-
-@media (min-width: 2150px) {
-    #hero {
-        left: calc((100% - 2150px) / 2);
-    }
 }
 
 #hero:before {
@@ -557,13 +567,6 @@ h6 {
     overflow: hidden;
 }
 
-@media (max-width: 991px) {
-    #hero .hero-container {
-        top: 70px;
-        background-size: contain;
-    }
-}
-
 #hero h1 {
     color: #fff;
     font-family: "Raleway", sans-serif;
@@ -576,22 +579,10 @@ h6 {
     color: #E459BB;
 }
 
-@media (max-width: 991px) {
-    #hero h1 {
-        font-size: 34px;
-    }
-}
-
 #hero p {
     color: #ebebeb;
     font-weight: 700;
     font-size: 20px;
-}
-
-@media (max-width: 991px) {
-    #hero p {
-        font-size: 16px;
-    }
 }
 
 #hero .banner {
@@ -601,10 +592,9 @@ h6 {
     top: 200px;
 }
 
-@media (max-width: 991px) {
-    #hero .banner {
-    }
-}
+#hero .info-support {
+    display: none;
+} 
 
 #hero .countdown {
     position: absolute;
@@ -666,13 +656,77 @@ h6 {
     margin-bottom: 3vh;
     max-width: 400px;
 }
-/* 
-#hero .banner {
-    width: 50vmin;
-    margin-top: -200px;
-} */
 
-@-webkit-keyframes pulsate-btn {
+@media (max-width: 414px) {
+
+    #hero {
+        /* background-image: none; */
+        /* background-color: yellow; */
+        /* height: 500px;
+        min-height: 500px; */
+        /* width: 100%;
+        min-width: 320px; */
+        /* max-width: 2150px; */
+        /* min-height: 1000px;
+        max-height: 1600px; */
+    }
+
+    #hero .hero-container {
+        background-image: none;
+        background-image: url("../img/hero-foreground-mobile.png");
+        background-size: 414px 457px;
+        height: 667px;
+    }
+
+    #hero .banner {
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        top: 110px;
+    }
+
+    #hero .info-support {
+        display: block;
+        width: 200px;
+        position: absolute;
+        right: 5%;
+        top: 220px;
+    }
+
+    #hero .countdown {
+        left: 0px;
+        width: 350px;
+    }
+
+    #hero .countdown .date {
+        /* display: none; */
+        font-size: 35px;
+        top: 80px;
+        right: 38px;
+    }
+
+    #hero .countdown-text {
+        display: none;
+    }
+
+
+
+    #hero .info-support-logo {
+        display: none;
+    }
+
+}
+
+@media (min-width: 2150px) {
+
+    #hero {
+        left: calc((100% - 2150px) / 2);
+    }
+}
+
+
+
+/* @-webkit-keyframes pulsate-btn {
     0% {
         transform: scale(0.6, 0.6);
         opacity: 1;
@@ -694,7 +748,7 @@ h6 {
         transform: scale(1, 1);
         opacity: 0;
     }
-}
+} */
 
 /*--------------------------------------------------------------
 # About Section
