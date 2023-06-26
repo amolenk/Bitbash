@@ -381,7 +381,7 @@ header .logo-mobile {
 }
 
 
-@media (max-width: 1366px) {
+/* @media (max-width: 1366px) {
     .navbar .dropdown .dropdown ul {
         left: -90%;
     }
@@ -389,7 +389,7 @@ header .logo-mobile {
     .navbar .dropdown .dropdown:hover>ul {
         left: -100%;
     }
-}
+} */
 
 
 
@@ -423,7 +423,6 @@ header .logo-mobile {
     header .logo-mobile {
         display: block;
         position: absolute;
-        /* background-color: yellow; */
         top: 0px;
         left: 0px;
         width: 100vw;
@@ -431,12 +430,13 @@ header .logo-mobile {
     }
 
     header .logo-mobile img {
-        /* display: block;
-        position: absolute; */
-        /* top: 0px; */
-        /* left: 0px; */
-        /* width: 300px; */
-        /* background-color: yellow; */
+        width: 350px;
+    }
+}
+
+@media (max-width: 414px) {
+
+    header .logo-mobile img {
         width: 250px;
     }
 }
@@ -606,21 +606,54 @@ header .logo-mobile {
 }
 
 #hero .banner {
-    width: 850px;
-    position: absolute;
     left: 5%;
+    position: absolute;
     top: 200px;
+    width: 850px;
+}
+@media (max-width: 991px) {
+    #hero .banner {
+        left: 5%;
+        top: 150px;
+        width: 80%;
+    }
+}
+@media (max-width: 414px) {
+    #hero .banner {
+        top: 110px;
+        width: 90%;
+    }
 }
 
 #hero .info-support {
     display: none;
-} 
+}
+@media (max-width: 991px) {
+    #hero .info-support {
+        display: block;
+        width: 40%;
+        position: absolute;
+        right: 5%;
+        top: 350px;
+    }
+}
+@media (max-width: 414px) {
+    #hero .info-support {
+        display: block;
+        width: 200px;
+        position: absolute;
+        right: 5%;
+        top: 220px;
+    }
+}
+
+
 
 #hero .countdown {
     position: absolute;
     display: inline-block;
     bottom: 0px;
-    left: 75px;
+    left: 30px;
     width: 550px;
 }
   
@@ -668,14 +701,85 @@ header .logo-mobile {
 }
 
 #hero .info-support-logo {
-    width: 25vw;
+    /* width: 40vw; */
     position: absolute;
     bottom: 0px;
     right: 0px;
     margin-right: 2vw;
     margin-bottom: 3vh;
-    max-width: 400px;
+    max-width: 450px;
+    width: 425px;
 }
+
+@media (max-width: 991px) {
+    #header {
+        /* background-color: red; */
+        height: 130px;
+        position: fixed;
+        /* background-color: yellow; */
+    }
+
+    #hero {
+        height: 1000px;
+        max-height: 1000px;
+        min-height: 1000px;
+    }
+
+    #hero .hero-container {
+        background-image: url("../img/hero-foreground-tablet.png");
+        background-size: 992px 833px;
+        height: 1000px;
+    }
+
+    /* #hero .info-support {
+        display: block;
+        width: 60%;
+        position: absolute;
+        right: 5%;
+        top: 420px;
+    } */
+
+    #hero .info-support-logo {
+        display: none;
+    }
+
+    #hero .countdown {
+        left: 0px;
+        width: 450px;
+    }
+}
+
+
+@media (max-width: 991px) {
+
+    #hero .countdown {
+        left: 0px;
+        width: 350px;
+    }
+
+    #hero .countdown .date {
+        font-size: 35px;
+        top: 80px;
+        right: 38px;
+    }
+
+    #hero .countdown-text {
+        /* display: none; */
+
+        /* position: absolute; */
+        bottom: 30px;
+        left: 140px;
+        font-size: 40px;
+        /* font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        transform: scale(1, 2.5);
+        -webkit-transform: scale(1, 2.5);
+        -moz-transform: scale(1, 2.5);
+        -o-transform: scale(1, 2.5); */
+        width: 78px;
+    }
+}
+
 
 @media (max-width: 414px) {
 
@@ -701,20 +805,9 @@ header .logo-mobile {
         height: 667px;
     }
 
-    #hero .banner {
-        width: 90%;
-        position: absolute;
-        left: 5%;
-        top: 110px;
-    }
 
-    #hero .info-support {
-        display: block;
-        width: 200px;
-        position: absolute;
-        right: 5%;
-        top: 220px;
-    }
+
+
 
     #hero .countdown {
         left: 0px;
@@ -750,7 +843,9 @@ header .logo-mobile {
     }
 }
 
-@media (max-width: 991px) {
+
+
+@media (max-width: 414px) {
     #header {
         /* background-color: red; */
         height: 90px;
