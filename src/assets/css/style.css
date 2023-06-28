@@ -2,14 +2,18 @@
 # Fonts
 --------------------------------------------------------------*/
 
-@font-face { font-family: 'Lampoon'; src: url('../fonts/lampoon.ttf') format('truetype'); }
+/* @font-face {
+    font-family: 'Lampoon';
+    src: url('../fonts/lampoon.ttf') format('truetype');
+} */
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 
 body {
-    background-color: #4E2A8C;
+    background-color: #121838;
+    /* background-color: #4E2A8C; */
     color: white;
     font-family: "Open Sans", sans-serif;
     min-height: 500px;
@@ -36,7 +40,7 @@ p {
 
 h1,
 h2 {
-    font-family: "Lampoon", sans-serif;
+    font-family: "Agdasima", sans-serif;
     /* font-weight: 400; */
     /* margin: 0 0 20px 0;
     padding: 0; */
@@ -272,8 +276,8 @@ h6 {
     align-items: center;
     justify-content: space-between;
     color: white;
-    font-family: "Arial", sans-serif;
-    font-size: 16px;
+    font-family: "Agdasima", sans-serif;
+    font-size: 24px;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -554,7 +558,7 @@ header .logo-mobile {
     background-position-y: center;
     overflow: hidden;
     position: relative;
-    min-height: 1000px; 
+    min-height: 700px; 
     max-height: 1600px;
 }
 
@@ -608,8 +612,8 @@ header .logo-mobile {
 #hero .banner {
     left: 5%;
     position: absolute;
-    top: 200px;
-    width: 850px;
+    top: 175px;
+    width: 650px;
 }
 @media (max-width: 991px) {
     #hero .banner {
@@ -674,15 +678,16 @@ header .logo-mobile {
   
 #hero .countdown-text {
     position: absolute;
-    bottom: 46px;
+    bottom: 42px;
     left: 220px;
-    font-size: 65px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75px;
+    font-family: Montserrat;
+    font-weight: 600;
     color: black;
-    transform: scale(1, 2.5);
-    -webkit-transform: scale(1, 2.5);
-    -moz-transform: scale(1, 2.5);
-    -o-transform: scale(1, 2.5);
+    transform: scale(1, 2);
+    -webkit-transform: scale(1, 2);
+    -moz-transform: scale(1, 2);
+    -o-transform: scale(1, 2);
     width: 122px;
     /* background-color: yellow; */
 }
@@ -690,10 +695,12 @@ header .logo-mobile {
 #hero .countdown .date {
     display: block;
     position: absolute;
-    font-family: "Lampoon", sans-serif;
+    font-family: "Agdasima", sans-serif;
     font-size: 55px;
-    top: 40px;
+    top: 115px;
     right: 58px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
 }
 
 #hero .countdown .highlight {
@@ -705,8 +712,8 @@ header .logo-mobile {
     position: absolute;
     bottom: 0px;
     right: 0px;
-    margin-right: 2vw;
-    margin-bottom: 3vh;
+    margin-right: 3%;
+    margin-bottom: 3%;
     max-width: 450px;
     width: 425px;
 }
@@ -913,7 +920,7 @@ header .logo-mobile {
 
 #about h2 {
     font-size: 36px;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-bottom: 10px;
     /* color: #fff; */
 }
