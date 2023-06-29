@@ -238,7 +238,7 @@
   function calculateDays() {
     var currentDate = new Date();
     var timeDifference = targetDate.getTime() - currentDate.getTime();
-    var daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    var daysRemaining = Math.max(0, Math.ceil(timeDifference / (1000 * 60 * 60 * 24)));
     return daysRemaining;
   }
 

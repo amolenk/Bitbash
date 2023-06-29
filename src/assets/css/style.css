@@ -693,9 +693,9 @@ header .logo-mobile {
 }
 @media (max-width: 991px) {
     #hero .countdown-text {
-        bottom: 29px;
+        bottom: 24px;
         left: 140px;
-        font-size: 45px;
+        font-size: 50px;
         width: 78px;
     }
 }
