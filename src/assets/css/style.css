@@ -64,7 +64,6 @@ h6 {
 #main {
     min-width: 320px;
     background-color: black;
-    text-shadow: 1px 1px 1px black;
     font-family: "Agdasima", sans-serif;
     font-size: 24px;
 }
@@ -122,9 +121,10 @@ h6 {
 .section-header h2 {
     display: inline;
     position: relative;
-    font-size: 36px;
+    font-size: 40px;
     text-transform: uppercase;
     text-align: center;
+    text-shadow: 1px 1px 2px black;
     /* margin-bottom: 10px; */
 }
 
@@ -913,6 +913,7 @@ header .logo-mobile {
     margin: auto;
     margin-bottom: 20px;
     max-width: 1000px;
+    text-shadow: 1px 1px 1px black;
 }
 
 /*--------------------------------------------------------------
@@ -931,153 +932,62 @@ header .logo-mobile {
     margin: auto;
     margin-bottom: 20px;
     max-width: 1000px;
+    text-shadow: 1px 1px 1px black;
 }
 
 #speakers p:last-child {
-    padding-bottom: 150px;
-    /* background-color: yellow; */
+    padding-bottom: 30px;
 }
 
 /*--------------------------------------------------------------
 # Schedule Section
 --------------------------------------------------------------*/
 #schedule {
-    padding: 60px 0 60px 0;
+    background-image: url("../img/section-schedule.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+    padding: 60px 0 0 0;
 }
 
-#schedule .sub-heading {
-    text-align: center;
-    font-size: 18px;
-    font-style: italic;
-    margin: 0 auto 30px auto;
+#schedule .embed {
+    margin: auto; 
+    max-width: 1000px;   
 }
 
-@media (min-width: 991px) {
-    #schedule .sub-heading {
-        width: 75%;
-    }
-}
-
-#schedule .tab-pane {
-    transition: ease-in-out 0.2s;
-}
-
-#schedule .schedule-item {
-    border-bottom: 1px solid #cad4f6;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    transition: background-color ease-in-out 0.3s;
-}
-
-#schedule .schedule-item:hover {
-    background-color: #fff;
-}
-
-#schedule .schedule-item time {
-    padding-bottom: 5px;
-    display: inline-block;
-}
-
-#schedule .schedule-item .speaker {
-    width: 60px;
-    height: 60px;
-    overflow: hidden;
-    border-radius: 50%;
-    float: left;
-    margin: 0 10px 10px 0;
-}
-
-#schedule .schedule-item .speaker img {
-    height: 100%;
-    transform: translateX(-50%);
-    margin-left: 50%;
-    transition: all ease-in-out 0.3s;
-}
-
-#schedule .schedule-item h4 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-#schedule .schedule-item h4 a {
-    color: #0e1b4d;
-}
-
-#schedule .schedule-item h4 a:hover {
-    color: #E459BB;
-}
-
-#schedule .schedule-item h4 span {
-    font-style: italic;
-    color: #19328e;
-    font-weight: normal;
-    font-size: 16px;
-}
-
-#schedule .schedule-item p {
-    font-style: italic;
-    color: #152b79;
-    margin-bottom: 0;
-}
 
 /*--------------------------------------------------------------
 # Venue Section
 --------------------------------------------------------------*/
 #venue {
-    padding: 60px 0;
+    background-image: url("../img/section-schedule.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+    padding: 60px 0 0 0;
 }
 
-#venue .container-fluid {
-    margin-bottom: 3px;
+#venue .row>* {
+    padding: 0px;
 }
 
-#venue .venue-map iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
+#venue .logo {
+    padding-bottom: 40px;
+    width: 80%;
+}
+@media (max-width: 991px) {
+    #venue .logo {
+        max-width: 400px;
+    }
 }
 
 #venue .venue-info {
-    background: linear-gradient(111.3deg, #269BB9 10%, #C248D6 90%);
-    /* background-size: cover; */
+    background: linear-gradient(135deg, #269BB9 10%, #C248D6 90%);
     position: relative;
-    padding-top: 120px;
-    padding-bottom: 60px;
-}
-
-/* #venue .venue-info:before {
-    content: "";
-    background: rgba(13, 20, 41, 0.7);
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-} */
-
-#venue .venue-info h3 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #fff;
-}
-
-@media (max-width: 574px) {
-    #venue .venue-info h3 {
-        font-size: 24px;
-    }
-}
-
-#venue .venue-info h4 {
-    font-size: 32px;
-    font-weight: 500;
-    color: #fff;
-}
-
-@media (max-width: 574px) {
-    #venue .venue-info h4 {
-        font-size: 18px;
-    }
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
 
 #venue .venue-info p {
@@ -1085,22 +995,15 @@ header .logo-mobile {
     margin-bottom: 0;
 }
 
-#venue .venue-gallery-container {
-    padding-right: 12px;
+#venue .venue-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
 }
-
-#venue .venue-gallery {
-    overflow: hidden;
-    border-right: 3px solid #fff;
-    border-bottom: 3px solid #fff;
-}
-
-#venue .venue-gallery img {
-    transition: all ease-in-out 0.4s;
-}
-
-#venue .venue-gallery:hover img {
-    transform: scale(1.1);
+@media (max-width: 991px) {
+    #venue .venue-map iframe {
+        min-height: 300px;
+    }
 }
 
 /*--------------------------------------------------------------
