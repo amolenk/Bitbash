@@ -961,12 +961,16 @@ header .logo-mobile {
 # Venue Section
 --------------------------------------------------------------*/
 #venue {
-    background-image: url("../img/section-schedule.png");
+    background-image: url("../img/section-venue.png");
     background-position-x: center;
     background-position-y: top;
     background-repeat: no-repeat;
     background-size: clamp(320px, 80%, 700px) auto;
     padding: 60px 0 0 0;
+}
+
+#venue .row {
+    margin: 0px;
 }
 
 #venue .row>* {
@@ -990,6 +994,12 @@ header .logo-mobile {
     padding-bottom: 40px;
 }
 
+@media (max-width: 991px) {
+    #venue .venue-info .info {
+        text-align: center;
+    }
+}
+
 #venue .venue-info p {
     color: #fff;
     margin-bottom: 0;
@@ -998,12 +1008,7 @@ header .logo-mobile {
 #venue .venue-map iframe {
     width: 100%;
     height: 100%;
-    min-height: 350px;
-}
-@media (max-width: 991px) {
-    #venue .venue-map iframe {
-        min-height: 300px;
-    }
+    min-height: 300px;
 }
 
 /*--------------------------------------------------------------
