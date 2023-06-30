@@ -1051,7 +1051,7 @@ header .logo-mobile {
     overflow: hidden;
     border-radius: 50%;
     float: left;
-    margin: 0 10px 10px 0;
+    /* margin: 0 10px 10px 0; */
 }
 
 #organizers .organizer img {
@@ -1061,24 +1061,33 @@ header .logo-mobile {
     transition: all ease-in-out 0.3s;
 }
 
+#organizers .organizer-item {
+    align-items: center;
+    /* background-color: yellow; */
+    vertical-align: middle;
+    display: table;
+}
+
 #organizers .organizer-item h4 {
     font-size: 18px;
     font-weight: 600;
-    padding-top: 5px;
-    margin-bottom: 0px;
+    /* padding-top: 5px; */
+    /* margin-bottom: 0px; */
 }
 
 #organizers .organizer-item h4 span {
     font-style: italic;
-    color: #19328e;
+    /* color: #19328e; */
     font-weight: normal;
     font-size: 16px;
 }
 
 #organizers .organizer-item p {
-    font-style: italic;
-    color: #152b79;
-    margin-bottom: 0;
+    /* margin-bottom: 0; */
+    line-height: normal;
+    /* background-color: red; */
+    vertical-align: middle;
+    display: table-cell;
 }
 
 /*--------------------------------------------------------------
