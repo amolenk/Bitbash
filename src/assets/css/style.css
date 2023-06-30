@@ -956,7 +956,6 @@ header .logo-mobile {
     max-width: 1000px;   
 }
 
-
 /*--------------------------------------------------------------
 # Venue Section
 --------------------------------------------------------------*/
@@ -989,9 +988,9 @@ header .logo-mobile {
 
 #venue .venue-info {
     background: linear-gradient(135deg, #269BB9 10%, #C248D6 90%);
-    position: relative;
-    padding-top: 60px;
     padding-bottom: 40px;
+    padding-top: 60px;
+    position: relative;
 }
 
 @media (max-width: 991px) {
@@ -1001,125 +1000,42 @@ header .logo-mobile {
 }
 
 #venue .venue-info p {
-    color: #fff;
     margin-bottom: 0;
 }
 
 #venue .venue-map iframe {
-    width: 100%;
-    height: 100%;
     min-height: 300px;
+    height: 100%;
+    width: 100%;
 }
 
 /*--------------------------------------------------------------
-# Sponsors Section
+# Tickets Section
 --------------------------------------------------------------*/
-#supporters {
-    padding: 60px 0;
+#tickets {
+    background-image: url("../img/section-tickets.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+    padding: 60px 0 0 0;
 }
 
-#supporters .supporters-wrap {
-    margin-bottom: 30px;
-    justify-content: center;
+#tickets h3 {
+    color: #E459BB;
+    text-align: center;
+    text-shadow: 0 0 25px white;
 }
 
-#supporters .supporter-logo {
-    padding: 30px;
+#tickets p {
+    margin: auto;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #e0e5fa;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 1);
-    height: 160px;
+    max-width: 1000px;
+    text-shadow: 1px 1px 1px black;
 }
 
-#supporters .silver {
-    height: 120px;
-}
-
-#supporters .supporter-logo:hover img {
-    transform: scale(1.2);
-}
-
-#supporters img {
-    transition: all 0.4s ease-in-out;
-}
-
-/*--------------------------------------------------------------
-# Buy Tickets Section
---------------------------------------------------------------*/
-#buy-tickets {
-    padding: 60px 0;
-}
-
-#buy-tickets .card {
-    border: none;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 10px 25px 0 rgba(6, 12, 34, 0.1);
-}
-
-#buy-tickets .card:hover {
-    box-shadow: 0 10px 35px 0 rgba(6, 12, 34, 0.2);
-}
-
-#buy-tickets .card hr {
-    margin: 25px 0;
-}
-
-#buy-tickets .card .card-title {
-    margin: 10px 0;
-    font-size: 14px;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
-
-#buy-tickets .card .card-price {
-    font-size: 48px;
-    margin: 0;
-}
-
-#buy-tickets .card ul li {
-    margin-bottom: 20px;
-}
-
-#buy-tickets .card .text-muted {
-    opacity: 0.7;
-}
-
-#buy-tickets .card .btn {
-    font-size: 15px;
-    border-radius: 50px;
-    padding: 10px 40px;
-    transition: all 0.2s;
-    background-color: #E459BB;
-    border: 0;
-    color: #fff;
-}
-
-#buy-tickets .card .btn:hover {
-    background-color: #E459BB;
-}
-
-#buy-tickets #buy-ticket-modal input,
-#buy-tickets #buy-ticket-modal select {
-    border-radius: 0;
-}
-
-#buy-tickets #buy-ticket-modal .btn {
-    font-size: 15px;
-    border-radius: 50px;
-    padding: 10px 40px;
-    transition: all 0.2s;
-    background-color: #E459BB;
-    border: 0;
-    color: #fff;
-}
-
-#buy-tickets #buy-ticket-modal .btn:hover {
-    background-color: #E459BB;
+#tickets p:last-child {
+    padding-bottom: 30px;
 }
 
 /*--------------------------------------------------------------
