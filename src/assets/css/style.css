@@ -692,24 +692,24 @@ header .logo-mobile {
   
 #hero .countdown-text {
     position: absolute;
-    bottom: 40px;
+    bottom: 50px;
     left: 220px;
-    font-size: 75px;
+    font-size: 62px;
     font-family: Montserrat;
     font-weight: 600;
     color: black;
-    transform: scale(1, 2);
-    -webkit-transform: scale(1, 2);
-    -moz-transform: scale(1, 2);
-    -o-transform: scale(1, 2);
+    transform: scale(1, 2.5);
+    -webkit-transform: scale(1, 2.5);
+    -moz-transform: scale(1, 2.5);
+    -o-transform: scale(1, 2.5);
     width: 122px;
     /* background-color: yellow; */
 }
 @media (max-width: 991px) {
     #hero .countdown-text {
-        bottom: 24px;
+        bottom: 31px;
         left: 140px;
-        font-size: 50px;
+        font-size: 40px;
         width: 78px;
     }
 }
