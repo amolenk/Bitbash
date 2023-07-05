@@ -10,7 +10,7 @@ body {
 }
 
 a {
-    color: #E459BB;
+    color: #F924A1;
     text-decoration: none;
     transition: 0.5s;
 }
@@ -18,7 +18,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #E459BB;
+    color: #F924A1;
     outline: none;
     text-decoration: none;
 }
