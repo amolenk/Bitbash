@@ -1,13 +1,4 @@
 /*--------------------------------------------------------------
-# Fonts
---------------------------------------------------------------*/
-
-/* @font-face {
-    font-family: 'Lampoon';
-    src: url('../fonts/lampoon.ttf') format('truetype');
-} */
-
-/*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 
@@ -57,8 +48,9 @@ h6 {
     color: #0e1b4d;
 }
 
-.highlight {
+em {
     color: #F924A1;
+    font-style: normal;
 }
 
 #main {
@@ -388,6 +380,10 @@ h6 {
     top: 0;
     left: 100%;
     visibility: visible;
+}
+
+.nav-link {
+    text-transform: uppercase;
 }
 
 header .logo-mobile {
