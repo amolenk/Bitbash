@@ -60,10 +60,6 @@ em {
     min-width: 320px;
 }
 
-/* .main-page {
-    margin-top: 70px;
-} */
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -97,6 +93,7 @@ em {
     opacity: 1;
 }
 
+/*--------------------------------------------------------------
 /* Sections Header
 --------------------------------*/
 
@@ -113,14 +110,7 @@ em {
     text-transform: uppercase;
     text-align: center;
     text-shadow: 1px 1px 2px black;
-    /* margin-bottom: 10px; */
 }
-
-
-/* #about h2 {
-    font-size: 36px;
-} */
-
 
 .section-header h2::before {
     content: "";
@@ -139,57 +129,28 @@ em {
 --------------------------------------------------------------*/
 #header {
     position: fixed;
-    /* background-color: yellow; */
     left: 0;
     top: 0;
     right: 0;
     transition: all 0.5s;
     z-index: 997;
 }
+@media (max-width: 991px) {
+    #header {
+        height: 130px;
+        position: fixed;
+    }
+}
+@media (max-width: 414px) {
+    #header {
+        height: 90px;
+    }
+}
 
 #header.header-scrolled,
 #header.header-inner {
     background: rgba(6, 12, 34, .85);
-    /* height: 70px; */
 }
-
-/* #header #logo h1 {
-    font-size: 36px;
-    margin: 0;
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-} */
-
-/* #header #logo h1 span {
-    color: #E459BB;
-} */
-
-/* #header #logo h1 a,
-#header #logo h1 a:hover {
-    color: #fff;
-} */
-
-/* #header #logo img {
-    /* padding: 0;
-    margin: 0; */
-    /* display: none;
-    display: block;
-    height: 70px;
-} */
-
-/* #header.header-fixed #logo img,
-    #header.header-scrolled #logo img {
-    display: block;
-} */
-
-/* @media (max-width: 992px) {
-    #header #logo img {
-        max-height: 30px;
-    }
-} */
-
 
 /*--------------------------------------------------------------
 # Buy Tickets
@@ -258,10 +219,6 @@ em {
 .navbar .logo img {
     width: 400px;
 }
-
-/* #header.header-scrolled .navbar .logo img {
-    width: 20vw;
-} */
 
 .navbar li {
     position: relative;
@@ -390,19 +347,6 @@ header .logo-mobile {
     display: none;
 }
 
-
-/* @media (max-width: 1366px) {
-    .navbar .dropdown .dropdown ul {
-        left: -90%;
-    }
-
-    .navbar .dropdown .dropdown:hover>ul {
-        left: -100%;
-    }
-} */
-
-
-
 /**
 * Mobile Navigation 
 */
@@ -422,10 +366,6 @@ header .logo-mobile {
 }
 
 @media (max-width: 991px) {
-    /* .mobile-nav-toggle {
-        display: block;
-    } */
-
     .navbar ul {
         display: none;
     }
@@ -567,16 +507,26 @@ header .logo-mobile {
     min-height: 700px; 
     max-height: 1600px;
 }
+@media (min-width: 2150px) {
 
-/* TODO: Re-enable??? */
-/* #hero:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-} */
+    #hero {
+        left: calc((100% - 2150px) / 2);
+    }
+}
+@media (max-width: 991px) {
+    #hero {
+        height: 1000px;
+        max-height: 1000px;
+        min-height: 1000px;
+    }
+}
+@media (max-width: 414px) {
+    #hero {
+        height: 667px;
+        max-height: 667px;
+        min-height: 667px;
+    }
+}
 
 #hero .hero-container {
     background-image: url("../img/hero-foreground.png");
@@ -589,12 +539,24 @@ header .logo-mobile {
     left: 0;
     top: 0;
     right: 0;
-    /* display: flex; */
     align-items: center;
     flex-direction: column;
     text-align: center;
-    /* padding: 0 15px; */
     overflow: hidden;
+}
+@media (max-width: 991px) {
+    #hero .hero-container {
+        background-image: url("../img/hero-foreground-tablet.png");
+        background-size: 992px 833px;
+        height: 1000px;
+    }
+}
+@media (max-width: 414px) {
+    #hero .hero-container {
+        background-image: url("../img/hero-foreground-mobile.png");
+        background-size: 414px 457px;
+        height: 667px;
+    }
 }
 
 #hero h1 {
@@ -657,7 +619,20 @@ header .logo-mobile {
     }
 }
 
-
+#hero .info-support-logo {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    max-width: 450px;
+    width: 425px;
+}
+@media (max-width: 991px) {
+    #hero .info-support-logo {
+        display: none;
+    }
+}
 
 #hero .countdown {
     position: absolute;
@@ -666,7 +641,14 @@ header .logo-mobile {
     left: 30px;
     width: 550px;
 }
-  
+@media (max-width: 991px) {
+
+    #hero .countdown {
+        left: 0px;
+        width: 350px;
+    }
+}
+
 #hero .countdown-image-bottom {
     display: block;
     width: 100%;
@@ -695,7 +677,6 @@ header .logo-mobile {
     -moz-transform: scale(1, 2.5);
     -o-transform: scale(1, 2.5);
     width: 122px;
-    /* background-color: yellow; */
 }
 @media (max-width: 991px) {
     #hero .countdown-text {
@@ -705,12 +686,6 @@ header .logo-mobile {
         width: 78px;
     }
 }
-/* @media (max-width: 414px) {
-    #hero .countdown-text {
-        bottom: 29px;
-        width: 78px;
-    }
-} */
 
 #hero .countdown .date {
     display: block;
@@ -729,165 +704,6 @@ header .logo-mobile {
         right: 38px;
     }
 }
-/* @media (max-width: 414px) {
-    #hero .countdown .date {
-        font-size: 35px;
-        right: 38px;
-    }
-} */
-
-
-
-#hero .info-support-logo {
-    /* width: 40vw; */
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    margin-right: 3%;
-    margin-bottom: 3%;
-    max-width: 450px;
-    width: 425px;
-}
-
-@media (max-width: 991px) {
-    #header {
-        /* background-color: red; */
-        height: 130px;
-        position: fixed;
-        /* background-color: yellow; */
-    }
-
-    #hero {
-        height: 1000px;
-        max-height: 1000px;
-        min-height: 1000px;
-    }
-
-    #hero .hero-container {
-        background-image: url("../img/hero-foreground-tablet.png");
-        background-size: 992px 833px;
-        height: 1000px;
-    }
-
-    /* #hero .info-support {
-        display: block;
-        width: 60%;
-        position: absolute;
-        right: 5%;
-        top: 420px;
-    } */
-
-    #hero .info-support-logo {
-        display: none;
-    }
-
-    #hero .countdown {
-        left: 0px;
-        width: 450px;
-    }
-}
-
-
-@media (max-width: 991px) {
-
-    #hero .countdown {
-        left: 0px;
-        width: 350px;
-    }
-
-
-
-
-}
-
-
-@media (max-width: 414px) {
-
-    #hero {
-        /* background-image: none; */
-        /* background-color: yellow; */
-        /* height: 500px;
-        min-height: 500px; */
-        /* width: 100%;
-        min-width: 320px; */
-        /* max-width: 2150px; */
-        /* min-height: 1000px;
-        max-height: 1600px; */
-        height: 667px;
-        /* min-height: 200px;  */
-        max-height: 667px;
-        min-height: 667px;
-    }
-
-    #hero .hero-container {
-        background-image: url("../img/hero-foreground-mobile.png");
-        background-size: 414px 457px;
-        height: 667px;
-    }
-
-
-
-
-
-    #hero .countdown {
-        left: 0px;
-        width: 350px;
-    }
-
-
-
-
-
-
-
-    #hero .info-support-logo {
-        display: none;
-    }
-}
-
-
-
-@media (max-width: 414px) {
-    #header {
-        /* background-color: red; */
-        height: 90px;
-        position: fixed;
-        /* background-color: yellow; */
-    }
-}
-
-@media (min-width: 2150px) {
-
-    #hero {
-        left: calc((100% - 2150px) / 2);
-    }
-}
-
-
-
-/* @-webkit-keyframes pulsate-btn {
-    0% {
-        transform: scale(0.6, 0.6);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1, 1);
-        opacity: 0;
-    }
-}
-
-@keyframes pulsate-btn {
-    0% {
-        transform: scale(0.6, 0.6);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1, 1);
-        opacity: 0;
-    }
-} */
 
 /*--------------------------------------------------------------
 # About Section
@@ -1043,7 +859,6 @@ header .logo-mobile {
     overflow: hidden;
     border-radius: 50%;
     float: left;
-    /* margin: 0 10px 10px 0; */
 }
 
 #organizers .organizer img {
@@ -1055,7 +870,6 @@ header .logo-mobile {
 
 #organizers .organizer-item {
     align-items: center;
-    /* background-color: yellow; */
     vertical-align: middle;
     display: table;
 }
@@ -1063,21 +877,16 @@ header .logo-mobile {
 #organizers .organizer-item h4 {
     font-size: 18px;
     font-weight: 600;
-    /* padding-top: 5px; */
-    /* margin-bottom: 0px; */
 }
 
 #organizers .organizer-item h4 span {
     font-style: italic;
-    /* color: #19328e; */
     font-weight: normal;
     font-size: 16px;
 }
 
 #organizers .organizer-item p {
-    /* margin-bottom: 0; */
     line-height: normal;
-    /* background-color: red; */
     vertical-align: middle;
     display: table-cell;
 }
