@@ -4,7 +4,6 @@
 
 body {
     background-color: #121838;
-    /* background-color: #4E2A8C; */
     color: white;
     min-height: 500px;
 }
@@ -31,9 +30,6 @@ p {
 h1,
 h2 {
     font-family: "Agdasima", sans-serif;
-    /* font-weight: 400; */
-    /* margin: 0 0 20px 0;
-    padding: 0; */
     color: white;
 }
 
