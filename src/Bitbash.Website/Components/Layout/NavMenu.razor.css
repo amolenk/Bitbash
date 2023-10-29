@@ -71,7 +71,6 @@ header .logo-mobile {
     display: flex;
     list-style: none;
     align-items: center;
-    /* background-color: yellow; */
 }
 
 .navbar .mobile-nav-toggle {
@@ -231,7 +230,7 @@ header .logo-mobile {
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9);    
     transition: 0.3s;
     z-index: 999;
 }
@@ -272,7 +271,7 @@ header .logo-mobile {
 .navbar-mobile a,
 .navbar-mobile a:focus {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 21px;
     color: #060c22;
 }
 

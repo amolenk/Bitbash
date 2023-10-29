@@ -6,5 +6,5 @@ public class WebsiteSettings
 
     public bool SpeakersAnnounced { get; set; } = false;
 
-    public bool TicketsOnSale { get; set; } = false;
+    public string? EventbriteLink { get; set; }
 }

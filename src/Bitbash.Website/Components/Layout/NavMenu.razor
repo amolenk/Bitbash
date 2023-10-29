@@ -5,21 +5,20 @@
     <div class="container-fluid container-xxl align-items-center">
 
         <div class="logo-mobile">
-            <a href="#hero" alt="Home" class="scrollto"><img src="img/logo.png" alt="" title=""></a>
+            <a href="#hero" alt="Home"><img src="img/logo.png" alt="" title=""></a>
         </div>
 
-        <nav id="navbar" class="navbar order-last order-lg-0">
+        <nav id="navbar" class="navbar order-last order-lg-0 @(useMobileNav ? "navbar-mobile" : string.Empty)">
             <ul>
-                <li><a class="nav-link scrollto" href="" @onclick="NavigateToAboutSection"  @onclick:preventDefault>About</a></li>
-                <li><a class="nav-link scrollto" href="/speakers">Speakers</a></li>                    
-                <li><a class="nav-link scrollto" href="/agenda">Agenda</a></li>
+                <li><a class="nav-link @(activePage == string.Empty ? "active" : string.Empty)" href="" @onclick="@(() => Navigate("/"))" @onclick:preventDefault>Home</a></li>
+                <li><a class="nav-link @(activePage == "agenda" ? "active" : string.Empty)" href="" @onclick="@(() => Navigate("/agenda"))" @onclick:preventDefault>Agenda</a></li>
                 <li class="logo"><div id="logo" class="me-auto">
-                    <a href="/" class="scrollto"><img src="img/logo.png" alt="Logo" title=""></a>
+                    <a href="/"><img src="img/logo.png" alt="Logo" title=""></a>
                 </div></li>
-                @* <li><a class="nav-link scrollto" href="/#venue">Venue</a></li> *@
-                <li><a class="nav-link scrollto" href="" @onclick="NavigateToTicketsSection"  @onclick:preventDefault>Get your free ticket</a></li>
+                <li><a class="nav-link @(activePage == "speakers" ? "active" : string.Empty)" href="" @onclick="@(() => Navigate("/speakers"))" @onclick:preventDefault>Speakers</a></li>
+                <li><a class="nav-link @(activePage == "tickets" ? "active" : string.Empty)" href="" @onclick="@(() => Navigate("/tickets"))" @onclick:preventDefault>Tickets</a></li>
             </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
+            <i class="bi mobile-nav-toggle @(useMobileNav ? "bi-x" : "bi-list")" @onclick="ToggleMobileNavigation"></i>
         </nav>
 
     </div>
@@ -27,37 +26,39 @@
 
 @code
 {
+    private bool useMobileNav { get; set; }
+
+    private string activePage { get; set; } = string.Empty;
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
+            var newActivePage = Path.GetFileName(NavigationManager.Uri);
+            if (newActivePage != activePage)
+            {
+                activePage = newActivePage;
+                StateHasChanged();
+            }
+
             await JS.InvokeVoidAsync("InitializeHeaderScrollEffect");
         }
     }
 
-    private void NavigateToAboutSection()
+    private void ToggleMobileNavigation()
     {
-        var path = new Uri(NavigationManager.Uri).LocalPath;
-        if (path == "/about")
-        {
-            JS.InvokeVoidAsync("scrollToElement", "#about");
-        }
-        else
-        {
-            NavigationManager.NavigateTo("/about");
-        }
+        useMobileNav = !useMobileNav;
     }
 
-    private void NavigateToTicketsSection()
+    private void Navigate(string uri)
     {
-        var path = new Uri(NavigationManager.Uri).LocalPath;
-        if (path == "/tickets")
+        if (useMobileNav)
         {
-            JS.InvokeVoidAsync("scrollToElement", "#tickets");
+            useMobileNav = false;
         }
-        else
-        {
-            NavigationManager.NavigateTo("/tickets");
-        }
+
+        activePage = Path.GetFileName(uri);
+
+        NavigationManager.NavigateTo(uri);
     }
 }
