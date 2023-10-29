@@ -1,0 +1,11 @@
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/bin/Debug/net8.0/Bitbash.Models.deps.json
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/bin/Debug/net8.0/Bitbash.Models.dll
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/bin/Debug/net8.0/Bitbash.Models.pdb
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/obj/Debug/net8.0/Bitbash.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/obj/Debug/net8.0/Bitbash.Models.AssemblyInfoInputs.cache
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/obj/Debug/net8.0/Bitbash.Models.AssemblyInfo.cs
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/obj/Debug/net8.0/Bitbash.Models.csproj.CoreCompileInputs.cache
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/obj/Debug/net8.0/Bitbash.Models.dll
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/obj/Debug/net8.0/refint/Bitbash.Models.dll
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/obj/Debug/net8.0/Bitbash.Models.pdb
+/Users/amolenk/Downloads/BitbashWasm/Bitbash.Models/obj/Debug/net8.0/ref/Bitbash.Models.dll

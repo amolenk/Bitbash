@@ -1,0 +1,322 @@
+#header[b-i15idw38tz] {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    transition: all 0.5s;
+    z-index: 997;
+}
+
+@media (max-width: 991px) {
+    #header[b-i15idw38tz] {
+        height: 130px;
+    }
+}
+
+@media (max-width: 414px) {
+    #header[b-i15idw38tz] {
+        height: 90px;
+    }
+}
+
+#header.header-scrolled[b-i15idw38tz],
+#header.header-inner[b-i15idw38tz] {
+    background: rgba(6, 12, 34, .85);
+}
+
+header .logo-mobile[b-i15idw38tz] {
+    display: none;
+}
+
+@media (max-width: 991px) {
+
+    header .logo-mobile[b-i15idw38tz] {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        text-align: center;
+    }
+
+    header .logo-mobile img[b-i15idw38tz] {
+        width: 350px;
+    }
+}
+
+@media (max-width: 414px) {
+
+    header .logo-mobile img[b-i15idw38tz] {
+        width: 250px;
+    }
+}
+
+/**
+* Desktop Navigation 
+*/
+.navbar[b-i15idw38tz] {
+    padding: 0;
+    justify-content: center;
+}
+
+@media (max-width: 991px) {
+    .navbar[b-i15idw38tz] {
+        justify-content: right;
+    }
+}
+
+.navbar ul[b-i15idw38tz] {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    /* background-color: yellow; */
+}
+
+.navbar .mobile-nav-toggle[b-i15idw38tz] {
+    position: absolute;
+    top: -30px;
+    right: 3px;
+}
+
+.navbar .logo img[b-i15idw38tz] {
+    width: 400px;
+}
+
+.navbar li[b-i15idw38tz] {
+    position: relative;
+}
+
+.navbar>ul>li[b-i15idw38tz] {
+    white-space: nowrap;
+    padding: 10px 0 10px 12px;
+}
+
+.navbar a[b-i15idw38tz],
+.navbar a:focus[b-i15idw38tz] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-family: "Agdasima", sans-serif;
+    font-size: 26px;
+    white-space: nowrap;
+    transition: 0.3s;
+    position: relative;
+    padding: 6px 4px;
+}
+
+.navbar a:hover[b-i15idw38tz] {
+    color: #269BB9;
+}
+
+.navbar a i[b-i15idw38tz],
+.navbar a:focus i[b-i15idw38tz] {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+
+.navbar>ul>li>a[b-i15idw38tz]:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #E459BB;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar a:hover[b-i15idw38tz]:before,
+.navbar li:hover>a[b-i15idw38tz]:before,
+.navbar .active[b-i15idw38tz]:before {
+    visibility: visible;
+    width: 100%;
+}
+
+.navbar .dropdown ul[b-i15idw38tz] {
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+}
+
+.navbar .dropdown ul li[b-i15idw38tz] {
+    min-width: 200px;
+}
+
+.navbar .dropdown ul a[b-i15idw38tz] {
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: none;
+    color: #060c22;
+}
+
+.navbar .dropdown ul a i[b-i15idw38tz] {
+    font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover[b-i15idw38tz],
+.navbar .dropdown ul .active:hover[b-i15idw38tz],
+.navbar .dropdown ul li:hover>a[b-i15idw38tz] {
+    color: #E459BB;
+}
+
+.navbar .dropdown:hover>ul[b-i15idw38tz] {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul[b-i15idw38tz] {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover>ul[b-i15idw38tz] {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+    visibility: visible;
+}
+
+.nav-link[b-i15idw38tz] {
+    text-transform: uppercase;
+}
+
+.mobile-only[b-i15idw38tz] {
+    display: none;
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle[b-i15idw38tz] {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-toggle[b-i15idw38tz] {
+        display: block;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar ul[b-i15idw38tz] {
+        display: none;
+    }
+}
+
+.navbar-mobile[b-i15idw38tz] {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.navbar-mobile .logo[b-i15idw38tz] {
+    display: none;
+}
+
+.navbar-mobile .mobile-nav-toggle[b-i15idw38tz] {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.navbar-mobile ul[b-i15idw38tz] {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
+}
+
+.navbar-mobile>ul>li[b-i15idw38tz] {
+    padding: 0;
+}
+
+.navbar-mobile a:hover[b-i15idw38tz]:before,
+.navbar-mobile li:hover>a[b-i15idw38tz]:before,
+.navbar-mobile .active[b-i15idw38tz]:before {
+    visibility: hidden;
+}
+
+.navbar-mobile a[b-i15idw38tz],
+.navbar-mobile a:focus[b-i15idw38tz] {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #060c22;
+}
+
+.navbar-mobile a:hover[b-i15idw38tz],
+.navbar-mobile .active[b-i15idw38tz],
+.navbar-mobile li:hover>a[b-i15idw38tz] {
+    color: #E459BB;
+}
+
+.navbar-mobile .getstarted[b-i15idw38tz],
+.navbar-mobile .getstarted:focus[b-i15idw38tz] {
+    margin: 15px;
+}
+
+.navbar-mobile .dropdown ul[b-i15idw38tz] {
+    position: static;
+    display: none;
+    margin: 10px 20px;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li[b-i15idw38tz] {
+    min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a[b-i15idw38tz] {
+    padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i[b-i15idw38tz] {
+    font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover[b-i15idw38tz],
+.navbar-mobile .dropdown ul .active:hover[b-i15idw38tz],
+.navbar-mobile .dropdown ul li:hover>a[b-i15idw38tz] {
+    color: #E459BB;
+}
+
+.navbar-mobile .dropdown>.dropdown-active[b-i15idw38tz] {
+    display: block;
+}

@@ -1,0 +1,28 @@
+.card-body[b-v497hqxu94] {
+    color: black;
+}
+
+.card-footer[b-v497hqxu94] {
+    background-color: #1e275e;
+}
+
+h2[b-v497hqxu94] {
+    color: black;
+}
+
+.speaker-photo[b-v497hqxu94] {
+    width: 256px;
+    height: 256px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    border: 4px solid rgba(238, 238, 238, 0.2);
+    border-radius: 50%;
+}
+
+.speaker-photo img[b-v497hqxu94] {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 50%
+}

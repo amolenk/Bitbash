@@ -1,0 +1,30 @@
+/* #organizers {
+    padding: 20px 0;
+    align-items: center;
+} */
+
+#organizers .organizer-item[b-147916gfiy] {
+    min-width: 250px;
+}
+
+#organizers .organizer-item .organizer[b-147916gfiy] {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+#organizers .organizer-item .organizer img[b-147916gfiy] {
+    height: 100%;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    transition: all ease-in-out 0.3s;
+}
+
+#organizers .organizer-item p[b-147916gfiy] {
+    line-height: 60px;
+    margin-bottom: 0;
+    display: inline-block;
+}

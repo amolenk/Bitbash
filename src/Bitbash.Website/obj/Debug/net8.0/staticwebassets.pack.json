@@ -1,0 +1,345 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/bin/Debug/net8.0/wwwroot/_framework/blazor.webassembly.js",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/obj/Debug/net8.0/compressed/gn3ck5l08u.gz",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/obj/Debug/net8.0/scopedcss/bundle/Bitbash.Website.styles.css",
+      "PackagePath": "staticwebassets/Bitbash.Website.styles.css"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/aos/aos.css",
+      "PackagePath": "staticwebassets/aos/aos.css"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/aos/aos.js",
+      "PackagePath": "staticwebassets/aos/aos.js"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/appsettings.json",
+      "PackagePath": "staticwebassets/appsettings.json"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/bootstrap-icons/bootstrap-icons.css",
+      "PackagePath": "staticwebassets/bootstrap-icons/bootstrap-icons.css"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/bootstrap-icons/bootstrap-icons.json",
+      "PackagePath": "staticwebassets/bootstrap-icons/bootstrap-icons.json"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/bootstrap-icons/fonts/bootstrap-icons.woff",
+      "PackagePath": "staticwebassets/bootstrap-icons/fonts/bootstrap-icons.woff"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/bootstrap-icons/fonts/bootstrap-icons.woff2",
+      "PackagePath": "staticwebassets/bootstrap-icons/fonts/bootstrap-icons.woff2"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/bootstrap-icons/index.html",
+      "PackagePath": "staticwebassets/bootstrap-icons/index.html"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/data/winter-2024.json",
+      "PackagePath": "staticwebassets/data/winter-2024.json"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/amy-van-bijsterveldt.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/amy-van-bijsterveldt.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/anu-singh.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/anu-singh.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/bart-lannoeye.png",
+      "PackagePath": "staticwebassets/img/2024/speakers/bart-lannoeye.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/daniel-mertens.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/daniel-mertens.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/dennis-doomen.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/dennis-doomen.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/eduard-keilholz.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/eduard-keilholz.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/glenn-versweyveld.jpeg",
+      "PackagePath": "staticwebassets/img/2024/speakers/glenn-versweyveld.jpeg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/iona-varga.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/iona-varga.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/jarne-van-aerde.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/jarne-van-aerde.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/maarten-mulders.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/maarten-mulders.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/marco-kuiper.png",
+      "PackagePath": "staticwebassets/img/2024/speakers/marco-kuiper.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/maurice-de-beijer.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/maurice-de-beijer.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/niels-tanis.png",
+      "PackagePath": "staticwebassets/img/2024/speakers/niels-tanis.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/peter-wessels.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/peter-wessels.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/sander-ten-brinke.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/sander-ten-brinke.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/sander-van-de-velde.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/sander-van-de-velde.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/stephan-van-rooij.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/stephan-van-rooij.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/wilko-van-de-velde.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/wilko-van-de-velde.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/2024/speakers/willem-meints.jpg",
+      "PackagePath": "staticwebassets/img/2024/speakers/willem-meints.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/Info-support-vertical.png",
+      "PackagePath": "staticwebassets/img/Info-support-vertical.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/apple-touch-icon.png",
+      "PackagePath": "staticwebassets/img/apple-touch-icon.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/countdown-bottom.png",
+      "PackagePath": "staticwebassets/img/countdown-bottom.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/countdown-top.png",
+      "PackagePath": "staticwebassets/img/countdown-top.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/favicon.png",
+      "PackagePath": "staticwebassets/img/favicon.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/galaxy.png",
+      "PackagePath": "staticwebassets/img/galaxy.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/hero-foreground-mobile.png",
+      "PackagePath": "staticwebassets/img/hero-foreground-mobile.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/hero-foreground-tablet.png",
+      "PackagePath": "staticwebassets/img/hero-foreground-tablet.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/hero-foreground.png",
+      "PackagePath": "staticwebassets/img/hero-foreground.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/hero-galaxy.png",
+      "PackagePath": "staticwebassets/img/hero-galaxy.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/hills.png",
+      "PackagePath": "staticwebassets/img/hills.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/info-support.png",
+      "PackagePath": "staticwebassets/img/info-support.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/logo.png",
+      "PackagePath": "staticwebassets/img/logo.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/organizers/amy.jpg",
+      "PackagePath": "staticwebassets/img/organizers/amy.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/organizers/edwin.jpg",
+      "PackagePath": "staticwebassets/img/organizers/edwin.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/organizers/sander.jpg",
+      "PackagePath": "staticwebassets/img/organizers/sander.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/organizers/thomas.jpg",
+      "PackagePath": "staticwebassets/img/organizers/thomas.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/organizers/tom.jpg",
+      "PackagePath": "staticwebassets/img/organizers/tom.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/rocket-1.png",
+      "PackagePath": "staticwebassets/img/rocket-1.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/rocket-2.png",
+      "PackagePath": "staticwebassets/img/rocket-2.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/rocket-3.png",
+      "PackagePath": "staticwebassets/img/rocket-3.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/rocket-4.png",
+      "PackagePath": "staticwebassets/img/rocket-4.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/rocket-5.png",
+      "PackagePath": "staticwebassets/img/rocket-5.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/amy-van-bijsterveldt.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/amy-van-bijsterveldt.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/anu-singh.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/anu-singh.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/bart-lannoeye.png",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/bart-lannoeye.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/daniel-mertens.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/daniel-mertens.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/dennis-doomen.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/dennis-doomen.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/eduard-keilholz.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/eduard-keilholz.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/glenn-versweyveld.jpeg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/glenn-versweyveld.jpeg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/iona-varga.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/iona-varga.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/jarne-van-aerde.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/jarne-van-aerde.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/maarten-mulders.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/maarten-mulders.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/marco-kuiper.png",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/marco-kuiper.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/maurice-de-beijer.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/maurice-de-beijer.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/niels-tanis.png",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/niels-tanis.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/peter-wessels.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/peter-wessels.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/sander-ten-brinke.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/sander-ten-brinke.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/sander-van-de-velde.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/sander-van-de-velde.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/stephan-van-rooij.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/stephan-van-rooij.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/wilko-van-de-velde.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/wilko-van-de-velde.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-2024/speakers/willem-meints.jpg",
+      "PackagePath": "staticwebassets/img/winter-2024/speakers/willem-meints.jpg"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/img/winter-glow.png",
+      "PackagePath": "staticwebassets/img/winter-glow.png"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/wwwroot/js/main.js",
+      "PackagePath": "staticwebassets/js/main.js"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Bitbash.Website.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Bitbash.Website.props",
+      "PackagePath": "build\\Bitbash.Website.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Bitbash.Website.props",
+      "PackagePath": "buildMultiTargeting\\Bitbash.Website.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Bitbash.Website.props",
+      "PackagePath": "buildTransitive\\Bitbash.Website.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,34 @@
+
+.card[b-1su7m0567c] {
+    transition: all 0.3s ease-in-out;
+    width: 18rem; 
+}
+
+.card.service-session[b-1su7m0567c] {
+    background-color: #e9ecef;
+}
+
+.card:hover.cursor-pointer[b-1su7m0567c] {
+    box-shadow: 0 0 40px 0 #E459BB;
+    transform: scale(1.1);
+}
+
+.card-title[b-1su7m0567c] {
+    color: black;
+}
+
+.card-body h5[b-1su7m0567c] {
+    font-size: 1.5rem;
+}
+
+.card-body h6[b-1su7m0567c] {
+    font-size: 1rem;
+}
+
+.card-footer .session-format[b-1su7m0567c] {
+    background-color: #269BB9;
+}
+
+.card-footer .session-level[b-1su7m0567c] {
+    background-color: #E459BB;
+}

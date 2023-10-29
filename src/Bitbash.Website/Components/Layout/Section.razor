@@ -1,0 +1,37 @@
+<section id="@Id" class="@ExtraClass" data-aos="@(FadeUp ? "fade-up" : null)">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>@HeaderText</h2>
+            @if (!string.IsNullOrEmpty(SubText))
+            {
+                <h4>@SubText</h4>
+            }
+        </div>
+
+        @ChildContent
+    </div>
+</section>
+
+@code
+{
+    private IEnumerable<Speaker>? speakers;
+
+    [Parameter]
+    public string? Id { get; set; }
+
+    [Parameter]
+	public string? HeaderText { get; set; }
+
+    [Parameter]
+	public string? SubText { get; set; }
+
+    [Parameter]
+	public string? ExtraClass { get; set; }
+
+    [Parameter]
+	public bool FadeUp { get; set; }
+
+    [Parameter]
+	public RenderFragment? ChildContent { get; set; }
+}

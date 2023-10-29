@@ -1,0 +1,25 @@
+#footer .content[b-oipfoqhhtf] {
+    background-color: #121838;
+}
+
+#footer .links[b-oipfoqhhtf] {
+    text-align: center;
+    font-size: 21px;
+    padding-top: 30px;
+    padding-bottom: 12px;
+}
+
+#footer .links a[b-oipfoqhhtf] {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#footer .links a:hover[b-oipfoqhhtf] {
+    color: pointer;
+}
+
+#footer .credits[b-oipfoqhhtf] {
+    text-align: center;
+    font-size: 13px;
+    color: #ddd;
+}

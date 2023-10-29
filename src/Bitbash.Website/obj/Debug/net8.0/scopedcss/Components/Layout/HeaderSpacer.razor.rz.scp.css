@@ -1,0 +1,9 @@
+#header-spacer[b-13y7973llh] {
+    height: 100px;
+}
+
+@media (max-width: 991px) {
+    #header-spacer[b-13y7973llh] {
+        height: 70px;
+    }
+}

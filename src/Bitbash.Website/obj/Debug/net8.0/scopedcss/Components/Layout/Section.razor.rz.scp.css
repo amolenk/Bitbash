@@ -1,0 +1,79 @@
+.rocket-1[b-tbwqij4w2n] {
+    background-image: url("img/rocket-1.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.rocket-2[b-tbwqij4w2n] {
+    background-image: url("img/rocket-2.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.rocket-3[b-tbwqij4w2n] {
+    background-image: url("img/rocket-3.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.rocket-4[b-tbwqij4w2n] {
+    background-image: url("img/rocket-4.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.rocket-5[b-tbwqij4w2n] {
+    background-image: url("img/rocket-5.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.container[b-tbwqij4w2n] {
+    min-height: 250px;
+}
+
+.section-header[b-tbwqij4w2n] {
+    /* margin-top: 30px; */
+    margin-bottom: 50px;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.section-header h2[b-tbwqij4w2n] {
+    display: inline;
+    position: relative;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+.section-header h2[b-tbwqij4w2n]::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 7px);
+    width: calc(100% + 20px);
+    left: -10px;
+    height: 5px;
+    background: linear-gradient(111.3deg, #269BB9 10%, #C248D6 90%);
+    text-align: center;
+    justify-content: center;
+}
+
+.section-header h4[b-tbwqij4w2n] {
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+    margin-top: 23px;
+    color: white;
+}

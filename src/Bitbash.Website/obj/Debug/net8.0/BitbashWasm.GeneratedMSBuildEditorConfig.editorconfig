@@ -1,0 +1,83 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = BitbashWasm
+build_property.RootNamespace = BitbashWasm
+build_property.ProjectDir = /Users/amolenk/Downloads/BitbashWasm/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/amolenk/Downloads/BitbashWasm
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvQXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvUGFnZXMvQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvUGFnZXMvSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvUGFnZXMvV2VhdGhlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvX0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/About.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvQWJvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-km32fb9ygk
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/BackToTop.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvQmFja1RvVG9wLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-e2dhjc8a6f
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Countdown.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvQ291bnRkb3duLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-dxr86fgoia
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvRm9vdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-x90igsjeyb
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Hero.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvSGVyby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-52p3yteiu6
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvTGF5b3V0L01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-le24p30v12
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvTGF5b3V0L05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-tpakrob657
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Organizers.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvT3JnYW5pemVycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-uvbr6dm3v9
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Tickets.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvVGlja2V0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-av3svhw0jn
+
+[/Users/amolenk/Downloads/BitbashWasm/Bitbash.Website/Components/Venue.razor]
+build_metadata.AdditionalFiles.TargetPath = Qml0YmFzaC5XZWJzaXRlL0NvbXBvbmVudHMvVmVudWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ie55pj7vzc

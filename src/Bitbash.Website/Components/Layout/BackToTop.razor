@@ -1,0 +1,16 @@
+@inject IJSRuntime JS
+
+<a href="#" alt="Back to top" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+</a>
+
+@code
+{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("InitializeBackToTopButton");
+        }
+    }
+}

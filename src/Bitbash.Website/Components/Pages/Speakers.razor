@@ -1,0 +1,37 @@
+﻿@page "/speakers"
+@inject EventDetailsProvider EventDetailsProvider
+@inject WebsiteSettings Settings
+
+<PageTitle>Speakers | Bitbash</PageTitle>
+
+<HeaderSpacer />
+
+<Section HeaderText="Speakers" ExtraClass="rocket-3">
+
+    <div class="container" data-aos="fade-up">
+
+        @if (speakers is not null)
+        {
+            <div class="row justify-content-center p-2">
+
+            @foreach (var speaker in speakers)
+            {
+                <SpeakerCard Speaker="@speaker" />
+            }
+
+            </div>
+        }
+
+    </div>
+
+</Section>
+
+@code
+{
+    private IEnumerable<Speaker>? speakers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        speakers = await EventDetailsProvider.GetSpeakersAsync(Settings.CurrentEdition);
+    }
+}

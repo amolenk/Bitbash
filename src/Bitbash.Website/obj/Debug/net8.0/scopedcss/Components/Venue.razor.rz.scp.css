@@ -1,0 +1,40 @@
+/* .venue .row {
+    margin: 0px;
+}
+
+.venue .row>* {
+    padding: 0px;
+} */
+
+.venue .logo[b-g5dhb5iml1] {
+    padding-bottom: 40px;
+    width: 80%;
+}
+@media (max-width: 991px) {
+    .venue .logo[b-g5dhb5iml1] {
+        max-width: 400px;
+    }
+}
+
+.venue .venue-info[b-g5dhb5iml1] {
+    background: linear-gradient(135deg, #269BB9 10%, #C248D6 90%);
+    padding-bottom: 40px;
+    padding-top: 60px;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .venue .venue-info .info[b-g5dhb5iml1] {
+        text-align: center;
+    }
+}
+
+.venue .venue-info p[b-g5dhb5iml1] {
+    margin-bottom: 0;
+}
+
+.venue .venue-map iframe[b-g5dhb5iml1] {
+    min-height: 300px;
+    height: 100%;
+    width: 100%;
+}
