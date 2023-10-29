@@ -1,0 +1,46 @@
+@inject NavigationManager NavigationManager
+@inject WebsiteSettings Settings
+
+@if (Session is not null)
+{
+    @if (Session.IsServiceSession is bool isServiceSession && isServiceSession)
+    {
+        <div class="card m-3 service-session">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">@Session.Room</h6>
+                <h5 class="card-title">@Session.Title</h5>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card m-3 cursor-pointer" @onclick="@(() => OnSessionClick(@Session))">
+            <div class="card-body">
+                <h6 class="mb-2 text-muted">@Session.Room</h6>
+                <h5 class="card-title">@Session.Title</h5>
+                @foreach (var speaker in Session.Speakers)
+                {
+                    <h6 class="mb-2 text-muted">@speaker.FullName</h6>
+                }
+            </div>
+            <div class="card-footer bg-transparent border-0">
+                <h6>
+                    <span class="badge rounded-pill session-format">@Session.SessionFormat</span>
+                    <span class="badge rounded-pill session-level">@Session.Level</span>
+                </h6>
+            </div>
+        </div>
+    }
+}
+
+@code
+{
+    [Parameter]
+    public Session? Session { get; set; }
+
+    private void OnSessionClick(Session session)
+    {
+        NavigationManager.NavigateTo(
+            $"{Settings.CurrentEdition}/session/{session.Id}");
+    }
+}

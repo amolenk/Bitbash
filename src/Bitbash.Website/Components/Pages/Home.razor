@@ -1,0 +1,27 @@
+﻿@page "/"
+@page "/{anchor}"
+@inject IJSRuntime JS
+
+<PageTitle>Bitbash</PageTitle>
+
+<Hero />
+<About />
+<Venue />
+<Tickets /> 
+<Organizers />
+
+@code {
+
+    [Parameter]
+    public string? Anchor { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Cross-page anchor navigation doesn't work in Blazor WASM (including 8).
+        // This is a workaround until it's fixed (if ever).
+        if (Anchor == "about" || Anchor == "tickets")
+        {
+            await JS.InvokeVoidAsync("scrollToElement", $"#{Anchor}");
+        }
+    }
+}

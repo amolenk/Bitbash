@@ -1,0 +1,43 @@
+@inject WebsiteSettings Settings
+
+<Section Id="tickets" HeaderText="Tickets" ExtraClass="rocket-4" FadeUp="true">
+
+    @if (Settings.TicketsOnSale)
+    {
+        <div class="row">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body">
+                        <h3 class="card-title text-uppercase text-center">Conference Day</h3>
+                        <h3 class="card-title text-uppercase text-center">Saturday Jan 27th</h3>
+                        <h6 class="card-price text-center">FREE</h6>
+                        <hr>
+                        <p class="text-center">This ticket gives access to all Bitbash sessions on Saturday January 27th.</p>
+                        <p class="text-center">Workshops on Friday January 26th require separate tickets which will become available when the workshop schedule is announced.</p>
+                        <hr>
+                        <div class="text-center">
+                            <a href="https://www.eventbrite.nl/e/bitbash-2024-tickets-712833974607" target="_blank" class="btn btn-primary">Get ticket now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div>
+            <p><em>Tickets for Bitbash are 100% free!</em></p>
+            <p>While tickets are not available just yet, we are working hard to make them available soon.</p>
+            <p>Please stay tuned for updates on our website and social media channels.</p>
+        </div>
+    }
+
+</Section>
+
+@code
+{
+    // TODO Get from app settings.
+    private const bool TicketsOnSale = true;
+}
