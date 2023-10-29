@@ -1,0 +1,46 @@
+﻿@page "/tickets"
+@inject WebsiteSettings Settings
+
+<PageTitle>Tickets | Bitbash</PageTitle>
+
+<HeaderSpacer />
+
+<Section Id="tickets" HeaderText="Tickets" ExtraClass="rocket-4" FadeUp="true">
+
+    @if (TicketsOnSale)
+    {
+        <div class="row">
+            <p>Bitbash is a two day conference with half- and fullday workshops on Friday January 26th and 50 minute talks on Saturday January 27th. Have a look at our <a href="/agenda">agenda</a> for the full details.</p>
+            <p>Please note that you need separate tickets for Friday and Saturday. Also, be cautious when registering for multiple workshops on Friday to avoid any overlapping registrations.</p>
+            <p><em>Tickets for Bitbash are 100% free</em> and we'd like to keep it that way. Please register only if you are <em>certain you can attend in-person</em>, to avoid wasting food or disappointing others. We understand that unexpected circumstances may arise. If that happens, please cancel your ticket(s) as soon as possible to make them available for others.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-body text-center">
+                        <p class="text-center">Bitbash tickets are available through Eventbrite. By clicking the button below a new tab will open to complete your registration at Eventbrite.</p>
+                        <hr>
+                        <a href="@Settings.EventbriteLink" target="_blank" class="btn btn-primary">Get tickets now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div>
+            <p><em>Tickets for Bitbash are 100% free!</em></p>
+            <p>While tickets are not available just yet, we are working hard to make them available soon.</p>
+            <p>Please stay tuned for updates on our website and social media channels.</p>
+        </div>
+    }
+
+</Section>
+
+@code
+{
+    private bool TicketsOnSale => Settings.EventbriteLink is not null;
+}
