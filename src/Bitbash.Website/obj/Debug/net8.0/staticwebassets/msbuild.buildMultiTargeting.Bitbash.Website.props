@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/Bitbash.Website.props" />
-</Project>
