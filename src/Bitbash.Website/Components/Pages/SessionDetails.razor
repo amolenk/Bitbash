@@ -19,8 +19,7 @@
                     </div>
                 }
                 <div class="card-body">
-                    @* <h2>@session.Title</h2> *@
-                    <p>@session.Description</p>
+                    <p>@((MarkupString)((session.Description ?? string.Empty).Replace("\r\n", "<br/>")))</p>
                     <h6>
                         <span class="badge rounded-pill session-format">@session.SessionFormat</span>
                         <span class="badge rounded-pill session-level">@session.Level</span>
