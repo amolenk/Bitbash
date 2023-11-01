@@ -20,7 +20,12 @@
                 <h5 class="card-title">@Session.Title</h5>
                 @foreach (var speaker in Session.Speakers)
                 {
-                    <h6 class="mb-2 text-muted">@speaker.FullName</h6>
+                    @* <span class="speaker-photo">
+                        <img loading="lazy" src="@speaker.ProfilePictureUrl">
+                    </span> *@
+                    <h6 class="mb-2 text-muted">
+                        <img loading="lazy" src="@speaker.ProfilePictureUrl" class="speaker-photo"> @speaker.FullName
+                    </h6>
                 }
             </div>
             <div class="card-footer bg-transparent border-0">

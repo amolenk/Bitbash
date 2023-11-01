@@ -32,3 +32,10 @@
 .card-footer .session-level {
     background-color: #E459BB;
 }
+
+.speaker-photo {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
