@@ -20,9 +20,6 @@
                 <h5 class="card-title">@Session.Title</h5>
                 @foreach (var speaker in Session.Speakers)
                 {
-                    @* <span class="speaker-photo">
-                        <img loading="lazy" src="@speaker.ProfilePictureUrl">
-                    </span> *@
                     <h6 class="mb-2 text-muted">
                         <img loading="lazy" src="@speaker.ProfilePictureUrl" class="speaker-photo"> @speaker.FullName
                     </h6>
@@ -30,8 +27,8 @@
             </div>
             <div class="card-footer bg-transparent border-0">
                 <h6>
-                    <span class="badge rounded-pill session-format">@Session.SessionFormat</span>
-                    <span class="badge rounded-pill session-level">@Session.Level</span>
+                    <span class="badge rounded-pill session-format mt-2">@Session.SessionFormat</span>
+                    <span class="badge rounded-pill session-level mt-2">@Session.Level</span>
                 </h6>
             </div>
         </div>
