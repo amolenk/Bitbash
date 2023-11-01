@@ -213,189 +213,7 @@
   ],
   "Sessions": [
     {
-      "Id": "assessing-nuget-packages-more-easily-with-security-scorecards",
-      "Title": "Assessing NuGet Packages more easily with Security Scorecards",
-      "Description": "Several studies shown that round 80% of our applications consist of other people\u0027s code because why would you re-create something that\u0027s already made by someone else? But with using a NuGet Package that is developed by others, we also put a lot of trust in it, which might result in bigger security problems later. Of course, it\u0027s always a good idea to get updates of libraries in case of a bug fix related to a functional and/or security issue found. But will that be enough? What about packages that have malicious code inside? Even related to your own supply-chain security, any problem in the package its supply-chain implicitly means your supply-chain is compromised as well!\r\nWould it not be nice if there is a better way to review NuGet packages for security? An easier way to perform an assessment based on certain aspects of the package that will tell you more about the package its software security. With the introduction of Scorecards the Open Source Security Foundation (OpenSSF) exactly tries to achieve that. You could consider a Scorecard being the equivalent of a nutrition labels put on food you buy in a supermarket. It will allow you to see what\u0027s inside and determine if you want to eat it or not.\r\nIn this session we start out with different area\u0027s covered by of OpenSSF Scorecards, like how well it\u0027s maintained, does the build have dangerous workflows, and does the project use other security tools to check for problems? We\u0027re also going to identify additional area\u0027s for NuGet packages in which we could add additional information related to reproducibility, insights on what .NET APIs are used, and security review of the codebase. All combined will give us the ability to assess a NuGet package its security posture more easily and improve our own application security.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "niels-tanis"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "azure-networking-a-love-story-between-a-hub-and-a-spoke",
-      "Title": "Azure Networking - A love story between a Hub and a Spoke",
-      "Description": "Join my session on Azure Networking as we explore the creation of virtual networks, VPN connections, and network peering. This hands-on session will guide you through the process of building virtual networks and establishing secure connections. Learn how to configure VPN gateways, for seamless connectivity between on-premises networks and Azure virtual networks. Discover the power of network peering to connect virtual networks within Azure and enable secure communication across different network boundaries. Gain practical skills and knowledge to enhance your Azure Networking projects and unlock the true potential of cloud networking.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "eduard-keilholz"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Advanced",
-      "Room": null
-    },
-    {
-      "Id": "battling-your-biased-brain",
-      "Title": "Battling your Biased Brain",
-      "Description": "Ever heard of the IKEA effect or the bandwagon-effect? In our efforts to delivering great software, there are numerous occasions where our brain tries to trick us. Don\u2019t fall for them!\r\n\r\nIn this talk we will dive into some well-known and researched cognitive biases that impact our judgments in our day-to-day jobs as software creators.\r\nWhen do they typically occur? And why are we falling into these traps from time to time?\r\n\r\nAfter this talk you\u0027ll have a better understanding of how your brain tricks you, how to make better decisions and in the end how to deliver some great software.\r\n\r\nA word of warning; during this talk you may get tricked!",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "peter-wessels"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Introductory and overview",
-      "Room": null
-    },
-    {
-      "Id": "building-a-chat-assistent-with-azure-openai-service",
-      "Title": "Building a chat assistent with Azure OpenAI service",
-      "Description": "You\u2019ve probably used ChatGPT or Github copilot in your work at least once or maybe you\u2019re using it on a daily basis and maybe you\u2019re wondering how you can build something like that yourself. This is the session for you. I\u2019ll show you how we made our own ChatGPT instance at Info Support and connected it to our internal knowledge base. We\u2019ll cover how to write a good system prompt, how to structure the conversation, and how to connect your own data sources. Finally, we\u2019ll talk a little bit about using the chat API for other things than chat. ",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "willem-meints"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "five-ways-open-source-will-slow-you-down",
-      "Title": "Five ways open source will slow you down",
-      "Description": "Software is changing the world - and even other planets. An ever-growing part of software is \u201Copen source\u201D. But it hasn\u2019t always been that way! And \u201Cdoing something open source\u201D is definitely no guarantee for success. There are numerous ways in which you can use open-source software and be worse off than if you did not.\r\n\r\nJoin me in this talk to find out how not to leverage open-source software in your organisation and your projects. Find out why reading the documentation may not always be your best bet, or how a workaround may eventually work against you. By investigating 5 ways in which you can fail, we can learn valuable lessons on what to do instead.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "maarten-mulders"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Introductory and overview",
-      "Room": null
-    },
-    {
-      "Id": "from-manual-to-automatic-using-openapi-to-generate-productionready-api-clients",
-      "Title": "From manual to automatic: Using OpenAPI to generate production-ready API clients",
-      "Description": "Are you tired of spending hours creating API clients and updating them every time the API changes?\r\n\r\nIn this session, you\u0027ll learn how to streamline your API development process with OpenAPI and code generation tools. We\u0027ll discuss how these tools can automate the process of generating production-ready API clients and how they can save you valuable time and effort. You\u0027ll discover the many benefits of this approach, including improved code reusability, more consistent API development and more.\r\n\r\nBy the end of this talk, you\u0027ll have a better understanding of how to leverage OpenAPI and code generation tools in your projects and take your API development to the next level!",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "sander-ten-brinke"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "getting-a-grip-on-your-code-dependencies",
-      "Title": "Getting a grip on your code dependencies",
-      "Description": "I\u0027m sure every developer wants to be able to change code with confidence and without fear. Readable and self-explanatory code is one aspect of that. Too much coupling is another major source of problems that prevent you from changing one part of the system without causing side-effects. In this talk, I\u0027d like you to show you common sources of unnecessary coupling and offer you options to help prevent and/or break those. I\u0027ll talk about how principles like Don\u0027t Repeat Yourself and Dependency Injection can be a double-edge sword, how to detect too unnecessary dependencies and how to use the Dependency Inversion Principle to unravel some of those. And yes, I will also talk about controlling dependencies on the package level.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "dennis-doomen"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Advanced",
-      "Room": null
-    },
-    {
-      "Id": "pro-code-in-unison-with-low-code-via-ecosystems",
-      "Title": "Pro Code in unison with Low Code via Ecosystems",
-      "Description": "Pro code is on top of the foodchain, but what if your prey starts to outnumber the predator? By means of large numbers, there is a point where Low Code will transition from the \u0027next new thing\u0027 to a stayer. And when that will be, might surprise you.\r\n\r\nIn this session, we\u0027ll discuss the history of \u0027low code\u0027, the impact on pro code and code first, and the future of a merge between both called Fusion Development.\r\n\r\nBy investigating Ecosystems, you will see how modern development might look, and how to join the revolution as an early adoptor.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "iona-varga"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Introductory and overview",
-      "Room": null
-    },
-    {
-      "Id": "protect-your-api-with-entra-from-zero-security-to-security-hero",
-      "Title": "Protect your API with Entra - from zero security to security hero",
-      "Description": "Security should be top priority in any application these days. In this interactive demonstration I\u0027ll show you how to go from an API without security to an API that is secured with Entra ID.\r\n\r\nJoin this session so you never have to worry about the security of your API ever again.\r\n\r\n- Protecting the API\r\n- What are JWTs (Json Web Tokens)?\r\n- Scopes vs Roles?\r\n- Getting a token as application\r\n- Getting a token as user\r\n\r\nThese principals are not Entra specific and can be applied to other Identity Providers as well, the exact implementation might be slightly different.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "stephan-van-rooij"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Advanced",
-      "Room": null
-    },
-    {
-      "Id": "secure-cloud-development-in-azure-dont-cut-corners",
-      "Title": "Secure Cloud Development in Azure: Don\u0027t Cut Corners",
-      "Description": "Authentication and authorization are well-known concepts among developers, but secure cloud development goes beyond these basics. In this session, we will delve into the fundamental principles of cloud security, focusing on building applications in an Azure environment.\r\n\r\nUsing practical examples, we will explore common vulnerabilities and threats, and provide practical guidance on how to effectively mitigate these risks. We will address the misconception that secure development is difficult and time-consuming, showcasing how to implement secure practices for commonly used Azure services.\r\n\r\nFurthermore, we will go beyond the technical aspects of secure cloud development and touch upon the importance of SecOps in the cloud. By the end of this session, you will gain a comprehensive understanding of best practices for secure cloud development in Azure, be equipped with practical techniques to deal with threats, and have a broader perspective on integrating SecOps into your cloud development projects.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "bart-lannoeye"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "supercharge-your-data-analysis-with-azure-databricks-and-microsoft-fabric-integration",
-      "Title": "Supercharge Your Data Analysis with Azure Databricks and Microsoft Fabric Integration",
-      "Description": "This session is all about the bringing the power of Azure Databricks and Microsoft Fabric together. Here\u0027s what we\u0027ll focus on:\r\n\u2022 Access Azure Databricks Delta Tables in Fabric: How to easily access Azure Databricks Delta Tables in Fabric, so you can quickly create shortcuts to read the data and analyse in Power BI via DirectLake.\r\n\u2022 Access Fabric Delta table in Azure Databricks: The seamless process for accessing Fabric Delta tables in Azure Databricks, including ingesting data into OneLake using the pipeline experience and creating a delta table that can be easily read and modified via Azure Databricks.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "anu-singh"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Introductory and overview",
-      "Room": null
-    },
-    {
-      "Id": "sustainable-software-may-the-green-code-be-with-you",
-      "Title": "Sustainable Software: May the Green Code Be with You",
-      "Description": "In a galaxy not so far away, software development is taking on an eco-friendly twist! Join me for a journey into the world of Green Software Development, where we explore how the Force of sustainability can be harnessed to create a better, greener future for software and the planet.\r\n\r\nWe\u0027ll fly away to various topics, including:\r\n- The Green Side of Code: Discover the fundamental principles of Green Software Development and how they can lead to reduced energy consumption, lower carbon footprints, and more environmentally responsible software.\r\n- Eco-Jedi Tools: Explore the tools and techniques at the heart of Green Software Development, including energy-efficient coding practices and sustainable development methodologies.\r\n- Carbon Emissions and the Dark Side: Learn about the environmental impact of software and how we can combat the \u0022Dark Side\u0022 of excessive energy consumption with eco-conscious programming.\r\n- Ewoks vs. Energy Efficiency: Are you building your software like the energy-efficient Ewoks or the resource-hungry Death Star?\r\n- The Path to a Greener Future: We\u0027ll discuss the challenges and opportunities ahead on our journey toward a more sustainable software galaxy and how you can be a part of it.\r\n\r\nJoin me for an engaging and informative presentation where we combine the power of technology and the wisdom of the Jedi to bring balance to the software development Force. Together, we\u0027ll ensure that the code is green, and our planet is preserved for generations to come. May the Green Code Be with You!",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "marco-kuiper"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Introductory and overview",
-      "Room": null
-    },
-    {
-      "Id": "tales-from-the-trenches-a-new-data-engineers-story-of-success-and-struggle",
-      "Title": "Tales from the Trenches: A New Data Engineer\u0027s Story of Success and Struggle",
-      "Description": "Once upon a time, there was a junior data engineer who believed she could conquer any data challenge that came her way. But as she soon discovered, the world of data engineering was full of surprises - not all of them pleasant. Despite the struggles and setbacks she faced, the intrepid junior data engineer refused to give up. With determination and a healthy dose of humor, she persevered, and in the end, emerged victorious. Accompany her on her journey to discover how she turned setbacks into opportunities for growth, whilst also learning a thing or two on what to avoid when building a modern data platform.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "amy-van-bijsterveldt"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "702eba0d-e07d-4cac-90ff-d11ef043b8b6",
+      "Id": "f293bce4-ded7-45dd-81c5-0bf5cb2ff0c9",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:00:00",
@@ -451,7 +269,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "63ad7a11-a3c3-48a9-b7d1-abacd04fc37e",
+      "Id": "54bf9ea4-1c2b-4ca1-8e7c-c06c37cded42",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -491,7 +309,7 @@
       "Room": "Room 2"
     },
     {
-      "Id": "79b612e2-6efd-4802-961c-6f20b4ecd2dc",
+      "Id": "30b92988-b502-4edc-a279-a043bf3b4525",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:00:00",
@@ -503,19 +321,21 @@
       "Room": "Nexus"
     },
     {
-      "Id": "148f8a19-39fa-403c-a28a-d93e21a2d08e",
-      "Title": "Opening Keynote: TBA",
-      "Description": null,
+      "Id": "sustainable-software-may-the-green-code-be-with-you",
+      "Title": "Sustainable Software: May the Green Code Be with You",
+      "Description": "In a galaxy not so far away, software development is taking on an eco-friendly twist! Join me for a journey into the world of Green Software Development, where we explore how the Force of sustainability can be harnessed to create a better, greener future for software and the planet.\r\n\r\nWe\u0027ll fly away to various topics, including:\r\n- The Green Side of Code: Discover the fundamental principles of Green Software Development and how they can lead to reduced energy consumption, lower carbon footprints, and more environmentally responsible software.\r\n- Eco-Jedi Tools: Explore the tools and techniques at the heart of Green Software Development, including energy-efficient coding practices and sustainable development methodologies.\r\n- Carbon Emissions and the Dark Side: Learn about the environmental impact of software and how we can combat the \u0022Dark Side\u0022 of excessive energy consumption with eco-conscious programming.\r\n- Ewoks vs. Energy Efficiency: Are you building your software like the energy-efficient Ewoks or the resource-hungry Death Star?\r\n- The Path to a Greener Future: We\u0027ll discuss the challenges and opportunities ahead on our journey toward a more sustainable software galaxy and how you can be a part of it.\r\n\r\nJoin me for an engaging and informative presentation where we combine the power of technology and the wisdom of the Jedi to bring balance to the software development Force. Together, we\u0027ll ensure that the code is green, and our planet is preserved for generations to come. May the Green Code Be with You!",
       "StartsAt": "2024-01-27T09:00:00",
       "EndsAt": "2024-01-27T10:00:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "marco-kuiper"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
       "Room": "Room 1"
     },
     {
-      "Id": "852c5564-29c4-4116-8225-c577df72b058",
+      "Id": "d2bf01f7-124f-4913-b013-65b25b634a7a",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -527,79 +347,91 @@
       "Room": "Nexus"
     },
     {
-      "Id": "709412a6-52b6-4da9-832b-469558a7b70d",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
+      "Id": "getting-a-grip-on-your-code-dependencies",
+      "Title": "Getting a grip on your code dependencies",
+      "Description": "I\u0027m sure every developer wants to be able to change code with confidence and without fear. Readable and self-explanatory code is one aspect of that. Too much coupling is another major source of problems that prevent you from changing one part of the system without causing side-effects. In this talk, I\u0027d like you to show you common sources of unnecessary coupling and offer you options to help prevent and/or break those. I\u0027ll talk about how principles like Don\u0027t Repeat Yourself and Dependency Injection can be a double-edge sword, how to detect too unnecessary dependencies and how to use the Dependency Inversion Principle to unravel some of those. And yes, I will also talk about controlling dependencies on the package level.",
       "StartsAt": "2024-01-27T10:30:00",
       "EndsAt": "2024-01-27T11:20:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "dennis-doomen"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Advanced",
       "Room": "Room 1"
     },
     {
-      "Id": "f246b3b8-7bb7-4205-b006-43e9376c8302",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
+      "Id": "azure-networking-a-love-story-between-a-hub-and-a-spoke",
+      "Title": "Azure Networking - A love story between a Hub and a Spoke",
+      "Description": "Join my session on Azure Networking as we explore the creation of virtual networks, VPN connections, and network peering. This hands-on session will guide you through the process of building virtual networks and establishing secure connections. Learn how to configure VPN gateways, for seamless connectivity between on-premises networks and Azure virtual networks. Discover the power of network peering to connect virtual networks within Azure and enable secure communication across different network boundaries. Gain practical skills and knowledge to enhance your Azure Networking projects and unlock the true potential of cloud networking.",
       "StartsAt": "2024-01-27T10:30:00",
       "EndsAt": "2024-01-27T11:20:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "eduard-keilholz"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Advanced",
       "Room": "Room 2"
     },
     {
-      "Id": "4eceb707-e18b-43f8-a910-5e8ed55ce262",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
+      "Id": "tales-from-the-trenches-a-new-data-engineers-story-of-success-and-struggle",
+      "Title": "Tales from the Trenches: A New Data Engineer\u0027s Story of Success and Struggle",
+      "Description": "Once upon a time, there was a junior data engineer who believed she could conquer any data challenge that came her way. But as she soon discovered, the world of data engineering was full of surprises - not all of them pleasant. Despite the struggles and setbacks she faced, the intrepid junior data engineer refused to give up. With determination and a healthy dose of humor, she persevered, and in the end, emerged victorious. Accompany her on her journey to discover how she turned setbacks into opportunities for growth, whilst also learning a thing or two on what to avoid when building a modern data platform.",
       "StartsAt": "2024-01-27T10:30:00",
       "EndsAt": "2024-01-27T11:20:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "amy-van-bijsterveldt"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
       "Room": "Room 3"
     },
     {
-      "Id": "fa6bdb89-926c-4a77-a143-bcf694a40415",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
+      "Id": "pro-code-in-unison-with-low-code-via-ecosystems",
+      "Title": "Pro Code in unison with Low Code via Ecosystems",
+      "Description": "Pro code is on top of the foodchain, but what if your prey starts to outnumber the predator? By means of large numbers, there is a point where Low Code will transition from the \u0027next new thing\u0027 to a stayer. And when that will be, might surprise you.\r\n\r\nIn this session, we\u0027ll discuss the history of \u0027low code\u0027, the impact on pro code and code first, and the future of a merge between both called Fusion Development.\r\n\r\nBy investigating Ecosystems, you will see how modern development might look, and how to join the revolution as an early adoptor.",
       "StartsAt": "2024-01-27T11:30:00",
       "EndsAt": "2024-01-27T12:20:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "iona-varga"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
       "Room": "Room 1"
     },
     {
-      "Id": "8556c0d3-fdfb-4c53-8b6a-d77f64cc3ad5",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
+      "Id": "five-ways-open-source-will-slow-you-down",
+      "Title": "Five ways open source will slow you down",
+      "Description": "Software is changing the world - and even other planets. An ever-growing part of software is \u201Copen source\u201D. But it hasn\u2019t always been that way! And \u201Cdoing something open source\u201D is definitely no guarantee for success. There are numerous ways in which you can use open-source software and be worse off than if you did not.\r\n\r\nJoin me in this talk to find out how not to leverage open-source software in your organisation and your projects. Find out why reading the documentation may not always be your best bet, or how a workaround may eventually work against you. By investigating 5 ways in which you can fail, we can learn valuable lessons on what to do instead.",
       "StartsAt": "2024-01-27T11:30:00",
       "EndsAt": "2024-01-27T12:20:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "maarten-mulders"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
       "Room": "Room 2"
     },
     {
-      "Id": "717fc6c5-d2bb-4207-8c84-c3489ce5eeab",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
+      "Id": "assessing-nuget-packages-more-easily-with-security-scorecards",
+      "Title": "Assessing NuGet Packages more easily with Security Scorecards",
+      "Description": "Several studies shown that round 80% of our applications consist of other people\u0027s code because why would you re-create something that\u0027s already made by someone else? But with using a NuGet Package that is developed by others, we also put a lot of trust in it, which might result in bigger security problems later. Of course, it\u0027s always a good idea to get updates of libraries in case of a bug fix related to a functional and/or security issue found. But will that be enough? What about packages that have malicious code inside? Even related to your own supply-chain security, any problem in the package its supply-chain implicitly means your supply-chain is compromised as well!\r\nWould it not be nice if there is a better way to review NuGet packages for security? An easier way to perform an assessment based on certain aspects of the package that will tell you more about the package its software security. With the introduction of Scorecards the Open Source Security Foundation (OpenSSF) exactly tries to achieve that. You could consider a Scorecard being the equivalent of a nutrition labels put on food you buy in a supermarket. It will allow you to see what\u0027s inside and determine if you want to eat it or not.\r\nIn this session we start out with different area\u0027s covered by of OpenSSF Scorecards, like how well it\u0027s maintained, does the build have dangerous workflows, and does the project use other security tools to check for problems? We\u0027re also going to identify additional area\u0027s for NuGet packages in which we could add additional information related to reproducibility, insights on what .NET APIs are used, and security review of the codebase. All combined will give us the ability to assess a NuGet package its security posture more easily and improve our own application security.",
       "StartsAt": "2024-01-27T11:30:00",
       "EndsAt": "2024-01-27T12:20:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "niels-tanis"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
       "Room": "Room 3"
     },
     {
-      "Id": "f8f656c9-af7e-4f96-9021-6847a0c4d1fd",
+      "Id": "6fc2551e-7671-428f-b0eb-78f7c6bb04ac",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -611,35 +443,81 @@
       "Room": "Nexus"
     },
     {
-      "Id": "7c857467-b27b-496a-941a-2f81b6ec84fd",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
+      "Id": "secure-cloud-development-in-azure-dont-cut-corners",
+      "Title": "Secure Cloud Development in Azure: Don\u0027t Cut Corners",
+      "Description": "Authentication and authorization are well-known concepts among developers, but secure cloud development goes beyond these basics. In this session, we will delve into the fundamental principles of cloud security, focusing on building applications in an Azure environment.\r\n\r\nUsing practical examples, we will explore common vulnerabilities and threats, and provide practical guidance on how to effectively mitigate these risks. We will address the misconception that secure development is difficult and time-consuming, showcasing how to implement secure practices for commonly used Azure services.\r\n\r\nFurthermore, we will go beyond the technical aspects of secure cloud development and touch upon the importance of SecOps in the cloud. By the end of this session, you will gain a comprehensive understanding of best practices for secure cloud development in Azure, be equipped with practical techniques to deal with threats, and have a broader perspective on integrating SecOps into your cloud development projects.",
       "StartsAt": "2024-01-27T13:00:00",
       "EndsAt": "2024-01-27T13:50:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "bart-lannoeye"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
       "Room": "Room 1"
     },
     {
-      "Id": "cff59a9d-db8f-44fe-8de7-7f3a4dbe9deb",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
+      "Id": "from-manual-to-automatic-using-openapi-to-generate-productionready-api-clients",
+      "Title": "From manual to automatic: Using OpenAPI to generate production-ready API clients",
+      "Description": "Are you tired of spending hours creating API clients and updating them every time the API changes?\r\n\r\nIn this session, you\u0027ll learn how to streamline your API development process with OpenAPI and code generation tools. We\u0027ll discuss how these tools can automate the process of generating production-ready API clients and how they can save you valuable time and effort. You\u0027ll discover the many benefits of this approach, including improved code reusability, more consistent API development and more.\r\n\r\nBy the end of this talk, you\u0027ll have a better understanding of how to leverage OpenAPI and code generation tools in your projects and take your API development to the next level!",
       "StartsAt": "2024-01-27T13:00:00",
       "EndsAt": "2024-01-27T13:50:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "sander-ten-brinke"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
       "Room": "Room 2"
     },
     {
-      "Id": "10a70fc6-6515-442c-9b16-2064aa4ceb33",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
+      "Id": "supercharge-your-data-analysis-with-azure-databricks-and-microsoft-fabric-integration",
+      "Title": "Supercharge Your Data Analysis with Azure Databricks and Microsoft Fabric Integration",
+      "Description": "This session is all about the bringing the power of Azure Databricks and Microsoft Fabric together. Here\u0027s what we\u0027ll focus on:\r\n\u2022 Access Azure Databricks Delta Tables in Fabric: How to easily access Azure Databricks Delta Tables in Fabric, so you can quickly create shortcuts to read the data and analyse in Power BI via DirectLake.\r\n\u2022 Access Fabric Delta table in Azure Databricks: The seamless process for accessing Fabric Delta tables in Azure Databricks, including ingesting data into OneLake using the pipeline experience and creating a delta table that can be easily read and modified via Azure Databricks.",
       "StartsAt": "2024-01-27T13:00:00",
       "EndsAt": "2024-01-27T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "anu-singh"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "building-a-chat-assistent-with-azure-openai-service",
+      "Title": "Building a chat assistent with Azure OpenAI service",
+      "Description": "You\u2019ve probably used ChatGPT or Github copilot in your work at least once or maybe you\u2019re using it on a daily basis and maybe you\u2019re wondering how you can build something like that yourself. This is the session for you. I\u2019ll show you how we made our own ChatGPT instance at Info Support and connected it to our internal knowledge base. We\u2019ll cover how to write a good system prompt, how to structure the conversation, and how to connect your own data sources. Finally, we\u2019ll talk a little bit about using the chat API for other things than chat. ",
+      "StartsAt": "2024-01-27T14:00:00",
+      "EndsAt": "2024-01-27T14:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "willem-meints"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "protect-your-api-with-entra-from-zero-security-to-security-hero",
+      "Title": "Protect your API with Entra - from zero security to security hero",
+      "Description": "Security should be top priority in any application these days. In this interactive demonstration I\u0027ll show you how to go from an API without security to an API that is secured with Entra ID.\r\n\r\nJoin this session so you never have to worry about the security of your API ever again.\r\n\r\n- Protecting the API\r\n- What are JWTs (Json Web Tokens)?\r\n- Scopes vs Roles?\r\n- Getting a token as application\r\n- Getting a token as user\r\n\r\nThese principals are not Entra specific and can be applied to other Identity Providers as well, the exact implementation might be slightly different.",
+      "StartsAt": "2024-01-27T14:00:00",
+      "EndsAt": "2024-01-27T14:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "stephan-van-rooij"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Advanced",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "83e4b480-630f-4111-9fef-d554fd2a588f",
+      "Title": "Breakout Session: TBA",
+      "Description": null,
+      "StartsAt": "2024-01-27T14:00:00",
+      "EndsAt": "2024-01-27T14:50:00",
       "IsServiceSession": true,
       "speakers": [],
       "SessionFormat": null,
@@ -647,43 +525,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "d864e76d-aa5b-4fca-8de3-bfd95e942f9f",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
-      "StartsAt": "2024-01-27T14:00:00",
-      "EndsAt": "2024-01-27T14:50:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
-      "Room": "Room 1"
-    },
-    {
-      "Id": "6affba3d-adeb-4a4a-8364-4b52755ba617",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
-      "StartsAt": "2024-01-27T14:00:00",
-      "EndsAt": "2024-01-27T14:50:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
-      "Room": "Room 2"
-    },
-    {
-      "Id": "646e580d-9009-4be1-a492-60bceb933da9",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
-      "StartsAt": "2024-01-27T14:00:00",
-      "EndsAt": "2024-01-27T14:50:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
-      "Room": "Room 3"
-    },
-    {
-      "Id": "19ad3ec6-2a36-4eb8-906c-a4ec478b8b8d",
+      "Id": "6a4c0189-15d6-4ecd-b806-a436abcc4277",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
@@ -695,15 +537,17 @@
       "Room": "Nexus"
     },
     {
-      "Id": "ef8bcffb-ef0d-4667-bbae-124ad579fd27",
-      "Title": "Closing Keynote: TBA",
-      "Description": null,
+      "Id": "battling-your-biased-brain",
+      "Title": "Battling your Biased Brain",
+      "Description": "Ever heard of the IKEA effect or the bandwagon-effect? In our efforts to delivering great software, there are numerous occasions where our brain tries to trick us. Don\u2019t fall for them!\r\n\r\nIn this talk we will dive into some well-known and researched cognitive biases that impact our judgments in our day-to-day jobs as software creators.\r\nWhen do they typically occur? And why are we falling into these traps from time to time?\r\n\r\nAfter this talk you\u0027ll have a better understanding of how your brain tricks you, how to make better decisions and in the end how to deliver some great software.\r\n\r\nA word of warning; during this talk you may get tricked!",
       "StartsAt": "2024-01-27T15:10:00",
       "EndsAt": "2024-01-27T16:00:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "peter-wessels"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
       "Room": "Room 1"
     }
   ]
