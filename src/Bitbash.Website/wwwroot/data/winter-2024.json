@@ -224,21 +224,7 @@
   ],
   "Sessions": [
     {
-      "Id": "microsoft-fabric-onelake-to-rule-them-all",
-      "Title": "Microsoft Fabric: OneLake to rule them all",
-      "Description": "OneLake to find them, OneLake to integrate them all and in the Fabric bind them.\r\n\r\nIn this workshop we\u2019ll cover how to build an end-to-end analytics solution using Microsoft Fabric. We\u2019ll cover subjects such as:\r\n\r\n\u2022\tHow to move (or not move) data\r\n\u2022\tWorking with Lakehouses\r\n\u2022\tWhen and how to use data warehouses\r\n\u2022\tHow to drive actions based on data\r\n\u2022\tAnd how to handle security, governance, and compliance.\r\n",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "jody-treffers"
-      ],
-      "SessionFormat": "Half-day workshop",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "259e4dd2-b9c2-4e1b-9ef2-ad4883068121",
+      "Id": "3567cc11-cbb6-4690-9c09-654004d73fd1",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:00:00",
@@ -294,7 +280,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "9a508e35-ad20-4ca8-b6d9-8f729e91cd47",
+      "Id": "cb4d7218-0564-406d-bc4f-20abc191373a",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -334,7 +320,21 @@
       "Room": "Room 2"
     },
     {
-      "Id": "a3093ed5-282f-4784-b501-032c791017ca",
+      "Id": "microsoft-fabric-onelake-to-rule-them-all",
+      "Title": "Microsoft Fabric: OneLake to rule them all",
+      "Description": "OneLake to find them, OneLake to integrate them all and in the Fabric bind them.\r\n\r\nIn this workshop we\u2019ll cover how to build an end-to-end analytics solution using Microsoft Fabric. We\u2019ll cover subjects such as:\r\n\r\n\u2022\tHow to move (or not move) data\r\n\u2022\tWorking with Lakehouses\r\n\u2022\tWhen and how to use data warehouses\r\n\u2022\tHow to drive actions based on data\r\n\u2022\tAnd how to handle security, governance, and compliance.\r\n",
+      "StartsAt": "2024-01-26T13:00:00",
+      "EndsAt": "2024-01-26T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "jody-treffers"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "824a45b5-c2bd-4e30-ab25-bff173881b20",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:00:00",
@@ -360,7 +360,7 @@
       "Room": "Room 1"
     },
     {
-      "Id": "7493ba4c-f716-4820-8a9e-314388d1a8a3",
+      "Id": "2ef84dba-d817-427d-ab11-1143c6182921",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -456,7 +456,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "b2f887c1-993c-44c1-8afb-b8b33c77d0af",
+      "Id": "94aa9bb2-9ace-43ce-a45a-2ba3c2268cf8",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -538,7 +538,7 @@
       "Room": "Room 2"
     },
     {
-      "Id": "96ea803c-ecdf-43f6-aa72-29bf0caf88ea",
+      "Id": "fc398c52-fe36-4027-8a03-7437baff5f1c",
       "Title": "Breakout Session: TBA",
       "Description": null,
       "StartsAt": "2024-01-27T14:00:00",
@@ -550,7 +550,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "4fb864bc-ae97-4b72-afaf-d5f6735748dc",
+      "Id": "42261117-2d84-43ce-9062-73860d17aa84",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
