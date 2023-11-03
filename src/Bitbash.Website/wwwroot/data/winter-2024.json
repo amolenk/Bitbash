@@ -101,6 +101,17 @@
       ]
     },
     {
+      "Id": "jody-treffers",
+      "FullName": "Jody Treffers",
+      "Bio": "Jody Treffers is a highly experienced IT professional with over 10 years of expertise in data engineering and cloud engineering. With extensive experience in managing cloud solutions, Jody has been working with public cloud technologies for the past years, helping organizations to adopt and optimize their cloud strategies. In his role as Chapter Lead Data \u0026 AI at Info Support, Jody is responsible for the Managed Data Platform solution, which provides a comprehensive suite of tools and services for managing modern data workloads in the cloud.\r\n\r\nAside from his passion for IT, Jody is also an avid gamer and while he enjoys working with Microsoft technologies he is quick to point out that while he likes Xbox, he firmly believes that Sony Playstation is the superior gaming console.",
+      "TagLine": "IT Consultant and Chapter Lead Data \u0026 AI @ Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2024/speakers/jody-treffers.jpg",
+      "sessions": [
+        "microsoft-fabric-onelake-to-rule-them-all"
+      ]
+    },
+    {
       "Id": "maarten-mulders",
       "FullName": "Maarten Mulders",
       "Bio": "Passionate architect, senior developer and trainer; also Java Champion. Passionate about \u0022building the right thing\u0022 and \u0022building the thing right\u0022. Focusing on lean and elegant solutions. Love to share new ideas and knowledge. Outside work, I appreciate creating and consuming good food, photography, and music, in no particular order.",
@@ -213,7 +224,21 @@
   ],
   "Sessions": [
     {
-      "Id": "f293bce4-ded7-45dd-81c5-0bf5cb2ff0c9",
+      "Id": "microsoft-fabric-onelake-to-rule-them-all",
+      "Title": "Microsoft Fabric: OneLake to rule them all",
+      "Description": "OneLake to find them, OneLake to integrate them all and in the Fabric bind them.\r\n\r\nIn this workshop we\u2019ll cover how to build an end-to-end analytics solution using Microsoft Fabric. We\u2019ll cover subjects such as:\r\n\r\n\u2022\tHow to move (or not move) data\r\n\u2022\tWorking with Lakehouses\r\n\u2022\tWhen and how to use data warehouses\r\n\u2022\tHow to drive actions based on data\r\n\u2022\tAnd how to handle security, governance, and compliance.\r\n",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "jody-treffers"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "259e4dd2-b9c2-4e1b-9ef2-ad4883068121",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:00:00",
@@ -269,7 +294,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "54bf9ea4-1c2b-4ca1-8e7c-c06c37cded42",
+      "Id": "9a508e35-ad20-4ca8-b6d9-8f729e91cd47",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -309,7 +334,7 @@
       "Room": "Room 2"
     },
     {
-      "Id": "30b92988-b502-4edc-a279-a043bf3b4525",
+      "Id": "a3093ed5-282f-4784-b501-032c791017ca",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:00:00",
@@ -335,7 +360,7 @@
       "Room": "Room 1"
     },
     {
-      "Id": "d2bf01f7-124f-4913-b013-65b25b634a7a",
+      "Id": "7493ba4c-f716-4820-8a9e-314388d1a8a3",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -431,7 +456,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "6fc2551e-7671-428f-b0eb-78f7c6bb04ac",
+      "Id": "b2f887c1-993c-44c1-8afb-b8b33c77d0af",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -513,7 +538,7 @@
       "Room": "Room 2"
     },
     {
-      "Id": "83e4b480-630f-4111-9fef-d554fd2a588f",
+      "Id": "96ea803c-ecdf-43f6-aa72-29bf0caf88ea",
       "Title": "Breakout Session: TBA",
       "Description": null,
       "StartsAt": "2024-01-27T14:00:00",
@@ -525,7 +550,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "6a4c0189-15d6-4ecd-b806-a436abcc4277",
+      "Id": "4fb864bc-ae97-4b72-afaf-d5f6735748dc",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
