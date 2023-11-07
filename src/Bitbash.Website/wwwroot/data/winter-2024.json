@@ -90,6 +90,17 @@
       ]
     },
     {
+      "Id": "ivo-geurtsen",
+      "FullName": "Ivo Geurtsen",
+      "Bio": "IT Consultant @ Info Support",
+      "TagLine": "IT Consultant @ Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2024/speakers/ivo-geurtsen.jpg",
+      "sessions": [
+        "microsoft-fabric-onelake-to-rule-them-all"
+      ]
+    },
+    {
       "Id": "jarne-van-aerde",
       "FullName": "Jarne Van Aerde",
       "Bio": "Everyone wants to make the world a better place, we each do this by different actions. I do this by sharing knowledge to the best of my ability. I get great joy from explaining something that is not easy to understand, but in such a way that it becomes trivial and fun to listen to.\r\n\r\nI mostly cover technical topics, but I also like to talk about the way we work, communicate and use our soft skills.\r\n\r\nOutside work, I like to cook, play pool and have a beer with some friends.",
@@ -224,7 +235,7 @@
   ],
   "Sessions": [
     {
-      "Id": "3567cc11-cbb6-4690-9c09-654004d73fd1",
+      "Id": "39fdb797-3818-4428-bdc4-0da0b3f4f8b8",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:00:00",
@@ -252,7 +263,7 @@
     {
       "Id": "accelerate-your-frontend-development-with-micro-apps",
       "Title": "Accelerate your frontend development with micro apps",
-      "Description": "We\u0027ve all been there, it\u0027s your fifth coffee and still no frontend build ready to go?\r\n\r\nIn this session, we will explore the challenges of inefficiently configured frontend monorepos and offer solutions and tools to overcome them.  Discover how tools like Parcel, Lerna, and Vite.js can transform your development process, making your monorepo not just more comprehensible but also significantly faster when it comes to compilation and real-time visualization of changes during development.\r\n\r\nDuring this talk, you will gain valuable insights on setting up your monorepo correctly or migrating existing repositories to harness the advantages highlighted above.\r\n\r\nJoin us to supercharge your frontend development and amplify your productivity!",
+      "Description": "Are you ready to take your frontend development to the next level? Join us in this exciting workshop, where we\u0027ll guide you on a transformative journey from novice to proficient frontend monorepo developer.\r\n\r\nBy the end of this workshop, you\u0027ll be equipped with the knowledge and tools to harness the full potential of frontend monorepos, enabling you to:\r\n\r\n- Streamline your frontend development process.\r\n- Boost code quality and development speed.\r\n- Effortlessly manage versions and dependencies across multiple packages.\r\n\r\nWhether you\u0027re a seasoned frontend developer looking to enhance your skills or someone just starting on their frontend journey, This workshop will provide valuable insights and practical guidance to take your projects to the next level. Join us and unlock the true potential of frontend monorepos!",
       "StartsAt": "2024-01-26T09:00:00",
       "EndsAt": "2024-01-26T12:00:00",
       "IsServiceSession": false,
@@ -280,7 +291,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "cb4d7218-0564-406d-bc4f-20abc191373a",
+      "Id": "1c6edcdc-784b-463d-a20d-f7c7c41044ba",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -327,14 +338,15 @@
       "EndsAt": "2024-01-26T16:00:00",
       "IsServiceSession": false,
       "speakers": [
-        "jody-treffers"
+        "jody-treffers",
+        "ivo-geurtsen"
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Intermediate",
       "Room": "Room 3"
     },
     {
-      "Id": "824a45b5-c2bd-4e30-ab25-bff173881b20",
+      "Id": "b2f267b3-f815-47a4-9fda-f49a0bc3f22b",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:00:00",
@@ -360,7 +372,7 @@
       "Room": "Room 1"
     },
     {
-      "Id": "2ef84dba-d817-427d-ab11-1143c6182921",
+      "Id": "6186c2bd-311b-49ef-8794-6520c810d4ce",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -456,7 +468,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "94aa9bb2-9ace-43ce-a45a-2ba3c2268cf8",
+      "Id": "56381bb0-38ed-4e48-bfdb-69f702245f83",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -538,7 +550,7 @@
       "Room": "Room 2"
     },
     {
-      "Id": "fc398c52-fe36-4027-8a03-7437baff5f1c",
+      "Id": "c94f6e67-bea3-4108-9f46-6c721a47e63a",
       "Title": "Breakout Session: TBA",
       "Description": null,
       "StartsAt": "2024-01-27T14:00:00",
@@ -550,7 +562,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "42261117-2d84-43ce-9062-73860d17aa84",
+      "Id": "cdc5756f-7180-4daf-a922-0a91f8922efb",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
