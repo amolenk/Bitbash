@@ -1,7 +1,5 @@
 .community-item {
-    width: 200px; /* Adjust this value as needed */
-    height: 200px; /* Adjust this value as needed */
-    display: flex;
+    min-width: 200px; /* Adjust this value as needed */
     justify-content: center;
     align-items: center;
     padding: 10px; /* Adjust this value as needed */
