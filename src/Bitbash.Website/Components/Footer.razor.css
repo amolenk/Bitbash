@@ -1,21 +1,13 @@
-#footer .content {
+#footer {
     background-color: #121838;
 }
 
-#footer .link-item {
-    min-width: 250px;
-}
-
-#footer .link-item a {
+#footer a {
     color: white;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
-#footer .link-item a:hover {
+#footer a:hover {
     color: #269BB9;
-}
-
-#footer .link-item p {
-    line-height: 60px;
-    margin-bottom: 0;
-    display: inline-block;
 }
