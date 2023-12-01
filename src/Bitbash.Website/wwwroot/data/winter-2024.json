@@ -56,17 +56,6 @@
       ]
     },
     {
-      "Id": "eduard-keilholz",
-      "FullName": "Eduard Keilholz",
-      "Bio": "Eduard is a Cloud Solution Architect at 4DotNet (The Netherlands). He likes to help customers with implementing and experiencing cloud technologies. He likes to create highly performant software and help team members reach a higher skill level of software development. He focusses is on the Microsoft development stack, mainly C# and the Microsoft Azure Cloud, and has a strong affinity with Angular. He enjoys speaking at (inter)national conferences and contributing to community events. In 2020, Microsoft has recognized these community activities with the Microsoft MVP Award for Azure.",
-      "TagLine": "Team Lead \u0026 Solution Architect at 4DotNet | Azure MVP",
-      "IsTopSpeaker": false,
-      "ProfilePictureUrl": "img/winter-2024/speakers/eduard-keilholz.jpg",
-      "sessions": [
-        "azure-networking-a-love-story-between-a-hub-and-a-spoke"
-      ]
-    },
-    {
       "Id": "glenn-versweyveld",
       "FullName": "Glenn Versweyveld",
       "Bio": "Glenn Versweyveld is a developer with interest in everything surrounding Microsoft and .NET in particular, currently working as a System Expert at Baliose Insurances.\r\nStill loves Windows Phone, but don\u0027t judge him for it :)\r\n\r\nCurrently Microsoft MVP in Developer Technologies",
@@ -235,7 +224,7 @@
   ],
   "Sessions": [
     {
-      "Id": "39fdb797-3818-4428-bdc4-0da0b3f4f8b8",
+      "Id": "34b9abfd-7454-40c9-9c78-199a2e34a824",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:00:00",
@@ -291,7 +280,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "1c6edcdc-784b-463d-a20d-f7c7c41044ba",
+      "Id": "88e605de-09c6-4bc1-a081-c69a277bdb72",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -346,7 +335,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "b2f267b3-f815-47a4-9fda-f49a0bc3f22b",
+      "Id": "cf4ccca7-86cc-4b6b-b7f2-f9525ef1e2b3",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:00:00",
@@ -372,7 +361,7 @@
       "Room": "Room 1"
     },
     {
-      "Id": "6186c2bd-311b-49ef-8794-6520c810d4ce",
+      "Id": "c626027a-9edc-4708-a3fd-96b75a310f20",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -398,20 +387,6 @@
       "Room": "Room 1"
     },
     {
-      "Id": "azure-networking-a-love-story-between-a-hub-and-a-spoke",
-      "Title": "Azure Networking - A love story between a Hub and a Spoke",
-      "Description": "Join my session on Azure Networking as we explore the creation of virtual networks, VPN connections, and network peering. This hands-on session will guide you through the process of building virtual networks and establishing secure connections. Learn how to configure VPN gateways, for seamless connectivity between on-premises networks and Azure virtual networks. Discover the power of network peering to connect virtual networks within Azure and enable secure communication across different network boundaries. Gain practical skills and knowledge to enhance your Azure Networking projects and unlock the true potential of cloud networking.",
-      "StartsAt": "2024-01-27T10:30:00",
-      "EndsAt": "2024-01-27T11:20:00",
-      "IsServiceSession": false,
-      "speakers": [
-        "eduard-keilholz"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Advanced",
-      "Room": "Room 2"
-    },
-    {
       "Id": "tales-from-the-trenches-a-new-data-engineers-story-of-success-and-struggle",
       "Title": "Tales from the Trenches: A New Data Engineer\u0027s Story of Success and Struggle",
       "Description": "Once upon a time, there was a junior data engineer who believed she could conquer any data challenge that came her way. But as she soon discovered, the world of data engineering was full of surprises - not all of them pleasant. Despite the struggles and setbacks she faced, the intrepid junior data engineer refused to give up. With determination and a healthy dose of humor, she persevered, and in the end, emerged victorious. Accompany her on her journey to discover how she turned setbacks into opportunities for growth, whilst also learning a thing or two on what to avoid when building a modern data platform.",
@@ -423,7 +398,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Room 3"
+      "Room": "Room 2"
     },
     {
       "Id": "pro-code-in-unison-with-low-code-via-ecosystems",
@@ -468,7 +443,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "56381bb0-38ed-4e48-bfdb-69f702245f83",
+      "Id": "f230d0d1-8a31-44eb-9e5d-f00c587a590b",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -550,7 +525,7 @@
       "Room": "Room 2"
     },
     {
-      "Id": "c94f6e67-bea3-4108-9f46-6c721a47e63a",
+      "Id": "605fe578-900b-45b1-a478-05db9151adeb",
       "Title": "Breakout Session: TBA",
       "Description": null,
       "StartsAt": "2024-01-27T14:00:00",
@@ -562,7 +537,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "cdc5756f-7180-4daf-a922-0a91f8922efb",
+      "Id": "d2686c75-9056-44ea-9bf8-48373a66823a",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
