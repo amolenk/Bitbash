@@ -23,6 +23,17 @@
       ]
     },
     {
+      "Id": "barbara-forbes",
+      "FullName": "Barbara Forbes",
+      "Bio": "Barbara works as the Azure technical lead for OGD in the Netherlands. She is a Microsoft MVP Azure, MCT and GitHub Star. Her focus is on Azure and automation. Think Serverless, Azure DevOps, PowerShell, GitHub and Infrastructure as Code. She loves teaching in an approachable way. She regularly writes posts for her blog https://4bes.nl and speaks at conferences and user groups. She helps grow the community as co-owner of the Dutch DevOps \u0026 GitHub community (DDOG), as well as co-hosting the Dutch PowerShell User Group (DUPSUG). ",
+      "TagLine": "Azure technical lead @ OGD | Azure MVP | GitHub Star",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2024/speakers/barbara-forbes.jpg",
+      "sessions": [
+        "github-codespaces-for-everyone-everywhere"
+      ]
+    },
+    {
       "Id": "bart-lannoeye",
       "FullName": "Bart Lannoeye",
       "Bio": "Consultant during the day, hobbyist at night.\r\n\r\nBart is an independent consultant, and technical architect focusing on the Microsoft technology stack, covering anything between cloud and backend services to Windows and mobile. He\u2019s always open for a new challenge and eager to learn.\r\n\r\nBart keeps a personal blog at http://www.bartlannoeye.com/blog/ on which he describes his discoveries and findings on the problems he encounters during his daily tasks. He\u0027s been awarded the Microsoft MVP award for 7 consecutive years.",
@@ -224,7 +235,7 @@
   ],
   "Sessions": [
     {
-      "Id": "34b9abfd-7454-40c9-9c78-199a2e34a824",
+      "Id": "3cea70ee-9f87-4eea-8d94-50ece7824298",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:00:00",
@@ -280,7 +291,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "88e605de-09c6-4bc1-a081-c69a277bdb72",
+      "Id": "8c8a116f-e698-4fa0-8844-554c3b479ca7",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -335,7 +346,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "cf4ccca7-86cc-4b6b-b7f2-f9525ef1e2b3",
+      "Id": "c0777cd2-457c-433d-b774-822e6aa15e2c",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:00:00",
@@ -361,7 +372,7 @@
       "Room": "Room 1"
     },
     {
-      "Id": "c626027a-9edc-4708-a3fd-96b75a310f20",
+      "Id": "9b6b31d5-4f14-4595-a0eb-6216fe57d801",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -443,7 +454,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "f230d0d1-8a31-44eb-9e5d-f00c587a590b",
+      "Id": "06fb6057-226d-40fa-ab0a-472840428a2d",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -511,6 +522,20 @@
       "Room": "Room 1"
     },
     {
+      "Id": "github-codespaces-for-everyone-everywhere",
+      "Title": "GitHub CodeSpaces for everyone, everywhere!",
+      "Description": "With GitHub Codespaces, you can have a consistent development experience right in your browser! Write your code from every device without worrying about installing anything. Codespaces are avaliable for everyone with a GitHub account for free. A great opportunity to get a better development experience, whether you are Dev or Ops.\r\n\r\nIn this session, I\u0027ll show you how Codespaces work and how you create one from your GitHub repository. We will walk through use cases, configurations and the options to work with Visual studio code, so you can make the most of of your codespaces. After this session you will be able to get started straight away!",
+      "StartsAt": "2024-01-27T14:00:00",
+      "EndsAt": "2024-01-27T14:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "barbara-forbes"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
       "Id": "protect-your-api-with-entra-from-zero-security-to-security-hero",
       "Title": "Protect your API with Entra - from zero security to security hero",
       "Description": "Security should be top priority in any application these days. In this interactive demonstration I\u0027ll show you how to go from an API without security to an API that is secured with Entra ID.\r\n\r\nJoin this session so you never have to worry about the security of your API ever again.\r\n\r\n- Protecting the API\r\n- What are JWTs (Json Web Tokens)?\r\n- Scopes vs Roles?\r\n- Getting a token as application\r\n- Getting a token as user\r\n\r\nThese principals are not Entra specific and can be applied to other Identity Providers as well, the exact implementation might be slightly different.",
@@ -522,22 +547,10 @@
       ],
       "SessionFormat": "Session",
       "Level": "Advanced",
-      "Room": "Room 2"
-    },
-    {
-      "Id": "605fe578-900b-45b1-a478-05db9151adeb",
-      "Title": "Breakout Session: TBA",
-      "Description": null,
-      "StartsAt": "2024-01-27T14:00:00",
-      "EndsAt": "2024-01-27T14:50:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
       "Room": "Room 3"
     },
     {
-      "Id": "d2686c75-9056-44ea-9bf8-48373a66823a",
+      "Id": "aed0c961-debd-4266-b126-cbef3fc2aedb",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
