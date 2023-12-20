@@ -235,10 +235,10 @@
   ],
   "Sessions": [
     {
-      "Id": "3cea70ee-9f87-4eea-8d94-50ece7824298",
+      "Id": "cc0db563-875c-4464-a31f-c2bfec89b8de",
       "Title": "Registration and Welcome",
       "Description": null,
-      "StartsAt": "2024-01-26T08:00:00",
+      "StartsAt": "2024-01-26T08:30:00",
       "EndsAt": "2024-01-26T09:00:00",
       "IsServiceSession": true,
       "speakers": [],
@@ -291,7 +291,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "8c8a116f-e698-4fa0-8844-554c3b479ca7",
+      "Id": "8fce2f36-bae2-4644-ae00-960611b6c173",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -346,10 +346,10 @@
       "Room": "Room 3"
     },
     {
-      "Id": "c0777cd2-457c-433d-b774-822e6aa15e2c",
+      "Id": "2064cd83-d19a-4868-ae7d-4f60aecb03d4",
       "Title": "Registration and Welcome",
       "Description": null,
-      "StartsAt": "2024-01-27T08:00:00",
+      "StartsAt": "2024-01-27T08:30:00",
       "EndsAt": "2024-01-27T09:00:00",
       "IsServiceSession": true,
       "speakers": [],
@@ -372,7 +372,7 @@
       "Room": "Room 1"
     },
     {
-      "Id": "9b6b31d5-4f14-4595-a0eb-6216fe57d801",
+      "Id": "48c45304-1869-40b5-94b4-5093a5ff264d",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -454,7 +454,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "06fb6057-226d-40fa-ab0a-472840428a2d",
+      "Id": "15aa20d3-ba6e-4836-be02-47ea76661804",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -550,7 +550,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "aed0c961-debd-4266-b126-cbef3fc2aedb",
+      "Id": "6337de82-a814-49e9-a499-ee9343953770",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
