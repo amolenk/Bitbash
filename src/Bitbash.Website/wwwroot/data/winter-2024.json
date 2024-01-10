@@ -235,7 +235,7 @@
   ],
   "Sessions": [
     {
-      "Id": "cc0db563-875c-4464-a31f-c2bfec89b8de",
+      "Id": "34c11576-cb6b-4d08-83f9-1f5050862513",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:30:00",
@@ -258,7 +258,7 @@
       ],
       "SessionFormat": "Full-day workshop",
       "Level": "Intermediate",
-      "Room": "Room 1"
+      "Room": "Vader"
     },
     {
       "Id": "accelerate-your-frontend-development-with-micro-apps",
@@ -273,7 +273,7 @@
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Advanced",
-      "Room": "Room 2"
+      "Room": "Chewbacca"
     },
     {
       "Id": "experience-the-basics-of-azure-iot-dashboarding-and-beyond",
@@ -288,10 +288,10 @@
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Introductory and overview",
-      "Room": "Room 3"
+      "Room": "C-3PO"
     },
     {
-      "Id": "8fce2f36-bae2-4644-ae00-960611b6c173",
+      "Id": "db79a0e2-8ed6-4074-9025-c91e63899e7c",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -314,7 +314,7 @@
       ],
       "SessionFormat": "Full-day workshop",
       "Level": "Intermediate",
-      "Room": "Room 1"
+      "Room": "Vader"
     },
     {
       "Id": "mastering-react-server-components-unlocking-the-future-of-react-development",
@@ -328,7 +328,7 @@
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Intermediate",
-      "Room": "Room 2"
+      "Room": "Chewbacca"
     },
     {
       "Id": "microsoft-fabric-onelake-to-rule-them-all",
@@ -343,10 +343,10 @@
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Intermediate",
-      "Room": "Room 3"
+      "Room": "C-3PO"
     },
     {
-      "Id": "2064cd83-d19a-4868-ae7d-4f60aecb03d4",
+      "Id": "7e5ff531-78af-4f56-b58a-e58c97f798f1",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:30:00",
@@ -369,10 +369,10 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Room 1"
+      "Room": "Vader"
     },
     {
-      "Id": "48c45304-1869-40b5-94b4-5093a5ff264d",
+      "Id": "e24b06fd-8dd4-4287-9095-dce4ea17fbf7",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -395,7 +395,21 @@
       ],
       "SessionFormat": "Session",
       "Level": "Advanced",
-      "Room": "Room 1"
+      "Room": "Vader"
+    },
+    {
+      "Id": "from-manual-to-automatic-using-openapi-to-generate-productionready-api-clients",
+      "Title": "From manual to automatic: Using OpenAPI to generate production-ready API clients",
+      "Description": "Are you tired of spending hours creating API clients and updating them every time the API changes?\r\n\r\nIn this session, you\u0027ll learn how to streamline your API development process with OpenAPI and code generation tools. We\u0027ll discuss how these tools can automate the process of generating production-ready API clients and how they can save you valuable time and effort. You\u0027ll discover the many benefits of this approach, including improved code reusability, more consistent API development and more.\r\n\r\nBy the end of this talk, you\u0027ll have a better understanding of how to leverage OpenAPI and code generation tools in your projects and take your API development to the next level!",
+      "StartsAt": "2024-01-27T10:30:00",
+      "EndsAt": "2024-01-27T11:20:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "sander-ten-brinke"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Chewbacca"
     },
     {
       "Id": "tales-from-the-trenches-a-new-data-engineers-story-of-success-and-struggle",
@@ -409,7 +423,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Room 2"
+      "Room": "C-3PO"
     },
     {
       "Id": "pro-code-in-unison-with-low-code-via-ecosystems",
@@ -423,7 +437,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Room 1"
+      "Room": "Vader"
     },
     {
       "Id": "five-ways-open-source-will-slow-you-down",
@@ -437,7 +451,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Room 2"
+      "Room": "Chewbacca"
     },
     {
       "Id": "assessing-nuget-packages-more-easily-with-security-scorecards",
@@ -451,10 +465,10 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Room 3"
+      "Room": "C-3PO"
     },
     {
-      "Id": "15aa20d3-ba6e-4836-be02-47ea76661804",
+      "Id": "8bc03025-e940-4b3f-b8dc-82f348391fbc",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -477,21 +491,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Room 1"
-    },
-    {
-      "Id": "from-manual-to-automatic-using-openapi-to-generate-productionready-api-clients",
-      "Title": "From manual to automatic: Using OpenAPI to generate production-ready API clients",
-      "Description": "Are you tired of spending hours creating API clients and updating them every time the API changes?\r\n\r\nIn this session, you\u0027ll learn how to streamline your API development process with OpenAPI and code generation tools. We\u0027ll discuss how these tools can automate the process of generating production-ready API clients and how they can save you valuable time and effort. You\u0027ll discover the many benefits of this approach, including improved code reusability, more consistent API development and more.\r\n\r\nBy the end of this talk, you\u0027ll have a better understanding of how to leverage OpenAPI and code generation tools in your projects and take your API development to the next level!",
-      "StartsAt": "2024-01-27T13:00:00",
-      "EndsAt": "2024-01-27T13:50:00",
-      "IsServiceSession": false,
-      "speakers": [
-        "sander-ten-brinke"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": "Room 2"
+      "Room": "Vader"
     },
     {
       "Id": "supercharge-your-data-analysis-with-azure-databricks-and-microsoft-fabric-integration",
@@ -505,7 +505,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Room 3"
+      "Room": "C-3PO"
     },
     {
       "Id": "building-a-chat-assistent-with-azure-openai-service",
@@ -519,7 +519,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Room 1"
+      "Room": "Vader"
     },
     {
       "Id": "github-codespaces-for-everyone-everywhere",
@@ -533,7 +533,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Room 2"
+      "Room": "Chewbacca"
     },
     {
       "Id": "protect-your-api-with-entra-from-zero-security-to-security-hero",
@@ -547,10 +547,10 @@
       ],
       "SessionFormat": "Session",
       "Level": "Advanced",
-      "Room": "Room 3"
+      "Room": "C-3PO"
     },
     {
-      "Id": "6337de82-a814-49e9-a499-ee9343953770",
+      "Id": "22b4bd72-e06f-4243-8247-d09d2e74905e",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
@@ -573,7 +573,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Room 1"
+      "Room": "Vader"
     }
   ]
 }
