@@ -156,6 +156,17 @@
       ]
     },
     {
+      "Id": "michael-hompus",
+      "FullName": "Micha\u00EBl Hompus",
+      "Bio": "Micha\u00EBl Hompus is a Software Architect at Info Support.\r\nAs architect he is part of several teams, realizing new and innovative solutions, preferable using the Microsoft Cloud.\r\nMicha\u00EBl has many years of development experience with .NET, Java, Microsoft Azure, Azure DevOps, Office 365 and Dynamics 365.\r\nHis passion is to share knowledge, with colleagues, customers, and peers.\r\nMicrosoft has recognized his efforts for the community by awarding him a Microsoft MVP award.",
+      "TagLine": "Software Architect @ Info Support | Microsoft MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2024/speakers/michael-hompus.jpg",
+      "sessions": [
+        "a-season-for-speed-turning-puzzles-into-c-performance-wins"
+      ]
+    },
+    {
       "Id": "niels-tanis",
       "FullName": "Niels Tanis",
       "Bio": "Niels Tanis has got a background in .NET development, pentesting and security consultancy. He is Microsoft MVP and has been involved in breaking, defending and building secure applications. He joined Veracode in 2015 and right now he works as a security researcher on a variant of languages and technologies related to Veracode\u2019s Binary Static Analysis service. He is married, father of two and lives in a small village just outside Amersfoort, The Netherlands.",
@@ -235,7 +246,7 @@
   ],
   "Sessions": [
     {
-      "Id": "34c11576-cb6b-4d08-83f9-1f5050862513",
+      "Id": "bfd6e9af-a7b4-4ec7-87dc-970945293f87",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:30:00",
@@ -291,7 +302,7 @@
       "Room": "C-3PO"
     },
     {
-      "Id": "db79a0e2-8ed6-4074-9025-c91e63899e7c",
+      "Id": "d76be3e9-a14b-4f0f-8952-07802fd24bd6",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -346,7 +357,7 @@
       "Room": "C-3PO"
     },
     {
-      "Id": "7e5ff531-78af-4f56-b58a-e58c97f798f1",
+      "Id": "824ff98f-be6f-4749-8376-14d3685a8481",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:30:00",
@@ -372,7 +383,7 @@
       "Room": "Vader"
     },
     {
-      "Id": "e24b06fd-8dd4-4287-9095-dce4ea17fbf7",
+      "Id": "4adf4a11-34d9-422e-ab17-518d996b3dfb",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -468,7 +479,7 @@
       "Room": "C-3PO"
     },
     {
-      "Id": "8bc03025-e940-4b3f-b8dc-82f348391fbc",
+      "Id": "fd168f26-bf2c-440a-97c6-8cefad54b66d",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -492,6 +503,20 @@
       "SessionFormat": "Session",
       "Level": "Intermediate",
       "Room": "Vader"
+    },
+    {
+      "Id": "a-season-for-speed-turning-puzzles-into-c-performance-wins",
+      "Title": "A Season for Speed: Turning Puzzles into C# Performance Wins",
+      "Description": "Welcome to a world where coding puzzles lead to fast C# skills!\r\n\r\nIn this talk, I\u0027ll take you through an amazing journey, inspired by Advent of Code. We\u0027ll look at how these daily brain teasers helped me make C# code run quicker.\r\n\r\nYou\u0027ll learn simple tricks and methods that make a big difference in speed. This session is perfect for anyone interested in C#, from beginners to those who already code.\r\n\r\nJoin us to see how fun puzzles can transform your C# coding speed!\u0022",
+      "StartsAt": "2024-01-27T13:00:00",
+      "EndsAt": "2024-01-27T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "michael-hompus"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Advanced",
+      "Room": "Chewbacca"
     },
     {
       "Id": "supercharge-your-data-analysis-with-azure-databricks-and-microsoft-fabric-integration",
@@ -550,7 +575,7 @@
       "Room": "C-3PO"
     },
     {
-      "Id": "22b4bd72-e06f-4243-8247-d09d2e74905e",
+      "Id": "7b705c9d-f16f-41af-87e8-12917fc64118",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
