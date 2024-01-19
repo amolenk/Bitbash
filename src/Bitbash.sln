@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitbash.SessionizeImport", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitbash.Website", "Bitbash.Website\Bitbash.Website.csproj", "{DA32244C-BBD0-478D-ABB5-88B7CCC65D4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitbash.MailTool", "Bitbash.MailTool\Bitbash.MailTool.csproj", "{03948E94-E30C-402F-8338-543A482E4213}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DA32244C-BBD0-478D-ABB5-88B7CCC65D4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA32244C-BBD0-478D-ABB5-88B7CCC65D4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA32244C-BBD0-478D-ABB5-88B7CCC65D4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03948E94-E30C-402F-8338-543A482E4213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03948E94-E30C-402F-8338-543A482E4213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03948E94-E30C-402F-8338-543A482E4213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03948E94-E30C-402F-8338-543A482E4213}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
