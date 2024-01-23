@@ -56,6 +56,33 @@ public class EventDetailsProvider
             .GroupBy(s => s.StartsAt!.Value)
             .OrderBy(g => g.Key);
     }
+    
+    public async Task<IEnumerable<Session>> GetUpNextAsync(string edition, DateTime time)
+    {
+        var eventDetails = await GetEventDetailsAsync(edition);
+
+        var sessionsByUpNextTime = eventDetails.Sessions
+            .Where(s => s.StartsAt is not null && s.IsServiceSession is false)
+            .GroupBy(s => s.StartsAt!.Value + (s.EndsAt - s.StartsAt) / 2)
+            .OrderBy(g => g.Key)
+            .ToList();
+        
+        var upNext = sessionsByUpNextTime
+            .FirstOrDefault(g => g.Key > time);
+
+        return upNext ?? sessionsByUpNextTime.Last();
+    }
+
+    public async Task<IEnumerable<IGrouping<DateTime, Session>>> GetUpNextTestSessionsAsync(string edition)
+    {
+        var eventDetails = await GetEventDetailsAsync(edition);
+
+        return eventDetails.Sessions
+            .Where(s => s.StartsAt is not null && s.IsServiceSession is false)
+            .GroupBy(s => s.StartsAt!.Value)
+            .OrderBy(g => g.Key)
+            .ToList();
+    }
 
     public async Task<Session?> GetSessionAsync(string edition, string sessionId)
     {
@@ -63,11 +90,7 @@ public class EventDetailsProvider
 
         return eventDetails.Sessions.FirstOrDefault(s => s.Id == sessionId);
     }
-
-
-    // private Task<EventDetails> GetEventDetailsAsync(string edition)
-    //     => eventDetailTasks.GetOrAdd(edition, GetEventDetailsCoreAsync(edition));
-
+    
     private Task<EventDetails> GetEventDetailsAsync(string edition)
     {
         if (eventDetailTasks.TryGetValue(edition, out var task))
@@ -77,8 +100,7 @@ public class EventDetailsProvider
 
         return eventDetailTasks.GetOrAdd(edition, GetEventDetailsCoreAsync(edition));
     }
-
-
+    
     private async Task<EventDetails> GetEventDetailsCoreAsync(string edition)
     {
         Console.WriteLine($"Loading event details for {edition}...");
