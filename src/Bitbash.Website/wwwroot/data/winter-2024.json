@@ -246,7 +246,7 @@
   ],
   "Sessions": [
     {
-      "Id": "bfd6e9af-a7b4-4ec7-87dc-970945293f87",
+      "Id": "273bdbd1-b5f4-451e-87ae-defab629a51f",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:30:00",
@@ -269,7 +269,7 @@
       ],
       "SessionFormat": "Full-day workshop",
       "Level": "Intermediate",
-      "Room": "Vader"
+      "Room": "Room 1: Vader"
     },
     {
       "Id": "accelerate-your-frontend-development-with-micro-apps",
@@ -284,7 +284,7 @@
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Advanced",
-      "Room": "Chewbacca"
+      "Room": "Room 2: Chewbacca"
     },
     {
       "Id": "experience-the-basics-of-azure-iot-dashboarding-and-beyond",
@@ -299,10 +299,10 @@
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Introductory and overview",
-      "Room": "C-3PO"
+      "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "d76be3e9-a14b-4f0f-8952-07802fd24bd6",
+      "Id": "b29952c7-435a-487b-9b1e-4ef33c3601be",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -325,7 +325,7 @@
       ],
       "SessionFormat": "Full-day workshop",
       "Level": "Intermediate",
-      "Room": "Vader"
+      "Room": "Room 1: Vader"
     },
     {
       "Id": "mastering-react-server-components-unlocking-the-future-of-react-development",
@@ -339,7 +339,7 @@
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Intermediate",
-      "Room": "Chewbacca"
+      "Room": "Room 2: Chewbacca"
     },
     {
       "Id": "microsoft-fabric-onelake-to-rule-them-all",
@@ -354,10 +354,10 @@
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Intermediate",
-      "Room": "C-3PO"
+      "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "824ff98f-be6f-4749-8376-14d3685a8481",
+      "Id": "a1c00edd-1e07-4d60-9db7-2e29a7066fd9",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:30:00",
@@ -380,10 +380,10 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Vader"
+      "Room": "Room 1: Vader"
     },
     {
-      "Id": "4adf4a11-34d9-422e-ab17-518d996b3dfb",
+      "Id": "0c25997d-6347-484d-9ad1-3a1e765f5e55",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -406,7 +406,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Advanced",
-      "Room": "Vader"
+      "Room": "Room 1: Vader"
     },
     {
       "Id": "from-manual-to-automatic-using-openapi-to-generate-productionready-api-clients",
@@ -420,7 +420,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Chewbacca"
+      "Room": "Room 2: Chewbacca"
     },
     {
       "Id": "tales-from-the-trenches-a-new-data-engineers-story-of-success-and-struggle",
@@ -434,7 +434,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "C-3PO"
+      "Room": "Room 3: C-3PO"
     },
     {
       "Id": "pro-code-in-unison-with-low-code-via-ecosystems",
@@ -448,7 +448,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Vader"
+      "Room": "Room 1: Vader"
     },
     {
       "Id": "five-ways-open-source-will-slow-you-down",
@@ -462,7 +462,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Chewbacca"
+      "Room": "Room 2: Chewbacca"
     },
     {
       "Id": "assessing-nuget-packages-more-easily-with-security-scorecards",
@@ -476,10 +476,10 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "C-3PO"
+      "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "fd168f26-bf2c-440a-97c6-8cefad54b66d",
+      "Id": "624a55f3-e204-4508-b4f5-eab0bed31294",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -502,7 +502,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Vader"
+      "Room": "Room 1: Vader"
     },
     {
       "Id": "a-season-for-speed-turning-puzzles-into-c-performance-wins",
@@ -516,7 +516,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Advanced",
-      "Room": "Chewbacca"
+      "Room": "Room 2: Chewbacca"
     },
     {
       "Id": "supercharge-your-data-analysis-with-azure-databricks-and-microsoft-fabric-integration",
@@ -530,7 +530,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "C-3PO"
+      "Room": "Room 3: C-3PO"
     },
     {
       "Id": "building-a-chat-assistent-with-azure-openai-service",
@@ -544,7 +544,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Vader"
+      "Room": "Room 1: Vader"
     },
     {
       "Id": "github-codespaces-for-everyone-everywhere",
@@ -558,7 +558,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Chewbacca"
+      "Room": "Room 2: Chewbacca"
     },
     {
       "Id": "protect-your-api-with-entra-from-zero-security-to-security-hero",
@@ -572,10 +572,10 @@
       ],
       "SessionFormat": "Session",
       "Level": "Advanced",
-      "Room": "C-3PO"
+      "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "7b705c9d-f16f-41af-87e8-12917fc64118",
+      "Id": "fea2ee58-fefd-4f1a-83ec-5ab88cbba7be",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
@@ -598,7 +598,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Vader"
+      "Room": "Room 1: Vader"
     }
   ]
 }
