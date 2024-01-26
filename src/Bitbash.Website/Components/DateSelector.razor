@@ -25,7 +25,7 @@
     protected override async Task OnInitializedAsync()
     {
         eventDates = await EventDetailsProvider.GetEventDatesAsync(Settings.CurrentEdition);
-        SetSelectedDate(eventDates?.FirstOrDefault());
+        SetSelectedDate(eventDates?.LastOrDefault());
     }
 
     private void SetSelectedDate(DateOnly? date)
