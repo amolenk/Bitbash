@@ -34,17 +34,6 @@
       ]
     },
     {
-      "Id": "bart-lannoeye",
-      "FullName": "Bart Lannoeye",
-      "Bio": "Consultant during the day, hobbyist at night.\r\n\r\nBart is an independent consultant, and technical architect focusing on the Microsoft technology stack, covering anything between cloud and backend services to Windows and mobile. He\u2019s always open for a new challenge and eager to learn.\r\n\r\nBart keeps a personal blog at http://www.bartlannoeye.com/blog/ on which he describes his discoveries and findings on the problems he encounters during his daily tasks. He\u0027s been awarded the Microsoft MVP award for 7 consecutive years.",
-      "TagLine": "Microsoft MVP Azure",
-      "IsTopSpeaker": false,
-      "ProfilePictureUrl": "img/winter-2024/speakers/bart-lannoeye.png",
-      "sessions": [
-        "secure-cloud-development-in-azure-dont-cut-corners"
-      ]
-    },
-    {
       "Id": "daniel-mertens",
       "FullName": "Dani\u00EBl Mertens",
       "Bio": "Dani\u00EBl is a software consultant at Info Support with a passion for problem solving. He loves solving coding puzzle and participating in Hackathons and coding challenges.",
@@ -76,17 +65,6 @@
       "sessions": [
         "add-observability-to-any-microservices-environment-part-1",
         "add-observability-to-any-microservices-environment-part-2"
-      ]
-    },
-    {
-      "Id": "iona-varga",
-      "FullName": "Iona Varga",
-      "Bio": "Azure, Check! Power Platform, Check! Not only am I a geek on technology, helping others is what thrives me!\r\nFrom low-code and fusion-dev to process management and more. My background is in technology for healthcare and that is what excites me the most!",
-      "TagLine": "Principial Consultant in the CTO Office @ Rapid Circle",
-      "IsTopSpeaker": false,
-      "ProfilePictureUrl": "img/winter-2024/speakers/iona-varga.jpg",
-      "sessions": [
-        "pro-code-in-unison-with-low-code-via-ecosystems"
       ]
     },
     {
@@ -196,8 +174,8 @@
       "IsTopSpeaker": false,
       "ProfilePictureUrl": "img/winter-2024/speakers/sander-ten-brinke.jpg",
       "sessions": [
-        "from-manual-to-automatic-using-openapi-to-generate-productionready-api-clients",
-        "secure-cloud-development-in-azure-dont-cut-corners"
+        "everything-a-net-developer-needs-to-know-about-configuration-and-secret-management",
+        "from-manual-to-automatic-using-openapi-to-generate-productionready-api-clients"
       ]
     },
     {
@@ -247,21 +225,7 @@
   ],
   "Sessions": [
     {
-      "Id": "pro-code-in-unison-with-low-code-via-ecosystems",
-      "Title": "Pro Code in unison with Low Code via Ecosystems",
-      "Description": "Pro code is on top of the foodchain, but what if your prey starts to outnumber the predator? By means of large numbers, there is a point where Low Code will transition from the \u0027next new thing\u0027 to a stayer. And when that will be, might surprise you.\r\n\r\nIn this session, we\u0027ll discuss the history of \u0027low code\u0027, the impact on pro code and code first, and the future of a merge between both called Fusion Development.\r\n\r\nBy investigating Ecosystems, you will see how modern development might look, and how to join the revolution as an early adoptor.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "iona-varga"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Introductory and overview",
-      "Room": null
-    },
-    {
-      "Id": "425d9f70-9204-4712-9fdd-48ee7d55483f",
+      "Id": "96986dfc-b099-4478-b36c-c6bb0bd28ed6",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:30:00",
@@ -317,7 +281,7 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "8a4eeef7-475f-424e-8c01-3396b46a0e2c",
+      "Id": "679f990d-010b-45df-b0e5-2c7c63c097af",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -372,7 +336,7 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "46efedd0-50a9-4c84-81e8-55fff32abfbb",
+      "Id": "e97402c4-1023-42b8-adcb-28d2c16b29ea",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:30:00",
@@ -398,7 +362,7 @@
       "Room": "Room 1: Vader"
     },
     {
-      "Id": "839b3636-df75-4801-bf7f-947397d4a130",
+      "Id": "4343d6d7-ec84-4885-ad27-8e6daf1df1a8",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -480,7 +444,7 @@
       "Room": "Room 2: Chewbacca"
     },
     {
-      "Id": "3c0986f4-14fd-4598-a69c-5b29c8bafc25",
+      "Id": "1554a7fe-4cdf-4be4-8e87-769df5ff415e",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -492,14 +456,13 @@
       "Room": "Nexus"
     },
     {
-      "Id": "secure-cloud-development-in-azure-dont-cut-corners",
-      "Title": "Secure Cloud Development in Azure: Don\u0027t Cut Corners",
-      "Description": "Authentication and authorization are well-known concepts among developers, but secure cloud development goes beyond these basics. In this session, we will delve into the fundamental principles of cloud security, focusing on building applications in an Azure environment.\r\n\r\nUsing practical examples, we will explore common vulnerabilities and threats, and provide practical guidance on how to effectively mitigate these risks. We will address the misconception that secure development is difficult and time-consuming, showcasing how to implement secure practices for commonly used Azure services.\r\n\r\nFurthermore, we will go beyond the technical aspects of secure cloud development and touch upon the importance of SecOps in the cloud. By the end of this session, you will gain a comprehensive understanding of best practices for secure cloud development in Azure, be equipped with practical techniques to deal with threats, and have a broader perspective on integrating SecOps into your cloud development projects.",
+      "Id": "everything-a-net-developer-needs-to-know-about-configuration-and-secret-management",
+      "Title": "Everything a .NET developer needs to know about configuration and secret management",
+      "Description": "App configuration. Settings. Secrets. We have all dealt with these things in our code without thinking much about it.\r\n\r\nBut how does this actually work in .NET and how do you make the most of it? And more importantly, how do you store them correctly and prevent leaking secrets?\r\n\r\nThis talk will teach you how configuration works in .NET, what you should and shouldn\u0027t do, and how you can use the power of the cloud to keep your secrets safe!",
       "StartsAt": "2024-01-27T13:00:00",
       "EndsAt": "2024-01-27T13:50:00",
       "IsServiceSession": false,
       "speakers": [
-        "bart-lannoeye",
         "sander-ten-brinke"
       ],
       "SessionFormat": "Session",
@@ -577,7 +540,7 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "a6e72749-c5e0-4600-81f7-c8d3e172b161",
+      "Id": "df68dbc8-d5c7-4ffc-8eae-1299ac496118",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
