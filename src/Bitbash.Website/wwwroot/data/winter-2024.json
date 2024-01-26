@@ -246,7 +246,21 @@
   ],
   "Sessions": [
     {
-      "Id": "273bdbd1-b5f4-451e-87ae-defab629a51f",
+      "Id": "pro-code-in-unison-with-low-code-via-ecosystems",
+      "Title": "Pro Code in unison with Low Code via Ecosystems",
+      "Description": "Pro code is on top of the foodchain, but what if your prey starts to outnumber the predator? By means of large numbers, there is a point where Low Code will transition from the \u0027next new thing\u0027 to a stayer. And when that will be, might surprise you.\r\n\r\nIn this session, we\u0027ll discuss the history of \u0027low code\u0027, the impact on pro code and code first, and the future of a merge between both called Fusion Development.\r\n\r\nBy investigating Ecosystems, you will see how modern development might look, and how to join the revolution as an early adoptor.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "iona-varga"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": null
+    },
+    {
+      "Id": "2e02b5a1-9b0c-4a76-87bd-34868e8d42e6",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:30:00",
@@ -302,7 +316,7 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "b29952c7-435a-487b-9b1e-4ef33c3601be",
+      "Id": "f829bfe4-bf66-4031-9bdf-9e5c12e98e34",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -357,7 +371,7 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "a1c00edd-1e07-4d60-9db7-2e29a7066fd9",
+      "Id": "3a6ecbe7-bb38-4b2d-899a-02d479b25744",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:30:00",
@@ -383,7 +397,7 @@
       "Room": "Room 1: Vader"
     },
     {
-      "Id": "0c25997d-6347-484d-9ad1-3a1e765f5e55",
+      "Id": "d2c29538-8d3e-415a-8d45-7d7595539bb8",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -437,20 +451,6 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "pro-code-in-unison-with-low-code-via-ecosystems",
-      "Title": "Pro Code in unison with Low Code via Ecosystems",
-      "Description": "Pro code is on top of the foodchain, but what if your prey starts to outnumber the predator? By means of large numbers, there is a point where Low Code will transition from the \u0027next new thing\u0027 to a stayer. And when that will be, might surprise you.\r\n\r\nIn this session, we\u0027ll discuss the history of \u0027low code\u0027, the impact on pro code and code first, and the future of a merge between both called Fusion Development.\r\n\r\nBy investigating Ecosystems, you will see how modern development might look, and how to join the revolution as an early adoptor.",
-      "StartsAt": "2024-01-27T11:30:00",
-      "EndsAt": "2024-01-27T12:20:00",
-      "IsServiceSession": false,
-      "speakers": [
-        "iona-varga"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Introductory and overview",
-      "Room": "Room 1: Vader"
-    },
-    {
       "Id": "five-ways-open-source-will-slow-you-down",
       "Title": "Five ways open source will slow you down",
       "Description": "Software is changing the world - and even other planets. An ever-growing part of software is \u201Copen source\u201D. But it hasn\u2019t always been that way! And \u201Cdoing something open source\u201D is definitely no guarantee for success. There are numerous ways in which you can use open-source software and be worse off than if you did not.\r\n\r\nJoin me in this talk to find out how not to leverage open-source software in your organisation and your projects. Find out why reading the documentation may not always be your best bet, or how a workaround may eventually work against you. By investigating 5 ways in which you can fail, we can learn valuable lessons on what to do instead.",
@@ -462,7 +462,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Room 2: Chewbacca"
+      "Room": "Room 1: Vader"
     },
     {
       "Id": "assessing-nuget-packages-more-easily-with-security-scorecards",
@@ -476,10 +476,10 @@
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": "Room 3: C-3PO"
+      "Room": "Room 2: Chewbacca"
     },
     {
-      "Id": "624a55f3-e204-4508-b4f5-eab0bed31294",
+      "Id": "52becdde-b475-4b63-a6ca-278197598cd0",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -575,7 +575,7 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "fea2ee58-fefd-4f1a-83ec-5ab88cbba7be",
+      "Id": "4a442b89-a3e9-43f5-984c-a6bf70b0d28d",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
