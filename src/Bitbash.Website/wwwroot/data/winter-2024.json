@@ -196,7 +196,8 @@
       "IsTopSpeaker": false,
       "ProfilePictureUrl": "img/winter-2024/speakers/sander-ten-brinke.jpg",
       "sessions": [
-        "from-manual-to-automatic-using-openapi-to-generate-productionready-api-clients"
+        "from-manual-to-automatic-using-openapi-to-generate-productionready-api-clients",
+        "secure-cloud-development-in-azure-dont-cut-corners"
       ]
     },
     {
@@ -260,21 +261,7 @@
       "Room": null
     },
     {
-      "Id": "secure-cloud-development-in-azure-dont-cut-corners",
-      "Title": "Secure Cloud Development in Azure: Don\u0027t Cut Corners",
-      "Description": "Authentication and authorization are well-known concepts among developers, but secure cloud development goes beyond these basics. In this session, we will delve into the fundamental principles of cloud security, focusing on building applications in an Azure environment.\r\n\r\nUsing practical examples, we will explore common vulnerabilities and threats, and provide practical guidance on how to effectively mitigate these risks. We will address the misconception that secure development is difficult and time-consuming, showcasing how to implement secure practices for commonly used Azure services.\r\n\r\nFurthermore, we will go beyond the technical aspects of secure cloud development and touch upon the importance of SecOps in the cloud. By the end of this session, you will gain a comprehensive understanding of best practices for secure cloud development in Azure, be equipped with practical techniques to deal with threats, and have a broader perspective on integrating SecOps into your cloud development projects.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "bart-lannoeye"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "1397bae7-990e-4b66-99ae-25ad95fdbed4",
+      "Id": "425d9f70-9204-4712-9fdd-48ee7d55483f",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-26T08:30:00",
@@ -330,7 +317,7 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "f9ce910d-cb95-4a24-be4c-6d75e3148b92",
+      "Id": "8a4eeef7-475f-424e-8c01-3396b46a0e2c",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-26T12:00:00",
@@ -385,7 +372,7 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "af15b12b-6ece-4d1f-bd48-16a72c9ae291",
+      "Id": "46efedd0-50a9-4c84-81e8-55fff32abfbb",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2024-01-27T08:30:00",
@@ -411,7 +398,7 @@
       "Room": "Room 1: Vader"
     },
     {
-      "Id": "69977c7f-3002-4138-a21f-3a895506a8b3",
+      "Id": "839b3636-df75-4801-bf7f-947397d4a130",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2024-01-27T10:00:00",
@@ -493,7 +480,7 @@
       "Room": "Room 2: Chewbacca"
     },
     {
-      "Id": "86971fad-958a-4c6c-9bc7-1131cedd8c1d",
+      "Id": "3c0986f4-14fd-4598-a69c-5b29c8bafc25",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2024-01-27T12:20:00",
@@ -503,6 +490,21 @@
       "SessionFormat": null,
       "Level": null,
       "Room": "Nexus"
+    },
+    {
+      "Id": "secure-cloud-development-in-azure-dont-cut-corners",
+      "Title": "Secure Cloud Development in Azure: Don\u0027t Cut Corners",
+      "Description": "Authentication and authorization are well-known concepts among developers, but secure cloud development goes beyond these basics. In this session, we will delve into the fundamental principles of cloud security, focusing on building applications in an Azure environment.\r\n\r\nUsing practical examples, we will explore common vulnerabilities and threats, and provide practical guidance on how to effectively mitigate these risks. We will address the misconception that secure development is difficult and time-consuming, showcasing how to implement secure practices for commonly used Azure services.\r\n\r\nFurthermore, we will go beyond the technical aspects of secure cloud development and touch upon the importance of SecOps in the cloud. By the end of this session, you will gain a comprehensive understanding of best practices for secure cloud development in Azure, be equipped with practical techniques to deal with threats, and have a broader perspective on integrating SecOps into your cloud development projects.",
+      "StartsAt": "2024-01-27T13:00:00",
+      "EndsAt": "2024-01-27T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "bart-lannoeye",
+        "sander-ten-brinke"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 1: Vader"
     },
     {
       "Id": "a-season-for-speed-turning-puzzles-into-c-performance-wins",
@@ -516,7 +518,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Advanced",
-      "Room": "Room 1: Vader"
+      "Room": "Room 2: Chewbacca"
     },
     {
       "Id": "supercharge-your-data-analysis-with-azure-databricks-and-microsoft-fabric-integration",
@@ -530,7 +532,7 @@
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
-      "Room": "Room 2: Chewbacca"
+      "Room": "Room 3: C-3PO"
     },
     {
       "Id": "building-a-chat-assistent-with-azure-openai-service",
@@ -575,7 +577,7 @@
       "Room": "Room 3: C-3PO"
     },
     {
-      "Id": "ee89c8b3-a2c5-4033-b7d8-e5d15f391a2d",
+      "Id": "a6e72749-c5e0-4600-81f7-c8d3e172b161",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2024-01-27T14:50:00",
