@@ -1,24 +1,23 @@
-﻿<div class="countdown">
+﻿@using System.ComponentModel
+@inject WebsiteSettings Settings
+
+<div class="countdown">
     <img class="countdown-image-bottom" src="img/countdown-bottom.png" alt="Countdown background"/>
     <div class="countdown-text">
         <span id="days">@days</span>
     </div>
     <img class="countdown-image-top" src="img/countdown-top.png" alt="Countdown foreground"/>
-    <span class="date"><em>26/27</em> jan 2024</span>
+    <span class="date"><em>@Settings.PreConWorkshopsDate.Day/@Settings.ConferenceDate.Day</em> @Settings.PreConWorkshopsDate.ToString("MMM") @Settings.PreConWorkshopsDate.Year</span>
 </div>
 
 @code
 {
-    // TODO Hide when days = 0
-    // TODO Get from app settings.
-    private static readonly DateOnly TargetDate = new DateOnly(2024, 1, 26);
-
     private int days;
 
     protected override void OnInitialized()
     {
         days = Math.Max(
             0,
-            (TargetDate.ToDateTime(TimeOnly.MinValue) - DateTime.Today).Days);
+            (Settings.PreConWorkshopsDate.ToDateTime(TimeOnly.MinValue) - DateTime.Today).Days);
     }
 }

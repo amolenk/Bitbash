@@ -1,11 +1,14 @@
 ﻿@page "/"
-@inject IJSRuntime JS
+@inject WebsiteSettings Settings
 
 <PageTitle>Bitbash</PageTitle>
 
 <Hero />
 <About />
-<SpeakerHighlights />
+@if (Settings.SpeakersAnnounced)
+{
+    <SpeakerHighlights />
+}
 <Venue />
 <Communities />
 <Organizers />

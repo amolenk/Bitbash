@@ -79,7 +79,7 @@
 
 
     /**
-     * Scrool with ofset on links with a class name .scrollto
+     * Scroll with ofset on links with a class name .scrollto
      */
     on('click', '.scrollto', function (e) {
         if (select(this.hash)) {
@@ -146,6 +146,20 @@ function InitializeHeaderScrollEffect() {
         document.addEventListener('scroll', headerScrolled);
         headerScrolled();
     }
+}
+
+// Load photos into Galleria
+function InitializeGallery(dataUrl, selector) {
+    fetch(dataUrl)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            Galleria.run(selector, {
+                dataSource: data,
+                imageCrop: false
+            });
+        });
 }
 
 /**

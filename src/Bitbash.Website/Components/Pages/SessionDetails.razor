@@ -9,7 +9,6 @@
 
     <Section HeaderText="@session.Title" FadeUp="true">
 
-    @* <div class="container pt-4" data-aos="fade-up"> *@
         <div class="row">
             <div class="card p-0">
                 @if (session.StartsAt.HasValue)
@@ -28,12 +27,12 @@
                 <div class="card-footer d-flex justify-content-center">
                     @foreach (var speaker in session.Speakers)
                     {
-                        <SpeakerCard Speaker="speaker" />
+                        <SpeakerCard Edition="@Edition" Speaker="speaker" />
                     }
                 </div>
             </div>
         </div>
-    @* </div> *@
+
     </Section>
 }
 

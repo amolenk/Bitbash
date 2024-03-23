@@ -6,32 +6,55 @@
 
 <HeaderSpacer />
 
-<Section HeaderText="Speakers" ExtraClass="rocket-3">
+<Section HeaderText="Speakers" ExtraClass="rocket-3"  FadeUp="true">
 
-    <div class="container" data-aos="fade-up">
+    @if (Settings.SpeakersAnnounced)
+    {
+        <div class="container">
 
-        @if (speakers is not null)
-        {
-            <div class="row justify-content-center p-2">
-
-            @foreach (var speaker in speakers)
+            @if (speakers is not null)
             {
-                <SpeakerCard Speaker="@speaker" />
+                <div class="row justify-content-center p-2">
+
+                    @foreach (var speaker in speakers)
+                    {
+                        <SpeakerCard Speaker="@speaker"/>
+                    }
+
+                </div>
             }
 
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <p>For the brightest ideas and newest perspectives, we're bringing the best minds together!</p>
+            <p>Please stay tuned for updates on our website and social media channels for speaker announcements.</p>
+        </div>
+        
+        @if (CfpOpen)
+        {
+            <div class="text-center">
+                <h2>Interested in speaking at Bitbash?</h2>
+                <p>Our <a href="@Settings.SessionizeCfpLink">call for papers</a> is now open!</p>
             </div>
         }
-
-    </div>
+    }
 
 </Section>
 
 @code
 {
+    private bool CfpOpen => Settings.SessionizeCfpLink is not null;
+
     private IEnumerable<Speaker>? speakers;
 
     protected override async Task OnInitializedAsync()
     {
-        speakers = await EventDetailsProvider.GetSpeakersAsync(Settings.CurrentEdition);
+        if (Settings.SpeakersAnnounced)
+        {
+            speakers = await EventDetailsProvider.GetSpeakersAsync(Settings.CurrentEdition);
+        }
     }
 }

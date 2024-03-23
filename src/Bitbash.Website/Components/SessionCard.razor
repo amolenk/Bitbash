@@ -39,10 +39,14 @@
 {
     [Parameter]
     public Session? Session { get; set; }
-
+    
+    [Parameter]
+    public string? Edition { get; set; }
+    
     private void OnSessionClick(Session session)
     {
-        NavigationManager.NavigateTo(
-            $"{Settings.CurrentEdition}/session/{session.Id}");
+        var edition = Edition ?? Settings.CurrentEdition;
+        
+        NavigationManager.NavigateTo($"{edition}/session/{session.Id}");
     }
 }
