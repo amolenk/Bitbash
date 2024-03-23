@@ -1,9 +1,11 @@
-﻿<Section Id="about" HeaderText="About" ExtraClass="rocket-1" FadeUp="true">
+﻿@inject WebsiteSettings Settings
+
+<Section Id="about" HeaderText="About" ExtraClass="rocket-1" FadeUp="true">
 
     <div class="center">
         <p>Get ready for an exciting two-day event that will cover the latest Microsoft technologies and innovations. Whether you’re interested in .NET, Azure, Data platforms or AI, Bitbash will let you take your skills to the next level!</p>
         <p>Inspiring community speakers will present you with insightful sessions, real-world experience, and compelling demonstrations.</p>
-        <p>Bitbash is an in-person event that’s <em>free to attend</em>. It's held on January 26-27 at Info Support HQ in Veenendaal, The Netherlands.</p>
+        <p>Bitbash is an in-person event that’s <em>free to attend</em>. It's held on @Settings.PreConWorkshopsDate.ToString("MMMM d")-@Settings.ConferenceDate.Day at Info Support HQ in Veenendaal, The Netherlands.</p>
         <p>Don’t miss out on this opportunity to learn and network with like-minded professionals. See you at the event!</p>
     </div>
 

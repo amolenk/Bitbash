@@ -30,7 +30,7 @@
         <div class="row d-flex justify-content-center">
         @foreach (var session in speaker.Sessions)
         {
-            <SessionCard Session="session" />
+            <SessionCard Edition="@Edition" Session="session" />
         }
         </div>
 

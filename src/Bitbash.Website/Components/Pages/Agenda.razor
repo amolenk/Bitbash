@@ -6,35 +6,45 @@
 
 <HeaderSpacer />
 
-<Section HeaderText="Agenda" ExtraClass="rocket-2">
+<Section HeaderText="Agenda" ExtraClass="rocket-2" FadeUp="true">
 
-    <DateSelector OnSelectedDateChanged="OnSelectedDateChanged" />
+    @if (Settings.AgendaAnnounced)
+    {
+        <DateSelector OnSelectedDateChanged="OnSelectedDateChanged"/>
 
-    <div class="container" data-aos="fade-up">
+        <div class="container">
 
-        @if (schedule is not null)
-        {
-            foreach (var slot in schedule)
+            @if (schedule is not null)
             {
-                <div class="row text-center">
-                    <h2>@slot.Key.ToString("HH:mm") - @slot.First().EndsAt!.Value.ToString("HH:mm")</h2>
-                </div>
+                foreach (var slot in schedule)
+                {
+                    <div class="row text-center">
+                        <h2>@slot.Key.ToString("HH:mm") - @slot.First().EndsAt!.Value.ToString("HH:mm")</h2>
+                    </div>
 
-                <div class="row justify-content-center p-2">
+                    <div class="row justify-content-center p-2">
 
-                    @if (slot.Any())
-                    {
-                        foreach (var session in slot)
+                        @if (slot.Any())
                         {
-                            <SessionCard Session="@session" />
+                            foreach (var session in slot)
+                            {
+                                <SessionCard Session="@session"/>
+                            }
                         }
-                    }
 
-                </div>
+                    </div>
+                }
             }
-        }
 
-    </div>
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <p>We are currently working diligently to finalize the agenda for the event.</p>
+            <p>Please check back soon for the full agenda, which will be published as soon as it is confirmed.</p>
+        </div>
+    }
 
 </Section>
 
@@ -44,6 +54,9 @@
 
     private async Task OnSelectedDateChanged(DateOnly date)
     {
-        schedule = await EventDetailsProvider.GetScheduleAsync(Settings.CurrentEdition, date);
+        if (Settings.AgendaAnnounced)
+        {
+            schedule = await EventDetailsProvider.GetScheduleAsync(Settings.CurrentEdition, date);
+        }
     }
 }
