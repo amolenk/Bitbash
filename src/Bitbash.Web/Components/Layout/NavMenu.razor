@@ -1,0 +1,22 @@
+﻿@inject WebsiteSettings Settings
+
+<PageScript Src="./Components/Layout/NavMenu.razor.js" />
+
+<header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xxl align-items-center">
+        <div class="logo-mobile">
+            <a href="#hero" alt="Home"><img src="img/logo.png" alt="" title=""></a>
+        </div>
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li><a class="nav-link" href="/">Home</a></li>
+                <li><a class="nav-link" href="/agenda">Agenda</a></li>
+                <li class="logo"><a href="/"><img src="img/logo.png" alt="Logo" title=""></a></li>
+                <li><a class="nav-link" href="/speakers">Speakers</a></li>
+                <li><a class="nav-link" href="/tickets">Tickets</a></li>
+                <li><a class="nav-link" href="/past/@Settings.PreviousEdition">@Settings.PreviousEditionTitle</a></li>
+            </ul>
+            <i class="bi mobile-nav-toggle bi-list" onclick="navMenu.toggleMobileNavigation()"></i>
+        </nav>
+    </div>
+</header>

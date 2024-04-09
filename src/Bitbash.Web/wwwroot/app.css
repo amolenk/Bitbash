@@ -1,0 +1,61 @@
+body {
+    background-color: #121838;
+    color: white;
+    min-height: 500px;
+}
+
+a {
+    color: #F924A1;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #F924A1;
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+h1,
+h2,
+h5 {
+    font-family: "Agdasima", sans-serif;
+    color: white;
+}
+
+h3,
+h4,
+h6 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+    color: #000;
+}
+
+em {
+    color: #F924A1;
+    font-style: normal;
+}
+
+/*--------------------------------------------------------------
+# Code of Conduct Section
+--------------------------------------------------------------*/
+#code-of-conduct {
+    padding: 60px 0 60px 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+code {
+    color: #c02d76;
+}
