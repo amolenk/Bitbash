@@ -9,6 +9,11 @@ public class WebsiteSettings
     public DateOnly ConferenceDate { get; init; }
     public bool AgendaAnnounced { get; init; } = false;
     public bool SpeakersAnnounced { get; init; } = false;
+    public bool ConferenceTicketSaleOpened { get; init; } = true;
+    public bool WorkshopTicketSaleOpened { get; init; } = false;
     public string? SessionizeCfpLink { get; init; }
     public string? EventbriteLink { get; init; }
+    public string? HubSpotRegion { get; init; }
+    public string? HubSpotPortalId { get; init; }
+    public string? HubSpotConferenceTicketFormId { get; init; }
 }

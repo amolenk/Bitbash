@@ -10,20 +10,46 @@
     @if (TicketsOnSale)
     {
         <div class="row">
-            <p>Bitbash is a two day conference with half- and fullday workshops on Friday January 26th and 50 minute talks on Saturday January 27th. Have a look at our <a href="/agenda">agenda</a> for the full details.</p>
-            <p>Please note that you need separate tickets for Friday and Saturday. Also, be cautious when registering for multiple workshops on Friday to avoid any overlapping registrations.</p>
-            <p><em>Tickets for Bitbash are 100% free</em> and we'd like to keep it that way. Please register only if you are <em>certain you can attend in-person</em>, to avoid wasting food or disappointing others. We understand that unexpected circumstances may arise. If that happens, please cancel your ticket(s) as soon as possible to make them available for others.</p>
+            <p>Bitbash is a two day conference with half- and fullday workshops on @Settings.PreConWorkshopsDate.ToString("dddd MMMM d") and 50 minute talks on @Settings.ConferenceDate.ToString("dddd MMMM d"). Have a look at our <a href="/agenda">agenda</a> for the full details.</p>
+            <p>Please note that you need separate tickets for @Settings.PreConWorkshopsDate.ToString("dddd") and @Settings.ConferenceDate.ToString("dddd"). All tickets are <em>100% free</em>.</p>
         </div>
-
+        
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card mb-5 mb-lg-0">
+                    <div class="card-header text-center">
+                        <h4>Workshops</h4>
+                        <h6>@Settings.PreConWorkshopsDate.ToLongDateString()</h6>
+                    </div>
                     <div class="card-body text-center">
-                        <p class="text-center">Bitbash tickets are available through Eventbrite. By clicking the button below a new tab will open to complete your registration at Eventbrite.</p>
-                        <hr>
-                        <a href="@Settings.EventbriteLink" target="_blank" class="btn btn-primary">Get tickets now</a>
+                        @if (Settings.WorkshopTicketSaleOpened)
+                        {
+                            <a href="/tickets/workshops" class="btn btn-primary">Register for workshop(s)</a>
+                        }
+                        else
+                        {
+                            <p>Workshop tickets are not available yet.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card mb-5 mb-lg-0">
+                    <div class="card-header text-center">
+                        <h4>Conference</h4>
+                        <h6>@Settings.ConferenceDate.ToLongDateString()</h6>
+                    </div>
+                    <div class="card-body text-center">
+                        @if (Settings.ConferenceTicketSaleOpened)
+                        {
+                            <a href="/tickets/conference" class="btn btn-primary">Register for conference</a>
+                        }
+                        else
+                        {
+                            <p>Conference tickets are not available yet.</p>
+                        }
                     </div>
                 </div>
             </div>
@@ -42,5 +68,5 @@
 
 @code
 {
-    private bool TicketsOnSale => Settings.EventbriteLink is not null;
+    private bool TicketsOnSale => Settings.ConferenceTicketSaleOpened || Settings.WorkshopTicketSaleOpened;
 }
