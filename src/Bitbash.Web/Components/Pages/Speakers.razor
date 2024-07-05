@@ -28,18 +28,15 @@
     }
     else
     {
-        <div class="text-center">
+        <div class="row text-center">
             <p>For the brightest ideas and newest perspectives, we're bringing the best minds together!</p>
             <p>Please stay tuned for updates on our website and social media channels for speaker announcements.</p>
         </div>
-        
-        @if (CfpOpen)
-        {
-            <div class="text-center">
-                <h2>Interested in speaking at Bitbash?</h2>
-                <p>Our <a href="@Settings.SessionizeCfpLink">call for papers</a> is now open!</p>
-            </div>
-        }
+    }
+    
+    @if (Settings.IsCallForPapersOpen)
+    {
+        <CallForPapers />
     }
 
 </Section>

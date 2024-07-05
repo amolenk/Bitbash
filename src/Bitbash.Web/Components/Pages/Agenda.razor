@@ -50,12 +50,17 @@
     }
     else
     {
-        <div class="text-center">
+        <div class="row text-center">
             <p>We are currently working diligently to finalize the agenda for the event.</p>
             <p>Please check back soon for the full agenda, which will be published as soon as it is confirmed.</p>
         </div>
     }
 
+    @if (Settings.IsCallForPapersOpen)
+    {
+        <CallForPapers />
+    }
+    
 </Section>
 
 @code
