@@ -8,6 +8,7 @@ public class WebsiteSettings
     public DateOnly PreConWorkshopsDate { get; init; }
     public DateOnly ConferenceDate { get; init; }
     public bool AgendaAnnounced { get; init; } = false;
+    public bool AgendaFinalized { get; init; } = false;
     public bool SpeakersAnnounced { get; init; } = false;
     public string? SessionizeCfpLink { get; init; }
     public DateTimeOffset CfpOpenTime { get; init; }

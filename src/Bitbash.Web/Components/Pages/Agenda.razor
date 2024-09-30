@@ -26,12 +26,19 @@
 
             @if (_schedule is not null)
             {
+                @if (!Settings.AgendaFinalized)
+                {
+                    <div class="text-center mb-5">
+                        <h2>The agenda is still being finalized, and session times are subject to change.</h2>
+                    </div>
+                }
+
                 foreach (var slot in _schedule)
                 {
                     <div class="row text-center">
                         <h2>@slot.Key.ToString("HH:mm") - @slot.First().EndsAt!.Value.ToString("HH:mm")</h2>
                     </div>
-
+                    
                     <div class="row justify-content-center p-2">
 
                         @if (slot.Any())

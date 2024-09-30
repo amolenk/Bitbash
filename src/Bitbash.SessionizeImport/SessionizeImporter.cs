@@ -155,7 +155,7 @@ public class SessionizeImporter(HttpClient httpClient)
 
         var json = JsonSerializer.Serialize(value, jsonOptions);
 
-        var outputPath = Path.Combine(websitePath, $"wwwroot/data/{name}.json");
+        var outputPath = Path.Combine(websitePath, $"Data/{name}/event-details.json");
         File.WriteAllText(outputPath, json);
     }
 }
