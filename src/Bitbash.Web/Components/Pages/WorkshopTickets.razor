@@ -1,0 +1,31 @@
+﻿@page "/tickets/workshops"
+@inject WebsiteSettings Settings
+
+<PageTitle>Workshop Tickets | Bitbash</PageTitle>
+
+<HeaderSpacer />
+
+<Section Id="tickets" HeaderText="Workshop Tickets" ExtraClass="rocket-4">
+
+    @if (Settings.ConferenceTicketSaleOpened)
+    {
+        <div class="row">
+            <p>This ticket gives you access to selected Bitbash workshops on @Settings.PreConWorkshopsDate.ToString("D").</p>
+            <p><em>Tickets for Bitbash are 100% free</em> and we'd like to keep it that way. Please register only if you are <em>certain you can attend in-person</em>, to avoid wasting food or disappointing others. We understand that unexpected circumstances may arise. If that happens, please cancel your ticket as soon as possible to make them available for others.</p>
+            <p>By registering for a ticket, you agree to our <a href="https://www.infosupport.com/en/privacy-statement/" target="_blank">privacy policy.</a></p>
+        </div>
+
+        <div class="row">
+            <HubSpotForm Region="@Settings.HubSpotRegion" PortalId="@Settings.HubSpotPortalId" FormId="@Settings.HubSpotWorkshopTicketFormId" />
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <h2>Tickets for Bitbash are 100% free!</h2>
+            <p>While tickets are not available just yet, we are working hard to make them available soon.</p>
+            <p>Please stay tuned for updates on our website and social media channels.</p>
+        </div>
+    }
+
+</Section>

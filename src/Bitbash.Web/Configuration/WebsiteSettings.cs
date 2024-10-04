@@ -13,10 +13,11 @@ public class WebsiteSettings
     public string? SessionizeCfpLink { get; init; }
     public DateTimeOffset CfpOpenTime { get; init; }
     public DateTimeOffset CfpCloseTime { get; init; }
-    public bool ConferenceTicketSaleOpened { get; init; } = true;
+    public bool ConferenceTicketSaleOpened { get; init; } = false;
     public bool WorkshopTicketSaleOpened { get; init; } = false;
     public string? HubSpotRegion { get; init; }
     public string? HubSpotPortalId { get; init; }
+    public string? HubSpotWorkshopTicketFormId { get; init; }
     public string? HubSpotConferenceTicketFormId { get; init; }
     
     public bool IsCallForPapersOpen => !string.IsNullOrWhiteSpace(SessionizeCfpLink)
