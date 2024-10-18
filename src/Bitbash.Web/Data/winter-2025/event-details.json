@@ -56,6 +56,17 @@
       ]
     },
     {
+      "Id": "erwin-staal",
+      "FullName": "Erwin Staal",
+      "Bio": "Erwin Staal is an Azure Architect and DevOps consultant working for Xebia in the Netherlands. Helping companies deliver their software to customers using DevOps practices and cloud-native architectures is what he loves to do. He believes in the power of both the monolith and microservices and prefers to run his workload on the Azure Cloud and/or Kubernetes.\r\nBesides the work he does for the customers of Xebia, he has a passion for sharing knowledge. He is one of the authors of \u0027Azure Infrastructure as Code\u0027 (https://www.manning.com/books/azure-infrastructure-as-code), occasionally writes a blog, and is an international speaker at conferences.",
+      "TagLine": "Azure Architect @ Xebia, Author of \u0027Azure Infrastructure as Code\u0027",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/erwin-staal.jpg",
+      "sessions": [
+        "efficient-and-secure-software-delivery-with-azure-deployment-environments-and-dev-box"
+      ]
+    },
+    {
       "Id": "henry-been",
       "FullName": "Henry Been",
       "Bio": "Henry Been is an independent architect and developer from The Netherlands. He enjoys working with software development teams to create and deliver software for the Azure cloud. His interests include Azure, Agile, DevOps, software architecture and the design and implementation of testable and maintainable software. Besides his work he is a speaker at international conferences, is the author of two books, and creates online training courses for Pluralsight and A Cloud Guru. For his work in the community, he has been awarded the Microsoft MVP Award since 2019. To follow Henry, you can go to his blog henrybeen.nl or look him up on LinkedIn: https://www.linkedin.com/in/henrybeen\r\n",
@@ -246,7 +257,7 @@
   ],
   "Sessions": [
     {
-      "Id": "f4a13021-f097-45bf-8191-305c9ed098ba",
+      "Id": "ceeb8b6a-821f-48bc-b4ae-7b7b30201b49",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-24T08:30:00",
@@ -301,7 +312,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "5747b986-654a-453d-b989-bd569d6fb4f8",
+      "Id": "ae103a99-9d99-46e1-acdb-a8c650479ebe",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-24T12:00:00",
@@ -355,7 +366,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "5ad31457-4c19-466c-8b62-675cedca1b0e",
+      "Id": "b47c6c62-d609-48b8-97f3-016eb96e4ef8",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-25T09:00:00",
@@ -394,6 +405,20 @@
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
       "Room": "Room 2"
+    },
+    {
+      "Id": "efficient-and-secure-software-delivery-with-azure-deployment-environments-and-dev-box",
+      "Title": "Efficient and Secure Software Delivery with Azure Deployment Environments and Dev Box",
+      "Description": "DevOps has improved the speed of software development, but organizations still face the challenge of providing an efficient and secure infrastructure for teams while balancing agility, security, and compliance. To address this, Azure Deployment Environments is a new service that provides a way to quickly spin up app environments while maximizing security, compliance, and cost-efficiency. It perfectly fits within the upcoming self-service platform engineering approach.\r\n\r\nBy defining environment types, platform engineers can make it easy for developers to deploy environments with the right services, resources, and policies applied. Azure Deployment Environments integrates nicely with CI/CD tooling,  ensuring a smooth transition from development to production.\r\n\r\nBut where do developers craft their apps? How do we onboard new engineers quickly? Under the same umbrella as Deployment Environments, Azure Dev Box offers a streamlined development experience by providing developers with pre-configured environments tailored to their needs. This tool ensures consistency across development environments and facilitates collaboration among team members.\r\n\r\nThis session will provide a demonstration of the features and setup of Azure Deployment Environments, including integration with Azure Dev Box and CI/CD pipelines, showcasing how these tools collectively enhance software delivery efficiency and security.",
+      "StartsAt": "2025-01-25T09:30:00",
+      "EndsAt": "2025-01-25T10:20:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "erwin-staal"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 3"
     },
     {
       "Id": "github-actions-to-deploy-to-azure-take-it-to-the-next-level",
@@ -438,7 +463,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "79b4d910-6a24-41ac-9145-a7eb82c305ef",
+      "Id": "e7e77daa-c2f0-41e7-b251-52c54bd12004",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2025-01-25T11:20:00",
@@ -493,7 +518,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "d36a11a3-f08d-49ad-9abc-06b5e2d89d92",
+      "Id": "5a057a9d-d16c-4c12-a348-d4a9cc8aa466",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-25T12:40:00",
