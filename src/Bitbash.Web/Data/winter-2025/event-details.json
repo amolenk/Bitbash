@@ -246,7 +246,7 @@
   ],
   "Sessions": [
     {
-      "Id": "e9731cdd-1288-4dea-af63-2e74d343bc42",
+      "Id": "3f25ba4c-5bad-45ff-844b-185c17b1c7a4",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-24T08:30:00",
@@ -301,7 +301,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "d1776e8e-a80c-44c0-87bc-404662d8a2e8",
+      "Id": "f84b745b-efb8-4411-b72f-c888efe6e1f0",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-24T12:00:00",
@@ -355,11 +355,11 @@
       "Room": "Room 3"
     },
     {
-      "Id": "71096080-1f7a-418b-8fff-93ce1d97a5f1",
+      "Id": "74637a70-33ca-4b13-9d55-70ccfd0a0094",
       "Title": "Registration and Welcome",
       "Description": null,
-      "StartsAt": "2025-01-25T09:00:00",
-      "EndsAt": "2025-01-25T09:30:00",
+      "StartsAt": "2025-01-25T08:30:00",
+      "EndsAt": "2025-01-25T09:15:00",
       "IsServiceSession": true,
       "speakers": [],
       "SessionFormat": null,
@@ -370,8 +370,8 @@
       "Id": "failure-is-not-an-option-durable-execution-dapr-",
       "Title": "Failure is not an option: durable execution \u002B Dapr = \uD83D\uDE80",
       "Description": "Applications break all the time, there could be a network issue, a cloud provider outage, or just a glitch in the matrix. But as a developer, you really need your applications to be resilient without the need to recover databases and restart services manually.\r\n\r\nIn this session, I\u0027ll demonstrate how Dapr Workflow provides durable execution, which enables you to write reliable workflows as code. In addition, I\u0027ll show how resiliency policies in Dapr improve reliable communication across services and resources when developing distributed applications.\r\n\r\nI\u0027ll go into specific workflow features, such as scheduling, sequential and parallel execution, and waiting for external events. I\u0027ll show many code samples (in C#) for each of these features and will run the applications using the Dapr CLI to demonstrate their resiliency.\r\n\r\nBy the end of the session, you will have a good grasp of how durable execution with Dapr workflow and resiliency policies can help you build resilient applications.",
-      "StartsAt": "2025-01-25T09:30:00",
-      "EndsAt": "2025-01-25T10:20:00",
+      "StartsAt": "2025-01-25T09:15:00",
+      "EndsAt": "2025-01-25T10:05:00",
       "IsServiceSession": false,
       "speakers": [
         "marc-duiker"
@@ -384,8 +384,8 @@
       "Id": "from-duplo-to-domain-knowledge",
       "Title": "From Duplo to Domain Knowledge",
       "Description": "Are you struggling to onboard new employees who have the technical knowledge but lack functional domain experience? Do you let new people struggle through code, learning the domain along the way? In our work as IT consultants, we faced this challenge and discovered that traditional methods simply weren\u0027t cutting it. To address this, we innovated a unique solution: a serious game designed to simplify and accelerate domain learning.\r\n\r\nOur journey began with simple tools like post-its and evolved into using customized Duplo blocks to visualize complex processes. This hands-on approach not only made learning more engaging but also more effective. In our session, we\u0027ll walk you through our entire process, from the initial concept to the successful implementation of the game, and share the unexpected successes that exceeded our original goals.\r\n\r\nYou\u2019ll gain practical insights into creating your own serious game tailored to your organization\u0027s needs. We\u2019ll provide guidance and valuable tips on how to attract and integrate experienced professionals into your domain swiftly and effectively. Discover how to transform your onboarding process and ensure new team members hit the ground running from day one.\r\n\r\nWhether you\u0027re an IT leader, a trainer, or someone passionate about innovative learning techniques, this session is for you. Join us to explore a new approach to domain education and leave equipped with actionable ideas to revolutionize how you educate and integrate new team members.",
-      "StartsAt": "2025-01-25T09:30:00",
-      "EndsAt": "2025-01-25T10:20:00",
+      "StartsAt": "2025-01-25T09:15:00",
+      "EndsAt": "2025-01-25T10:05:00",
       "IsServiceSession": false,
       "speakers": [
         "michael-hompus",
@@ -399,8 +399,8 @@
       "Id": "efficient-and-secure-software-delivery-with-azure-deployment-environments-and-dev-box",
       "Title": "Efficient and Secure Software Delivery with Azure Deployment Environments and Dev Box",
       "Description": "DevOps has improved the speed of software development, but organizations still face the challenge of providing an efficient and secure infrastructure for teams while balancing agility, security, and compliance. To address this, Azure Deployment Environments is a new service that provides a way to quickly spin up app environments while maximizing security, compliance, and cost-efficiency. It perfectly fits within the upcoming self-service platform engineering approach.\r\n\r\nBy defining environment types, platform engineers can make it easy for developers to deploy environments with the right services, resources, and policies applied. Azure Deployment Environments integrates nicely with CI/CD tooling,  ensuring a smooth transition from development to production.\r\n\r\nBut where do developers craft their apps? How do we onboard new engineers quickly? Under the same umbrella as Deployment Environments, Azure Dev Box offers a streamlined development experience by providing developers with pre-configured environments tailored to their needs. This tool ensures consistency across development environments and facilitates collaboration among team members.\r\n\r\nThis session will provide a demonstration of the features and setup of Azure Deployment Environments, including integration with Azure Dev Box and CI/CD pipelines, showcasing how these tools collectively enhance software delivery efficiency and security.",
-      "StartsAt": "2025-01-25T09:30:00",
-      "EndsAt": "2025-01-25T10:20:00",
+      "StartsAt": "2025-01-25T09:15:00",
+      "EndsAt": "2025-01-25T10:05:00",
       "IsServiceSession": false,
       "speakers": [
         "erwin-staal"
@@ -413,8 +413,8 @@
       "Id": "github-actions-to-deploy-to-azure-take-it-to-the-next-level",
       "Title": "GitHub Actions to deploy to Azure: Take it to the next level",
       "Description": "A basic deployment to Azure from GitHub Actions can be set up in 10 minutes. And we will do that, to get the basics down. But let\u0027s take it a step further. How can you make sure a workflow runs as efficient and flexible as possible? What options do you have to make a connection? Can different Bicep templates interact with each other? How do you work with stages? How do you make the workflow act differently based on branch or pull request label? Can you implement manual approvals?\r\n\r\nIn this session we will start with the basic workflow and walk through these great options that GitHub has to offer to get your workflow to work for you. ",
-      "StartsAt": "2025-01-25T10:30:00",
-      "EndsAt": "2025-01-25T11:20:00",
+      "StartsAt": "2025-01-25T10:15:00",
+      "EndsAt": "2025-01-25T11:05:00",
       "IsServiceSession": false,
       "speakers": [
         "barbara-forbes"
@@ -427,8 +427,8 @@
       "Id": "uncovering-the-magic-of-managed-identity-a-deep-dive-into-security",
       "Title": "Uncovering the Magic of Managed Identity: A Deep Dive into Security",
       "Description": "Join me for an look under the hood of Azure Managed Identities! In this deep dive session, we\u0027ll explore the inner workings of this awesome technique, and see how it\u0027s transforming the way we manage security in our applications. As a contributor to these open-source libraries, I\u0027m uniquely qualified to take you on this journey.\r\n\r\nWe\u0027ll cover a range of topics, including:\r\n\r\n- How Managed Identities works and what happens behind the scenes\r\n- The risks of using Managed Identities and how to secure your environment\r\n- Using Managed Identity outside of Azure and in your local development environment\r\n- The relationship between Managed Identities and Federated Credentials\r\n- How GitHub Actions use a similar pattern to authenticate to Azure\r\n\r\nBring your questions, and let\u0027s discuss the security side of Managed Identity over a cup of coffee or your favorite beverage. See you there!\r\n",
-      "StartsAt": "2025-01-25T10:30:00",
-      "EndsAt": "2025-01-25T11:20:00",
+      "StartsAt": "2025-01-25T10:15:00",
+      "EndsAt": "2025-01-25T11:05:00",
       "IsServiceSession": false,
       "speakers": [
         "stephan-van-rooij"
@@ -441,8 +441,8 @@
       "Id": "log-it-like-its-hot-unleashing-the-superpowers-of-logging",
       "Title": "Log It Like It\u0027s Hot: Unleashing the Superpowers of Logging",
       "Description": "Dive into the underestimated world of application logging. This talk sheds light on how logging, often less appreciated than unit testing, can be transformed into a powerful tool in your development arsenal.\r\n\r\nDiscover practical tips and tricks to elevate your logging from mere text files to a proactive, insightful resource. Learn how to automate logging to simplify troubleshooting and predict issues before they escalate. We\u2019ll discuss how to make your logs not just informative but actionable, turning them into a first line of defense when production environments go awry. We\u0027ll also dive in logging and tracing for your microservices and other distributed systems.\r\n\r\nI\u2019ll guide you through the nuances of modern logging practices, from implementing structured logging for better data analysis to smartly handling sensitive information. This session is ideal for developers and IT professionals seeking to enhance their logging strategy with efficiency and foresight. Maybe AI can also help us find insights in abnormal events.\r\n\r\nJoin me for a concise, insightful exploration into making logging an integral, dynamic part of your development process. Leave equipped with the knowledge to transform your logs into a valuable asset, ready to tackle any challenge that comes your way.\r\n",
-      "StartsAt": "2025-01-25T10:30:00",
-      "EndsAt": "2025-01-25T11:20:00",
+      "StartsAt": "2025-01-25T10:15:00",
+      "EndsAt": "2025-01-25T11:05:00",
       "IsServiceSession": false,
       "speakers": [
         "steven-hillaert"
@@ -452,11 +452,11 @@
       "Room": "Room 3"
     },
     {
-      "Id": "54194a38-ae47-4aac-b919-31da2db01e65",
+      "Id": "b6e63f1a-abfd-403f-adc8-71157aaee0cd",
       "Title": "Coffee Break",
       "Description": null,
-      "StartsAt": "2025-01-25T11:20:00",
-      "EndsAt": "2025-01-25T11:50:00",
+      "StartsAt": "2025-01-25T11:05:00",
+      "EndsAt": "2025-01-25T11:25:00",
       "IsServiceSession": true,
       "speakers": [],
       "SessionFormat": null,
@@ -467,8 +467,8 @@
       "Id": "the-best-ways-to-use-the-latest-openapi-features-in-net-9",
       "Title": "The best ways to use the latest OpenAPI features in .NET 9!",
       "Description": ".NET 9 makes some impactful changes for creating .NET applications with OpenAPI support! In this session, we\u2019ll dive into the breaking changes and latest OpenAPI advancements for .NET 9 and explore how these features can be leveraged to create robust, efficient, and well-documented APIs. We will cover both minimal API\u0027s and controllers.\r\n\r\nAfterwards, we\u0027ll also talk about Kiota, a new API client generator from Microsoft, and how it can be used to generate API clients based on an OpenAPI document.\r\n\r\nThis presentation will feature lots of demos with the aim of giving you an end-to-end experience of the latest and greatest features of OpenAPI in .NET 9 and how this can be used with OpenAPI tooling to generate and use API clients!",
-      "StartsAt": "2025-01-25T11:50:00",
-      "EndsAt": "2025-01-25T12:40:00",
+      "StartsAt": "2025-01-25T11:25:00",
+      "EndsAt": "2025-01-25T12:15:00",
       "IsServiceSession": false,
       "speakers": [
         "sander-ten-brinke"
@@ -481,8 +481,8 @@
       "Id": "genai-from-the-trenches-from-legacy-to-a-modern-development-stack",
       "Title": "GenAI from the trenches: from legacy to a modern development stack",
       "Description": "Generative AI changes how we build software. Many of you use Github Copilot or other AI coding assistants daily or have tried one. Although these coding assistants are powerful, you can do so much more with GPT-4 to improve your software development game.\r\n\r\nWe combined Generative AI with software engineering best practices to translate a complete legacy codebase built in a low-code solution into a modern approach with Vue and Typescript. This allowed us to translate the codebase with 85% less effort than translating the code by hand. We took away the tedious work by automating it with AI while allowing engineers to review and improve the overall structure of the solution.\r\n\r\nIn this talk, you\u2019ll learn how we use generative AI to translate complete code bases and how to iterate on your prompts using a Human-In-The-Loop principle. We\u2019ll also demonstrate how generative AI can be a powerful asset for developers, enhancing rather than replacing human creativity.\r\n",
-      "StartsAt": "2025-01-25T11:50:00",
-      "EndsAt": "2025-01-25T12:40:00",
+      "StartsAt": "2025-01-25T11:25:00",
+      "EndsAt": "2025-01-25T12:15:00",
       "IsServiceSession": false,
       "speakers": [
         "jurre-brandsen"
@@ -495,8 +495,8 @@
       "Id": "how-you-got-hacked-before-the-code-hit-production",
       "Title": "How you got hacked before the code hit production",
       "Description": "With the rise of AI coding assistants a new attack vector has opened up for hackers! Let\u2019s dive into the world of typosquatting  and other techniques that hackers have been using. Does AI protect you against these attacks or is it maybe even more vulnerable?\r\n\r\nIn this talk you will learn how hackers can use the software supply chain and target dependencies in different ways to eventually get to your code. To remedy this you can set up artifact systems which allow you to check dependencies before they hit your code.\r\n\r\nIf you want to learn how to make your coding environment safer and prevent hackers from tricking you or your AI assistant, join this talk and find out!",
-      "StartsAt": "2025-01-25T11:50:00",
-      "EndsAt": "2025-01-25T12:40:00",
+      "StartsAt": "2025-01-25T11:25:00",
+      "EndsAt": "2025-01-25T12:15:00",
       "IsServiceSession": false,
       "speakers": [
         "leo-visser"
@@ -506,11 +506,11 @@
       "Room": "Room 3"
     },
     {
-      "Id": "f0e8a6cf-46af-40b7-82cb-906b7056f972",
+      "Id": "f42233e6-ee77-437c-b1e1-1d917ea44e47",
       "Title": "Lunch",
       "Description": null,
-      "StartsAt": "2025-01-25T12:40:00",
-      "EndsAt": "2025-01-25T13:20:00",
+      "StartsAt": "2025-01-25T12:15:00",
+      "EndsAt": "2025-01-25T13:00:00",
       "IsServiceSession": true,
       "speakers": [],
       "SessionFormat": null,
@@ -521,8 +521,8 @@
       "Id": "micro-frontend-architectures-with-blazor-and-nuget-",
       "Title": "Micro Frontend Architectures with Blazor and NuGet \uD83D\uDE80",
       "Description": "Join us for an exciting session where we\u2019ll dive into the fascinating world of micro frontends in Blazor! Learn how to architect your Blazor web apps with modular, independently deployable components using a plug-in model. This flexible approach allows teams to build, maintain, and scale applications more efficiently, moving away from the constraints of traditional monolithic frontends.\r\n\r\nWhat to Expect:\r\nWe\u0027ll be gradually implementing a micro frontend architecture, adding functionality (and complexity) along the way. Plus, discover how to use NuGet as your delivery network, offering a seamless and standardized way to distribute and manage your frontend components.\r\n\r\nBut that\u0027s not all! Attendees will also learn how to tackle compatibility challenges when dynamically loading .NET packages, a common hurdle in plugin architectures.\r\n\r\nKey Takeaways:\r\n\r\n- Get introduced to micro frontend architectures and when you should use them.\r\n- Explore an incremental approach to implementing micro frontends in Blazor.\r\n- Learn how to leverage NuGet for dynamic, secure distribution of Blazor components.\r\n- Gain insights into managing compatibility issues with .NET packages, and learn practical solutions to versioning and framework compatibility challenges.",
-      "StartsAt": "2025-01-25T13:20:00",
-      "EndsAt": "2025-01-25T14:10:00",
+      "StartsAt": "2025-01-25T13:00:00",
+      "EndsAt": "2025-01-25T13:50:00",
       "IsServiceSession": false,
       "speakers": [
         "simon-van-der-meer"
@@ -535,8 +535,8 @@
       "Id": "the-philosophy-of-truth-in-the-age-of-ai-is-the-truth-still-out-there",
       "Title": "The Philosophy of Truth in the Age of AI. Is the Truth still out there?",
       "Description": "In a world increasingly dominated by AI-generated content, discerning truth from fiction has become a complex philosophical issue. This session seeks to explore this fascinating intersection of technology, philosophy, and truth, using Microsoft Azure\u0027s advanced AI capabilities as illustrative examples.\r\n\r\nWe will delve into the philosophical implications of AI\u0027s ability to generate seemingly authentic but fabricated content and the challenges it presents in our pursuit of truth. The session will explore the role of cutting-edge technologies in both creating and combatting this issue, with a special emphasis on Azure\u0027s AI and machine learning tools.\r\n\r\nWhether you\u0027re a philosopher musing on the nature of truth, a technology enthusiast intrigued by the implications of AI, or a professional seeking to understand and navigate this challenging landscape, this session promises thought-provoking insights and practical knowledge.\r\n\r\nThe truth is out there!",
-      "StartsAt": "2025-01-25T13:20:00",
-      "EndsAt": "2025-01-25T14:10:00",
+      "StartsAt": "2025-01-25T13:00:00",
+      "EndsAt": "2025-01-25T13:50:00",
       "IsServiceSession": false,
       "speakers": [
         "roelant-dieben"
@@ -549,8 +549,8 @@
       "Id": "creating-a-quantum-algorithm-using-microsoft-q",
       "Title": "Creating a quantum algorithm using Microsoft Q#",
       "Description": "In the last couple of years, there has been a lot of talk about quantum computing and many years ago, Microsoft has released their preview of Azure Quantum. So today, you cannot only write quantum programs on a simulated environment with the QDK and Q#, but you can also compile Q# and target a physical quantum computer on Azure Quantum.\r\nIn this session, I will guide you through the implementation of an existing quantum algorithm, step by step, while I explain all the details. This will be a very technical and code-heavy session.",
-      "StartsAt": "2025-01-25T13:20:00",
-      "EndsAt": "2025-01-25T14:10:00",
+      "StartsAt": "2025-01-25T13:00:00",
+      "EndsAt": "2025-01-25T13:50:00",
       "IsServiceSession": false,
       "speakers": [
         "johnny-hooyberghs"
@@ -560,11 +560,23 @@
       "Room": "Room 3"
     },
     {
+      "Id": "1cbc85a6-9f56-47e9-b471-3b5abb14cc60",
+      "Title": "Break",
+      "Description": null,
+      "StartsAt": "2025-01-25T13:50:00",
+      "EndsAt": "2025-01-25T14:10:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
       "Id": "unlocking-seamless-collaboration-designfirst-apis-for-ui-components",
       "Title": "Unlocking Seamless Collaboration: Design-First APIs for UI Components",
       "Description": "In the ever-evolving world of software development, teams grapple with a fundamental challenge: collaboration. Some teams have complete control over their user interfaces (UI), while others navigate the intricate dance between front-end and back-end developers. But why does collaboration remain an elusive goal? Shouldn\u2019t it be simpler?\r\n\r\nImagine this: treating UI components as if they were APIs. Just as we meticulously design APIs before diving into implementation, let\u2019s apply the same principle to components. Picture this: complex components\u2014think interactive maps, ordering systems, and payment options\u2014encased in a black-box with a well-defined API. Now take it a step further. Extend this approach to both back-end and front-end frameworks. The result? A harmonious symphony of development, where seamless collaboration becomes the norm.\r\n\r\nSo, let\u2019s embrace the power of design-first thinking. Let\u2019s redefine how we build, share, and collaborate. Because when components come with their APIs preordained, magic happens!",
-      "StartsAt": "2025-01-25T14:20:00",
-      "EndsAt": "2025-01-25T15:10:00",
+      "StartsAt": "2025-01-25T14:10:00",
+      "EndsAt": "2025-01-25T15:00:00",
       "IsServiceSession": false,
       "speakers": [
         "lucien-immink"
@@ -577,8 +589,8 @@
       "Id": "using-genai-on-your-code-what-could-possibly-go-wrong",
       "Title": "Using GenAI on your code, what could possibly go wrong?",
       "Description": "With GenAI, developers are shifting from traditional code reuse to generating new code snippets by prompting GenAI, leading to a significant change in the ways software gets developed. \r\nSeveral academic studies show that AI generated code based on LLM\u0027s that are trained on vulnerable OSS implementations lead to vulnerable generated code. Another study showed that developers tend to trust GenAI created code more than human created code. Combining that with the higher code velocity it will result in more vulnerabilities in it\u0027s output. \r\nUsing an AI system that runs an LLM also has additional risks tied to it, related to jailbreaks, data poisoning and malicious agents, recursive learning and IP infringements. \r\nIn this presentation, we will examine real-world data from several academic studies to understand how GenAI is changing software security, the risks it introduces, and possible strategies to address these emerging issues.",
-      "StartsAt": "2025-01-25T14:20:00",
-      "EndsAt": "2025-01-25T15:10:00",
+      "StartsAt": "2025-01-25T14:10:00",
+      "EndsAt": "2025-01-25T15:00:00",
       "IsServiceSession": false,
       "speakers": [
         "niels-tanis"
@@ -591,8 +603,8 @@
       "Id": "designing-an-iam-strategy-for-your-engineering-platform",
       "Title": "Designing an IAM Strategy for your Engineering Platform",
       "Description": "Over the last few years, a lot of attention has been paid to building (engineering) platforms. But how do you manage access to your environments for engineers?  Do you even manage this with the same rigor as you manage application security? And how to find the balance between security and usability?\r\n\r\nIn this session, Henry will explore with you how he has solved this at his customers. We will take a look at Entra ID Access Packages and Privileged Identity Management and see how we can apply those in a practical design that allows for self-service requests for access, approvals by their peers or a manager, automatic access reviews, and much more!",
-      "StartsAt": "2025-01-25T14:20:00",
-      "EndsAt": "2025-01-25T15:10:00",
+      "StartsAt": "2025-01-25T14:10:00",
+      "EndsAt": "2025-01-25T15:00:00",
       "IsServiceSession": false,
       "speakers": [
         "henry-been"
@@ -600,6 +612,18 @@
       "SessionFormat": "Session",
       "Level": "Advanced",
       "Room": "Room 3"
+    },
+    {
+      "Id": "011f184f-8f38-4a2b-9b9d-c41a72823fc5",
+      "Title": "Closing Keynote (TBA)",
+      "Description": null,
+      "StartsAt": "2025-01-25T15:10:00",
+      "EndsAt": "2025-01-25T16:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Room 1"
     }
   ]
 }
