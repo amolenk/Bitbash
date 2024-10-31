@@ -45,17 +45,6 @@
       ]
     },
     {
-      "Id": "elise-lems",
-      "FullName": "Elise Lems",
-      "Bio": "Elise is a social and enthusiastic professional who loves to read books and has a curious and questioning mind. Elise has a master\u0027s in Artificial Intelligence from Radboud University and is currently working as a Data scientist/IT consultant at Info Support. Elise\u0027s areas of interest are computer vision, explainable AI, AI in healthcare, and much more.",
-      "TagLine": "Data scientist at Info Support",
-      "IsTopSpeaker": false,
-      "ProfilePictureUrl": "img/winter-2025/speakers/elise-lems.jpg",
-      "sessions": [
-        "genai-from-the-trenches-from-legacy-to-a-modern-development-stack"
-      ]
-    },
-    {
       "Id": "erwin-staal",
       "FullName": "Erwin Staal",
       "Bio": "Erwin Staal is an Azure Architect and DevOps consultant working for Xebia in the Netherlands. Helping companies deliver their software to customers using DevOps practices and cloud-native architectures is what he loves to do. He believes in the power of both the monolith and microservices and prefers to run his workload on the Azure Cloud and/or Kubernetes.\r\nBesides the work he does for the customers of Xebia, he has a passion for sharing knowledge. He is one of the authors of \u0027Azure Infrastructure as Code\u0027 (https://www.manning.com/books/azure-infrastructure-as-code), occasionally writes a blog, and is an international speaker at conferences.",
@@ -257,7 +246,7 @@
   ],
   "Sessions": [
     {
-      "Id": "ceeb8b6a-821f-48bc-b4ae-7b7b30201b49",
+      "Id": "e9731cdd-1288-4dea-af63-2e74d343bc42",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-24T08:30:00",
@@ -312,7 +301,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "ae103a99-9d99-46e1-acdb-a8c650479ebe",
+      "Id": "d1776e8e-a80c-44c0-87bc-404662d8a2e8",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-24T12:00:00",
@@ -366,7 +355,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "b47c6c62-d609-48b8-97f3-016eb96e4ef8",
+      "Id": "71096080-1f7a-418b-8fff-93ce1d97a5f1",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-25T09:00:00",
@@ -463,7 +452,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "e7e77daa-c2f0-41e7-b251-52c54bd12004",
+      "Id": "54194a38-ae47-4aac-b919-31da2db01e65",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2025-01-25T11:20:00",
@@ -496,8 +485,7 @@
       "EndsAt": "2025-01-25T12:40:00",
       "IsServiceSession": false,
       "speakers": [
-        "jurre-brandsen",
-        "elise-lems"
+        "jurre-brandsen"
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
@@ -518,7 +506,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "5a057a9d-d16c-4c12-a348-d4a9cc8aa466",
+      "Id": "f0e8a6cf-46af-40b7-82cb-906b7056f972",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-25T12:40:00",
