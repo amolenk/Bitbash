@@ -130,7 +130,7 @@
       "IsTopSpeaker": false,
       "ProfilePictureUrl": "img/winter-2025/speakers/maurice-de-beijer.jpg",
       "sessions": [
-        "building-robust-web-applications-with-testdriven-development-and-playwright-a-comprehensive-worksh"
+        "building-robust-web-applications-with-testdriven-development-and-playwright"
       ]
     },
     {
@@ -246,7 +246,7 @@
   ],
   "Sessions": [
     {
-      "Id": "3f25ba4c-5bad-45ff-844b-185c17b1c7a4",
+      "Id": "2db38a93-2703-4093-b533-be2d13f3429a",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-24T08:30:00",
@@ -287,8 +287,8 @@
       "Room": "Room 2"
     },
     {
-      "Id": "building-robust-web-applications-with-testdriven-development-and-playwright-a-comprehensive-worksh",
-      "Title": "Building Robust Web Applications with Test-Driven Development and Playwright: A Comprehensive Worksh",
+      "Id": "building-robust-web-applications-with-testdriven-development-and-playwright",
+      "Title": "Building Robust Web Applications with Test-Driven Development and Playwright",
       "Description": "Get ready to take your front-end development skills to the next level with our hands-on workshop. In this four-hour session, you will learn the ins and outs of test-driven development using Playwright, a powerful tool that will revolutionize your web development workflow.\r\n\r\nAre you tired of spending endless hours debugging issues in your web applications? Dive deep into writing tests before writing code, ensuring top-notch quality and functionality in your web applications. Say goodbye to manual testing and hello to automated tests that catch bugs early in the development process.\r\n\r\nJoin us for an interactive and fun workshop where you\u0027ll gain the confidence to elevate your front-end development game and build web applications like a pro. Don\u0027t let common pain points like inconsistent UI behavior or regression issues slow you down - learn how to effectively use Playwright to avoid these pitfalls and streamline your development process.\r\n\r\nDon\u0027t miss this opportunity to unlock the full potential of test-driven development with Playwright \u2013 sign up now and get ready to uplevel your skills!",
       "StartsAt": "2025-01-24T09:00:00",
       "EndsAt": "2025-01-24T12:00:00",
@@ -301,7 +301,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "f84b745b-efb8-4411-b72f-c888efe6e1f0",
+      "Id": "c585e165-51b4-49a1-a4b0-5ea467e87369",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-24T12:00:00",
@@ -355,7 +355,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "74637a70-33ca-4b13-9d55-70ccfd0a0094",
+      "Id": "2ab318d2-e583-4dc2-96e2-eb7cf05280ce",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-25T08:30:00",
@@ -452,7 +452,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "b6e63f1a-abfd-403f-adc8-71157aaee0cd",
+      "Id": "e5a8f1b8-927e-4782-a763-3668ba40547d",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2025-01-25T11:05:00",
@@ -506,7 +506,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "f42233e6-ee77-437c-b1e1-1d917ea44e47",
+      "Id": "78799a6f-ad5b-43f3-903e-077acb206682",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-25T12:15:00",
@@ -560,7 +560,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "1cbc85a6-9f56-47e9-b471-3b5abb14cc60",
+      "Id": "5ce75bf9-9f0e-4577-baef-7966ed2c3ec3",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2025-01-25T13:50:00",
@@ -614,7 +614,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "011f184f-8f38-4a2b-9b9d-c41a72823fc5",
+      "Id": "cf56b3ce-270c-49ec-b488-0baed2f2cdbd",
       "Title": "Closing Keynote (TBA)",
       "Description": null,
       "StartsAt": "2025-01-25T15:10:00",
