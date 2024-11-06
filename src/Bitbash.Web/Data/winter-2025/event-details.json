@@ -257,7 +257,7 @@
   ],
   "Sessions": [
     {
-      "Id": "8ffe3388-f4ea-412f-9ab4-f2dc80f4ae31",
+      "Id": "4d285b3f-525a-476f-b1e4-35e7bceadb07",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-24T08:30:00",
@@ -312,7 +312,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "27318633-28d5-410c-a270-7ece8a6cddcb",
+      "Id": "6f3c2043-3281-4c24-bb8b-2fa17f527b81",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-24T12:00:00",
@@ -366,7 +366,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "52c786a3-6c31-46e4-b568-08fbdf0bb442",
+      "Id": "275f1827-5935-4b00-b3e9-6a8e19eed0d8",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-25T08:30:00",
@@ -463,7 +463,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "51d0eb7d-725a-42ff-89fb-752d18e37c02",
+      "Id": "961e7cda-9cc1-43a4-810e-e91e080867f6",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2025-01-25T11:05:00",
@@ -517,7 +517,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "7cb9c7b9-4426-4e6c-81ad-eccc2d56f893",
+      "Id": "2ecc34cf-8054-4e60-a220-3f4ad548a27a",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-25T12:15:00",
@@ -571,7 +571,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "6caa7e5e-c9f0-4884-b559-09039625e9ac",
+      "Id": "032c979c-6df0-428b-8955-3de5d5f98f6e",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2025-01-25T13:50:00",
@@ -634,7 +634,7 @@
       "speakers": [
         "rik-hepworth"
       ],
-      "SessionFormat": "Session",
+      "SessionFormat": "Closing keynote",
       "Level": "Intermediate",
       "Room": "Room 1"
     }
