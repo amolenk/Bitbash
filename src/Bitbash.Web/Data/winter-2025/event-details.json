@@ -211,17 +211,6 @@
       ]
     },
     {
-      "Id": "simon-van-der-meer",
-      "FullName": "Simon van der Meer",
-      "Bio": "Simon van der Meer is a lead developer at Info Support. With his team he mainly works on cloud-native applications in Azure. Simon also very much enjoys working on solutions involving much more low level technical software and hardware. His passion overall lies with discovering creative solutions for complex problems.\r\n\r\nSimon\u0027s hobbies are playing guitar and singing in a band. He also enjoys sports.",
-      "TagLine": "IT Consultant at Info Support",
-      "IsTopSpeaker": false,
-      "ProfilePictureUrl": "img/winter-2025/speakers/simon-van-der-meer.jpg",
-      "sessions": [
-        "micro-frontend-architectures-with-blazor-and-nuget-"
-      ]
-    },
-    {
       "Id": "stephan-van-rooij",
       "FullName": "Stephan van Rooij",
       "Bio": "A blogger, a speaker but mainly a software architect with a strong focus on security, identity and automation. My day job is all .NET core and single-sign-on. If I have some spare time, I\u0027m mostly working on one off my home automation projects (with over half a million combined downloads)\r\n\r\nI\u0027m also an occasional contributor to @azure/msal, azure/microsoft docs and Azure pipeline tasks\r\n\r\nCheck my blog or github profile for more details",
@@ -257,7 +246,7 @@
   ],
   "Sessions": [
     {
-      "Id": "4d285b3f-525a-476f-b1e4-35e7bceadb07",
+      "Id": "19579e55-631d-4045-93e1-b5ea6cd4a872",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-24T08:30:00",
@@ -312,7 +301,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "6f3c2043-3281-4c24-bb8b-2fa17f527b81",
+      "Id": "efb736a0-3d29-45a7-9125-68c56c750e49",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-24T12:00:00",
@@ -366,7 +355,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "275f1827-5935-4b00-b3e9-6a8e19eed0d8",
+      "Id": "07c81869-54c7-4296-bbde-7165df6ee35e",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-25T08:30:00",
@@ -463,7 +452,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "961e7cda-9cc1-43a4-810e-e91e080867f6",
+      "Id": "665b42ca-67a8-4ac3-9eca-188a44a296a6",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2025-01-25T11:05:00",
@@ -517,7 +506,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "2ecc34cf-8054-4e60-a220-3f4ad548a27a",
+      "Id": "3e32bc8a-05ce-49c1-beb1-d487acd03eb5",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-25T12:15:00",
@@ -529,14 +518,14 @@
       "Room": "Nexus"
     },
     {
-      "Id": "micro-frontend-architectures-with-blazor-and-nuget-",
-      "Title": "Micro Frontend Architectures with Blazor and NuGet \uD83D\uDE80",
-      "Description": "Join us for an exciting session where we\u2019ll dive into the fascinating world of micro frontends in Blazor! Learn how to architect your Blazor web apps with modular, independently deployable components using a plug-in model. This flexible approach allows teams to build, maintain, and scale applications more efficiently, moving away from the constraints of traditional monolithic frontends.\r\n\r\nWhat to Expect:\r\nWe\u0027ll be gradually implementing a micro frontend architecture, adding functionality (and complexity) along the way. Plus, discover how to use NuGet as your delivery network, offering a seamless and standardized way to distribute and manage your frontend components.\r\n\r\nBut that\u0027s not all! Attendees will also learn how to tackle compatibility challenges when dynamically loading .NET packages, a common hurdle in plugin architectures.\r\n\r\nKey Takeaways:\r\n\r\n- Get introduced to micro frontend architectures and when you should use them.\r\n- Explore an incremental approach to implementing micro frontends in Blazor.\r\n- Learn how to leverage NuGet for dynamic, secure distribution of Blazor components.\r\n- Gain insights into managing compatibility issues with .NET packages, and learn practical solutions to versioning and framework compatibility challenges.",
+      "Id": "creating-a-quantum-algorithm-using-microsoft-q",
+      "Title": "Creating a quantum algorithm using Microsoft Q#",
+      "Description": "In the last couple of years, there has been a lot of talk about quantum computing and many years ago, Microsoft has released their preview of Azure Quantum. So today, you cannot only write quantum programs on a simulated environment with the QDK and Q#, but you can also compile Q# and target a physical quantum computer on Azure Quantum.\r\nIn this session, I will guide you through the implementation of an existing quantum algorithm, step by step, while I explain all the details. This will be a very technical and code-heavy session.",
       "StartsAt": "2025-01-25T13:00:00",
       "EndsAt": "2025-01-25T13:50:00",
       "IsServiceSession": false,
       "speakers": [
-        "simon-van-der-meer"
+        "johnny-hooyberghs"
       ],
       "SessionFormat": "Session",
       "Level": "Advanced",
@@ -557,21 +546,7 @@
       "Room": "Room 2"
     },
     {
-      "Id": "creating-a-quantum-algorithm-using-microsoft-q",
-      "Title": "Creating a quantum algorithm using Microsoft Q#",
-      "Description": "In the last couple of years, there has been a lot of talk about quantum computing and many years ago, Microsoft has released their preview of Azure Quantum. So today, you cannot only write quantum programs on a simulated environment with the QDK and Q#, but you can also compile Q# and target a physical quantum computer on Azure Quantum.\r\nIn this session, I will guide you through the implementation of an existing quantum algorithm, step by step, while I explain all the details. This will be a very technical and code-heavy session.",
-      "StartsAt": "2025-01-25T13:00:00",
-      "EndsAt": "2025-01-25T13:50:00",
-      "IsServiceSession": false,
-      "speakers": [
-        "johnny-hooyberghs"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Advanced",
-      "Room": "Room 3"
-    },
-    {
-      "Id": "032c979c-6df0-428b-8955-3de5d5f98f6e",
+      "Id": "dbb8c69d-b46e-49bf-9ec4-002e69f341f0",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2025-01-25T13:50:00",
