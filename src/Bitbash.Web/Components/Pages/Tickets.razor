@@ -26,7 +26,14 @@
                     <div class="card-body text-center">
                         @if (Settings.WorkshopTicketSaleOpened)
                         {
-                            <a href="/tickets/workshops" class="btn btn-primary">Register for workshop(s)</a>
+                            if (Settings.WorkshopTicketSoldOut)
+                            {
+                                <p>Workshop tickets are sold out.</p>
+                            }
+                            else
+                            {
+                                <a href="/tickets/workshops" class="btn btn-primary">Register for workshop(s)</a>
+                            }
                         }
                         else
                         {
