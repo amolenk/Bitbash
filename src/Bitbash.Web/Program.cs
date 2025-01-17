@@ -9,12 +9,23 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddSingleton<EventDetailsProvider>();
+builder.Services.AddHttpContextAccessor();
 
 var settings = new WebsiteSettings();
 builder.Configuration.GetSection("Bitbash").Bind(settings);
 builder.Services.AddSingleton(settings);
 
 var app = builder.Build();
+
+// Allow embedding in iframes for the /up-next page
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path == "/up-next")
+    {
+        context.Response.Headers["X-Frame-Options"] = "ALLOWALL";
+    }
+    await next();
+});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
