@@ -235,7 +235,7 @@
   ],
   "Sessions": [
     {
-      "Id": "b4e82af8-a3ae-46bb-9fff-7f80d19fc789",
+      "Id": "c331d6da-f57c-45f2-9c26-a245427d1cc2",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-24T08:30:00",
@@ -290,7 +290,7 @@
       "Room": "Room 4"
     },
     {
-      "Id": "ef531846-a7a9-44b7-9c6b-d170a187eb79",
+      "Id": "978ec5b4-4f3a-4f00-9177-bc872f0071d4",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-24T12:00:00",
@@ -344,7 +344,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "b09c13d9-685b-4c49-b406-7cee660252c7",
+      "Id": "c0fb156f-c0d0-4932-837b-2db94798b7ed",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-25T08:30:00",
@@ -426,7 +426,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "007f739e-60f7-4ff1-96dd-d3bbd059063c",
+      "Id": "45b45638-382e-4353-bc13-9c402ed151ad",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2025-01-25T11:05:00",
@@ -440,7 +440,7 @@
     {
       "Id": "the-best-ways-to-use-the-latest-openapi-features-in-net-9",
       "Title": "The best ways to use the latest OpenAPI features in .NET 9!",
-      "Description": ".NET 9 makes some impactful changes for creating .NET applications with OpenAPI support! In this session, we\u2019ll dive into the breaking changes and latest OpenAPI advancements for .NET 9 and explore how these features can be leveraged to create robust, efficient, and well-documented APIs. We will cover both minimal API\u0027s and controllers.\r\n\r\nAfterwards, we\u0027ll also talk about Kiota, a new API client generator from Microsoft, and how it can be used to generate API clients based on an OpenAPI document.\r\n\r\nThis presentation will feature lots of demos with the aim of giving you an end-to-end experience of the latest and greatest features of OpenAPI in .NET 9 and how this can be used with OpenAPI tooling to generate and use API clients!",
+      "Description": ".NET 9 makes some impactful changes for creating .NET applications with OpenAPI support! In this session, we\u2019ll dive into the breaking changes and latest OpenAPI advancements for .NET 9 and explore how these features can be leveraged to create robust, efficient, and well-documented APIs. We will cover both minimal API\u0027s and controllers.\r\n\r\nThis presentation will feature lots of demos with the aim of giving you an end-to-end experience of the latest and greatest features of OpenAPI in .NET 9!",
       "StartsAt": "2025-01-25T11:25:00",
       "EndsAt": "2025-01-25T12:15:00",
       "IsServiceSession": false,
@@ -480,7 +480,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "004d4961-2226-4dd0-b03d-7c351ec0f064",
+      "Id": "998a4d88-f477-4e0e-8a0f-ddf2464e7137",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-25T12:15:00",
@@ -535,7 +535,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "14b0558a-d148-46f6-bc1e-b1f30b291d1c",
+      "Id": "36c001cb-bfaf-48d7-8808-a657f2adec1c",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2025-01-25T13:50:00",
