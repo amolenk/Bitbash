@@ -235,7 +235,7 @@
   ],
   "Sessions": [
     {
-      "Id": "c331d6da-f57c-45f2-9c26-a245427d1cc2",
+      "Id": "28865d4c-847b-464a-b494-725d78816c5a",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-24T08:30:00",
@@ -290,7 +290,7 @@
       "Room": "Room 4"
     },
     {
-      "Id": "978ec5b4-4f3a-4f00-9177-bc872f0071d4",
+      "Id": "7077dcc7-d463-4191-8576-bca157cda438",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-24T12:00:00",
@@ -344,7 +344,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "c0fb156f-c0d0-4932-837b-2db94798b7ed",
+      "Id": "b4574f1b-15a3-485b-8e54-fa6f00317257",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-25T08:30:00",
@@ -426,7 +426,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "45b45638-382e-4353-bc13-9c402ed151ad",
+      "Id": "10d64b44-79f1-4300-932d-d2ee2b0c9c4a",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2025-01-25T11:05:00",
@@ -480,7 +480,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "998a4d88-f477-4e0e-8a0f-ddf2464e7137",
+      "Id": "db9f0e4e-168f-41c5-81c0-16623376f932",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-25T12:15:00",
@@ -535,7 +535,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "36c001cb-bfaf-48d7-8808-a657f2adec1c",
+      "Id": "8fdd2b6c-d416-4753-aacf-ce76b9528462",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2025-01-25T13:50:00",
@@ -586,6 +586,18 @@
       ],
       "SessionFormat": "Closing keynote",
       "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "4c0997be-aca2-465a-a5a3-0b13c9e97150",
+      "Title": "LEGO Sets Giveaway",
+      "Description": "Join our raffle to win some great LEGO sets! Every attendee has a chance to win as long as they\u0027re in person at the raffle.",
+      "StartsAt": "2025-01-25T16:00:00",
+      "EndsAt": "2025-01-25T16:10:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
       "Room": "Room 1"
     }
   ]

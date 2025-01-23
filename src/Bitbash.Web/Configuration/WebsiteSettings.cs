@@ -14,6 +14,7 @@ public class WebsiteSettings
     public DateTimeOffset CfpOpenTime { get; init; }
     public DateTimeOffset CfpCloseTime { get; init; }
     public bool ConferenceTicketSaleOpened { get; init; } = false;
+    public bool ConferenceTicketSoldOut { get; init; } = false;
     public bool WorkshopTicketSaleOpened { get; init; } = false;
     public bool WorkshopTicketSoldOut { get; init; } = false;
     public string? HubSpotRegion { get; init; }

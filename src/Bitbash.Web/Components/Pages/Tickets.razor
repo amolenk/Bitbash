@@ -51,7 +51,14 @@
                     <div class="card-body text-center">
                         @if (Settings.ConferenceTicketSaleOpened)
                         {
-                            <a href="/tickets/conference" class="btn btn-primary">Register for conference</a>
+                            if (Settings.ConferenceTicketSoldOut)
+                            {
+                                <p>Conference ticket registration is closed.</p>
+                            }
+                            else
+                            {
+                                <a href="/tickets/conference" class="btn btn-primary">Register for conference</a>
+                            }
                         }
                         else
                         {
