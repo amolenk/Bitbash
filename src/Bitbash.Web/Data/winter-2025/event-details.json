@@ -156,17 +156,6 @@
       ]
     },
     {
-      "Id": "rik-hepworth",
-      "FullName": "Rik Hepworth",
-      "Bio": "Rik helps organisations large and small use Cloud better. Whether that is a new adoption where governance and management are key, or an application modernisation project where technology choice and team knowledge are important factors in success.\r\nThrough his public speaking and community involvement, Rik is a recipient of the Microsoft MVP Programme award for his work with Azure. He is also proud to be a member of the Microsoft Regional Director Programme. As an event organiser, speaker and lapsed blogger, Rik is keen to share his knowledge with the community, and encourage and support others as they do the same.\r\nHis grey hair is an indication of how long he has worked in IT, and in that time he\u0027s done most things you\u0027d expect of an IT Pro: From crawling under floors pulling cables, to managing large scale automated OS rollouts, to architecting solutions for on-premises and cloud. Now he spends more time working with his customers\u0027 management, sharing that breadth of experience and learning.",
-      "TagLine": "Microsoft MVP (Azure); Microsoft Regional Director",
-      "IsTopSpeaker": false,
-      "ProfilePictureUrl": "img/winter-2025/speakers/rik-hepworth.jpg",
-      "sessions": [
-        "azure-architecture-choosing-wisely"
-      ]
-    },
-    {
       "Id": "roelant-dieben",
       "FullName": "Roelant Dieben",
       "Bio": "With over 20 years of experience developing software on the Microsoft stack, Roelant Dieben has a lot to share about stuff that has been obsolete for years. With XPRTZ.cloud he is helping companies with their Azure cloud challenges, he is a Microsoft Azure MVP, and has a passion for machine learning \u0026 AI and application lifecycle management.",
@@ -235,7 +224,7 @@
   ],
   "Sessions": [
     {
-      "Id": "28865d4c-847b-464a-b494-725d78816c5a",
+      "Id": "ed645245-d1f2-4461-b373-062233036d1c",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-24T08:30:00",
@@ -290,7 +279,7 @@
       "Room": "Room 4"
     },
     {
-      "Id": "7077dcc7-d463-4191-8576-bca157cda438",
+      "Id": "146977df-3506-494f-84a1-96fd749b46fb",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-24T12:00:00",
@@ -344,7 +333,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "b4574f1b-15a3-485b-8e54-fa6f00317257",
+      "Id": "e823f907-104d-422a-9c4a-b2221701a4e5",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2025-01-25T08:30:00",
@@ -426,7 +415,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "10d64b44-79f1-4300-932d-d2ee2b0c9c4a",
+      "Id": "5179a396-f8ce-4d62-b8b1-3a99f0e0f785",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2025-01-25T11:05:00",
@@ -480,7 +469,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "db9f0e4e-168f-41c5-81c0-16623376f932",
+      "Id": "7aebb8a3-4a27-488f-896d-5775111da551",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2025-01-25T12:15:00",
@@ -535,7 +524,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "8fdd2b6c-d416-4753-aacf-ce76b9528462",
+      "Id": "5d6c49d6-673b-40d5-93d0-be288bf821b2",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2025-01-25T13:50:00",
@@ -575,25 +564,11 @@
       "Room": "Room 2"
     },
     {
-      "Id": "azure-architecture-choosing-wisely",
-      "Title": "Azure Architecture: Choosing wisely",
-      "Description": "The menu of Azure services is rich and vast. Selecting the best match for your application\u2019s needs can be a daunting choice.\r\nIn this session we will create an architecture for a cloud-native application, with requirements that are taken from several real-world projects to provide a realistic scenario that should resonate with your own experiences.\r\nWe will look at the requirements and discuss which Azure services could be used to deliver them, discussing the options and explaining the final choice.\r\nAs our architecture diagram steadily expands we will discuss the impact of specific security requirements and how the architecture may need to change to satisfy them. We will also discuss monitoring and telemetry and how they affect our design.\r\nBuilding an application in the cloud is a team sport. This session should provide learning for all involved: Developers writing applications who are involved in technology choices, IT Pros and Ops teams that manage and operate Azure within their organisation, Architects that design cloud applications and need to go through this process themselves, and finally managers who want to understand more about what their teams need to do in order to build cloud-native applications.",
-      "StartsAt": "2025-01-25T15:10:00",
-      "EndsAt": "2025-01-25T16:00:00",
-      "IsServiceSession": false,
-      "speakers": [
-        "rik-hepworth"
-      ],
-      "SessionFormat": "Closing keynote",
-      "Level": "Intermediate",
-      "Room": "Room 1"
-    },
-    {
-      "Id": "4c0997be-aca2-465a-a5a3-0b13c9e97150",
+      "Id": "cf4592a3-ca97-4163-82b4-931bf4dc50f8",
       "Title": "LEGO Sets Giveaway",
       "Description": "Join our raffle to win some great LEGO sets! Every attendee has a chance to win as long as they\u0027re in person at the raffle.",
-      "StartsAt": "2025-01-25T16:00:00",
-      "EndsAt": "2025-01-25T16:10:00",
+      "StartsAt": "2025-01-25T15:05:00",
+      "EndsAt": "2025-01-25T15:15:00",
       "IsServiceSession": true,
       "speakers": [],
       "SessionFormat": null,
