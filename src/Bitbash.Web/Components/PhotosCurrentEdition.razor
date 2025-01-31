@@ -1,0 +1,7 @@
+@inject WebsiteSettings Settings
+
+<Section HeaderText="@($"Photos {Settings.CurrentEditionTitle}")" ExtraClass="rocket-2" FadeUp="true">
+
+    <Galleria Edition="@Settings.CurrentEdition"/>
+
+</Section>

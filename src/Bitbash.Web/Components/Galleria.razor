@@ -1,0 +1,17 @@
+<PageScript Src="./Components/Galleria.razor.js" InitState="@Edition" />
+
+<div class="container">
+
+    <div class="row justify-content-center p-2">
+
+        <div class="galleria"></div>
+
+    </div>
+
+</div>
+
+@code {
+
+    [Parameter]
+    public string Edition { get; set; } = string.Empty;
+}

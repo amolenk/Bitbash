@@ -3,21 +3,11 @@
 
 <PageTitle>@Title | Bitbash</PageTitle>
 
-<PageScript Src="./Components/Pages/PastEdition.razor.js" InitState="@Edition" />
-
 <HeaderSpacer />
 
 <Section HeaderText="@Title" ExtraClass="rocket-3">
 
-    <div class="container">
-
-        <div class="row justify-content-center p-2">
-
-            <div class="galleria"></div>
-
-        </div>
-
-    </div>
+    <Galleria Edition="@Edition" />
 
 </Section>
 

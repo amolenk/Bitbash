@@ -5,6 +5,10 @@
 
 <Hero />
 <About />
+@if (Settings.CurrentEditionPhotosPublished)
+{
+    <PhotosCurrentEdition />
+}
 @if (Settings.SpeakersAnnounced)
 {
     <SpeakerHighlights />
