@@ -2,6 +2,16 @@
 
 <Section Id="about" HeaderText="About" ExtraClass="rocket-1" FadeUp="true">
 
+    @if (Settings.CurrentEditionPhotosPublished)
+    {
+        @if (Settings.CurrentEditionAfterMovieEmbedLink.Length > 0)
+        {
+            <YouTubeEmbed EmbedLink="@Settings.CurrentEditionAfterMovieEmbedLink" />
+        }
+
+        <Galleria Edition="@Settings.CurrentEdition"/>
+    }
+    
     <div class="center">
         <p>Get ready for an exciting two-day event that will cover the latest Microsoft technologies and innovations. Whether you’re interested in .NET, Azure, Data platforms or AI, Bitbash will let you take your skills to the next level!</p>
         <p>Inspiring community speakers will present you with insightful sessions, real-world experience, and compelling demonstrations.</p>

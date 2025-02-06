@@ -1,0 +1,15 @@
+<div class="container">
+
+    <div class="row justify-content-center p-2">
+
+        <iframe class="youtube" src="@EmbedLink" title="Bitbash Aftermovie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
+
+</div>
+
+@code {
+
+    [Parameter]
+    public string EmbedLink { get; set; } = string.Empty;
+}

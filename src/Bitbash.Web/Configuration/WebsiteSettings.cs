@@ -5,6 +5,7 @@ public class WebsiteSettings
     public string CurrentEdition { get; init; } = string.Empty;
     public string CurrentEditionTitle { get; init; } = string.Empty;
     public bool CurrentEditionPhotosPublished { get; init; } = false;
+    public string CurrentEditionAfterMovieEmbedLink { get; init; } = string.Empty;
     public string PreviousEdition { get; init; } = string.Empty;
     public string PreviousEditionTitle { get; init; } = string.Empty;
     public DateOnly PreConWorkshopsDate { get; init; }

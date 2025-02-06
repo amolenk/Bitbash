@@ -2,6 +2,11 @@
 
 <Section HeaderText="@($"Photos {Settings.CurrentEditionTitle}")" ExtraClass="rocket-2" FadeUp="true">
 
+    @if (Settings.CurrentEditionAfterMovieEmbedLink.Length > 0)
+    {
+        <YouTubeEmbed EmbedLink="@Settings.CurrentEditionAfterMovieEmbedLink" />
+    }
+    
     <Galleria Edition="@Settings.CurrentEdition"/>
 
 </Section>
