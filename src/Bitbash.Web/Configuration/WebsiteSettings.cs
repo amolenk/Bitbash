@@ -24,8 +24,9 @@ public class WebsiteSettings
     public string? HubSpotPortalId { get; init; }
     public string? HubSpotWorkshopTicketFormId { get; init; }
     public string? HubSpotConferenceTicketFormId { get; init; }
+    public Dictionary<string, string> Aftermovies { get; init; } = new();
     
     public bool IsCallForPapersOpen => !string.IsNullOrWhiteSpace(SessionizeCfpLink)
-        && CfpOpenTime <= DateTime.UtcNow
-        && CfpCloseTime >= DateTime.UtcNow;
+                                       && CfpOpenTime <= DateTime.UtcNow
+                                       && CfpCloseTime >= DateTime.UtcNow;
 }

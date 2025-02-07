@@ -4,11 +4,7 @@
 
     @if (Settings.CurrentEditionPhotosPublished)
     {
-        @if (Settings.CurrentEditionAfterMovieEmbedLink.Length > 0)
-        {
-            <YouTubeEmbed EmbedLink="@Settings.CurrentEditionAfterMovieEmbedLink" />
-        }
-
+        <Aftermovie Edition="@Settings.CurrentEdition"/>
         <Galleria Edition="@Settings.CurrentEdition"/>
     }
     

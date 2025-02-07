@@ -1,0 +1,20 @@
+@inject WebsiteSettings Settings
+
+@if (Settings.Aftermovies.TryGetValue(Edition, out var aftermovie))
+{
+    <div class="container">
+
+        <div class="row justify-content-center p-2">
+
+            <iframe class="aftermovie" src="@aftermovie" title="Bitbash Aftermovie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </div>
+
+    </div>
+}
+
+@code {
+    
+    [Parameter]
+    public string Edition { get; set; } = string.Empty;
+}
