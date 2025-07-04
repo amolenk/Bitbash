@@ -1,0 +1,40 @@
+@page "/editions"
+<link href="/edition-banner-img-bg.css" rel="stylesheet" />
+<link href="/edition-banner-grid.css" rel="stylesheet" />
+
+@inject WebsiteSettings Settings
+
+<PageTitle>Past editions | Bitbash</PageTitle>
+
+<HeaderSpacer />
+
+<Section HeaderText="Previous Editions" ExtraClass="rocket-3">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="edition-banner-container">
+                    <h4 class="text-center mb-4 text-white">Select an edition to explore</h4>
+                    <div class="edition-banner-grid">
+                        @foreach (var edition in Settings.PreviousEditions.OrderByDescending(e => e.Key))
+                        {
+                            <a href="/past/@edition.Key" class="edition-banner-item">
+                                <div class="edition-banner-card edition-banner-img-bg">
+                                    <img src="@edition.Value.Image" alt="Bitbash @edition.Value.Title" class="edition-banner-bg-img" />
+                                </div>
+                                <div class="edition-banner-content">
+                                    <h3>@edition.Value.Title</h3>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</Section>
+
+@code {
+    // Navigation is handled by direct HTML links
+}
