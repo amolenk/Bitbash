@@ -1,4 +1,5 @@
 ﻿@page "/past/{Edition}"
+@inject WebsiteSettings WebsiteSettings
 @inject EventDetailsProvider EventDetailsProvider
 
 <PageTitle>@Title | Bitbash</PageTitle>
@@ -37,7 +38,7 @@
     [Parameter]
     public string Edition { get; set; } = string.Empty;
 
-    private string Title => $"{Edition.ToUpperInvariant()[0]}{Edition[1..].Replace('-', ' ')}";
+    private string Title => WebsiteSettings.PreviousEditions[Edition].Title;
 
     private IEnumerable<Speaker>? _speakers;
 

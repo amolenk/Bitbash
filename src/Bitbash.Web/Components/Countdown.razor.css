@@ -18,17 +18,26 @@
     display: block;
     width: 100%;
     height: auto;
-  }
+}
 
-  #hero .countdown-image-top {
+#hero .countdown-image-middle {
     display: block;
     position: absolute;
     width: 100%;
     height: auto;
     top: 0px;
     left: 0px;
-  }
-  
+}
+
+#hero .countdown-image-top {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    left: 0px;
+}
+
 #hero .countdown-text {
     position: absolute;
     bottom: 50px;
