@@ -25,8 +25,15 @@ public class WebsiteSettings
     public string? HubSpotWorkshopTicketFormId { get; init; }
     public string? HubSpotConferenceTicketFormId { get; init; }
     public Dictionary<string, string> Aftermovies { get; init; } = new();
+    public Dictionary<string, EditionInfo> PreviousEditions { get; init; } = new();
     
     public bool IsCallForPapersOpen => !string.IsNullOrWhiteSpace(SessionizeCfpLink)
                                        && CfpOpenTime <= DateTime.UtcNow
                                        && CfpCloseTime >= DateTime.UtcNow;
+}
+
+public class EditionInfo
+{
+    public string Title { get; set; } = string.Empty;
+    public string Image { get; set; } = string.Empty;
 }
