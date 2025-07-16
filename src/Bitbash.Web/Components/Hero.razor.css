@@ -4,7 +4,7 @@
     min-width: 320px;
     max-width: 2150px;
     background-attachment: fixed;
-    background-image: url("img/hero-galaxy.png");
+    background-image: url("img/hero-galaxy.png?v=20250716");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -39,7 +39,7 @@
 }
 
 #hero .hero-container {
-    background-image: url("img/hero-foreground.png");
+    background-image: url("img/hero-foreground.png?v=20250716");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -57,7 +57,7 @@
 
 @media (max-width: 991px) {
     #hero .hero-container {
-        background-image: url("img/hero-foreground-tablet.png");
+        background-image: url("img/hero-foreground-tablet.png?v=20250716");
         background-size: 992px 833px;
         height: 1000px;
     }
@@ -65,7 +65,7 @@
 
 @media (max-width: 414px) {
     #hero .hero-container {
-        background-image: url("img/hero-foreground-mobile.png");
+        background-image: url("img/hero-foreground-mobile.png?v=20250716");
         background-size: 414px 457px;
         height: 667px;
     }
