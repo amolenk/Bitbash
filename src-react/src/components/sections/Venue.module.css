@@ -1,0 +1,33 @@
+.venue .logo {
+    padding-bottom: 40px;
+    width: 80%;
+}
+
+@media (max-width: 991px) {
+    .venue .logo {
+        max-width: 400px;
+    }
+}
+
+.venueInfo {
+    background: linear-gradient(135deg, #269BB9 10%, #C248D6 90%);
+    padding-bottom: 40px;
+    padding-top: 60px;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .venueInfo .info {
+        text-align: center;
+    }
+}
+
+.venueInfo p {
+    margin-bottom: 0;
+}
+
+.venueMap iframe {
+    min-height: 300px;
+    height: 100%;
+    width: 100%;
+}

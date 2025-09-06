@@ -1,0 +1,11 @@
+.aftermovie {
+    width: 560px;
+    height: 315px;
+}
+
+@media (max-width: 640px) {
+    .aftermovie {
+        width: 280px;
+        height: 157px;
+    }
+}
