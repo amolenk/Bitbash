@@ -14,7 +14,7 @@ export default function About() {
   const conferenceDate = new Date(websiteSettings.conferenceDate).getDate();
   
   return (
-    <Section id="about" headerText="About" extraClass="rocket1" fadeUp={true}>
+    <Section headerText="About" extraClass={styles.about} sectionBackground={1} fadeUp={true}>
       {websiteSettings.currentEditionPhotosPublished && (
         <>
           <Aftermovie edition={websiteSettings.currentEdition} />
@@ -22,7 +22,7 @@ export default function About() {
         </>
       )}
       
-      <div className={styles.center}>
+      <div className="center">
         <p>Get ready for an exciting two-day event that will cover the latest Microsoft technologies and innovations. Whether you&apos;re interested in .NET, Azure, Data platforms or AI, Bitbash will let you take your skills to the next level!</p>
         <p>Inspiring community speakers will present you with insightful sessions, real-world experience, and compelling demonstrations.</p>
         <p>Bitbash is an in-person event that&apos;s <em>free to attend</em>. It&apos;s held on {preConDate}-{conferenceDate} at Info Support HQ in Veenendaal, The Netherlands.</p>

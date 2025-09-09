@@ -3,7 +3,7 @@ import styles from "./Venue.module.css";
 
 export default function Venue() {
   return (
-    <Section headerText="Venue" extraClass="rocket2" fadeUp={true}>
+    <Section headerText="Venue" extraClass={styles.venue} sectionBackground={2} fadeUp={true}>
       <div className={`row ${styles.venue}`}>
         <div className={`col-lg-8 p-0 ${styles.venueMap}`}>
           <iframe

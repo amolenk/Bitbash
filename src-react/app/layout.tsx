@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+// import "./globals.css";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ export default function RootLayout({
         <link href="/galleria/themes/twelve/galleria.twelve.min.css" rel="stylesheet" />
         <link href="/app.css" rel="stylesheet" />
       </head>
-      <body data-enhance-nav="false">
+      <body>
         {children}
         
         {/* JavaScript libraries */}

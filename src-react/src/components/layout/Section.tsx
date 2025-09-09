@@ -5,6 +5,7 @@ interface SectionProps {
   headerText?: string;
   subText?: string;
   extraClass?: string;
+  sectionBackground?: number;
   fadeUp?: boolean;
   children: React.ReactNode;
 }
@@ -14,10 +15,15 @@ export default function Section({
   headerText, 
   subText, 
   extraClass, 
+  sectionBackground,
   fadeUp,
   children 
 }: SectionProps) {
-  const sectionClass = `${extraClass ? styles[extraClass] || extraClass : ''} ${fadeUp ? 'fade-up' : ''}`.trim();
+  const rocketClass = sectionBackground ? styles[`rocket${sectionBackground}`] : '';
+  const sectionClass = [
+    rocketClass,
+    extraClass ? styles[extraClass] || extraClass : ''
+  ].filter(Boolean).join(' ');
   
   return (
     <section 
@@ -25,7 +31,7 @@ export default function Section({
       className={sectionClass}
       data-aos={fadeUp ? "fade-up" : undefined}
     >
-      <div className={`container ${styles.container}`}>
+      <div className={`${styles.sectionContainer} container`}>
         {headerText && (
           <div className={styles.sectionHeader}>
             <h2>{headerText}</h2>

@@ -38,7 +38,7 @@
     background-size: clamp(320px, 80%, 700px) auto;
 }
 
-.container {
+.sectionContainer {
     min-height: 250px;
 }
 

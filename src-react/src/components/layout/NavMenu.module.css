@@ -44,6 +44,7 @@
 }
 
 @media (max-width: 414px) {
+
     .logoMobile img {
         width: 250px;
     }
@@ -52,7 +53,8 @@
 /**
 * Desktop Navigation 
 */
-.navbar {
+/* Double the .navbar selector, making it stronger than Bootstrap’s single .navbar. */
+.navbar.navbar {
     padding: 0;
     justify-content: center;
 }
@@ -104,10 +106,6 @@
     padding: 6px 4px;
 }
 
-.navbar a:hover {
-    color: #269BB9;
-}
-
 .navbar a i,
 .navbar a:focus i {
     font-size: 12px;
@@ -132,6 +130,11 @@
 .navbar .active:before {
     visibility: visible;
     width: 100%;
+}
+
+.navbar a:hover,
+.navbar .active{
+    color: #269BB9;
 }
 
 .navLink {
@@ -221,5 +224,5 @@
 .navbarMobile a:hover,
 .navbarMobile .active,
 .navbarMobile li:hover > a {
-    color: #E459BB;
+    color: #269BB9;
 }

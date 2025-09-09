@@ -1,11 +1,11 @@
 import { websiteSettings } from "../../config/website-settings";
 import styles from "./Aftermovie.module.css";
 
-interface AfterimovieProps {
+interface AftermovieProps {
   edition: string;
 }
 
-export default function Aftermovie({ edition }: AfterimovieProps) {
+export default function Aftermovie({ edition }: AftermovieProps) {
   const aftermovieUrl = websiteSettings.aftermovies[edition];
   
   if (!aftermovieUrl) return null;

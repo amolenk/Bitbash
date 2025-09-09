@@ -38,7 +38,12 @@ export default function Countdown() {
   const formatDate = () => {
     const options: Intl.DateTimeFormatOptions = { month: 'short' };
     const monthName = preConDate.toLocaleDateString('en-US', options);
-    return `${preConDate.getDate()}/${conferenceDate.getDate()} ${monthName} ${preConDate.getFullYear()}`;
+    return (
+      <>
+        <span className={styles.dateDays}>{preConDate.getDate()}/{conferenceDate.getDate()}</span>
+        <span className={styles.dateMonthYear}> {monthName} {preConDate.getFullYear()}</span>
+      </>
+    );
   };
 
   return (
