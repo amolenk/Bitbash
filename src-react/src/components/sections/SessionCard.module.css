@@ -1,0 +1,57 @@
+.sessionCard {
+    transition: all 0.3s ease-in-out;
+    width: 18rem;
+    margin: 1rem 0.5rem;
+    cursor: pointer;
+}
+
+.sessionCard:hover {
+    box-shadow: 0 0 40px 0 #E459BB;
+    transform: scale(1.1);
+}
+
+.serviceSessionCard {
+    background-color: #e9ecef;
+    width: 18rem;
+    margin: 1rem 0.5rem;
+}
+
+.cardTitle {
+    color: black;
+}
+
+.cardBody h5 {
+    font-size: 1.5rem;
+}
+
+.cardBody h6 {
+    font-size: 1rem;
+}
+
+.cardFooter {
+    background: transparent;
+    border: 0;
+}
+
+.sessionFormat {
+    background-color: #269BB9;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.25em 1em;
+    margin-right: 0.5em;
+}
+
+.sessionLevel {
+    background-color: #E459BB;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.25em 1em;
+}
+
+.speakerPhoto {
+    width: 32px;
+    height: 32px;
+    margin: 0 0.5em 0 0;
+    border-radius: 50%;
+    vertical-align: middle;
+}
