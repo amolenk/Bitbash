@@ -23,8 +23,6 @@ export default function NavMenu() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-console.log(pathname);
-
   return (
     <header 
       className={`${styles.header} d-flex align-items-center ${isScrolled ? styles.headerScrolled : ''}`}

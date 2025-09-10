@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-// import "./globals.css";
 import Script from "next/script";
+import '@/app/global.css';
 
 export const metadata: Metadata = {
   title: "Bitbash - Free two-day event covering the latest Microsoft technologies",
@@ -44,12 +44,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css?family=Montserrat:600"
           rel="stylesheet"
         />
-        {/* CSS Files */}
-        <link href="/aos/aos.css" rel="stylesheet" />
-        <link href="/bootstrap/bootstrap.min.css" rel="stylesheet" />
-        <link href="/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet" />
-        <link href="/galleria/themes/twelve/galleria.twelve.min.css" rel="stylesheet" />
-        <link href="/app.css" rel="stylesheet" />
       </head>
       <body>
         {children}

@@ -1,0 +1,579 @@
+{
+  "Speakers": [
+    {
+      "Id": "barbara-forbes",
+      "FullName": "Barbara Forbes",
+      "Bio": "Barbara Forbes is the Azure Technical Lead at OGD in the Netherlands, recognized as a Microsoft Azure MVP, Microsoft MCT, and GitHub Star. In her work Barbara aims to be the bridge between strategy, technology, education and development.  Focus areas include the Microsoft Cloud Adoption Framework, Generative AI, Infrastructure as Code, PowerShell and GitHub.  Barbara is passionate about teaching in an accessible manner, in person, as a teacher for LinkedIn Learning and as a regular speaker at conferences and user groups. She is actively involved in the tech community. She contributes to the organization of major events, including the European PowerShell Conference. ",
+      "TagLine": "Azure technical lead @ OGD | Azure MVP | GitHub Star",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/barbara-forbes.jpg",
+      "sessions": [
+        "github-actions-to-deploy-to-azure-take-it-to-the-next-level"
+      ]
+    },
+    {
+      "Id": "bart-renders",
+      "FullName": "Bart Renders",
+      "Bio": "Bart Renders, an IT-Consultant at Info Support with a passion for propelling businesses through software solutions. With 4 years of experience in the industry branch, Bart has seamlessly merged hardware and software in multiple projects.\r\n\r\nEager to share his wealth of knowledge, Bart found his voice as a speaker, driven by a desire to extend his insights beyond project boundaries. Although new to the speaking scene, he admires engaging speakers and aims to captivate audiences with exciting new knowledge and inspiration.\r\n\r\nGet ready to embark on a journey of innovation and fresh insights with Bart as your guide.",
+      "TagLine": "IT Consultant @ Info Support",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/bart-renders.JPG",
+      "sessions": [
+        "from-duplo-to-domain-knowledge"
+      ]
+    },
+    {
+      "Id": "daniel-mertens",
+      "FullName": "Dani\u00EBl Mertens",
+      "Bio": "Dani\u00EBl is a software consultant at Info Support with a passion for problem solving. He loves solving coding puzzle and participating in Hackathons and coding challenges.",
+      "TagLine": "Info Support - Software Engineer",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/daniel-mertens.jpg",
+      "sessions": [
+        "aspire-for-the-cloud-building-applications-with-net-aspire"
+      ]
+    },
+    {
+      "Id": "edwin-van-wijk",
+      "FullName": "Edwin van Wijk",
+      "Bio": "I have been working in IT since 1999 and I\u0027m currently working as Principal Solution Architect, managing consultant and Microsoft Community Lead at Info Support in The Netherlands. I\u0027m a Microsoft MVP in the Developer Technologies category  (since 2016). My primary areas of expertise are: building distributed systems, systems integration, (cloud-native) software architecture and patterns, software craftsmanship, .NET (Core) development, Azure and DevOps. I love sharing my experience and knowledge about these subjects by training people, publishing videos (www.youtube.com/dotnetflix) and speaking at conferences. ",
+      "TagLine": "Principal Solution Architect / Managing Consultant at Info Support \u0026 Microsoft MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/edwin-van-wijk.jpg",
+      "sessions": [
+        "dapr-workshop-build-microservice-applications-the-easy-way"
+      ]
+    },
+    {
+      "Id": "erwin-staal",
+      "FullName": "Erwin Staal",
+      "Bio": "Erwin Staal is an Azure Architect and DevOps consultant working for Xebia in the Netherlands. Helping companies deliver their software to customers using DevOps practices and cloud-native architectures is what he loves to do. He believes in the power of both the monolith and microservices and prefers to run his workload on the Azure Cloud and/or Kubernetes.\r\nBesides the work he does for the customers of Xebia, he has a passion for sharing knowledge. He is one of the authors of \u0027Azure Infrastructure as Code\u0027 (https://www.manning.com/books/azure-infrastructure-as-code), occasionally writes a blog, and is an international speaker at conferences.",
+      "TagLine": "Azure Architect @ Xebia, Author of \u0027Azure Infrastructure as Code\u0027",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/erwin-staal.jpg",
+      "sessions": [
+        "efficient-and-secure-software-delivery-with-azure-deployment-environments-and-dev-box"
+      ]
+    },
+    {
+      "Id": "henry-been",
+      "FullName": "Henry Been",
+      "Bio": "Henry Been is an independent architect and developer from The Netherlands. He enjoys working with software development teams to create and deliver software for the Azure cloud. His interests include Azure, Agile, DevOps, software architecture and the design and implementation of testable and maintainable software. Besides his work he is a speaker at international conferences, is the author of two books, and creates online training courses for Pluralsight and A Cloud Guru. For his work in the community, he has been awarded the Microsoft MVP Award since 2019. To follow Henry, you can go to his blog henrybeen.nl or look him up on LinkedIn: https://www.linkedin.com/in/henrybeen\r\n",
+      "TagLine": "DevOps \u0026 Azure Architect | Microsoft MVP",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/henry-been.jpg",
+      "sessions": [
+        "designing-an-iam-strategy-for-your-engineering-platform"
+      ]
+    },
+    {
+      "Id": "johnny-hooyberghs",
+      "FullName": "Johnny Hooyberghs",
+      "Bio": "Johnny Hooyberghs is a consultant for Involved since 2014 focusing on .NET architecture and backend development and a Microsoft MVP since 2020. Prior to joining Involved, he has had experience developing software for Corilus since 2008. He has been passionate about .NET ever since it was released and his areas of expertise are C#, .NET (Core), ASP.NET (Core), Entity Framework (Core), Cloud Native Development, Azure Cloud and ALM using the Microsoft Stack. Every now and then he enjoys doing some web development using Blazor and app development using MAUI. From 2010 to 2020, Johnny spent some of his free time teaching .NET and C# for the adult education institute CVO Antwerpen. When he\u0027s not working or teaching, he likes some casual gaming, scuba diving, learning to play the piano, travelling the world and visiting as many theme parks as possible.",
+      "TagLine": "Passionate Developer at Involved and Microsoft MVP",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/johnny-hooyberghs.jpg",
+      "sessions": [
+        "creating-a-quantum-algorithm-using-microsoft-q"
+      ]
+    },
+    {
+      "Id": "jurre-brandsen",
+      "FullName": "Jurre Brandsen",
+      "Bio": "Jurre is an enthusiastic professional who recently embarked on his journey as a Software Engineer at Info Support. His areas of interest include (but not limited to) .NET development, Distributed Systems, and Artificial Intelligence. With a solid foundation in IT and a passion for technology, Jurre is eager to dive into the world of software engineering and make meaningful contributions to the field. ",
+      "TagLine": "Software Engineer at Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/jurre-brandsen.jpg",
+      "sessions": [
+        "genai-from-the-trenches-from-legacy-to-a-modern-development-stack"
+      ]
+    },
+    {
+      "Id": "leo-visser",
+      "FullName": "Leo Visser",
+      "Bio": "I work as a Cloud Consultant for \u201COGD ict-diensten\u201D (Netherlands) where I consult different companies about making better use of cloud techniques and transforming their application to the cloud. Before that I worked as a (lead) SysOps engineer for a couple of years. During this time I focused a lot on automating work to free up resources and optimize the work to make sure the customers could be served with a small team of dedicated people. I also write on my blog https://www.autosysops.com where I share insights I have gathered during my IT career.",
+      "TagLine": "Microsoft MVP | Cloud Consultant @ OGD",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/leo-visser.jpg",
+      "sessions": [
+        "boost-your-azure-functions-with-api-management",
+        "how-you-got-hacked-before-the-code-hit-production"
+      ]
+    },
+    {
+      "Id": "lucien-immink",
+      "FullName": "Lucien Immink",
+      "Bio": "A Java developer that saw the light and embraced Internet Explorer 6 as his digital overlord.\r\nOver two decades in the field has taught Lucien how we often reinvent the wheel to accommodate new shiny frameworks.\r\nNow, as a Principal Consultant, his mission is to discover elegant solutions for his clients. While we\u2019ve moved beyond Flash and jQuery, the web platform technologies: HTML, CSS, and JavaScript remain essential. Rather than battling the platform, let\u2019s embrace it.\r\nLucien is a rewarded Google Developer Expert for Web Technologies and capabilities since 2022.",
+      "TagLine": "Principal Consultant, GDE web technology",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/lucien-immink.jpg",
+      "sessions": [
+        "unlocking-seamless-collaboration-designfirst-apis-for-ui-components"
+      ]
+    },
+    {
+      "Id": "marc-duiker",
+      "FullName": "Marc Duiker",
+      "Bio": "Marc is a Sr Developer Advocate at Diagrid with a strong focus on event-driven architectures. He loves helping developers to achieve more every day.\r\n\r\nYou might have seen Marc at a developer meetup or conference, since he\u0027s a regular speaker and event-organizer in the area of Dapr, Azure cloud, and serverless technologies. From 2019 to 2024 Marc received the Microsoft Azure MVP award for his community contributions.\r\n\r\nIn his spare time, Marc likes to give attention to the creative part of his brain. He likes to create pixel art (check out VSCode Pets), code visuals \u0026 music, and create an occasional retro game.",
+      "TagLine": "I \u2665 Event-driven, Dev Communities, \u0026 Creative Coding",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/marc-duiker.png",
+      "sessions": [
+        "failure-is-not-an-option-durable-execution-dapr-"
+      ]
+    },
+    {
+      "Id": "maurice-de-beijer",
+      "FullName": "Maurice de Beijer",
+      "Bio": "Maurice de Beijer is an independent software consultant and trainer. He specializes in TypeScript, ECMAScript, and React. His work includes popular collaboration software as well as a large, global, safety application for the oil and gas industry as well as a FinTech startup. He has a preference for working with startups and smaller, more dynamic companies. Maurice is also active in the open source community. He teaches ECMAScript, TypeScript, React, Cypress, Playwright and RxJS courses. From 2005 to 2024, he has received Microsoft\u2019s Yearly Most Valuable Professional Award. Further, Maurice is active in the Dutch dotNed user group and helps organize its meetings.",
+      "TagLine": "Tell me, and I will forget. Show me and I may remember. Involve me, and I will understand",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/maurice-de-beijer.jpg",
+      "sessions": [
+        "building-robust-web-applications-with-testdriven-development-and-playwright"
+      ]
+    },
+    {
+      "Id": "michael-hompus",
+      "FullName": "Micha\u00EBl Hompus",
+      "Bio": "Micha\u00EBl Hompus is an Architect and Area Lead at Info Support.\r\n\r\nAs an architect he is part of several teams, creating new and innovative solutions, preferably using the Microsoft Cloud.\r\nMicha\u00EBl has many years of development experience with dotnet, Java, Azure, DevOps, Office, and Dynamics 365.\r\n\r\nHis passion is to share knowledge with colleagues, customers, and peers.\r\nMicrosoft has recognized his efforts for the community by awarding him a Microsoft MVP award.",
+      "TagLine": "Architect @ Info Support | Microsoft MVP",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/michael-hompus.jpg",
+      "sessions": [
+        "from-duplo-to-domain-knowledge"
+      ]
+    },
+    {
+      "Id": "niels-groeneveld",
+      "FullName": "Niels Groeneveld",
+      "Bio": "Niels is an experienced platform engineer who collaborates with various customers to implement and optimize platform ways of working. With a strong focus on creating efficient, scalable, and robust platforms, he assists organizations in transforming and enhancing their technological infrastructure. Niels is known for his expertise in building sustainable solutions that streamline business processes and foster innovation.\r\n\r\nPassionate about technology, Niels enjoys sharing his knowledge about Azure and cloud-native tooling. His customer-centric approach and dedication to continuous learning make him a valuable partner for companies looking to improve and future-proof their platform strategies.",
+      "TagLine": "Platform engineer @ Cegeka",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/niels-groeneveld.jpg",
+      "sessions": [
+        "mastering-containers-a-comprehensive-introduction-to-docker-and-kubernetes"
+      ]
+    },
+    {
+      "Id": "roelant-dieben",
+      "FullName": "Roelant Dieben",
+      "Bio": "With over 20 years of experience developing software on the Microsoft stack, Roelant Dieben has a lot to share about stuff that has been obsolete for years. With XPRTZ.cloud he is helping companies with their Azure cloud challenges, he is a Microsoft Azure MVP, and has a passion for machine learning \u0026 AI and application lifecycle management.",
+      "TagLine": "Owner @ XPRTZ.cloud",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/roelant-dieben.jpg",
+      "sessions": [
+        "the-philosophy-of-truth-in-the-age-of-ai-is-the-truth-still-out-there"
+      ]
+    },
+    {
+      "Id": "sander-molenkamp",
+      "FullName": "Sander Molenkamp",
+      "Bio": "Sander Molenkamp is a principal cloud architect and Microsoft Azure MVP with over 25 years of professional experience. He works for Info Support (http://www.infosupport.com) designing and developing customer solutions using cloud native architectures.\r\nSander is also an accomplished speaker, having shared his insights and expertise at numerous international conferences. He is passionate about technology and freely shares his knowledge through the dotnetFlix YouTube channel (www.youtube.com/dotnetflix).\r\nFurthermore, Sander actively contributes to the organization of multiple free community events, including the Dutch Azure Meetup, Azure Fest, and Bitbash.\r\nIn his free time, Sander enjoys traveling, is (still) learning to play the ukelele, and tinkers with technology and LEGO. He has also defeated the sword master of M\u00EAl\u00E9e Island\u2122\uFE0F.",
+      "TagLine": "Principal Cloud Architect @ Info Support \u0026 Microsoft Azure MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/sander-molenkamp.jpg",
+      "sessions": [
+        "dapr-workshop-build-microservice-applications-the-easy-way"
+      ]
+    },
+    {
+      "Id": "sander-ten-brinke",
+      "FullName": "Sander ten Brinke",
+      "Bio": "Sander ten Brinke is a Microsoft MVP and Lead Software Engineer at Arcady, a Dutch IT consultancy firm based in Zwolle. He loves working with .NET, Azure, DevOps and a whole lot more. He always stays up to date with all new technology and loves sharing his knowledge with everyone by speaking, blogging, podcasting and more!",
+      "TagLine": "Lead Software Engineer @ Arcady | Microsoft MVP (Developer Technologies)",
+      "IsTopSpeaker": true,
+      "ProfilePictureUrl": "img/winter-2025/speakers/sander-ten-brinke.jpg",
+      "sessions": [
+        "the-best-ways-to-use-the-latest-openapi-features-in-net-9"
+      ]
+    },
+    {
+      "Id": "stephan-van-rooij",
+      "FullName": "Stephan van Rooij",
+      "Bio": "A blogger, a speaker but mainly a software architect with a strong focus on security, identity and automation. My day job is all .NET core and single-sign-on. If I have some spare time, I\u0027m mostly working on one off my home automation projects (with over half a million combined downloads)\r\n\r\nI\u0027m also an occasional contributor to @azure/msal, azure/microsoft docs and Azure pipeline tasks\r\n\r\nCheck my blog or github profile for more details",
+      "TagLine": "Software architect at Smartersoft",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/stephan-van-rooij.jpg",
+      "sessions": [
+        "uncovering-the-magic-of-managed-identity-a-deep-dive-into-security"
+      ]
+    },
+    {
+      "Id": "steven-hillaert",
+      "FullName": "Steven Hillaert",
+      "Bio": "Steven took up several roles over the past 20 years, from junior developer to team lead and architect. Currently working as a coach at AllPhi where he now develops other developers in technical and not so technical areas.\r\n\r\nMain technical interests are architecture, distributed systems and api design.\r\n\r\nWhen it comes to non-technical subjects he likes to coach, share knowledge, push others to share knowledge and in general help others grow.\r\n\r\nIn his free time he likes to sport, play chess and boardgames and tame his 2 kids.",
+      "TagLine": "Developer at heart, Regional Unit Coach at AllPhi",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/steven-hillaert.jpg",
+      "sessions": [
+        "log-it-like-its-hot-unleashing-the-superpowers-of-logging"
+      ]
+    },
+    {
+      "Id": "tom-van-den-berg",
+      "FullName": "Tom van den Berg",
+      "Bio": "Tom van den Berg is a software consultant at Info Support.\r\nAs a software consultant he is part of a team that realizes new and innovative solutions.\r\nTom likes to think outside of the box and he gets a lot of energy from sharing knowledge and encourage other people to think outside of the box.",
+      "TagLine": "Software consultant",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2025/speakers/tom-van-den-berg.jpg",
+      "sessions": [
+        "securing-nugets-supply-chain-flow"
+      ]
+    }
+  ],
+  "Sessions": [
+    {
+      "Id": "ed645245-d1f2-4461-b373-062233036d1c",
+      "Title": "Registration and Welcome",
+      "Description": null,
+      "StartsAt": "2025-01-24T08:30:00",
+      "EndsAt": "2025-01-24T09:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "dapr-workshop-build-microservice-applications-the-easy-way",
+      "Title": "Dapr workshop: build microservice applications the easy way",
+      "Description": "Dapr is an open source, event-driven, portable runtime for building microservices. It provides powerful building blocks to make it easy for developers to build resilient microservice applications using a variety of languages and frameworks.\r\n\r\nIn this session you will get an introduction of Dapr and the Dapr building blocks. After that, you will learn how to apply Dapr yourself in a sample application during the hands-on part of the workshop.\r\n\r\nThe workshop features step-by-step instructions so you can work on this at your own pace. During the workshop you will get hands-on experience with the following Dapr building blocks: service invocation, state management, pub/sub, bindings and secret management.",
+      "StartsAt": "2025-01-24T09:00:00",
+      "EndsAt": "2025-01-24T12:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "sander-molenkamp",
+        "edwin-van-wijk"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "building-robust-web-applications-with-testdriven-development-and-playwright",
+      "Title": "Building Robust Web Applications with Test-Driven Development and Playwright",
+      "Description": "Get ready to take your front-end development skills to the next level with our hands-on workshop. In this four-hour session, you will learn the ins and outs of test-driven development using Playwright, a powerful tool that will revolutionize your web development workflow.\r\n\r\nAre you tired of spending endless hours debugging issues in your web applications? Dive deep into writing tests before writing code, ensuring top-notch quality and functionality in your web applications. Say goodbye to manual testing and hello to automated tests that catch bugs early in the development process.\r\n\r\nJoin us for an interactive and fun workshop where you\u0027ll gain the confidence to elevate your front-end development game and build web applications like a pro. Don\u0027t let common pain points like inconsistent UI behavior or regression issues slow you down - learn how to effectively use Playwright to avoid these pitfalls and streamline your development process.\r\n\r\nDon\u0027t miss this opportunity to unlock the full potential of test-driven development with Playwright \u2013 sign up now and get ready to uplevel your skills!",
+      "StartsAt": "2025-01-24T09:00:00",
+      "EndsAt": "2025-01-24T12:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "maurice-de-beijer"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "securing-nugets-supply-chain-flow",
+      "Title": "Securing NuGet\u0027s Supply Chain Flow",
+      "Description": "Software applications are no longer built entirely from custom code. Instead, they are made up of a variety of third-party components, including open-source libraries, frameworks, and modules. Many developers appear to be unaware of the risks inherent in the software supply chain.\r\n\r\nIf you include software of which you don\u0027t know the origin, you are exposed to the risk of including malicious code in your software. There can be vulnerabilities in the package that could be exploited and used as a backdoor to harm your environment. One of the most famous examples was the finding of a vulnerability in Log4J.\r\n\r\nTo mitigate these risks, it is essential to understand and manage the components you use in your software. In this session will explore best practices for identifying, assessing, and managing third-party software components to ensure the security and integrity of your applications.",
+      "StartsAt": "2025-01-24T09:00:00",
+      "EndsAt": "2025-01-24T12:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "tom-van-den-berg"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 4"
+    },
+    {
+      "Id": "146977df-3506-494f-84a1-96fd749b46fb",
+      "Title": "Lunch",
+      "Description": null,
+      "StartsAt": "2025-01-24T12:00:00",
+      "EndsAt": "2025-01-24T13:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "mastering-containers-a-comprehensive-introduction-to-docker-and-kubernetes",
+      "Title": "Mastering Containers: A Comprehensive Introduction to Docker and Kubernetes",
+      "Description": "In today\u2019s dynamic software development environment, containerization has become essential for streamlining workflows and optimizing application deployment. This half-day workshop offers an in-depth introduction to Docker and Kubernetes, beginning with a foundational overview of Docker. Participants will learn core concepts and commands through hands-on exercises, enabling them to build, deploy, and manage containers efficiently. The latter half of the workshop transitions to Kubernetes, covering its architecture and key components. Practical labs will provide experience in orchestrating containerized applications using Kubernetes, ensuring attendees acquire the skills needed to implement these powerful tools in their projects. \r\nJoin us to enhance your development practices and stay ahead in the ever-evolving tech landscape.",
+      "StartsAt": "2025-01-24T13:00:00",
+      "EndsAt": "2025-01-24T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "niels-groeneveld"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Introductory and overview",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "aspire-for-the-cloud-building-applications-with-net-aspire",
+      "Title": "Aspire for the Cloud: Building applications with .NET Aspire",
+      "Description": "\r\nJoin us for an hands-on workshop where you\u0027ll learn to develop cloud-native, distributed applications using .NET Aspire\u2014a powerful, opinionated stack designed for scalability, observability, and production readiness. Through hands-on exercises, you\u0027ll explore the Aspire Dashboard, which simplifies the monitoring and management of distributed systems, ensuring your applications are always performing at their best.\r\n\r\nDiscover how .NET Aspire\u0027s orchestration streamlines local development by automatically handling configurations and service interconnections, reducing complexity when building sophisticated applications. You\u2019ll also dive into seamless integrations with popular services like RabbitMQ and PostgreSQL, and learn how standardized configuration patterns make connecting services easier and more reliable.\r\n\r\nBy the end of the workshop, you\u0027ll have the expertise to develop and manage robust cloud-native applications using .NET Aspire.\r\n\r\nWhat you\u0027ll learn:\r\n\r\n- How to use .NET Aspire for building scalable, distributed applications.\r\n- Effective monitoring and management with the Aspire Dashboard.\r\n- Simplifying local development with .NET Aspire\u2019s orchestration tools.\r\n- Integrating third-party services with your application.\r\n\r\nWorkshop Requirements:\r\n\r\n- Git\r\n- A .NET IDE (Visual Studio, Visual Studio Code, or Rider) with the ASP.NET workload installed\r\n- Docker Desktop\r\n- Latest Node.js\r\n",
+      "StartsAt": "2025-01-24T13:00:00",
+      "EndsAt": "2025-01-24T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "daniel-mertens"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Introductory and overview",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "boost-your-azure-functions-with-api-management",
+      "Title": "Boost your Azure Functions with API Management",
+      "Description": "Are you wasting precious development time adding authentication and other features to your PowerShell Azure Functions? Stop doing this and start leveraging the power of serverless Azure API Management.\r\n\r\nIn this talk you will learn how to use API Management to add authentication and you will also learn how to connect to the Azure Key Vault to secure your functions even more. To top it off you will learn how to set this up in a scalable way by utilizing the serverless platform. You will also learn how to set up reusable parts in your API management to save even more work.\r\n\r\nSo if you don\u2019t want to worry about security when writing PowerShell Azure Functions then join this talk to learn how to offload that!",
+      "StartsAt": "2025-01-24T13:00:00",
+      "EndsAt": "2025-01-24T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "leo-visser"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "e823f907-104d-422a-9c4a-b2221701a4e5",
+      "Title": "Registration and Welcome",
+      "Description": null,
+      "StartsAt": "2025-01-25T08:30:00",
+      "EndsAt": "2025-01-25T09:15:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "failure-is-not-an-option-durable-execution-dapr-",
+      "Title": "Failure is not an option: durable execution \u002B Dapr = \uD83D\uDE80",
+      "Description": "Applications break all the time, there could be a network issue, a cloud provider outage, or just a glitch in the matrix. But as a developer, you really need your applications to be resilient without the need to recover databases and restart services manually.\r\n\r\nIn this session, I\u0027ll demonstrate how Dapr Workflow provides durable execution, which enables you to write reliable workflows as code. In addition, I\u0027ll show how resiliency policies in Dapr improve reliable communication across services and resources when developing distributed applications.\r\n\r\nI\u0027ll go into specific workflow features, such as scheduling, sequential and parallel execution, and waiting for external events. I\u0027ll show many code samples (in C#) for each of these features and will run the applications using the Dapr CLI to demonstrate their resiliency.\r\n\r\nBy the end of the session, you will have a good grasp of how durable execution with Dapr workflow and resiliency policies can help you build resilient applications.",
+      "StartsAt": "2025-01-25T09:15:00",
+      "EndsAt": "2025-01-25T10:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "marc-duiker"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Advanced",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "genai-from-the-trenches-from-legacy-to-a-modern-development-stack",
+      "Title": "GenAI from the trenches: from legacy to a modern development stack",
+      "Description": "Generative AI changes how we build software. Many of you use Github Copilot or other AI coding assistants daily or have tried one. Although these coding assistants are powerful, you can do so much more with GPT-4 to improve your software development game.\r\n\r\nWe combined Generative AI with software engineering best practices to translate a complete legacy codebase built in a low-code solution into a modern approach with Vue and Typescript. This allowed us to translate the codebase with 85% less effort than translating the code by hand. We took away the tedious work by automating it with AI while allowing engineers to review and improve the overall structure of the solution.\r\n\r\nIn this talk, you\u2019ll learn how we use generative AI to translate complete code bases and how to iterate on your prompts using a Human-In-The-Loop principle. We\u2019ll also demonstrate how generative AI can be a powerful asset for developers, enhancing rather than replacing human creativity.\r\n",
+      "StartsAt": "2025-01-25T09:15:00",
+      "EndsAt": "2025-01-25T10:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "jurre-brandsen"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "uncovering-the-magic-of-managed-identity-a-deep-dive-into-security",
+      "Title": "Uncovering the Magic of Managed Identity: A Deep Dive into Security",
+      "Description": "Join me for an look under the hood of Azure Managed Identities! In this deep dive session, we\u0027ll explore the inner workings of this awesome technique, and see how it\u0027s transforming the way we manage security in our applications. As a contributor to these open-source libraries, I\u0027m uniquely qualified to take you on this journey.\r\n\r\nWe\u0027ll cover a range of topics, including:\r\n\r\n- How Managed Identities works and what happens behind the scenes\r\n- The risks of using Managed Identities and how to secure your environment\r\n- Using Managed Identity outside of Azure and in your local development environment\r\n- The relationship between Managed Identities and Federated Credentials\r\n- How GitHub Actions use a similar pattern to authenticate to Azure\r\n\r\nBring your questions, and let\u0027s discuss the security side of Managed Identity over a cup of coffee or your favorite beverage. See you there!\r\n",
+      "StartsAt": "2025-01-25T10:15:00",
+      "EndsAt": "2025-01-25T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "stephan-van-rooij"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Advanced",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "github-actions-to-deploy-to-azure-take-it-to-the-next-level",
+      "Title": "GitHub Actions to deploy to Azure: Take it to the next level",
+      "Description": "A basic deployment to Azure from GitHub Actions can be set up in 10 minutes. And we will do that, to get the basics down. But let\u0027s take it a step further. How can you make sure a workflow runs as efficient and flexible as possible? What options do you have to make a connection? Can different Bicep templates interact with each other? How do you work with stages? How do you make the workflow act differently based on branch or pull request label? Can you implement manual approvals?\r\n\r\nIn this session we will start with the basic workflow and walk through these great options that GitHub has to offer to get your workflow to work for you. ",
+      "StartsAt": "2025-01-25T10:15:00",
+      "EndsAt": "2025-01-25T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "barbara-forbes"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "how-you-got-hacked-before-the-code-hit-production",
+      "Title": "How you got hacked before the code hit production",
+      "Description": "With the rise of AI coding assistants a new attack vector has opened up for hackers! Let\u2019s dive into the world of typosquatting  and other techniques that hackers have been using. Does AI protect you against these attacks or is it maybe even more vulnerable?\r\n\r\nIn this talk you will learn how hackers can use the software supply chain and target dependencies in different ways to eventually get to your code. To remedy this you can set up artifact systems which allow you to check dependencies before they hit your code.\r\n\r\nIf you want to learn how to make your coding environment safer and prevent hackers from tricking you or your AI assistant, join this talk and find out!",
+      "StartsAt": "2025-01-25T10:15:00",
+      "EndsAt": "2025-01-25T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "leo-visser"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "5179a396-f8ce-4d62-b8b1-3a99f0e0f785",
+      "Title": "Coffee Break",
+      "Description": null,
+      "StartsAt": "2025-01-25T11:05:00",
+      "EndsAt": "2025-01-25T11:25:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "the-best-ways-to-use-the-latest-openapi-features-in-net-9",
+      "Title": "The best ways to use the latest OpenAPI features in .NET 9!",
+      "Description": ".NET 9 makes some impactful changes for creating .NET applications with OpenAPI support! In this session, we\u2019ll dive into the breaking changes and latest OpenAPI advancements for .NET 9 and explore how these features can be leveraged to create robust, efficient, and well-documented APIs. We will cover both minimal API\u0027s and controllers.\r\n\r\nThis presentation will feature lots of demos with the aim of giving you an end-to-end experience of the latest and greatest features of OpenAPI in .NET 9!",
+      "StartsAt": "2025-01-25T11:25:00",
+      "EndsAt": "2025-01-25T12:15:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "sander-ten-brinke"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "creating-a-quantum-algorithm-using-microsoft-q",
+      "Title": "Creating a quantum algorithm using Microsoft Q#",
+      "Description": "In the last couple of years, there has been a lot of talk about quantum computing and many years ago, Microsoft has released their preview of Azure Quantum. So today, you cannot only write quantum programs on a simulated environment with the QDK and Q#, but you can also compile Q# and target a physical quantum computer on Azure Quantum.\r\nIn this session, I will guide you through the implementation of an existing quantum algorithm, step by step, while I explain all the details. This will be a very technical and code-heavy session.",
+      "StartsAt": "2025-01-25T11:25:00",
+      "EndsAt": "2025-01-25T12:15:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "johnny-hooyberghs"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Advanced",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "unlocking-seamless-collaboration-designfirst-apis-for-ui-components",
+      "Title": "Unlocking Seamless Collaboration: Design-First APIs for UI Components",
+      "Description": "In the ever-evolving world of software development, teams grapple with a fundamental challenge: collaboration. Some teams have complete control over their user interfaces (UI), while others navigate the intricate dance between front-end and back-end developers. But why does collaboration remain an elusive goal? Shouldn\u2019t it be simpler?\r\n\r\nImagine this: treating UI components as if they were APIs. Just as we meticulously design APIs before diving into implementation, let\u2019s apply the same principle to components. Picture this: complex components\u2014think interactive maps, ordering systems, and payment options\u2014encased in a black-box with a well-defined API. Now take it a step further. Extend this approach to both back-end and front-end frameworks. The result? A harmonious symphony of development, where seamless collaboration becomes the norm.\r\n\r\nSo, let\u2019s embrace the power of design-first thinking. Let\u2019s redefine how we build, share, and collaborate. Because when components come with their APIs preordained, magic happens!",
+      "StartsAt": "2025-01-25T11:25:00",
+      "EndsAt": "2025-01-25T12:15:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "lucien-immink"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "7aebb8a3-4a27-488f-896d-5775111da551",
+      "Title": "Lunch",
+      "Description": null,
+      "StartsAt": "2025-01-25T12:15:00",
+      "EndsAt": "2025-01-25T13:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "from-duplo-to-domain-knowledge",
+      "Title": "From Duplo to Domain Knowledge",
+      "Description": "Are you struggling to onboard new employees who have the technical knowledge but lack functional domain experience? Do you let new people struggle through code, learning the domain along the way? In our work as IT consultants, we faced this challenge and discovered that traditional methods simply weren\u0027t cutting it. To address this, we innovated a unique solution: a serious game designed to simplify and accelerate domain learning.\r\n\r\nOur journey began with simple tools like post-its and evolved into using customized Duplo blocks to visualize complex processes. This hands-on approach not only made learning more engaging but also more effective. In our session, we\u0027ll walk you through our entire process, from the initial concept to the successful implementation of the game, and share the unexpected successes that exceeded our original goals.\r\n\r\nYou\u2019ll gain practical insights into creating your own serious game tailored to your organization\u0027s needs. We\u2019ll provide guidance and valuable tips on how to attract and integrate experienced professionals into your domain swiftly and effectively. Discover how to transform your onboarding process and ensure new team members hit the ground running from day one.\r\n\r\nWhether you\u0027re an IT leader, a trainer, or someone passionate about innovative learning techniques, this session is for you. Join us to explore a new approach to domain education and leave equipped with actionable ideas to revolutionize how you educate and integrate new team members.",
+      "StartsAt": "2025-01-25T13:00:00",
+      "EndsAt": "2025-01-25T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "michael-hompus",
+        "bart-renders"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "designing-an-iam-strategy-for-your-engineering-platform",
+      "Title": "Designing an IAM Strategy for your Engineering Platform",
+      "Description": "Over the last few years, a lot of attention has been paid to building (engineering) platforms. But how do you manage access to your environments for engineers?  Do you even manage this with the same rigor as you manage application security? And how to find the balance between security and usability?\r\n\r\nIn this session, Henry will explore with you how he has solved this at his customers. We will take a look at Entra ID Access Packages and Privileged Identity Management and see how we can apply those in a practical design that allows for self-service requests for access, approvals by their peers or a manager, automatic access reviews, and much more!",
+      "StartsAt": "2025-01-25T13:00:00",
+      "EndsAt": "2025-01-25T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "henry-been"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Advanced",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "the-philosophy-of-truth-in-the-age-of-ai-is-the-truth-still-out-there",
+      "Title": "The Philosophy of Truth in the Age of AI. Is the Truth still out there?",
+      "Description": "In a world increasingly dominated by AI-generated content, discerning truth from fiction has become a complex philosophical issue. This session seeks to explore this fascinating intersection of technology, philosophy, and truth, using Microsoft Azure\u0027s advanced AI capabilities as illustrative examples.\r\n\r\nWe will delve into the philosophical implications of AI\u0027s ability to generate seemingly authentic but fabricated content and the challenges it presents in our pursuit of truth. The session will explore the role of cutting-edge technologies in both creating and combatting this issue, with a special emphasis on Azure\u0027s AI and machine learning tools.\r\n\r\nWhether you\u0027re a philosopher musing on the nature of truth, a technology enthusiast intrigued by the implications of AI, or a professional seeking to understand and navigate this challenging landscape, this session promises thought-provoking insights and practical knowledge.\r\n\r\nThe truth is out there!",
+      "StartsAt": "2025-01-25T13:00:00",
+      "EndsAt": "2025-01-25T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "roelant-dieben"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "5d6c49d6-673b-40d5-93d0-be288bf821b2",
+      "Title": "Break",
+      "Description": null,
+      "StartsAt": "2025-01-25T13:50:00",
+      "EndsAt": "2025-01-25T14:10:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "efficient-and-secure-software-delivery-with-azure-deployment-environments-and-dev-box",
+      "Title": "Efficient and Secure Software Delivery with Azure Deployment Environments and Dev Box",
+      "Description": "DevOps has improved the speed of software development, but organizations still face the challenge of providing an efficient and secure infrastructure for teams while balancing agility, security, and compliance. To address this, Azure Deployment Environments is a new service that provides a way to quickly spin up app environments while maximizing security, compliance, and cost-efficiency. It perfectly fits within the upcoming self-service platform engineering approach.\r\n\r\nBy defining environment types, platform engineers can make it easy for developers to deploy environments with the right services, resources, and policies applied. Azure Deployment Environments integrates nicely with CI/CD tooling,  ensuring a smooth transition from development to production.\r\n\r\nBut where do developers craft their apps? How do we onboard new engineers quickly? Under the same umbrella as Deployment Environments, Azure Dev Box offers a streamlined development experience by providing developers with pre-configured environments tailored to their needs. This tool ensures consistency across development environments and facilitates collaboration among team members.\r\n\r\nThis session will provide a demonstration of the features and setup of Azure Deployment Environments, including integration with Azure Dev Box and CI/CD pipelines, showcasing how these tools collectively enhance software delivery efficiency and security.",
+      "StartsAt": "2025-01-25T14:10:00",
+      "EndsAt": "2025-01-25T15:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "erwin-staal"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "log-it-like-its-hot-unleashing-the-superpowers-of-logging",
+      "Title": "Log It Like It\u0027s Hot: Unleashing the Superpowers of Logging",
+      "Description": "Dive into the underestimated world of application logging. This talk sheds light on how logging, often less appreciated than unit testing, can be transformed into a powerful tool in your development arsenal.\r\n\r\nDiscover practical tips and tricks to elevate your logging from mere text files to a proactive, insightful resource. Learn how to automate logging to simplify troubleshooting and predict issues before they escalate. We\u2019ll discuss how to make your logs not just informative but actionable, turning them into a first line of defense when production environments go awry. We\u0027ll also dive in logging and tracing for your microservices and other distributed systems.\r\n\r\nI\u2019ll guide you through the nuances of modern logging practices, from implementing structured logging for better data analysis to smartly handling sensitive information. This session is ideal for developers and IT professionals seeking to enhance their logging strategy with efficiency and foresight. Maybe AI can also help us find insights in abnormal events.\r\n\r\nJoin me for a concise, insightful exploration into making logging an integral, dynamic part of your development process. Leave equipped with the knowledge to transform your logs into a valuable asset, ready to tackle any challenge that comes your way.\r\n",
+      "StartsAt": "2025-01-25T14:10:00",
+      "EndsAt": "2025-01-25T15:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "steven-hillaert"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "cf4592a3-ca97-4163-82b4-931bf4dc50f8",
+      "Title": "LEGO Sets Giveaway",
+      "Description": "Join our raffle to win some great LEGO sets! Every attendee has a chance to win as long as they\u0027re in person at the raffle.",
+      "StartsAt": "2025-01-25T15:05:00",
+      "EndsAt": "2025-01-25T15:15:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Room 1"
+    }
+  ]
+}

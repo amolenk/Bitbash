@@ -1,3 +1,8 @@
+@import "@/public/aos/aos.css";
+@import "@/public/bootstrap/bootstrap.min.css";
+@import "@/public/bootstrap-icons/bootstrap-icons.min.css";
+@import "@/public/galleria/themes/twelve/galleria.twelve.min.css";
+
 body {
     background-color: #121838;
     color: white;
@@ -58,4 +63,18 @@ em {
 
 code {
     color: #c02d76;
+}
+
+.btn-primary {
+  background-color: #E459BB;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  border-radius: 50px;
+  padding: 10px 30px;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: rgb(249, 36, 161);
 }

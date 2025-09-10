@@ -1,4 +1,5 @@
 export interface WebsiteSettings {
+  admittoUrl: string;
   currentEdition: string;
   currentEditionTitle: string;
   currentEditionPhotosPublished: boolean;
@@ -28,15 +29,16 @@ export interface WebsiteSettings {
 }
 
 export const websiteSettings: WebsiteSettings = {
-  currentEdition: "winter-2026",
-  currentEditionTitle: "2026",
+  admittoUrl: "https://app-admitto-api-utzwls7ov7ne2.wittysand-e7b3762f.swedencentral.azurecontainerapps.io",
+  currentEdition: "winter-2025",
+  currentEditionTitle: "2025",
   currentEditionPhotosPublished: false,
-  previousEdition: "winter-2025",
-  previousEditionTitle: "2025", 
-  preConWorkshopsDate: "2026-01-23",
-  conferenceDate: "2026-01-24",
-  agendaAnnounced: false,
-  agendaFinalized: false,
+  previousEdition: "winter-2024",
+  previousEditionTitle: "2024", 
+  preConWorkshopsDate: "2025-01-24",
+  conferenceDate: "2025-01-25",
+  agendaAnnounced: true,
+  agendaFinalized: true,
   speakersAnnounced: false,
   sessionizeCfpLink: "https://sessionize.com/bitbash-2026",
   cfpOpenTime: "2025-07-07T13:00:00+02:00",
@@ -45,9 +47,9 @@ export const websiteSettings: WebsiteSettings = {
   hubSpotPortalId: "25807913",
   hubSpotWorkshopTicketFormId: "a3d34d60-aa1f-453d-8f63-29ccee196660",
   hubSpotConferenceTicketFormId: "69e6d1c9-e1a0-4207-ae1d-c041fb07f074",
-  conferenceTicketSaleOpened: false,
+  conferenceTicketSaleOpened: true,
   conferenceTicketSoldOut: false,
-  workshopTicketSaleOpened: false,
+  workshopTicketSaleOpened: true,
   workshopTicketSoldOut: false,
   aftermovies: {
     "winter-2025": "https://www.youtube-nocookie.com/embed/RaM_pxesCcc?si=rsGEjH0zVlnNAJiy"
