@@ -71,10 +71,36 @@ code {
   border: none;
   font-size: 20px;
   border-radius: 50px;
-  padding: 10px 30px;
+  padding: 5px 30px;
   transition: all 0.2s;
 }
 
 .btn-primary:hover {
   background-color: rgb(249, 36, 161);
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+  background-color: silver
+}
+
+.card {
+    color: black;
+}
+
+.card h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.card-title {
+    color: black;
+}
+
+.form-control {
+    font-size: 1.5rem;
+}
+
+.col-form-label {
+    font-size: 1.5rem;
 }

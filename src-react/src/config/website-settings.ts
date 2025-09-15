@@ -31,7 +31,7 @@ export interface WebsiteSettings {
 export const websiteSettings: WebsiteSettings = {
   admittoUrl: "https://app-admitto-api-utzwls7ov7ne2.wittysand-e7b3762f.swedencentral.azurecontainerapps.io",
   currentEdition: "winter-2025",
-  currentEditionTitle: "2025",
+  currentEditionTitle: "Bitbash 2025",
   currentEditionPhotosPublished: false,
   previousEdition: "winter-2024",
   previousEditionTitle: "2024", 

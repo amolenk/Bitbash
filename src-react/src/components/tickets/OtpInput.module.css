@@ -1,0 +1,15 @@
+.otpInputs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.otpInput {
+  width: 40px;
+  height: 70px;
+  font-size: 3rem;
+  text-align: center;
+  border: 0;
+  background-color: #ddd;
+}
