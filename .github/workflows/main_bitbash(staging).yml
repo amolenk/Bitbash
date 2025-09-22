@@ -34,6 +34,7 @@ jobs:
           cd src-react
           pnpm install --frozen-lockfile
           pnpm build
+          ls -la .next
 
       # Create a clean deploy folder with only what the app needs at runtime
       - name: Create deploy bundle
@@ -45,6 +46,7 @@ jobs:
           cp src-react/pnpm-lock.yaml deploy/pnpm-lock.yaml
           cp src-react/server.js deploy/server.js
           cp src-react/web.config deploy/web.config
+          ls -la deploy
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
