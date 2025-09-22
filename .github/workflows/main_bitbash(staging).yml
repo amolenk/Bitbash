@@ -8,13 +8,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest         # Linux is faster & cheaper than Windows
+    runs-on: ubuntu-latest
     permissions:
       contents: read
 
     defaults:
       run:
-        working-directory: src-react   # <— All npm commands run inside this folder
+        working-directory: src-react
 
     steps:
       - uses: actions/checkout@v4
@@ -24,16 +24,21 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9 
+
       - name: Install and build
         run: |
-          npm ci
-          npm run build --if-present
+          pnpm install --frozen-lockfile
+          pnpm build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: src-react             # <— Upload the built Next.js app
+          path: src-react
 
   deploy:
     runs-on: ubuntu-latest
@@ -60,4 +65,4 @@ jobs:
         with:
           app-name: 'bitbash'
           slot-name: 'staging'
-          package: .                 # Deploy the artifact root (contains Next.js build)
+          package: .
