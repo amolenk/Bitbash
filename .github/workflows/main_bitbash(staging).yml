@@ -35,7 +35,7 @@ jobs:
           pnpm build
 
       - name: Zip artifact for deployment
-        run: zip -r next.zip . -x '.git*'*
+        run: zip -r ../next.zip . -x '.git*'*
 
     # Create a clean deploy folder with only what the app needs at runtime
     #   - name: Create deploy bundle
