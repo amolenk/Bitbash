@@ -1,0 +1,17 @@
+.speakerPhoto {
+    width: 256px;
+    height: 256px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    border: 4px solid rgba(238, 238, 238, 0.2);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.speakerPhotoImg {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+}

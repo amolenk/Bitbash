@@ -1,0 +1,48 @@
+.card {
+    transition: all 0.3s ease-in-out;
+    width: 18rem;
+    /* background: transparent; */
+    border: 0;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.speakerPhoto {
+    width: 128px;
+    height: 128px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    border: 4px solid rgba(238, 238, 238, 0.1);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.card:hover .speakerPhoto {
+    box-shadow: 0 0 40px 0 #269BB9;
+}
+
+.speakerPhotoImg {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.speakerName {
+    /* margin-bottom: 0; */
+    /* font-size: 1.5rem; */
+    /* line-height: 1.25; */
+    /* font-weight: bold; */
+}
+
+.speakerTagline {
+    /* font-size: 1rem;
+    line-height: 1.5;
+    font-weight: normal; */
+    /* color: rgba(238, 238, 238, 0.6); */
+}

@@ -1,0 +1,90 @@
+.countdown {
+    position: absolute;
+    display: inline-block;
+    bottom: 0px;
+    left: 30px;
+    width: 550px;
+}
+
+@media (max-width: 991px) {
+    .countdown {
+        left: 0px;
+        width: 350px;
+    }
+}
+
+.countdownImageBottom {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.countdownImageMiddle {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    left: 0px;
+}
+
+.countdownImageTop {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    left: 0px;
+}
+
+.countdownText {
+    position: absolute;
+    bottom: 50px;
+    left: 220px;
+    font-size: 62px;
+    font-family: Montserrat;
+    font-weight: 600;
+    color: black;
+    transform: scale(1, 2.5);
+    -webkit-transform: scale(1, 2.5);
+    -moz-transform: scale(1, 2.5);
+    -o-transform: scale(1, 2.5);
+    width: 122px;
+}
+
+@media (max-width: 991px) {
+    .countdownText {
+        bottom: 31px;
+        left: 140px;
+        font-size: 40px;
+        width: 78px;
+    }
+}
+
+
+.date {
+    display: block;
+    position: absolute;
+    font-family: "Agdasima", sans-serif;
+    font-size: 55px;
+    top: 110px;
+    right: 58px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+}
+
+.dateDays {
+    color: #F924A1;
+}
+
+.dateMonthYear {
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .date {
+        font-size: 35px;
+        top: 70px;
+        right: 38px;
+    }
+}

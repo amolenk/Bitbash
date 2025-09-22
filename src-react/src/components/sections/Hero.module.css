@@ -1,0 +1,110 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-width: 320px;
+    max-width: 2150px;
+    background-attachment: fixed;
+    background-image: url("/img/hero-galaxy.png?v=20250716");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    overflow: hidden;
+    position: relative;
+    min-height: 700px; 
+    max-height: 1600px;
+}
+
+@media (min-width: 2150px) {
+    .hero {
+        left: calc((100% - 2150px) / 2);
+    }
+}
+
+@media (max-width: 991px) {
+    .hero {
+        height: 1000px;
+        max-height: 1000px;
+        min-height: 1000px;
+    }
+}
+
+@media (max-width: 414px) {
+    .hero {
+        height: 667px;
+        max-height: 667px;
+        min-height: 667px;
+    }
+}
+
+.heroContainer {
+    background-image: url("/img/hero-foreground.png?v=20250716");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: bottom;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+@media (max-width: 991px) {
+    .heroContainer {
+        background-image: url("/img/hero-foreground-tablet.png?v=20250716");
+        background-size: 992px 833px;
+        height: 1000px;
+    }
+}
+
+@media (max-width: 414px) {
+    .heroContainer {
+        background-image: url("/img/hero-foreground-mobile.png?v=20250716");
+        background-size: 414px 457px;
+        height: 667px;
+    }
+}
+
+.hero h1 {
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: #E459BB;
+}
+
+.hero p {
+    color: #ebebeb;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.banner {
+    left: 5%;
+    position: absolute;
+    top: 175px;
+    width: 550px;
+}
+
+@media (max-width: 991px) {
+    .banner {
+        left: 5%;
+        top: 150px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 414px) {
+    .banner {
+        top: 110px;
+    }
+}

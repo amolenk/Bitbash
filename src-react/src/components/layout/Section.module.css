@@ -1,0 +1,77 @@
+.rocket1 {
+    background-image: url("/img/rocket-1.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.rocket2 {
+    background-image: url("/img/rocket-2.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.rocket3 {
+    background-image: url("/img/rocket-3.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.rocket4 {
+    background-image: url("/img/rocket-4.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.rocket5 {
+    background-image: url("/img/rocket-5.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: clamp(320px, 80%, 700px) auto;
+}
+
+.sectionContainer {
+    min-height: 300px;
+}
+
+.sectionHeader {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.sectionHeader h1 {
+    color: white;
+    display: inline;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+.sectionHeader h1::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 7px);
+    width: calc(100% + 20px);
+    left: -10px;
+    height: 5px;
+    background: linear-gradient(111.3deg, #269BB9 10%, #C248D6 90%);
+    text-align: center;
+    justify-content: center;
+}
+
+.sectionHeader h4 {
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+    margin-top: 23px;
+    color: white;
+}
