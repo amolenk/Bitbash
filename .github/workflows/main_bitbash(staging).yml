@@ -34,23 +34,26 @@ jobs:
           pnpm install --frozen-lockfile
           pnpm build
 
+      - name: Zip artifact for deployment
+        run: zip -r next.zip . -x '.git*'*
+
     # Create a clean deploy folder with only what the app needs at runtime
-      - name: Create deploy bundle
-        run: |
-          rm -rf ../deploy && mkdir -p ../deploy
-          cp -r .next ../deploy/.next
-          cp package.json ../deploy/package.json
-          cp pnpm-lock.yaml ../deploy/pnpm-lock.yaml
-          cp server.js ../deploy/server.js
-          cp web.config ../deploy/web.config
-          # include static assets if used
-          if [ -d public ]; then cp -r public ../deploy/public; fi
+    #   - name: Create deploy bundle
+    #     run: |
+    #       rm -rf ../deploy && mkdir -p ../deploy
+    #       cp -r .next ../deploy/.next
+    #       cp package.json ../deploy/package.json
+    #       cp pnpm-lock.yaml ../deploy/pnpm-lock.yaml
+    #       cp server.js ../deploy/server.js
+    #       cp web.config ../deploy/web.config
+    #       # include static assets if used
+    #       if [ -d public ]; then cp -r public ../deploy/public; fi
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: deploy  # <-- upload the clean bundle, not the whole src
+          path: next.zip  # <-- upload the clean bundle, not the whole src
 
   deploy:
     runs-on: ubuntu-latest
