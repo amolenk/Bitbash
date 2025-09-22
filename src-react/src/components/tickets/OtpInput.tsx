@@ -90,7 +90,7 @@ export default function OtpInput({ value, onChange }: OtpInputProps) {
             {value.map((digit, idx) => (
                 <input
                     key={idx}
-                    ref={el => (inputsRef.current[idx] = el)}
+                    ref={el => void (inputsRef.current[idx] = el)}
                     id={`otp-${idx}`}
                     type="text"
                     inputMode="numeric"

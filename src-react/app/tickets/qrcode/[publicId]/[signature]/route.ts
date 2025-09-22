@@ -3,9 +3,9 @@ import { NextRequest } from "next/server";
 
 export async function GET(
     req: NextRequest,
-    { params }: { params: { publicId: string; signature: string } }
+    context: { params: Promise<{ publicId: string; signature: string }> }
 ) {
-    const { publicId, signature } = params;
+    const { publicId, signature } = await context.params;
 
     const settings = websiteSettings.admitto;
     const encodedPublicId = encodeURIComponent(publicId);
