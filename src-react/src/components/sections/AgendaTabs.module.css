@@ -10,8 +10,8 @@
 .tabsItem {
     display: inline-block;
     margin: 4px;
-    font-size: 1.5rem;
     line-height: 20px;
+    text-transform: uppercase;
 }
 
 .tabsLink {
@@ -39,13 +39,6 @@
 
 .tabsItemActive .tabsLink {
     color: #fff;
-    background-color: #E459BB;
+    background-color: #269bb9;
     box-shadow: none;
-}
-
-.tabsItemActive .tabsLink:hover,
-.tabsItemActive .tabsLink:focus,
-.tabsItemActive .tabsLink:active {
-    color: #fff;
-    background-color: #E459BB;
 }

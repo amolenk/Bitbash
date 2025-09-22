@@ -11,7 +11,7 @@ export default function Home() {
     <MainLayout>
       <Hero />
       <About />
-      {websiteSettings.speakersAnnounced && <SpeakerHighlights />}
+      {websiteSettings.currentEdition.speakers.announced && <SpeakerHighlights />}
       <Venue />
       <Organizers />
     </MainLayout>

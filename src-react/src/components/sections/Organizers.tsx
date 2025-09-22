@@ -16,11 +16,11 @@ export default function Organizers() {
   ];
 
   return (
-    <Section id="organizers" headerText="Organizers" fadeUp={true} extraClass="justify-content-center text-center">
+    <Section id="organizers" headerText="Organizers" fadeUp={true} extraClass="justify-content-center text-center my-4">
       <div className="row">
         {organizers.slice(0, 2).map((organizer, index) => (
           <div key={index} className={`col ${styles.organizerItem} text-center`}>
-            <p>
+            <p className="lead text-light">
               <span className={styles.organizer}>
                 <img src={organizer.image} alt={organizer.name} />
               </span>
@@ -32,7 +32,7 @@ export default function Organizers() {
       <div className="row">
         {organizers.slice(2).map((organizer, index) => (
           <div key={index} className={`col ${styles.organizerItem} text-center`}>
-            <p>
+            <p className="lead text-light">
               <span className={styles.organizer}>
                 <img src={organizer.image} alt={organizer.name} />
               </span>

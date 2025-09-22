@@ -17,14 +17,14 @@ function shuffle<T>(array: T[]): T[] {
 }
 
 export default function SpeakerHighlights() {
-  const { data, error } = useSWR(`/data/${websiteSettings.currentEdition}.json`, fetcher);
+  const { data, error } = useSWR(`/data/${websiteSettings.currentEdition.slug}.json`, fetcher);
   if (error) return 'Failed to load';
   if (!data) return null;
 
   const speakers = shuffle(data.Speakers);
 
   return (
-    <Section id="speakers" headerText="Speakers" sectionBackground={3} fadeUp={true}>
+    <Section headerText="Speakers" extraClass="text-light" sectionBackground={3} fadeUp={true}>
       <div className="row">
         {speakers.slice(0, 3).map((speaker: any) => (
           <div key={speaker.Id} className="col-md-4 d-flex justify-content-center">
@@ -41,7 +41,7 @@ export default function SpeakerHighlights() {
       </div>
       <div className="row">
         <div className="col d-flex justify-content-center">
-          <a href="/speakers" className="btn btn-primary">
+          <a href="/speakers" className="btn btn-primary text-light">
             See all {speakers.length} speakers
           </a>
         </div>

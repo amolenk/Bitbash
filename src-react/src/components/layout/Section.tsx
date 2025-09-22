@@ -34,8 +34,8 @@ export default function Section({
       <div className={`${styles.sectionContainer} container`}>
         {headerText && (
           <div className={styles.sectionHeader}>
-            <h2>{headerText}</h2>
-            {subText && <h4>{subText}</h4>}
+            <h1>{headerText}</h1>
+            {subText && <h3>{subText}</h3>}
           </div>
         )}
         

@@ -34,7 +34,6 @@ export default function SessionDetailPage() {
 
   return (
     <MainLayout>
-        <div style={{ height: '130px' }}></div> {/* Header spacer */}
         <Section headerText={session.Title} extraClass="mb-5">
             <SessionDetailSection session={session} />
         </Section>

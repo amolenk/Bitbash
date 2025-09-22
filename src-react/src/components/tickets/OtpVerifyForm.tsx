@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import OtpInput from "./OtpInput";
-import { websiteSettings } from "../../config/website-settings";
+import SpinningButton from "../common/SpinningButton";
+import { verifyOtp as admittoVerifyOtp } from "../../api/admitto";
 
 export default function OtpVerifyForm() {
     const router = useRouter();
@@ -13,34 +14,17 @@ export default function OtpVerifyForm() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    async function verifyOtp(email: string, code: string) {
-        const url = `${websiteSettings.admittoUrl}/teams/bitbash/events/bitbash-2026/public/verify`;
-        try {
-            const res = await fetch(url, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, code })
-            });
-            if (!res.ok) {
-                const errorData = await res.json();
-                throw new Error(errorData?.detail || "Verification failed.");
-            }
-            return (await res.json()).registrationToken;
-        } catch (err: any) {
-            throw err;
-        }
-    }
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setError("");
         const code = otp.join("");
+        let token = null;
         try {
-            const token = await verifyOtp(email, code);
-            setLoading(false);
+            token = await admittoVerifyOtp(email, code);
             if (token) {
-                router.push(`/register/details?token=${encodeURIComponent(token)}&email=${encodeURIComponent(email)}`);
+                router.push(`/tickets/register?token=${encodeURIComponent(token)}&email=${encodeURIComponent(email)}`);
             }
         } catch (err: any) {
             setLoading(false);
@@ -52,7 +36,9 @@ export default function OtpVerifyForm() {
         <form onSubmit={handleSubmit} className="ticket-form">
             {error && <div className="text-danger my-3">{error}</div>}
             <OtpInput value={otp} onChange={setOtp} />
-            <button type="submit" className="btn btn-primary mt-2" disabled={loading || otp.some(digit => digit === "")}>Continue</button>
+            <SpinningButton loading={loading} disabled={otp.some(digit => digit === "")} className="mt-2">
+                Verify email
+            </SpinningButton>
         </form>
     );
 }

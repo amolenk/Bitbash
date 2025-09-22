@@ -12,7 +12,7 @@ interface Speaker {
 
 export default function SpeakerCard({ speaker }: { speaker: Speaker }) {
   const edition = websiteSettings.currentEdition;
-  const url = `/${edition}/speaker/${speaker.Id}`;
+  const url = `/${edition.slug}/speaker/${speaker.Id}`;
   return (
     <div
       className={`${styles.card} speaker bg-transparent border-0`}
@@ -27,8 +27,8 @@ export default function SpeakerCard({ speaker }: { speaker: Speaker }) {
             className={styles.speakerPhotoImg}
           />
         </div>
-        <h5 className={styles.speakerName}>{speaker.FullName}</h5>
-        <h4 className={styles.speakerTagline}>{speaker.TagLine}</h4>
+        <h3 className={styles.speakerName}>{speaker.FullName}</h3>
+        <p className={`${styles.speakerTagline}`}>{speaker.TagLine}</p>
       </div>
     </div>
   );

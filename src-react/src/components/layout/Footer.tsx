@@ -17,10 +17,10 @@ export default function Footer() {
           <i className={`bi bi-envelope ${styles.footerIcon}`}></i>
           E-mail
         </a>
-        <Link href="/code-of-conduct">
+        {/* <Link href="/code-of-conduct">
           <i className={`bi bi-peace ${styles.footerIcon}`}></i>
           Code of Conduct
-        </Link>
+        </Link> */}
       </p>
     </footer>
   );

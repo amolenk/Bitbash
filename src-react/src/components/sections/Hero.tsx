@@ -1,5 +1,6 @@
 import Countdown from "./Countdown";
 import styles from "./Hero.module.css";
+import { websiteSettings } from "@/src/config/website-settings";
 
 export default function Hero() {
   return (
@@ -8,7 +9,7 @@ export default function Hero() {
         <img 
           className={`${styles.banner} pb-10`} 
           src="/img/edition.png?v=20250716" 
-          alt="Jurassic edition" 
+          alt={websiteSettings.currentEdition.description}
           data-aos="zoom-in" 
           data-aos-delay="100" 
         />

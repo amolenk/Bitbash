@@ -1,0 +1,539 @@
+{
+  "Speakers": [
+    {
+      "Id": "chris-van-sluijsveld",
+      "FullName": "Chris van Sluijsveld",
+      "Bio": "Chris helps companies embracing the full potential of Cloud Technology. He is experienced in advising and implementing Cloud technologies for new and existing businesses. He enjoys the challenge of finding the best solution for the problem. In his spare time Chris enjoys playing the occasional digital or analog board game.",
+      "TagLine": "CTO Zure Netherlands",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/chris-van-sluijsveld.jpg",
+      "sessions": [
+        "build-a-cloud-native-engineering-platform-in-a-day"
+      ]
+    },
+    {
+      "Id": "christian-peeters",
+      "FullName": "Christian Peeters",
+      "Bio": "Christian started in 2000 as a software developer. Seven years later he became a Microsoft Certified Trainer and has been teaching other developers ever since. Currently he is a Principal Cloud Architect at Betabit. A software development company specialized in building business critical applications in the cloud.",
+      "TagLine": "Principal Cloud Architect and Trainer @ Betabit",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/christian-peeters.jpg",
+      "sessions": [
+        "getting-started-with-ethical-hacking"
+      ]
+    },
+    {
+      "Id": "daniel-floor",
+      "FullName": "Dani\u00EBl Floor",
+      "Bio": "Dani\u00EBl is a software engineer at Info Support, specializing in the Java ecosystem. He has a keen interest in functional programming and is particularly engaged with the emerging field of AI-augmented software engineering. His work is driven by a passion for tackling complex problems and uncovering elegant, maintainable solutions.\r\n\r\nDani\u00EBl is not only energized by solving challenging technical puzzles but also by empowering others to understand and master them. He brings clarity to complexity and thrives in environments where deep thinking and collaborative learning go hand in hand.",
+      "TagLine": "Software Engineer at Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/daniel-floor.jpg",
+      "sessions": [
+        "ai-at-every-step-why-are-you-still-doing-the-dev-cycle-by-hand"
+      ]
+    },
+    {
+      "Id": "daniel-mertens",
+      "FullName": "Dani\u00EBl Mertens",
+      "Bio": "Dani\u00EBl is a software consultant at Info Support with a passion for problem solving. He loves solving coding puzzle and participating in Hackathons and coding challenges.",
+      "TagLine": "Info Support - Software Engineer",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/daniel-mertens.jpg",
+      "sessions": [
+        "building-your-first-mcp-server-from-concept-to-production"
+      ]
+    },
+    {
+      "Id": "geert-van-der-cruijsen",
+      "FullName": "Geert van der Cruijsen",
+      "Bio": "Geert van der Cruijsen is the CEO of Zure Netherlands, helping companies improve how they build software by combining strong engineering culture with modern technology. He focuses on DevOps, cloud-native development, architecture and AI, enabling teams to work more autonomously and deliver faster through smart platforms and better ways of working. Geert is a long-time Microsoft MVP and an active member of the tech community, frequently sharing knowledge through talks, content and mentorship.",
+      "TagLine": "CEO Zure Netherlands",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/geert-van-der-cruijsen.jpg",
+      "sessions": [
+        "build-a-cloud-native-engineering-platform-in-a-day"
+      ]
+    },
+    {
+      "Id": "henry-been",
+      "FullName": "Henry Been",
+      "Bio": "Henry Been is an independent architect and developer from The Netherlands. He enjoys working with software development teams to create and deliver software for the Azure cloud. His interests include Azure, Agile, DevOps, software architecture and the design and implementation of testable and maintainable software. Besides his work he is a speaker at international conferences, is the author of two books, and creates online training courses for Pluralsight and A Cloud Guru. For his work in the community, he has been awarded the Microsoft MVP Award since 2019. To follow Henry, you can go to his blog henrybeen.nl or look him up on LinkedIn: https://www.linkedin.com/in/henrybeen\r\n",
+      "TagLine": "DevOps \u0026 Azure Architect | Microsoft MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/henry-been.jpg",
+      "sessions": [
+        "for-shits-and-giggles-building-a-compiler"
+      ]
+    },
+    {
+      "Id": "johnny-hooyberghs",
+      "FullName": "Johnny Hooyberghs",
+      "Bio": "Johnny Hooyberghs is a managing partner and consultant for Involved NV, part of the Cronos group, since 2014 focusing on software architecture, backend development and a Microsoft Most Valuable Professional for Azure and Developer Technologies since 2020. Prior to joining Involved as a consultant, he has had experience developing software for the health-care sector since 2008. Johnny has been passionate about software development using the .NET stack, cloud native development using the Microsoft Azure cloud stack and quantum computing. Johnny has spent 10 years of his free time teaching software development courses for the adult education institute CVO Antwerpen and has been enjoying public speaking these past 6 years. When Johnny is not working, he likes to spend his time on self-education, quantum computing, some casual video gaming, travelling the world and visiting as many theme parks as possible.",
+      "TagLine": "Passionate Developer at Involved and Microsoft MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/johnny-hooyberghs.jpg",
+      "sessions": [
+        "what-is-new-in-net-and-c"
+      ]
+    },
+    {
+      "Id": "jurre-brandsen",
+      "FullName": "Jurre Brandsen",
+      "Bio": "Jurre is a Software Engineer at Info Support with a focus on AI augmented software engineering. With a solid foundation in machine learning, he explores how AI can practically assist developers, from improving workflows to supporting decision-making throughout the software lifecycle. Jurre enjoys exploring practical ways to make AI a natural part of everyday development, aiming for tools and techniques that feel intuitive and useful.",
+      "TagLine": "Software Engineer at Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/jurre-brandsen.jpg",
+      "sessions": [
+        "ai-at-every-step-why-are-you-still-doing-the-dev-cycle-by-hand"
+      ]
+    },
+    {
+      "Id": "laura-kester",
+      "FullName": "Laura Kester",
+      "Bio": "Laura Kester is Requirements Engineer and Product Owner at Info Support.\r\n\r\nAs a requirements engineer, she bridges the gap between stakeholders and development teams. She is passionate about understanding how processes and systems work and ensuring software solutions truly meet user needs. With her background in Interaction Technology, Laura brings a unique blend of engineering, design, and ethical perspectives to her work.\r\n\r\nShe loves learning new things and sharing her knowledge and perspectives with others.\r\n\r\n\r\n",
+      "TagLine": "Requirements engineer and product owner @ Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/laura-kester.jpg",
+      "sessions": [
+        "navigating-complexity-playing-chess-while-the-rules-keep-changing"
+      ]
+    },
+    {
+      "Id": "michael-hompus",
+      "FullName": "Micha\u00EBl Hompus",
+      "Bio": "Micha\u00EBl Hompus is an Architect and Area Lead at Info Support.\r\n\r\nAs an architect he is part of several teams, creating new and innovative solutions.\r\nMicha\u00EBl has many years of development experience with .NET, Java, and Azure.\r\n\r\nHis passion is to share knowledge with colleagues, customers, and peers.\r\nMicrosoft has recognized his efforts for the community by awarding him a Microsoft MVP award.",
+      "TagLine": "Architect @ Info Support | Microsoft MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/michael-hompus.jpg",
+      "sessions": [
+        "arc42-the-art-of-simple-software-architecture-documentation"
+      ]
+    },
+    {
+      "Id": "michiel-hamers",
+      "FullName": "Michiel Hamers",
+      "Bio": "Hi, I\u2019m Michiel Hamers \u2014 a Principal Cloud Expert, Implementation Manager, Trainer, and former Microsoft MVP with over 25 years of experience in the Microsoft ecosystem.\r\n\r\nSince 2000, I\u2019ve been helping organizations successfully adopt and optimize Microsoft technologies, with a focus on Azure, cloud architecture, performance, and cost management. As a Microsoft Certified Trainer (MCT) and experienced consultant, I bridge strategy and execution, guiding both public and private sector teams through complex technical transformations.\r\n\r\nI regularly speak at international conferences such as Developer Week, PowerShell \u002B DevOps Global Summit, Global Azure, AzConf Chennai, Azure Fest, DevConf APG, FutureTech, and Dutch Cloud Meetup. I\u2019m passionate about delivering hands-on workshops and tailored in-company trainings, helping teams sharpen their Azure, automation, and application lifecycle skills.\r\n\r\nMy mission is clear: help people and organizations get the most out of the cloud \u2014 with control, clarity, and confidence. Whether coaching colleagues, giving workshops, or advising on cloud-native modernization, I combine deep technical knowledge with a pragmatic, people-focused approach.\r\n\r\nWhen I\u2019m not working, I enjoy life with Sandra \u2014 cooking, traveling, and spending time with family and friends. For me, technology is about empowering people, not just systems.\r\n\r\nLet\u2019s connect and build something great together.",
+      "TagLine": "Empowering Cloud Journeys with Azure | Trainer | Former MVP | MCT | International Speaker",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/michiel-hamers.jpg",
+      "sessions": [
+        "welcome-to-aiassic-park-run-your-own-llms-before-they-run-you"
+      ]
+    },
+    {
+      "Id": "neha-lagoo-ratnakar",
+      "FullName": "Neha Lagoo Ratnakar",
+      "Bio": "Neha Lagoo Ratnakar is a tiny speaker with a big name and an even bigger message. Her talks are part wakeup call and part kick in the behind. \r\n\r\nNeha\u2019s bestselling book, Back on Your Feet (Goodreads 4.5, Amazon 4.7) has helped hundreds of women start their career comeback journey and she\u2019s spent hours directly coaching them. \r\n\r\nBut throughout her career spanning 8 countries, and her work as the Head of Education at a non-profit in Europe, she was shocked to hear that it was difficult for leaders to bridge the gender numbers despite their best intentions. \r\n\r\nSo Neha made it her mission to help organisations bridge this gap and support women on their journey. \r\n\r\nWhat she has to say may offend you, could provoke you, but will definitely make you think. If you\u2019re looking for a keynote speaker who can talk from authentic global experiences infused with actionable insights, then Neha is your choice. ",
+      "TagLine": "TEDx Speaker, Bestselling Author and Former Head of Education - LEAD Network Europe",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/neha-lagoo-ratnakar.jpg",
+      "sessions": [
+        "code-coach-conquer-level-up-your-facilitation-game"
+      ]
+    },
+    {
+      "Id": "nico-vermeir",
+      "FullName": "Nico Vermeir",
+      "Bio": "Nico Vermeir is an application architect  at Inetum Belgium since 2010, where he has a strong focus on building and architecting modern applications.\r\nBeing a strong believer in the importance of communities he tries to share knowledge wherever he can, be it on Twitter, at a user group or conference. He has spoken on many international conferences such as NDC Oslo, NDC Sydney, NDC London, Swetugg, Build Stuff, DotNext.\r\nNico is a Microsoft MVP in Developer Technologies, crew member of Techorama BE and NL and crew member of VISUG, Belgium\u0027s largest .NET user group.\r\n\r\nIn his spare time he enjoys brewing (and tasting) beer, playing the guitar, riding his Harley-Davidson and doing Karate.",
+      "TagLine": "Application Architect .NET at Inetum",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/nico-vermeir.png",
+      "sessions": [
+        "modernizing-your-legacy-application"
+      ]
+    },
+    {
+      "Id": "niels-nagle",
+      "FullName": "Niels Nagle",
+      "Bio": "Niels Nagl\u00E9 is a Area Lead Data \u0026 AI - Architect, Data specialist, Podcast host(AITodayLive), co-host webcast Data Discovery Channel( Data \u0026AI), Trainer and Speaker at Info Support. As a consultant he specializes in data \u0026 AI solutions, business intelligence, Artificial Intelligence, data management, data governance, data mesh, Machine Learning and Analytics. Niels has consulted for a wide variety of companies in diverse sectors on enterprise business intelligence, Analytics, self-service BI etc. He is passionate about data and loves to share his experiences and expertise with like-minded individuals and organizations unlocking their data dividend. Currently working as architect, on designing smart data \u0026 AI solutions and delivering training and sharing knowledge via podcast, webcast and conferences.",
+      "TagLine": "Area lead Data \u0026 AI - Architect, Data specialist, Podcasthost (AITodayLive), Trainer and Speaker at Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/niels-nagle.jpg",
+      "sessions": [
+        "trust-as-the-new-currency-modern-data-platforms-and-ai"
+      ]
+    },
+    {
+      "Id": "niels-tanis",
+      "FullName": "Niels Tanis",
+      "Bio": "Niels Tanis has got a background in .NET development, pentesting and security consultancy. He is Microsoft MVP and has been involved in breaking, defending and building secure applications. He joined Veracode in 2015 and right now he works as a security researcher on a variant of languages and technologies related to Veracode\u2019s Binary Static Analysis service. He is married, father of two and lives in a small village just outside Amersfoort, The Netherlands.",
+      "TagLine": "Sr. Principal Security Researcher at Veracode | Microsoft MVP | International Speaker",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/niels-tanis.jpg",
+      "sessions": [
+        "beyond-trust-building-communitydriven-security-analysis-for-your-net-software-supply-chain"
+      ]
+    },
+    {
+      "Id": "sander-ten-brinke",
+      "FullName": "Sander ten Brinke",
+      "Bio": "Sander ten Brinke is a Microsoft MVP and Lead Software Engineer at Arcady, a Dutch IT consultancy firm based in Zwolle. He loves working with .NET, Azure, DevOps and a whole lot more. He always stays up to date with all new technology and loves sharing his knowledge with everyone by speaking, blogging, podcasting and more!\r\n\r\nSander is an accomplished speaker, he has spoken at 30\u002B events, including meetups and big conferences like WeAreDevelopers World Congress 2024 (15k attendees), NDC Oslo 2025, FutureTech and more! He was in the top 3% of the most active speakers on the Sessionize Platform in 2024!",
+      "TagLine": "Senior Software Engineer @ Arcady | Microsoft MVP (Developer Technologies)",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/sander-ten-brinke.jpg",
+      "sessions": [
+        "keeping-api-definitions-tidy-across-your-organization-with-openapi-and-spectral"
+      ]
+    },
+    {
+      "Id": "steven-hillaert",
+      "FullName": "Steven Hillaert",
+      "Bio": "Steven took up several roles over the past 20\u002B years, from junior developer to team lead and architect. Currently coaching software engineers at AllPhi where he hones both the hard technical skills and the softer people skills that are necessary to succeed as a consultant.\r\n\r\nMain technical interests are architecture, distributed systems and api design.\r\n\r\nWhen it comes to non-technical subjects he focuses on sharing knowledge and help others grow to become successful software engineers and consultants.\r\n\r\nIn his free time he likes to sport, play chess and boardgames, and tame his 2 kids.",
+      "TagLine": "Coaching software engineers",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/steven-hillaert.jpg",
+      "sessions": [
+        "roast-my-design-and-architecture-decisions"
+      ]
+    },
+    {
+      "Id": "stuart-van-der-lee",
+      "FullName": "Stuart van der Lee",
+      "Bio": "As a software engineer, Stuart is interested in programming languages, cloud and AI. Besides that, he also keeps up to date in the field of DevOps and everything that comes with it.\r\n\r\nStuart closely follows F1 in his free time, likes to do several sports such as cycling, golf and throwing weights around in the gym, and he tries to keep up with the endless stream of series and movies (with varying degrees of success).",
+      "TagLine": "Software Engineer",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/stuart-van-der-lee.jpg",
+      "sessions": [
+        "building-your-own-mcp-server"
+      ]
+    },
+    {
+      "Id": "willem-meints",
+      "FullName": "Willem Meints",
+      "Bio": "Willem Meints is Chief AI Architect for Info Support and Microsoft AI MVP responsible many machine-learning and AI projects at Info Support and Aigency. ",
+      "TagLine": "Chief AI Architect/Microsoft AI MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/willem-meints.jpg",
+      "sessions": [
+        "build-a-coding-agent-in-a-day-with-semantic-kernel-and-c"
+      ]
+    }
+  ],
+  "Sessions": [
+    {
+      "Id": "c71efa08-0104-4b52-a3c5-cebe03c96a68",
+      "Title": "Registration and Welcome",
+      "Description": null,
+      "StartsAt": "2026-01-23T08:30:00",
+      "EndsAt": "2026-01-23T09:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "build-a-cloud-native-engineering-platform-in-a-day",
+      "Title": "Build a cloud native engineering platform in a day",
+      "Description": "Building and running software in the cloud can overwhelm developers with many tools and settings. Platform engineering fixes this by giving teams one open-source, cloud native platform that hides the hard parts and offers ready-made golden paths. This approach lowers cognitive load and helps developers ship faster. \r\n\r\nSelf-service platforms are on the rise and a lot of companies are building them from scratch hoping their developers will come and use it. We believe you can use existing open-source tools to compose a platform and spend your time designing the services you want to offer to your developers. \r\n\r\nIn this full-day workshop you will build such a platform, starting on a small local Kubernetes cluster and finishing on Azure, setting up the groundwork so you can take the lessons back to your workplace to focus on implementing the services that your company needs. \r\n\r\nWhat we will cover:\r\n\r\nBuild a cloud native internal engineering platform with CNCF projects \u0026 Kubernetes clusters created locally for zero-cost experiments, then repeated on Azure Kubernetes Service for real world scale. \r\n\r\nAdopt GitOps with Argo CD so the cluster always follows what is in Git, giving safe and fast releases. \r\n\r\nLearn about tools such as Azure Service Operator, Crossplane, Terranetes \u0026 KRO and how they can help you design automated self-service scenarios. \r\n\r\nCreate golden path templates in Backstage that let a developer generate a new service repo, pipeline, and manifests in one click. \r\n\r\nShow a clear return on investment and gather facts you can use to convince leaders to fund a platform team. \r\n\r\nDeploy a service from commit to traffic and watch every step in the portal and GitOps dashboard, proving the value in minutes. \r\n\r\nLearning objectives:\r\n\r\n- Learn how platform engineering can cut developer cognitive load by providing a single self-service engineering platform. \r\n\r\n- Automate build and release with GitOps, Argo CD, and Backstage templates. \r\n\r\n- Learn to navigate the CNCF landscape regarding platform engineering with tools like Argo, Crossplane, Backstage, Azure Service Operator, Terranetes \u0026 KRO \r\n\r\n- Build a short business case that secures support for a platform team in your company. \r\n\r\nPrerequisites \r\n\r\n- A laptop that can run Docker \r\n- A GitHub account \r\n- Basic command-line knowledge \r\n- An Azure Account you can use\r\n- Any existing Kubernetes knowledge would speed things up but is not required ",
+      "StartsAt": "2026-01-23T09:00:00",
+      "EndsAt": "2026-01-23T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "geert-van-der-cruijsen",
+        "chris-van-sluijsveld"
+      ],
+      "SessionFormat": "Full-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "build-a-coding-agent-in-a-day-with-semantic-kernel-and-c",
+      "Title": "Build a coding agent in a day with Semantic Kernel and C#",
+      "Description": "Agents are the next evolution in AI application design\u2014and in this hands-on workshop, you\u0027ll build one from scratch in C# with Semantic Kernel just a day. Whether you\u0027re a developer curious about AI tooling or an engineer ready to bring autonomous problem-solving into your workflow, this session will give you the practical skills to get started.\r\n\r\nYou\u0027ll learn how the agent loop works, how to equip your agent with tools like code generation and test runners, and how to guide its behavior using prompt engineering and test-driven development. By the end of the day, you\u0027ll have built your own coding agent capable of planning and solving real-world programming tasks\u2014writing both features and tests.\r\n\r\nWe\u2019ll provide access to online teaching materials to support your learning, and you\u2019ll test your agent live with an LLM in the loop. Come ready to build, experiment, and leave with something that works.",
+      "StartsAt": "2026-01-23T09:00:00",
+      "EndsAt": "2026-01-23T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "willem-meints"
+      ],
+      "SessionFormat": "Full-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "building-your-first-mcp-server-from-concept-to-production",
+      "Title": "Building Your First MCP Server: From Concept to Production",
+      "Description": "Model Context Protocol (MCP) is quickly becoming a standard for connecting AI assistants with external tools, services, and data sources. In this hands-on workshop, participants will learn how to implement, and deploy their own MCP server. We\u2019ll cover the fundamentals of the protocol, common use cases, and best practices for development. Through guided exercises, attendees will set up a server from scratch, integrate it with an chat client, and extend it with their MCP\u0027s functionality. By the end of the session, participants will walk away with both a working server and the practical knowledge to continue building MCP-powered solutions in their own environments.",
+      "StartsAt": "2026-01-23T09:00:00",
+      "EndsAt": "2026-01-23T12:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "daniel-mertens"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Introductory and overview",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "code-coach-conquer-level-up-your-facilitation-game",
+      "Title": "Code, Coach, Conquer: Level Up Your Facilitation Game!",
+      "Description": "This engaging workshop equips tech experts with practical techniques to deliver clearer, more impactful training sessions. Participants will learn simple strategies to break down complex concepts, engage their audience, and handle questions with confidence. Through interactive exercises, they will gain a framework for structuring training content and tips to keep learners engaged. By the end of the session, attendees will walk away with actionable insights and the confidence to elevate their next training session.",
+      "StartsAt": "2026-01-23T09:00:00",
+      "EndsAt": "2026-01-23T12:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "neha-lagoo-ratnakar"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Introductory and overview",
+      "Room": "Room 4"
+    },
+    {
+      "Id": "ab26dbb5-7e17-4c77-a75e-7b0c03e175f3",
+      "Title": "Lunch",
+      "Description": null,
+      "StartsAt": "2026-01-23T12:00:00",
+      "EndsAt": "2026-01-23T13:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "welcome-to-aiassic-park-run-your-own-llms-before-they-run-you",
+      "Title": "Welcome to AIassic Park: Run Your Own LLMs Before They Run You",
+      "Description": "\u201CYour scientists were so preoccupied with whether they could, they didn\u2019t stop to think if they should.\u201D \u2014 Dr. Ian Malcolm\r\nWhat happens when you stop relying on OpenAI or Azure and start running your own language models\u2026 on your own servers\u2026 with your own data?\r\n\r\nIn this hands-on workshop, we\u2019ll take a light-hearted but technically solid approach to self-hosted AI. Just like in Jurassic Park, we\u2019ll recreate something powerful \u2014 but this time, you\u2019re in control. You\u2019ll learn how to:\r\n\t\u2022\tRun open-source LLMs (like Mistral, Phi2, or LLaMA) on your own machine using Ollama, LM Studio, or Text Generation Web UI\r\n\t\u2022\tCreate your own mini \u201Cchatbot dinosaur\u201D using LangChain or CrewAI\r\n\t\u2022\tUnderstand the trade-offs between local and cloud AI (speed, cost, privacy)\r\n\t\u2022\tKeep your AI agents from \u201Cescaping the paddock\u201D \u2014 aka: prompt injection, model hallucination and safety tips\r\n\r\nBy the end of the session, you\u2019ll have your own private, powerful LLM assistant.\r\nNo need for a helicopter or island \u2014 just bring a laptop (16 GB RAM or more recommended) and some curiosity.\r\n\r\n\uD83E\uDD95 Bonus: Dinosaur references and chaos theory metaphors included \u2014 for free!",
+      "StartsAt": "2026-01-23T13:00:00",
+      "EndsAt": "2026-01-23T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "michiel-hamers"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Advanced",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "0a74827d-e7c1-473e-bb1c-40b28169cbaa",
+      "Title": "Registration and Welcome",
+      "Description": null,
+      "StartsAt": "2026-01-24T08:30:00",
+      "EndsAt": "2026-01-24T09:15:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "ai-at-every-step-why-are-you-still-doing-the-dev-cycle-by-hand",
+      "Title": "AI at Every Step: Why Are You Still Doing the Dev Cycle by Hand?",
+      "Description": "Over the past year, many developers have started using AI tools like GitHub Copilot to help them write code. But most are only scratching the surface of what these tools can do. Copilot is more than just pressing TAB to autocomplete snippets. It can support you through the entire development cycle.\r\n\r\nIn this session, we explore how to use Copilot across the entire Dev cycle. A big part of this is context engineering: teaching the AI about your domain, your codebase, and your goals so its suggestions are more accurate and valuable. We\u2019ll see how Copilot can help with creating backlog items, designing implementation plans, writing real code, generating tests, reviewing pull requests, and producing documentation.\r\n\r\nThrough a live demo, we\u2019ll show you how to implement a production-ready feature using AI at every stage. You\u0027ll learn where GitHub Copilot shines, where it struggles, and how to make most of its capabilities.\r\n\r\nIf you are already experimenting with AI-Augmented programming and want to unlock its full potential, this talk will give you the insights and techniques you need.",
+      "StartsAt": "2026-01-24T09:15:00",
+      "EndsAt": "2026-01-24T10:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "jurre-brandsen",
+        "daniel-floor"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "modernizing-your-legacy-application",
+      "Title": "Modernizing your legacy application",
+      "Description": "How do you modernize beyond a 10-30 year legacy?\r\n\r\nToo often, organizations rely on applications that have been around for 10\u002B years. These applications are maintained on an \u0022as needed\u0022 basis and may represent a single point of failure, and those failures are expensive.\r\n\r\nBut how do you modernize over 10 years of legacy? Throw it all out and start over? That gets even more expensive. The answer is simple: it depends. \r\n\r\nIt depends on the specific needs of the business: does it need to scale? What about safety or privacy? How about Performance? Choices have to be made.\r\n\r\nAs an application modernization architect I have done my fair share of these projects. In this session I will share my experiences, and how I deal with them. By the end of the session you will have a clear understanding of where to start, and what steps to take to bring that business-critical application into the modern age.",
+      "StartsAt": "2026-01-24T09:15:00",
+      "EndsAt": "2026-01-24T10:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "nico-vermeir"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "arc42-the-art-of-simple-software-architecture-documentation",
+      "Title": "arc42: The Art of Simple Software Architecture Documentation",
+      "Description": "Many software teams struggle with architecture documentation that is either too long, missing key information, or, more often, nonexistent.\r\n\r\nThe arc42 template, created by practicing architects, offers a balanced set of twelve sections that cover goals, quality scenarios, context, building blocks, runtime behaviour, and more. Years of use have shown that the template captures the reasons behind design decisions and keeps the material clear for both the team and its stakeholders.\r\n\r\nThis session explains the purpose of every arc42 section, suggesting methods to gather the right facts without slowing project work, and demonstrates practical tools for well\u2011structured documentation in formats such as Markdown, PlantUML, and draw.io that sit comfortably in version control.\r\n\r\nAfter this session, you\u2019ll be able to jump\u2011start all 12 arc42 chapters and craft clear, reliable architecture documents for your own projects.",
+      "StartsAt": "2026-01-24T10:15:00",
+      "EndsAt": "2026-01-24T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "michael-hompus"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "for-shits-and-giggles-building-a-compiler",
+      "Title": "For Shits and Giggles: Building a Compiler",
+      "Description": "Have you ever wondered how a compiler works? Well, no more! In this session we will explore how a compiler works: which steps are invoked in which order and what are the intermediate results? We will also explore how we can use these results for other use cases like an interpreter, code analysis or other tools.\r\n\r\nIf you are ready to completely geek out over how one of the tools you use every day works, come join Henry and find out! ",
+      "StartsAt": "2026-01-24T10:15:00",
+      "EndsAt": "2026-01-24T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "henry-been"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "getting-started-with-ethical-hacking",
+      "Title": "Getting started with Ethical Hacking",
+      "Description": "Hacks, data breaches, ransomware... you keep hearing about it in the news. To effectively protect your business and/or software, you need to know where the vulnerabilities are. And what better way to find out than by attempting to hack yourself?\r\nIn this session, we will explore how hackers operate and which tools you can use to hack (your own) applications. Additionally, we will examine the most common types of vulnerabilities, how to practice exploiting them, and what measures can be taken to prevent them.\r\nChecking the security of your software is an ongoing process. Therefore, we will also explore options for integrating ethical hacking tools into pipelines to repeatedly assess your application for vulnerabilities.\r\nLast but not least, I\u0027ll share tips on keeping your colleagues sharp by applying Social Engineering.\r\n",
+      "StartsAt": "2026-01-24T10:15:00",
+      "EndsAt": "2026-01-24T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "christian-peeters"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "c21cfe37-914c-4241-bf43-e525ec532d79",
+      "Title": "Coffee Break",
+      "Description": null,
+      "StartsAt": "2026-01-24T11:05:00",
+      "EndsAt": "2026-01-24T11:25:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "what-is-new-in-net-and-c",
+      "Title": "What is new in .NET and C#?",
+      "Description": "November 2025 marked the release of .NET 10 and C# 14. In this session, I will talk about what is new in the latest version of .NET and what the future will bring for the .NET platform in general. Expect a large number of new .NET 10 and C# 14 features and examples of those features.",
+      "StartsAt": "2026-01-24T11:25:00",
+      "EndsAt": "2026-01-24T12:15:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "johnny-hooyberghs"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "beyond-trust-building-communitydriven-security-analysis-for-your-net-software-supply-chain",
+      "Title": "Beyond Trust: Building Community-Driven Security Analysis for Your .NET Software Supply Chain",
+      "Description": "With 80% of modern applications built on third-party code, supply chain security has become critical. Traditional security tools like OpenSSF Security Scorecard provide surface-level metrics, but fail to detect planted malware, risky API usage, and vulnerabilities buried deep in dependency chains.\r\n\r\nThis session explores the limitations of current NuGet security approaches and introduces Fennec Labs \u2014 an open-source project for comprehensive dependency analysis. We\u0027ll demonstrate automated detection of security risks within NuGet packages, collaborative threat intelligence sharing, and practical techniques for making informed decisions about package adoption.\r\nKey topics include:\r\n\r\n- Identifying hidden security threats in NuGet packages\r\n- Automated analysis of risky API patterns and behaviors\r\n- Community-driven security intelligence for .NET dependencies\r\n- Practical integration strategies for development workflows\r\n\r\nYou\u0027ll leave with actionable tools and methodologies to strengthen your application\u0027s supply chain security posture and defend against sophisticated package-based attacks.",
+      "StartsAt": "2026-01-24T11:25:00",
+      "EndsAt": "2026-01-24T12:15:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "niels-tanis"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "building-your-own-mcp-server",
+      "Title": "Building your own MCP server",
+      "Description": "The Model Context Protocol is all the rage and rightly so. As the USB-C for AI it is an incredibly powerful tool that acts as a bridge between real-world systems and LLMs. But how do you get started with MCP and more importantly: how do you build your own MCP server?\r\n\r\nIn this session we\u0027ll get our teeth stuck in these and many more questions while building our own MCP server along the way.",
+      "StartsAt": "2026-01-24T11:25:00",
+      "EndsAt": "2026-01-24T12:15:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "stuart-van-der-lee"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "5cd0fd82-9be5-4558-b24d-0a7c25fd26de",
+      "Title": "Lunch",
+      "Description": null,
+      "StartsAt": "2026-01-24T12:15:00",
+      "EndsAt": "2026-01-24T13:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "navigating-complexity-playing-chess-while-the-rules-keep-changing",
+      "Title": "Navigating Complexity: Playing chess while the rules keep changing",
+      "Description": "In my free time, I love solving chess puzzles. Finding that \u201Cmate in 3\u201D delivers a satisfying dopamine boost. But chess follows fixed rules with calculable outcomes. Imagine if each move could result in a change of the rules. Surprise, knights can\u2019t check the king now. Not so fun anymore, right? Yet this is often the environment we face in complex software projects where stakeholders have conflicting interests, and political alliances may be unknown.\r\nComplex and ever-changing environments can leave teams paralysed. It is tempting to oversimplify in complex situations to achieve clarity and determine the best course of action.  However, this can create dangerous blind spots that lead to the underestimation of critical risks or a waste of resources.\r\nThis talk introduces different approaches to complex decision-making. Instead of seeking perfect solutions, it will help you find \u201Cthe next best move\u201D by making incremental and reversible decisions. By embracing complexity rather than fighting it, you might discover that navigating uncertainty can deliver its own kind of dopamine hit!",
+      "StartsAt": "2026-01-24T13:00:00",
+      "EndsAt": "2026-01-24T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "laura-kester"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "keeping-api-definitions-tidy-across-your-organization-with-openapi-and-spectral",
+      "Title": "Keeping API definitions tidy across your organization with OpenAPI and Spectral!",
+      "Description": "When multiple teams across different domains and languages build APIs, it\u2019s only a matter of time before standards diverge\u2014different naming conventions, different ways of working, and different approaches to security. Everyone has the best intentions, but without guardrails, consistency and quality quickly slip, especially as standards evolve over time!\r\n\r\nSo how do we prevent this? How can we set up lightweight checks that integrate with the tools we already use, without forcing massive changes across every codebase before we can even get started?\r\n\r\nIn this session, we\u2019ll explore how Spectral, a linting tool for OpenAPI, helps you bring order to your API definitions by enforcing style, consistency, and security rules. We\u2019ll cover:\r\n\r\n- A (re)introduction to OpenAPI\r\n- Getting started with Spectral\r\n- Creating custom rulesets tailored to your organization\r\n- Running validations in CI/CD pipelines to catch issues early\r\n- Applying well-known community rulesets to align with best practices\r\n- Strengthening API security through automated checks\r\n\r\nYou\u2019ll walk away with practical tools and patterns to keep your API definitions clean, consistent, and secure, no matter how many teams are involved!",
+      "StartsAt": "2026-01-24T13:00:00",
+      "EndsAt": "2026-01-24T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "sander-ten-brinke"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "b9f7b35a-2781-4ee9-af1b-26709ec9e9cd",
+      "Title": "To Be Announced",
+      "Description": null,
+      "StartsAt": "2026-01-24T13:00:00",
+      "EndsAt": "2026-01-24T13:50:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Room 3"
+    },
+    {
+      "Id": "c66a09d7-0962-4c5c-93e3-90a7c567ea51",
+      "Title": "Break",
+      "Description": null,
+      "StartsAt": "2026-01-24T13:50:00",
+      "EndsAt": "2026-01-24T14:10:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "roast-my-design-and-architecture-decisions",
+      "Title": "Roast my design and architecture decisions",
+      "Description": "Every software project is a series of decisions: about architecture, design, what to prioritize and what to postpone (or ignore altogether). And behind every decision is a trade-off, between performance and complexity, scalability and simplicity, pragmatism and purity, short-term delivery and long-term maintainability.\r\n\r\nIn this talk, I\u2019ll walk you through real-world examples of architectural and design choices I have made in the past. Some were made under pressure, others based on team dynamics, technology constraints, or simply the information I had at the time.\r\n\r\nYou\u2019ll get to see the trade-offs behind decisions. We\u0027ll also look at the impact of team maturity, client capabilities, and deadlines. Because context is everything.\r\n\r\nAnd here\u2019s the twist: you get to be the jury. Was this a solid decision given the constraints, or an architectural blunder waiting to happen? Rate my decisions, and let\u2019s explore what we can learn from them. In the end, we all want to get better at designing systems that can stand the test of time and change.",
+      "StartsAt": "2026-01-24T14:10:00",
+      "EndsAt": "2026-01-24T15:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "steven-hillaert"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "trust-as-the-new-currency-modern-data-platforms-and-ai",
+      "Title": "Trust as the New Currency: Modern Data Platforms and AI",
+      "Description": "Explain how modern businesses rely on data-driven decisions and AI models, but adoption only happens when people trust the platform.\r\n\r\nSession will dive into the following points\r\n* Data driven decisions, data platforms,data products\r\n* Dimensions of trust in data platforms\r\n* How to build trust in your platform (people, process, tools and quality data)\r\n* Role of AI in data platforms\r\n* Wrap-up of trust as competitive advantage\r\n\r\nSession abastract is still work in progress but gives an overview of what this new session \r\n",
+      "StartsAt": "2026-01-24T14:10:00",
+      "EndsAt": "2026-01-24T15:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "niels-nagle"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 2"
+    }
+  ]
+}

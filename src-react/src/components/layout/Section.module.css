@@ -39,25 +39,24 @@
 }
 
 .sectionContainer {
-    min-height: 250px;
+    min-height: 300px;
 }
 
 .sectionHeader {
     margin-bottom: 50px;
     text-align: center;
-    padding-top: 60px;
 }
 
-.sectionHeader h2 {
+.sectionHeader h1 {
+    color: white;
     display: inline;
     position: relative;
-    font-size: 40px;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 1px 1px 2px black;
 }
 
-.sectionHeader h2::before {
+.sectionHeader h1::before {
     content: "";
     position: absolute;
     top: calc(100% + 7px);

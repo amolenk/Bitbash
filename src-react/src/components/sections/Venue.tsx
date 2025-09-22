@@ -3,7 +3,7 @@ import styles from "./Venue.module.css";
 
 export default function Venue() {
   return (
-    <Section headerText="Venue" extraClass={styles.venue} sectionBackground={2} fadeUp={true}>
+    <Section headerText="Venue" extraClass={`${styles.venue} mt-4`}  sectionBackground={2} fadeUp={true}>
       <div className={`row ${styles.venue}`}>
         <div className={`col-lg-8 p-0 ${styles.venueMap}`}>
           <iframe
@@ -21,8 +21,8 @@ export default function Venue() {
           <div className="row justify-content-center">
             <div className={`${styles.info} col-11 col-lg-8 position-relative`}>
               <img className={styles.logo} src="/img/info-support-vertical.png" alt="Info Support" />
-              <p>Kruisboog 42, 3905 TG</p>
-              <p>Veenendaal, The Netherlands</p>
+              <p className="lead text-light">Kruisboog 42, 3905 TG</p>
+              <p className="lead text-light">Veenendaal, The Netherlands</p>
             </div>
           </div>
         </div>

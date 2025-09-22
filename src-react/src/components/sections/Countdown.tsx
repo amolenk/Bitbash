@@ -12,7 +12,7 @@ export default function Countdown() {
     setMounted(true);
     
     const calculateDays = () => {
-      const preConDate = new Date(websiteSettings.preConWorkshopsDate);
+      const preConDate = new Date(websiteSettings.currentEdition.workshopsDate);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
       
@@ -32,8 +32,8 @@ export default function Countdown() {
 
   if (!mounted) return null;
 
-  const preConDate = new Date(websiteSettings.preConWorkshopsDate);
-  const conferenceDate = new Date(websiteSettings.conferenceDate);
+  const preConDate = new Date(websiteSettings.currentEdition.workshopsDate);
+  const conferenceDate = new Date(websiteSettings.currentEdition.conferenceDate);
   
   const formatDate = () => {
     const options: Intl.DateTimeFormatOptions = { month: 'short' };
@@ -67,7 +67,7 @@ export default function Countdown() {
         alt="Countdown foreground"
       />
       <span className={styles.date}>
-        <em>{formatDate()}</em>
+        {formatDate()}
       </span>
     </div>
   );

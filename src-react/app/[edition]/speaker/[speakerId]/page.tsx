@@ -23,20 +23,17 @@ export default function SpeakerDetailPage() {
     if (!speaker) return <div>Speaker not found.</div>;
 
     return (
-        <>
-            <MainLayout>
-                <div style={{ height: '130px' }}></div> {/* Header spacer */}
-                <SpeakerBioSection
-                    fullName={speaker.FullName}
-                    tagLine={speaker.TagLine}
-                    profilePictureUrl={speaker.ProfilePictureUrl}
-                    bio={speaker.Bio}
-                />
-                <SpeakerSessionsSection
-                    sessions={speaker.sessions}
-                    allSessions={data.Sessions || []}
-                />
-            </MainLayout>
-        </>
+        <MainLayout>
+            <SpeakerBioSection
+                fullName={speaker.FullName}
+                tagLine={speaker.TagLine}
+                profilePictureUrl={speaker.ProfilePictureUrl}
+                bio={speaker.Bio}
+            />
+            <SpeakerSessionsSection
+                sessions={speaker.sessions}
+                allSessions={data.Sessions || []}
+            />
+        </MainLayout>
     );
 }

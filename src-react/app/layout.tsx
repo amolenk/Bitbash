@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import '@/app/global.css';
+import '@/app/global.scss';
 
 export const metadata: Metadata = {
   title: "Bitbash - Free two-day event covering the latest Microsoft technologies",

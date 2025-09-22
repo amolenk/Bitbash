@@ -17,7 +17,7 @@ export default function AgendaTabs({ dates, selectedDate }: AgendaTabsProps) {
             key={date.toISOString()}
             className={isActive ? `${styles.tabsItem} ${styles.tabsItemActive}` : styles.tabsItem}
           >
-            <Link className={styles.tabsLink} href={`/agenda/${date.toISOString()}`}>
+            <Link className={styles.tabsLink} href={`/agenda?date=${date.toISOString()}`}>
               {date.toLocaleDateString("en-US", { weekday: "long", day: "numeric", month: "long" })}
             </Link>
           </li>
