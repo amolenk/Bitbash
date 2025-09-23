@@ -27,7 +27,6 @@ export interface Availability {
   registrationOpensAt?: string; // ISO Date string
   registrationClosesAt?: string; // ISO Date string
   ticketTypes: TicketTypeDto[];
-  availableTickets?: number;
 }
 
 export interface RegisteredTickets {

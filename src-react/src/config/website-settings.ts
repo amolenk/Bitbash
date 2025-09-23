@@ -53,7 +53,7 @@ export const websiteSettings: WebsiteSettings = {
         registration: {
             opensAt: new Date("2025-09-20T12:00:00+02:00"),
             closesAt: new Date("2026-01-22T09:00:00+02:00"),
-            enabled: false,
+            enabled: true,
             isOpen: function () {
                 const now = new Date();
                 return this.enabled && now >= this.opensAt && now <= this.closesAt;
