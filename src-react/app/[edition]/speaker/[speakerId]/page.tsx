@@ -40,6 +40,6 @@ export default async function SpeakerDetailPage({
             </MainLayout>
         );
     } catch (error) {
-        return <div>Failed to load session.</div>;
+        return <div>Failed to load speaker.</div>;
     }
 }
