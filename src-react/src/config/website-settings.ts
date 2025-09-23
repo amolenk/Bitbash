@@ -40,7 +40,7 @@ interface SpeakerSettings {
 
 export const websiteSettings: WebsiteSettings = {
     admitto: {
-        baseUrl: process.env.NEXT_PUBLIC_ADMITTO_URL || "http://localhost:5100",
+        baseUrl: process.env.NEXT_PUBLIC_ADMITTO_URL || "https://admitto.sandermolenkamp.com",// "http://localhost:5100",
         teamSlug: "bitbash",
         eventSlug: "bitbash-2026",
         mainConferenceTicketSlug: "conference"
