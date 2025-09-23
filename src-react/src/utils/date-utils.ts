@@ -3,6 +3,7 @@ export function formatDate(date: Date) {
     return date.toLocaleDateString('en-US', {
         weekday: 'long',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
+        timeZone: 'Europe/Amsterdam'
     });
 };
