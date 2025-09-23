@@ -13,20 +13,26 @@ export async function GET(
     const url = `${settings.baseUrl}/teams/${settings.teamSlug}/events/${settings.eventSlug}/public/${encodedPublicId}/qr-code?signature=${encodedSignature}`;
 
     // Fetch the QR code from the Admitto API
-    const res = await fetch(url);
-    if (!res.ok) {
-        console.log(res);
-        return new Response("Failed to fetch QR code", { status: 502 });
-    }
-
-    // Get the image bytes and content type
-    const contentType = res.headers.get("content-type") || "image/png";
-    const imageBuffer = await res.arrayBuffer();
-    return new Response(Buffer.from(imageBuffer), {
-        status: 200,
-        headers: {
-            "Content-Type": contentType,
-            "Cache-Control": "public, max-age=3600"
+    try
+    {
+        const res = await fetch(url);
+        if (!res.ok) {
+            console.error("Upstream error:", res.status, await res.text());
+            return new Response("Failed to fetch QR code", { status: 502 });
         }
-    });
+
+        // Get the image bytes and content type
+        const contentType = res.headers.get("content-type") || "image/png";
+        const imageBuffer = await res.arrayBuffer();
+        return new Response(Buffer.from(imageBuffer), {
+            status: 200,
+            headers: {
+                "Content-Type": contentType,
+                "Cache-Control": "public, max-age=3600"
+            }
+        });
+    } catch (err) {
+        console.error("Fetch threw an error:", err);
+        return new Response("Upstream request failed", { status: 502 });
+  }
 }
