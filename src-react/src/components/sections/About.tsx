@@ -5,24 +5,23 @@ import Galleria from "./Galleria";
 import styles from "./About.module.css";
 
 export default function About() {
-    const formatDate = (dateStr: string) => {
-        const date = new Date(dateStr);
+    const formatDate = (date: Date) => {
         return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
     };
 
-    const preConDate = formatDate(websiteSettings.preConWorkshopsDate);
-    const conferenceDate = new Date(websiteSettings.conferenceDate).getDate();
+    const preConDate = formatDate(websiteSettings.currentEdition.workshopsDate);
+    const conferenceDate = formatDate(websiteSettings.currentEdition.conferenceDate);
 
     const showTicketLink = websiteSettings.currentEdition.registration.isOpen();
 
     return (
         <Section headerText="About" extraClass={`${styles.about} mt-5`} sectionBackground={1} fadeUp={true}>
-            {websiteSettings.currentEditionPhotosPublished && (
+            {/* {websiteSettings.currentEditionPhotosPublished && (
                 <>
-                    {/* <Aftermovie edition={websiteSettings.currentEdition} />
-          <Galleria edition={websiteSettings.currentEdition} /> */}
+                    <Aftermovie edition={websiteSettings.currentEdition} />
+          <Galleria edition={websiteSettings.currentEdition} />
                 </>
-            )}
+            )} */}
 
             <div className="center lead text-light">
                 <p>Get ready for an exciting two-day event that will cover the latest Microsoft technologies and innovations. Whether you&apos;re interested in .NET, Azure, Data platforms or AI, Bitbash will let you take your skills to the next level!</p>
