@@ -6,7 +6,7 @@ import SpeakerHighlights from "../src/components/sections/SpeakerHighlights";
 import Venue from "../src/components/sections/Venue";
 import Organizers from "../src/components/sections/Organizers";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <MainLayout>
       <Hero />

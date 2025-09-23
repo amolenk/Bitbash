@@ -3,6 +3,10 @@ import MainLayout from "../../../../src/components/layout/MainLayout";
 import Section from "@/src/components/layout/Section";
 import { Suspense } from "react";
 
+export const metadata = {
+    title: "Ticket Registration | Bitbash"
+};
+
 export default function VerifyPage() {
     return (
         <MainLayout>

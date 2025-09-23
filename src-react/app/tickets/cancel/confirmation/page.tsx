@@ -1,6 +1,10 @@
 import Section from "@/src/components/layout/Section";
 import MainLayout from "@/src/components/layout/MainLayout";
 
+export const metadata = {
+    title: "Ticket Cancellation | Bitbash"
+};
+
 export default function CancellationConfirmationPage() {
   return (
     <MainLayout>

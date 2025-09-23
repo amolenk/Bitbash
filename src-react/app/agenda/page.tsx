@@ -4,7 +4,11 @@ import AgendaSection from "@/src/components/sections/AgendaSection";
 import AgendaPendingSection from "@/src/components/sections/AgendaPendingSection";
 import { Suspense } from "react";
 
-export default function Agenda() {
+export const metadata = {
+    title: "Agenda | Bitbash"
+};
+
+export default function AgendaPage() {
 
     const announced = websiteSettings.currentEdition.schedule.announced;
 

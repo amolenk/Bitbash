@@ -3,7 +3,11 @@ import MainLayout from "../../src/components/layout/MainLayout";
 import SpeakersSection from "../../src/components/sections/SpeakersSection";
 import { websiteSettings } from "../../src/config/website-settings";
 
-export default function Speakers() {
+export const metadata = {
+    title: "Speakers | Bitbash"
+};
+
+export default function SpeakersPage() {
 
     const announced = websiteSettings.currentEdition.speakers.announced;
 

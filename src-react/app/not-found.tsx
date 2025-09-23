@@ -1,10 +1,6 @@
 import Section from "@/src/components/layout/Section";
 import MainLayout from "@/src/components/layout/MainLayout";
 
-export const metadata = {
-    title: "Not Found | Bitbash"
-};
-
 export default function NotFoundPage() {
   return (
     <MainLayout>

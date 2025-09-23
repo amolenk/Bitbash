@@ -3,7 +3,7 @@ import Section from "@/src/components/layout/Section";
 import RegisterForm from "@/src/components/tickets/RegisterForm";
 
 export const metadata = {
-    title: "Registration | Bitbash"
+    title: "Ticket Registration | Bitbash"
 };
 
 export default async function RegisterPage({

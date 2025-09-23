@@ -10,6 +10,10 @@ import MainLayout from "@/src/components/layout/MainLayout";
 
 const fetcher = (url: string) => fetch(url).then(r => r.json());
 
+export const metadata = {
+    title: "Session Details | Bitbash"
+};
+
 export default function SessionDetailPage() {
   const params = useParams();
   const edition = params?.edition || websiteSettings.currentEdition;

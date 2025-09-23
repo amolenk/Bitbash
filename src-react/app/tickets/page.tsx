@@ -9,7 +9,7 @@ export const metadata = {
     title: "Tickets | Bitbash"
 };
 
-export default function Tickets() {
+export default function TicketsPage() {
     const edition = websiteSettings.currentEdition;
     const registrationOpen = edition.registration.isOpen();
     return (
