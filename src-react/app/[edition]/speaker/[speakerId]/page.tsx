@@ -1,43 +1,45 @@
-'use client'
-
 import React from "react";
 import SpeakerBioSection from "@/src/components/sections/SpeakerBioSection";
 import SpeakerSessionsSection from "@/src/components/sections/SpeakerSessionsSection";
-import { useParams } from "next/navigation";
-import useSWR from "swr";
 import { websiteSettings } from "@/src/config/website-settings";
 import MainLayout from "@/src/components/layout/MainLayout";
-
-const fetcher = (url: string) => fetch(url).then(r => r.json());
 
 export const metadata = {
     title: "Speaker Details | Bitbash"
 };
 
-export default function SpeakerDetailPage() {
-    const params = useParams();
-    const edition = params?.edition || websiteSettings.currentEdition;
-    const speakerId = params?.speakerId;
-    const { data, error } = useSWR(`/data/${edition}.json`, fetcher);
+export default async function SpeakerDetailPage({
+    params,
+}: {
+    params: Promise<{ edition: string; speakerId: string; }>
+}) {
 
-    if (error) return <div>Failed to load speaker.</div>;
-    if (!data) return null;
+    let { edition, speakerId } = await params;
+    edition = edition ?? websiteSettings.currentEdition.slug;
 
-    const speaker = data.Speakers.find((s: any) => s.Id === speakerId);
-    if (!speaker) return <div>Speaker not found.</div>;
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/data/${edition}.json`);
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data = await response.json();
 
-    return (
-        <MainLayout>
-            <SpeakerBioSection
-                fullName={speaker.FullName}
-                tagLine={speaker.TagLine}
-                profilePictureUrl={speaker.ProfilePictureUrl}
-                bio={speaker.Bio}
-            />
-            <SpeakerSessionsSection
-                sessions={speaker.sessions}
-                allSessions={data.Sessions || []}
-            />
-        </MainLayout>
-    );
+        const speaker = data.Speakers.find((s: any) => s.Id === speakerId);
+        if (!speaker) return <div>Speaker not found.</div>;
+
+        return (
+            <MainLayout>
+                <SpeakerBioSection
+                    fullName={speaker.FullName}
+                    tagLine={speaker.TagLine}
+                    profilePictureUrl={speaker.ProfilePictureUrl}
+                    bio={speaker.Bio}
+                />
+                <SpeakerSessionsSection
+                    sessions={speaker.sessions}
+                    allSessions={data.Sessions || []}
+                />
+            </MainLayout>
+        );
+    } catch (error) {
+        return <div>Failed to load session.</div>;
+    }
 }

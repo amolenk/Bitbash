@@ -15,8 +15,6 @@ export default async function RegisterPage({
     const email = searchParams.email ?? "";
     const token = searchParams.token ?? "";
 
-//    const { email, token } = await searchParams;
-
     return (
         <MainLayout>
             <Section headerText="Registration" sectionBackground={2}>
