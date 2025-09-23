@@ -48,11 +48,11 @@ export const websiteSettings: WebsiteSettings = {
     currentEdition: {
         slug: "winter-2026",
         description: "Jurassic edition",
-        workshopsDate: new Date("2026-01-23T00:00:00+02:00"),
-        conferenceDate: new Date("2026-01-24T00:00:00+02:00"),
+        workshopsDate: new Date("2026-01-23T00:00:00+01:00"),
+        conferenceDate: new Date("2026-01-24T00:00:00+01:00"),
         registration: {
             opensAt: new Date("2025-09-20T12:00:00+02:00"),
-            closesAt: new Date("2026-01-22T09:00:00+02:00"),
+            closesAt: new Date("2026-01-22T09:00:00+01:00"),
             enabled: true,
             isOpen: function () {
                 const now = new Date();

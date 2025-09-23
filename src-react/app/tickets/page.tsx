@@ -47,9 +47,7 @@ export default async function TicketsPage() {
     } catch (err: any) {
         return (
             <MainLayout>
-                <ErrorCard error={err.message} />
-                <ErrorCard error={websiteSettings.admitto.baseUrl} />
-                {/* <ErrorCard error={'An error occurred while checking ticket availability.'} /> */}
+                <ErrorCard error={'An error occurred while checking ticket availability.'} />
             </MainLayout>
         )
     }
