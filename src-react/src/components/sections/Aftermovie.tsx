@@ -6,23 +6,25 @@ interface AftermovieProps {
 }
 
 export default function Aftermovie({ edition }: AftermovieProps) {
-  const aftermovieUrl = websiteSettings.aftermovies[edition];
+
+    return null;
+    
+//   const aftermovieUrl = websiteSettings.aftermovies[edition];
+//   if (!aftermovieUrl) return null;
   
-  if (!aftermovieUrl) return null;
-  
-  return (
-    <div className="container">
-      <div className="row justify-content-center p-2">
-        <iframe 
-          className={styles.aftermovie}
-          src={aftermovieUrl}
-          title="Bitbash Aftermovie" 
-          frameBorder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerPolicy="strict-origin-when-cross-origin" 
-          allowFullScreen
-        />
-      </div>
-    </div>
-  );
+//   return (
+//     <div className="container">
+//       <div className="row justify-content-center p-2">
+//         <iframe 
+//           className={styles.aftermovie}
+//           src={aftermovieUrl}
+//           title="Bitbash Aftermovie" 
+//           frameBorder="0" 
+//           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+//           referrerPolicy="strict-origin-when-cross-origin" 
+//           allowFullScreen
+//         />
+//       </div>
+//     </div>
+//   );
 }
