@@ -12,10 +12,6 @@ jobs:
     permissions:
       contents: read
 
-    # defaults:
-    #   run:
-    #     working-directory: src-react
-
     steps:
       - uses: actions/checkout@v4
 
@@ -52,7 +48,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: deploy  # <-- upload the clean bundle, not the whole src
+          path: deploy
           include-hidden-files: true
 
   deploy:
