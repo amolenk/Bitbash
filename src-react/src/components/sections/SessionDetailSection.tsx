@@ -51,7 +51,7 @@ export default function SessionDetailSection({ session }: { session: Session }) 
                         <span className="badge bg-info rounded-pill m-1">{session.SessionFormat}</span>
                     )}
                     {session.Level && (
-                        <span className="badge bg-secondary rounded-pill m-1">{session.Level}</span>
+                        <span className="badge bg-primary rounded-pill m-1">{session.Level}</span>
                     )}
                 </div>
                 <div className="card-footer d-flex justify-content-center">
