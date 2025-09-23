@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 
 import ErrorCard from "../common/ErrorCard";
 import MainConferenceForm from "./MainConferenceForm";
-import PersonalDetailsForm from "./PersonalDetailsForm";
+import PersonalDetailsForm, { PersonalDetails } from "./PersonalDetailsForm";
 import SpinningButton from "../common/SpinningButton";
 import WorkshopsForm from "./WorkshopsForm";
 
@@ -26,11 +26,15 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
     const [availability, setAvailability] = useState<Availability | null>(null);
     const [conferenceSelection, setConferenceSelection] = useState<boolean | null>(null);
     const [workshopSelections, setWorkshopSelections] = useState<string[]>([]);
-    const [details, setDetails] = useState({
+    const [details, setDetails] = useState<PersonalDetails>({
         firstName: "",
         lastName: "",
-        company: "",
-        role: ""
+        attendeeType: null as any, // Must be chosen in form
+        organization: "",
+        role: "",
+        institute: "",
+        studyProgram: "",
+        graduationDate: ""
     });
     
     const formRef = useRef<HTMLFormElement>(null);
@@ -67,12 +71,31 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
             if (conferenceSelection) {
                 tickets.push(websiteSettings.admitto.mainConferenceTicketSlug);
             }
-            await register({
-                email,
-                ...details,
-                registrationToken: token,
-                tickets: tickets
-            });
+
+            if (details.attendeeType === "student") {
+                await register(
+                    email,
+                    details.firstName,
+                    details.lastName,
+                    details.attendeeType,
+                    details.institute,
+                    details.studyProgram,
+                    details.graduationDate,
+                    tickets,
+                    token);
+            } else {
+                await register(
+                    email,
+                    details.firstName,
+                    details.lastName,
+                    details.attendeeType,
+                    details.organization,
+                    details.role,
+                    "",
+                    tickets,
+                    token);
+            }
+
             router.push("/tickets/register/thankyou");
         } catch (err: any) {
             if (err instanceof AdmittoError && err.code === "attendee.invalid_token") {

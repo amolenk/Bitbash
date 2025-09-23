@@ -16,6 +16,7 @@ export default function VerifyPage() {
                         <div className="card h-100 shadow-sm">
                             <div className="card-header text-center"><h3>We've sent a verification code to your email.<br />Please enter it below to continue your registration.</h3></div>
                             <div className="card-body center text-center">
+                                <p className="text-center text-muted">(if you don't receive an email shortly, please check your spam folder)</p>
                                 <Suspense fallback={<div>Loading verification form...</div>}>
                                     <OtpVerifyForm />
                                 </Suspense>

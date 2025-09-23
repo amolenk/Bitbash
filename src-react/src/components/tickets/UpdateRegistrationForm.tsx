@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getAvailability, Availability, register, getTickets, isRegistrationOpen, isAfterRegistrationClosed } from "../../api/admitto";
+import { getAvailability, Availability, register, getTickets, isRegistrationOpen, isAfterRegistrationClosed, changeTickets } from "../../api/admitto";
 import SpinningButton from "../common/SpinningButton";
 import { websiteSettings } from "@/src/config/website-settings";
 import WorkshopsForm from "./WorkshopsForm";
@@ -82,12 +82,14 @@ export default function UpdateRegistrationForm({ publicId, signature }: UpdateRe
         setSubmittingError("");
 
         try {
+            const tickets = [...workshopSelections];
+            if (conferenceSelection) {
+                tickets.push(websiteSettings.admitto.mainConferenceTicketSlug);
+            }
 
-            // if (success) {
-            //     router.push("/register/thankyou");
-            // } else {
-            //     setError("Registration failed. Try again.");
-            // }
+            await changeTickets(publicId, signature, tickets);
+
+            router.push("/tickets/register/thankyou");
         } catch (err: any) {
             setSubmitting(false);
             setSubmittingError(err.message || "Registration update failed. Please try again.");
@@ -159,7 +161,7 @@ export default function UpdateRegistrationForm({ publicId, signature }: UpdateRe
                         <Link href={`/tickets/cancel/${publicId}/${signature}`} className="btn btn-danger mt-2 me-3">
                             Cancel Registration
                         </Link>
-                        <SpinningButton loading={loading} disabled={!isFormValid()} className="mt-2">
+                        <SpinningButton loading={submitting} disabled={!isFormValid()} className="mt-2">
                             Update Registration
                         </SpinningButton>
                     </div>

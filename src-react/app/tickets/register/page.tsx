@@ -9,11 +9,10 @@ export const metadata = {
 export default async function RegisterPage({
     searchParams,
 }: {
-    searchParams: { email: string; token: string; }
+    searchParams: Promise<{ email: string; token: string; }>
 }) {
 
-    const email = searchParams.email ?? "";
-    const token = searchParams.token ?? "";
+    const { email, token } = await searchParams;
 
     return (
         <MainLayout>

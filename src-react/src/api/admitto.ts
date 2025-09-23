@@ -11,26 +11,26 @@ export class AdmittoError extends Error {
 }
 
 export interface TicketTypeDto {
-  slug: string;
-  name: string;
-  slotNames: string[];
-  hasCapacity: boolean;
+    slug: string;
+    name: string;
+    slotNames: string[];
+    hasCapacity: boolean;
 }
 
 export interface AdditionalDetailSchemaDto {
-  name: string;
-  maxLength: string;
-  isRequired: boolean;
+    name: string;
+    maxLength: string;
+    isRequired: boolean;
 }
 
 export interface Availability {
-  registrationOpensAt?: string; // ISO Date string
-  registrationClosesAt?: string; // ISO Date string
-  ticketTypes: TicketTypeDto[];
+    registrationOpensAt?: string; // ISO Date string
+    registrationClosesAt?: string; // ISO Date string
+    ticketTypes: TicketTypeDto[];
 }
 
 export interface RegisteredTickets {
-  tickets: string[];
+    tickets: string[];
 }
 
 export function isRegistrationOpen(availability: Availability): boolean {
@@ -124,21 +124,33 @@ export async function getTickets(publicId: string, signature: string): Promise<R
     return await res.json();
 }
 
-export async function register(details: { email: string; firstName: string; lastName: string; company: string; role: string; tickets: string[]; registrationToken: string }) {
+export async function register(
+    email: string,
+    firstName: string,
+    lastName: string,
+    attendeeType: string,
+    organization: string,
+    role: string,
+    graduationDate: string,
+    tickets: string[],
+    registrationToken: string) {
+
     const url = `${getTicketedEventUrl()}/public/register`;
     const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            email: details.email,
-            firstName: details.firstName,
-            lastName: details.lastName,
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
             additionalDetails: [
-                { name: "Company", value: details.company },
-                { name: "Role", value: details.role }
+                { name: "AttendeeType", value: attendeeType },
+                { name: "Organization", value: organization },
+                { name: "Role", value: role },
+                { name: "GraduationDate", value: graduationDate }
             ],
-            requestedTickets: details.tickets,
-            verificationToken: details.registrationToken
+            requestedTickets: tickets,
+            verificationToken: registrationToken
         })
     });
     if (!res.ok) {
@@ -159,6 +171,41 @@ export async function register(details: { email: string; firstName: string; last
         }
 
         throw new AdmittoError(errorData?.detail || "Registration failed.", errorData?.errorCode);
+    }
+    return true;
+}
+
+export async function changeTickets(
+    publicId: string,
+    signature: string,
+    tickets: string[]) {
+
+    const url = `${getTicketedEventUrl()}/public/${publicId}/tickets?signature=${signature}`;
+    const res = await fetch(url, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            requestedTickets: tickets
+        })
+    });
+    if (!res.ok) {
+        const errorData = await res.json();
+
+        if (errorData?.errorCode === "validation") {
+
+            let errorString = "";
+            if (errorData && typeof errorData.errors === "object" && errorData.errors !== null) {
+                errorString = Object.values(errorData.errors)
+                    .flat()
+                    .map(String)
+                    .join(", ");
+            } else {
+                errorString = String(errorData.errors);
+            }
+            throw new AdmittoError(errorString, errorData.errorCode);
+        }
+
+        throw new AdmittoError(errorData?.detail || "Registration update failed.", errorData?.errorCode);
     }
     return true;
 }
