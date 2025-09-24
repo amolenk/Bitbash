@@ -93,8 +93,9 @@ export default function OtpInput({ value, onChange }: OtpInputProps) {
                     ref={el => void (inputsRef.current[idx] = el)}
                     id={`otp-${idx}`}
                     type="tel"
-                    inputMode="numeric"
+                    pattern="[0-9]*"
                     maxLength={1}
+                    inputMode="numeric"
                     value={digit}
                     onChange={e => handleChange(idx, e.target.value)}
                     onKeyDown={e => handleKeyDown(idx, e)}

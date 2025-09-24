@@ -37,6 +37,7 @@ export default function OtpVerifyForm() {
     return (
         <form onSubmit={handleSubmit} className="ticket-form">
             {error && <div className="text-danger my-3">{error}</div>}
+            <div className="alert alert-warning">Test version</div>
             <OtpInput value={otp} onChange={setOtp} />
             <SpinningButton loading={loading} disabled={otp.some(digit => digit === "")} className="mt-2">
                 Verify email
