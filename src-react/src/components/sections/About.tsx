@@ -6,7 +6,7 @@ import styles from "./About.module.css";
 
 export default function About() {
     const formatDate = (date: Date) => {
-        return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+        return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'Europe/Amsterdam' } );
     };
 
     const preConDate = formatDate(websiteSettings.currentEdition.workshopsDate);

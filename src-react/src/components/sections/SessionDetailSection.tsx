@@ -27,7 +27,7 @@ function formatTimeLocation(session: Session) {
     if (session.StartsAt && session.EndsAt) {
         const starts = new Date(session.StartsAt);
         const ends = new Date(session.EndsAt);
-        let result = `${starts.toLocaleDateString('en-US', { weekday: 'long', day: '2-digit', month: 'short' })} ${starts.getHours().toString().padStart(2, '0')}:${starts.getMinutes().toString().padStart(2, '0')} - ${ends.getHours().toString().padStart(2, '0')}:${ends.getMinutes().toString().padStart(2, '0')}`;
+        let result = `${starts.toLocaleDateString('en-US', { weekday: 'long', day: '2-digit', month: 'short', timeZone: 'Europe/Amsterdam' })} ${starts.getHours().toString().padStart(2, '0')}:${starts.getMinutes().toString().padStart(2, '0')} - ${ends.getHours().toString().padStart(2, '0')}:${ends.getMinutes().toString().padStart(2, '0')}`;
         if (session.Room) {
             result += ` - ${session.Room}`;
         }

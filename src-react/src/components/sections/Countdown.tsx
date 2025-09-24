@@ -36,7 +36,7 @@ export default function Countdown() {
   const conferenceDate = new Date(websiteSettings.currentEdition.conferenceDate);
   
   const formatDate = () => {
-    const options: Intl.DateTimeFormatOptions = { month: 'short' };
+    const options: Intl.DateTimeFormatOptions = { month: 'short', timeZone: 'Europe/Amsterdam' };
     const monthName = preConDate.toLocaleDateString('en-US', options);
     return (
       <>
