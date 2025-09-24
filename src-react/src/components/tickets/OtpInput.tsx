@@ -92,7 +92,7 @@ export default function OtpInput({ value, onChange }: OtpInputProps) {
                     key={idx}
                     ref={el => void (inputsRef.current[idx] = el)}
                     id={`otp-${idx}`}
-                    type="text"
+                    type="tel"
                     inputMode="numeric"
                     maxLength={1}
                     value={digit}
