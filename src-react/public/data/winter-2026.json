@@ -1,6 +1,17 @@
 {
   "Speakers": [
     {
+      "Id": "barbara-forbes",
+      "FullName": "Barbara Forbes",
+      "Bio": "Barbara Forbes is the Field CTO at OGD in the Netherlands, a Microsoft Azure MVP, Microsoft Certified Trainer (MCT), and a GitHub Star. She works at the intersection of strategy, technology, education, and development. Her technical focus is on the Microsoft Cloud Adoption Framework, Generative AI, Infrastructure as Code, PowerShell, and GitHub. \r\nBarbara loves teaching in an accessible manner; in person, as a teacher for LinkedIn Learning and as a frequent speaker at conferences and user groups. She is actively involved in the tech community, including being part of the organization of European events ",
+      "TagLine": "Field CTO @ OGD | Azure MVP | GitHub Star",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/barbara-forbes.jpg",
+      "sessions": [
+        "secure-access-to-your-azure-environment-lets-count-the-ways"
+      ]
+    },
+    {
       "Id": "chris-van-sluijsveld",
       "FullName": "Chris van Sluijsveld",
       "Bio": "Chris helps companies embracing the full potential of Cloud Technology. He is experienced in advising and implementing Cloud technologies for new and existing businesses. He enjoys the challenge of finding the best solution for the problem. In his spare time Chris enjoys playing the occasional digital or analog board game.",
@@ -64,6 +75,17 @@
       "ProfilePictureUrl": "img/winter-2026/speakers/henry-been.jpg",
       "sessions": [
         "for-shits-and-giggles-building-a-compiler"
+      ]
+    },
+    {
+      "Id": "jacob-duijzer",
+      "FullName": "Jacob Duijzer",
+      "Bio": "Jacob is a leader who inspires others through his commitment to learning, sharing knowledge, and fostering growth. With a strong foundation as a software developer, team lead, and technical consultant, he brings real-world experience to every role he takes on.\r\nJacob actively guides organizations through changes, such as adopting Team Topologies, and supports teams by mentoring developers, creating development teams, and leading workshops. His hands-on approach ensures that his ideas are practical and grounded in experience.\r\nDriven by a passion for helping people and teams succeed, Jacob focuses on building strong, collaborative environments. He combines technical expertise with leadership to advocate for better ways of working and continuous improvement.",
+      "TagLine": "Helping developers, teams \u0026 organizations build better software | Engineering Manager | Team Topologies Advocate | Sooner Safer Happier Advocate",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2026/speakers/jacob-duijzer.jpg",
+      "sessions": [
+        "handson-graphql-building-smarter-apis"
       ]
     },
     {
@@ -212,7 +234,7 @@
   ],
   "Sessions": [
     {
-      "Id": "c71efa08-0104-4b52-a3c5-cebe03c96a68",
+      "Id": "e0720a23-d85d-4f3d-97ba-36658ad000c1",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-23T08:30:00",
@@ -281,7 +303,7 @@
       "Room": "Room 4"
     },
     {
-      "Id": "ab26dbb5-7e17-4c77-a75e-7b0c03e175f3",
+      "Id": "6aa80dd8-ecdb-4da3-9b76-cb57c04a5958",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-23T12:00:00",
@@ -307,7 +329,21 @@
       "Room": "Room 3"
     },
     {
-      "Id": "0a74827d-e7c1-473e-bb1c-40b28169cbaa",
+      "Id": "handson-graphql-building-smarter-apis",
+      "Title": "Hands-On GraphQL: Building Smarter APIs",
+      "Description": "Curious about GraphQL but never had the chance to dive in? Whether you\u2019ve heard the buzz or always wanted to try it out, this workshop is your opportunity to get hands-on and learn by doing. In this half-day session, you\u2019ll explore the fundamentals of GraphQL and build your first API from scratch using .NET and Hot Chocolate.\r\n\r\nTo make things a bit more\u2026 prehistoric, you\u2019ll be creating an API for a fictional dinosaur park, think visitor management, dino facts, and secure feeding schedules. Along the way, you\u2019ll implement queries, mutations, and subscriptions, and add essential features like authentication and schema organization.\r\n\r\nBy the end of the workshop, you\u2019ll walk away with a fully functioning GraphQL API and the skills to build your own modern (and hopefully less dangerous) backend systems.\r\n\r\nNo prior GraphQL experience required, just bring your curiosity and your favorite IDE.\r\n\r\nRequirements:\r\n- .NET 8 or higher\r\n- Visual Studio/Rider/VS Code",
+      "StartsAt": "2026-01-23T13:00:00",
+      "EndsAt": "2026-01-23T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "jacob-duijzer"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 4"
+    },
+    {
+      "Id": "fa277c86-2fc8-4265-93d3-e805c576798f",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-24T08:30:00",
@@ -334,63 +370,63 @@
       "Room": "Room 1"
     },
     {
-      "Id": "modernizing-your-legacy-application",
-      "Title": "Modernizing your legacy application",
-      "Description": "How do you modernize beyond a 10-30 year legacy?\r\n\r\nToo often, organizations rely on applications that have been around for 10\u002B years. These applications are maintained on an \u0022as needed\u0022 basis and may represent a single point of failure, and those failures are expensive.\r\n\r\nBut how do you modernize over 10 years of legacy? Throw it all out and start over? That gets even more expensive. The answer is simple: it depends. \r\n\r\nIt depends on the specific needs of the business: does it need to scale? What about safety or privacy? How about Performance? Choices have to be made.\r\n\r\nAs an application modernization architect I have done my fair share of these projects. In this session I will share my experiences, and how I deal with them. By the end of the session you will have a clear understanding of where to start, and what steps to take to bring that business-critical application into the modern age.",
+      "Id": "secure-access-to-your-azure-environment-lets-count-the-ways",
+      "Title": "Secure access to your Azure environment: Let\u0027s count the ways",
+      "Description": "Azure\u0027s web-based access is incredibly convenient, allowing you to enter the portal from any device, anywhere. But this convenience isn\u0027t exclusive to you; it\u0027s also a potential gateway for those with malicious intent, trying to exploit your resources, data and budget. The consequences from a security breach can be huge.\r\n\r\nIn an era where digital protection is needed more than ever, navigating the security tools can be overwhelming. Some tools might slow down your processes. Is the added security worth the potential decrease in speed? Is it necessary?\r\n\r\nThis session is your guide through the security options available to cloud engineers. We\u0027ll explore MFA, PIM, JIT, VPN, PAW, and other three-letter abbreviations that stand between you and your Azure environment intruders. Discover modern tools that not only secure your Azure space but could also be used for on-premises access through Azure.\r\n\r\nBy the end of our journey, you\u0027ll have a blueprint for creating the most secure environment. You\u0027ll leave equipped to make informed decisions about which security measures are right for your setup. Let\u0027s secure your Azure landscape together.",
       "StartsAt": "2026-01-24T09:15:00",
       "EndsAt": "2026-01-24T10:05:00",
       "IsServiceSession": false,
       "speakers": [
-        "nico-vermeir"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": "Room 2"
-    },
-    {
-      "Id": "arc42-the-art-of-simple-software-architecture-documentation",
-      "Title": "arc42: The Art of Simple Software Architecture Documentation",
-      "Description": "Many software teams struggle with architecture documentation that is either too long, missing key information, or, more often, nonexistent.\r\n\r\nThe arc42 template, created by practicing architects, offers a balanced set of twelve sections that cover goals, quality scenarios, context, building blocks, runtime behaviour, and more. Years of use have shown that the template captures the reasons behind design decisions and keeps the material clear for both the team and its stakeholders.\r\n\r\nThis session explains the purpose of every arc42 section, suggesting methods to gather the right facts without slowing project work, and demonstrates practical tools for well\u2011structured documentation in formats such as Markdown, PlantUML, and draw.io that sit comfortably in version control.\r\n\r\nAfter this session, you\u2019ll be able to jump\u2011start all 12 arc42 chapters and craft clear, reliable architecture documents for your own projects.",
-      "StartsAt": "2026-01-24T10:15:00",
-      "EndsAt": "2026-01-24T11:05:00",
-      "IsServiceSession": false,
-      "speakers": [
-        "michael-hompus"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": "Room 1"
-    },
-    {
-      "Id": "for-shits-and-giggles-building-a-compiler",
-      "Title": "For Shits and Giggles: Building a Compiler",
-      "Description": "Have you ever wondered how a compiler works? Well, no more! In this session we will explore how a compiler works: which steps are invoked in which order and what are the intermediate results? We will also explore how we can use these results for other use cases like an interpreter, code analysis or other tools.\r\n\r\nIf you are ready to completely geek out over how one of the tools you use every day works, come join Henry and find out! ",
-      "StartsAt": "2026-01-24T10:15:00",
-      "EndsAt": "2026-01-24T11:05:00",
-      "IsServiceSession": false,
-      "speakers": [
-        "henry-been"
+        "barbara-forbes"
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
       "Room": "Room 2"
     },
     {
-      "Id": "getting-started-with-ethical-hacking",
-      "Title": "Getting started with Ethical Hacking",
-      "Description": "Hacks, data breaches, ransomware... you keep hearing about it in the news. To effectively protect your business and/or software, you need to know where the vulnerabilities are. And what better way to find out than by attempting to hack yourself?\r\nIn this session, we will explore how hackers operate and which tools you can use to hack (your own) applications. Additionally, we will examine the most common types of vulnerabilities, how to practice exploiting them, and what measures can be taken to prevent them.\r\nChecking the security of your software is an ongoing process. Therefore, we will also explore options for integrating ethical hacking tools into pipelines to repeatedly assess your application for vulnerabilities.\r\nLast but not least, I\u0027ll share tips on keeping your colleagues sharp by applying Social Engineering.\r\n",
+      "Id": "what-is-new-in-net-and-c",
+      "Title": "What is new in .NET and C#?",
+      "Description": "November 2025 marked the release of .NET 10 and C# 14. In this session, I will talk about what is new in the latest version of .NET and what the future will bring for the .NET platform in general. Expect a large number of new .NET 10 and C# 14 features and examples of those features.",
       "StartsAt": "2026-01-24T10:15:00",
       "EndsAt": "2026-01-24T11:05:00",
       "IsServiceSession": false,
       "speakers": [
-        "christian-peeters"
+        "johnny-hooyberghs"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "building-your-own-mcp-server",
+      "Title": "Building your own MCP server",
+      "Description": "The Model Context Protocol is all the rage and rightly so. As the USB-C for AI it is an incredibly powerful tool that acts as a bridge between real-world systems and LLMs. But how do you get started with MCP and more importantly: how do you build your own MCP server?\r\n\r\nIn this session we\u0027ll get our teeth stuck in these and many more questions while building our own MCP server along the way.",
+      "StartsAt": "2026-01-24T10:15:00",
+      "EndsAt": "2026-01-24T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "stuart-van-der-lee"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "navigating-complexity-playing-chess-while-the-rules-keep-changing",
+      "Title": "Navigating Complexity: Playing chess while the rules keep changing",
+      "Description": "In my free time, I love solving chess puzzles. Finding that \u201Cmate in 3\u201D delivers a satisfying dopamine boost. But chess follows fixed rules with calculable outcomes. Imagine if each move could result in a change of the rules. Surprise, knights can\u2019t check the king now. Not so fun anymore, right? Yet this is often the environment we face in complex software projects where stakeholders have conflicting interests, and political alliances may be unknown.\r\nComplex and ever-changing environments can leave teams paralysed. It is tempting to oversimplify in complex situations to achieve clarity and determine the best course of action.  However, this can create dangerous blind spots that lead to the underestimation of critical risks or a waste of resources.\r\nThis talk introduces different approaches to complex decision-making. Instead of seeking perfect solutions, it will help you find \u201Cthe next best move\u201D by making incremental and reversible decisions. By embracing complexity rather than fighting it, you might discover that navigating uncertainty can deliver its own kind of dopamine hit!",
+      "StartsAt": "2026-01-24T10:15:00",
+      "EndsAt": "2026-01-24T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "laura-kester"
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
       "Room": "Room 3"
     },
     {
-      "Id": "c21cfe37-914c-4241-bf43-e525ec532d79",
+      "Id": "2ceb3c3e-5780-4d48-9a65-dea563e96829",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2026-01-24T11:05:00",
@@ -402,17 +438,17 @@
       "Room": "Nexus"
     },
     {
-      "Id": "what-is-new-in-net-and-c",
-      "Title": "What is new in .NET and C#?",
-      "Description": "November 2025 marked the release of .NET 10 and C# 14. In this session, I will talk about what is new in the latest version of .NET and what the future will bring for the .NET platform in general. Expect a large number of new .NET 10 and C# 14 features and examples of those features.",
+      "Id": "arc42-the-art-of-simple-software-architecture-documentation",
+      "Title": "arc42: The Art of Simple Software Architecture Documentation",
+      "Description": "Many software teams struggle with architecture documentation that is either too long, missing key information, or, more often, nonexistent.\r\n\r\nThe arc42 template, created by practicing architects, offers a balanced set of twelve sections that cover goals, quality scenarios, context, building blocks, runtime behaviour, and more. Years of use have shown that the template captures the reasons behind design decisions and keeps the material clear for both the team and its stakeholders.\r\n\r\nThis session explains the purpose of every arc42 section, suggesting methods to gather the right facts without slowing project work, and demonstrates practical tools for well\u2011structured documentation in formats such as Markdown, PlantUML, and draw.io that sit comfortably in version control.\r\n\r\nAfter this session, you\u2019ll be able to jump\u2011start all 12 arc42 chapters and craft clear, reliable architecture documents for your own projects.",
       "StartsAt": "2026-01-24T11:25:00",
       "EndsAt": "2026-01-24T12:15:00",
       "IsServiceSession": false,
       "speakers": [
-        "johnny-hooyberghs"
+        "michael-hompus"
       ],
       "SessionFormat": "Session",
-      "Level": "Introductory and overview",
+      "Level": "Intermediate",
       "Room": "Room 1"
     },
     {
@@ -430,21 +466,21 @@
       "Room": "Room 2"
     },
     {
-      "Id": "building-your-own-mcp-server",
-      "Title": "Building your own MCP server",
-      "Description": "The Model Context Protocol is all the rage and rightly so. As the USB-C for AI it is an incredibly powerful tool that acts as a bridge between real-world systems and LLMs. But how do you get started with MCP and more importantly: how do you build your own MCP server?\r\n\r\nIn this session we\u0027ll get our teeth stuck in these and many more questions while building our own MCP server along the way.",
+      "Id": "modernizing-your-legacy-application",
+      "Title": "Modernizing your legacy application",
+      "Description": "How do you modernize beyond a 10-30 year legacy?\r\n\r\nToo often, organizations rely on applications that have been around for 10\u002B years. These applications are maintained on an \u0022as needed\u0022 basis and may represent a single point of failure, and those failures are expensive.\r\n\r\nBut how do you modernize over 10 years of legacy? Throw it all out and start over? That gets even more expensive. The answer is simple: it depends. \r\n\r\nIt depends on the specific needs of the business: does it need to scale? What about safety or privacy? How about Performance? Choices have to be made.\r\n\r\nAs an application modernization architect I have done my fair share of these projects. In this session I will share my experiences, and how I deal with them. By the end of the session you will have a clear understanding of where to start, and what steps to take to bring that business-critical application into the modern age.",
       "StartsAt": "2026-01-24T11:25:00",
       "EndsAt": "2026-01-24T12:15:00",
       "IsServiceSession": false,
       "speakers": [
-        "stuart-van-der-lee"
+        "nico-vermeir"
       ],
       "SessionFormat": "Session",
-      "Level": "Introductory and overview",
+      "Level": "Intermediate",
       "Room": "Room 3"
     },
     {
-      "Id": "5cd0fd82-9be5-4558-b24d-0a7c25fd26de",
+      "Id": "a7d2fe81-3655-4e04-972c-fd901e7a32c7",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-24T12:15:00",
@@ -456,14 +492,14 @@
       "Room": "Nexus"
     },
     {
-      "Id": "navigating-complexity-playing-chess-while-the-rules-keep-changing",
-      "Title": "Navigating Complexity: Playing chess while the rules keep changing",
-      "Description": "In my free time, I love solving chess puzzles. Finding that \u201Cmate in 3\u201D delivers a satisfying dopamine boost. But chess follows fixed rules with calculable outcomes. Imagine if each move could result in a change of the rules. Surprise, knights can\u2019t check the king now. Not so fun anymore, right? Yet this is often the environment we face in complex software projects where stakeholders have conflicting interests, and political alliances may be unknown.\r\nComplex and ever-changing environments can leave teams paralysed. It is tempting to oversimplify in complex situations to achieve clarity and determine the best course of action.  However, this can create dangerous blind spots that lead to the underestimation of critical risks or a waste of resources.\r\nThis talk introduces different approaches to complex decision-making. Instead of seeking perfect solutions, it will help you find \u201Cthe next best move\u201D by making incremental and reversible decisions. By embracing complexity rather than fighting it, you might discover that navigating uncertainty can deliver its own kind of dopamine hit!",
+      "Id": "roast-my-design-and-architecture-decisions",
+      "Title": "Roast my design and architecture decisions",
+      "Description": "Every software project is a series of decisions: about architecture, design, what to prioritize and what to postpone (or ignore altogether). And behind every decision is a trade-off, between performance and complexity, scalability and simplicity, pragmatism and purity, short-term delivery and long-term maintainability.\r\n\r\nIn this talk, I\u2019ll walk you through real-world examples of architectural and design choices I have made in the past. Some were made under pressure, others based on team dynamics, technology constraints, or simply the information I had at the time.\r\n\r\nYou\u2019ll get to see the trade-offs behind decisions. We\u0027ll also look at the impact of team maturity, client capabilities, and deadlines. Because context is everything.\r\n\r\nAnd here\u2019s the twist: you get to be the jury. Was this a solid decision given the constraints, or an architectural blunder waiting to happen? Rate my decisions, and let\u2019s explore what we can learn from them. In the end, we all want to get better at designing systems that can stand the test of time and change.",
       "StartsAt": "2026-01-24T13:00:00",
       "EndsAt": "2026-01-24T13:50:00",
       "IsServiceSession": false,
       "speakers": [
-        "laura-kester"
+        "steven-hillaert"
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
@@ -484,19 +520,21 @@
       "Room": "Room 2"
     },
     {
-      "Id": "b9f7b35a-2781-4ee9-af1b-26709ec9e9cd",
-      "Title": "To Be Announced",
-      "Description": null,
+      "Id": "getting-started-with-ethical-hacking",
+      "Title": "Getting started with Ethical Hacking",
+      "Description": "Hacks, data breaches, ransomware... you keep hearing about it in the news. To effectively protect your business and/or software, you need to know where the vulnerabilities are. And what better way to find out than by attempting to hack yourself?\r\nIn this session, we will explore how hackers operate and which tools you can use to hack (your own) applications. Additionally, we will examine the most common types of vulnerabilities, how to practice exploiting them, and what measures can be taken to prevent them.\r\nChecking the security of your software is an ongoing process. Therefore, we will also explore options for integrating ethical hacking tools into pipelines to repeatedly assess your application for vulnerabilities.\r\nLast but not least, I\u0027ll share tips on keeping your colleagues sharp by applying Social Engineering.\r\n",
       "StartsAt": "2026-01-24T13:00:00",
       "EndsAt": "2026-01-24T13:50:00",
-      "IsServiceSession": true,
-      "speakers": [],
-      "SessionFormat": null,
-      "Level": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "christian-peeters"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
       "Room": "Room 3"
     },
     {
-      "Id": "c66a09d7-0962-4c5c-93e3-90a7c567ea51",
+      "Id": "0edb53a9-f7aa-4615-bfee-7c3049082aef",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2026-01-24T13:50:00",
@@ -508,17 +546,17 @@
       "Room": "Nexus"
     },
     {
-      "Id": "roast-my-design-and-architecture-decisions",
-      "Title": "Roast my design and architecture decisions",
-      "Description": "Every software project is a series of decisions: about architecture, design, what to prioritize and what to postpone (or ignore altogether). And behind every decision is a trade-off, between performance and complexity, scalability and simplicity, pragmatism and purity, short-term delivery and long-term maintainability.\r\n\r\nIn this talk, I\u2019ll walk you through real-world examples of architectural and design choices I have made in the past. Some were made under pressure, others based on team dynamics, technology constraints, or simply the information I had at the time.\r\n\r\nYou\u2019ll get to see the trade-offs behind decisions. We\u0027ll also look at the impact of team maturity, client capabilities, and deadlines. Because context is everything.\r\n\r\nAnd here\u2019s the twist: you get to be the jury. Was this a solid decision given the constraints, or an architectural blunder waiting to happen? Rate my decisions, and let\u2019s explore what we can learn from them. In the end, we all want to get better at designing systems that can stand the test of time and change.",
+      "Id": "for-shits-and-giggles-building-a-compiler",
+      "Title": "For Shits and Giggles: Building a Compiler",
+      "Description": "Have you ever wondered how a compiler works? Well, no more! In this session we will explore how a compiler works: which steps are invoked in which order and what are the intermediate results? We will also explore how we can use these results for other use cases like an interpreter, code analysis or other tools.\r\n\r\nIf you are ready to completely geek out over how one of the tools you use every day works, come join Henry and find out! ",
       "StartsAt": "2026-01-24T14:10:00",
       "EndsAt": "2026-01-24T15:00:00",
       "IsServiceSession": false,
       "speakers": [
-        "steven-hillaert"
+        "henry-been"
       ],
       "SessionFormat": "Session",
-      "Level": "Intermediate",
+      "Level": "Introductory and overview",
       "Room": "Room 1"
     },
     {
