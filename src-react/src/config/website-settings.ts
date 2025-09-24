@@ -61,7 +61,7 @@ export const websiteSettings: WebsiteSettings = {
         },
         schedule: {
             announced: true,
-            finalized: false
+            finalized: true
         },
         speakers: {
             announced: true
