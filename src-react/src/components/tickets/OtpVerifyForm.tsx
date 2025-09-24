@@ -20,18 +20,20 @@ export default function OtpVerifyForm() {
         setLoading(true);
         setError("");
         const code = otp.join("");
-        let token = null;
         try {
-            token = await admittoVerifyOtp(email, code);
-            if (token) {
-                router.push(`/tickets/register?token=${encodeURIComponent(token)}&email=${encodeURIComponent(email)}`);
+            const verificationResult = await admittoVerifyOtp(email, code);
+            // If we received a publicId, the user already has tickets.
+            if (verificationResult.publicId) {
+                router.push(`/tickets/edit/${verificationResult.publicId}/${verificationResult.signature}?redirect=true`);
+            } else {
+                router.push(`/tickets/register?token=${encodeURIComponent(verificationResult.registrationToken)}&email=${encodeURIComponent(email)}`);
             }
         } catch (err: any) {
             setLoading(false);
             setError(err.message || "Verification failed. Please try again.");
         }
     };
-
+ 
     return (
         <form onSubmit={handleSubmit} className="ticket-form">
             {error && <div className="text-danger my-3">{error}</div>}

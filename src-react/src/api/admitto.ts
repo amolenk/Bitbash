@@ -33,6 +33,12 @@ export interface RegisteredTickets {
     tickets: string[];
 }
 
+export interface VerificationResult {
+    registrationToken: string;
+    publicId?: string;
+    signature?: string;
+}
+
 export function isRegistrationOpen(availability: Availability): boolean {
 
     return !isBeforeRegistrationOpen(availability) && !isAfterRegistrationClosed(availability);
@@ -92,7 +98,7 @@ export async function verifyOtp(email: string, code: string) {
         const errorData = await res.json();
         throw new Error(errorData?.detail || "Verification failed.");
     }
-    return (await res.json()).registrationToken;
+    return await res.json() as VerificationResult;
 }
 
 export async function getAvailability(): Promise<Availability> {
