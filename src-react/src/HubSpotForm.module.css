@@ -1,0 +1,22 @@
+.hubspot-container {
+    display: flex;
+    justify-content: center;
+}
+
+.hubspot-form {
+    min-width: 400px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 991px) {
+    .hubspot-form {
+        max-width: 950px;
+    }
+}
+
+@media (max-width: 414px) {
+    .hubspot-form {
+        min-width: 350px;
+        max-width: 350px;
+    }
+}
