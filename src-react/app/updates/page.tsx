@@ -18,7 +18,7 @@ export default async function EventUpdatesPage() {
                         <p className="lead">Want to be the first to know about upcoming (free!) events from Info Support?</p>
                         <p>Sign up to receive updates straight to your inbox. Whether it’s Bitbash or other community events, we’ll keep you posted so you never miss out.</p>
                         <p>By subscribing to event updates, you agree to our <a href="https://www.infosupport.com/en/privacy-statement/" target="_blank" rel="noopener">privacy policy.</a></p>
-                        <div className="mt-4">
+                        <div className="mt-4 mb-4">
                             <HubSpotForm />
                         </div>
                     </div>
