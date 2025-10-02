@@ -20,7 +20,7 @@ export default function Venue() {
         <div className={`col-lg-4 ${styles.venueInfo}`}>
           <div className="row justify-content-center">
             <div className={`${styles.info} col-11 col-lg-8 position-relative`}>
-              <img className={styles.logo} src="/img/info-support-vertical.png" alt="Info Support" />
+              <img className={styles.logo} src="/img/info-support.png" alt="Info Support" />
               <p className="lead text-light">Kruisboog 42, 3905 TG</p>
               <p className="lead text-light">Veenendaal, The Netherlands</p>
             </div>
