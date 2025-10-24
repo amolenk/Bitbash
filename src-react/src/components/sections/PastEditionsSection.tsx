@@ -8,11 +8,7 @@ import { websiteSettings } from "@/src/config/website-settings";
 import PhotoViewer from "../common/PhotoViewer";
 import SpeakersSection from "./SpeakersSection";
 
-interface PastEditionsSectionProps {
-  edition: string;
-}
-
-export default function PastEditionsSection({ edition }: PastEditionsSectionProps) {
+export default function PastEditionsSection() {
 
     const searchParams = useSearchParams();
     let selectedEditionSlug = searchParams.get("edition") || undefined;
