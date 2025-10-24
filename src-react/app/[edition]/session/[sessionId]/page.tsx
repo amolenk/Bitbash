@@ -38,7 +38,7 @@ export default async function SessionDetailPage({
         return (
             <MainLayout>
                 <Section headerText={session.Title} extraClass="mb-5">
-                    <SessionDetailSection session={session} />
+                    <SessionDetailSection session={session} edition={edition} />
                 </Section>
             </MainLayout>
         );

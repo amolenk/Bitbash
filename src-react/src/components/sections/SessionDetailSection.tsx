@@ -2,6 +2,7 @@
 
 import React from "react";
 import SpeakerCard from "./SpeakerCard";
+import { websiteSettings } from "@/src/config/website-settings";
 
 interface Speaker {
     Id: string;
@@ -36,7 +37,10 @@ function formatTimeLocation(session: Session) {
     return '';
 }
 
-export default function SessionDetailSection({ session }: { session: Session }) {
+export default function SessionDetailSection({ session, edition }: { session: Session, edition?: string }) {
+
+    edition ??= websiteSettings.currentEdition.slug;
+
     return (
         <div className="row">
             <div className="card p-0">
@@ -58,7 +62,7 @@ export default function SessionDetailSection({ session }: { session: Session }) 
                 </div>
                 <div className="card-footer d-flex justify-content-center">
                     {session.Speakers && session.Speakers.map(speaker => (
-                        <SpeakerCard key={speaker.Id} speaker={speaker} />
+                        <SpeakerCard key={speaker.Id} speaker={speaker} edition={edition} />
                     ))}
                 </div>
             </div>

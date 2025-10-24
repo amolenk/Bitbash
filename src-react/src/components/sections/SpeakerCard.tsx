@@ -10,9 +10,11 @@ interface Speaker {
   ProfilePictureUrl: string;
 }
 
-export default function SpeakerCard({ speaker }: { speaker: Speaker }) {
-  const edition = websiteSettings.currentEdition;
-  const url = `/${edition.slug}/speaker/${speaker.Id}`;
+export default function SpeakerCard({ speaker, edition }: { speaker: Speaker, edition?: string }) {
+  
+  edition ??= websiteSettings.currentEdition.slug;
+
+  const url = `/${edition}/speaker/${speaker.Id}`;
   return (
     <div
       className={`${styles.card} speaker bg-transparent border-0`}
