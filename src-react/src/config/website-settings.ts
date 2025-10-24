@@ -1,6 +1,7 @@
 export interface WebsiteSettings {
     admitto: AdmittoSettings;
     currentEdition: EditionSettings;
+    pastEditions: PastEditionSettings[];
 }
 
 interface AdmittoSettings {
@@ -18,6 +19,12 @@ interface EditionSettings {
     registration: RegistrationSettings;
     schedule: ScheduleSettings;
     speakers: SpeakerSettings;
+}
+
+export interface PastEditionSettings {
+    slug: string;
+    description: string;
+    photoCount: number;
 }
 
 interface RegistrationSettings {
@@ -66,5 +73,17 @@ export const websiteSettings: WebsiteSettings = {
         speakers: {
             announced: true
         }
-    }
+    },
+    pastEditions: [
+        {
+            slug: "winter-2024",
+            description: "2024: Far, Far Away edition",
+            photoCount: 28
+        },
+        {
+            slug: "winter-2025",
+            description: "2025: Haunted edition",
+            photoCount: 30
+        },
+    ]
 };

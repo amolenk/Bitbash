@@ -18,9 +18,10 @@ interface Session {
     Level?: string;
 }
 
-export default function SessionCard({ session }: { session: Session }) {
-    const edition = websiteSettings.currentEdition;
-    const url = `/${edition.slug}/session/${session.Id}`;
+export default function SessionCard({ session, edition }: { session: Session, edition?: string }) {
+
+    edition ??= websiteSettings.currentEdition.slug;
+    const url = `/${edition}/session/${session.Id}`;
 
     if (session.IsServiceSession) {
         return (

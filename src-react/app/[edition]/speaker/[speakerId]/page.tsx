@@ -32,10 +32,12 @@ export default async function SpeakerDetailPage({
                     tagLine={speaker.TagLine}
                     profilePictureUrl={speaker.ProfilePictureUrl}
                     bio={speaker.Bio}
+                    edition={edition}
                 />
                 <SpeakerSessionsSection
                     sessions={speaker.sessions}
                     allSessions={data.Sessions || []}
+                    edition={edition}
                 />
             </MainLayout>
         );

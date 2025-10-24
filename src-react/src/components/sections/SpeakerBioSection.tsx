@@ -3,15 +3,19 @@
 import React from "react";
 import Section from "../layout/Section";
 import styles from "./SpeakerBioSection.module.css";
+import { websiteSettings } from "@/src/config/website-settings";
 
 interface SpeakerBioSectionProps {
     fullName: string;
     tagLine: string;
     profilePictureUrl: string;
     bio: string;
+    edition?: string;
 }
 
-export default function SpeakerBioSection({ fullName, tagLine, profilePictureUrl, bio }: SpeakerBioSectionProps) {
+export default function SpeakerBioSection({ fullName, tagLine, profilePictureUrl, bio, edition }: SpeakerBioSectionProps) {
+
+    edition ??= websiteSettings.currentEdition.slug;
 
     return (
         <Section headerText={fullName} sectionBackground={4}>

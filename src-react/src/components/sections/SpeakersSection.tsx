@@ -8,11 +8,11 @@ import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then(r => r.json());
 
-export default function SpeakersSection() {
+export default function SpeakersSection({ edition }: { edition?: string }) {
 
-    const edition = websiteSettings.currentEdition;
+    edition ??= websiteSettings.currentEdition.slug;
 
-    const { data, error } = useSWR(`/data/${edition.slug}.json`, fetcher);
+    const { data, error } = useSWR(`/data/${edition}.json`, fetcher);
 
     if (error) return <div className="lead text-center text-danger">Failed to load speakers.</div>;
     if (!data) return null;
@@ -23,7 +23,7 @@ export default function SpeakersSection() {
                 <div className="row justify-content-center p-2">
                     {data.Speakers.map((speaker: any) => (
                         <div key={speaker.Id} className="col-md-4 d-flex justify-content-center">
-                            <SpeakerCard speaker={speaker} />
+                            <SpeakerCard speaker={speaker} edition={edition} />
                         </div>
                     ))}
                 </div>

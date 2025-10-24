@@ -43,13 +43,14 @@ export default function NavMenu() {
           <ul>
             <li><Link className={`${styles.navLink} nav-link ${pathname === "/" ? styles.active : ""}`} href="/">Home</Link></li>
             <li><Link className={`${styles.navLink} nav-link ${pathname === "/agenda" ? styles.active : ""}`} href="/agenda">Agenda</Link></li>
+            <li><Link className={`${styles.navLink} nav-link ${pathname === "/speakers" ? styles.active : ""}`} href="/speakers">Speakers</Link></li>
             <li className={styles.logo}>
               <Link href="/">
                 <img src="/img/logo.png" alt="Logo" title="" />
               </Link>
             </li>
-            <li><Link className={`${styles.navLink} nav-link ${pathname === "/speakers" ? styles.active : ""}`} href="/speakers">Speakers</Link></li>
             <li><Link className={`${styles.navLink} nav-link ${pathname === "/tickets" ? styles.active : ""}`} href="/tickets">Tickets</Link></li>
+            <li><Link className={`${styles.navLink} nav-link ${pathname === "/editions" ? styles.active : ""}`} href="/editions">Past Editions</Link></li>
           </ul>
           <i 
             className={`bi ${isMobileMenuOpen ? 'bi-x' : 'bi-list'} ${styles.mobileNavToggle}`}
