@@ -7,6 +7,7 @@ import PastEditionsTabs from "./PastEditionsTabs";
 import { websiteSettings } from "@/src/config/website-settings";
 import PhotoViewer from "../common/PhotoViewer";
 import SpeakersSection from "./SpeakersSection";
+import AftermoviePlayer from "../common/AftermoviePlayer";
 
 export default function PastEditionsSection() {
 
@@ -23,7 +24,14 @@ export default function PastEditionsSection() {
         <div>
             <PastEditionsTabs editions={websiteSettings.pastEditions} selectedEditionSlug={selectedEditionSlug} />
             <Section headerText={editionData.description} sectionBackground={2}>
-                <div className="d-flex justify-content-center container mb-4">
+                    
+                {editionData.aftermovieYoutubeId && (
+                    <div className="row justify-content-center mb-4">
+                        <AftermoviePlayer youtubeId={editionData.aftermovieYoutubeId} />
+                    </div>
+                )}
+
+                <div className="row justify-content-center mb-4">
                     <PhotoViewer editionSlug={selectedEditionSlug} photoCount={editionData.photoCount} />
                 </div>
             </Section>
