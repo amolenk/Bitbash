@@ -25,6 +25,7 @@ export interface PastEditionSettings {
     slug: string;
     description: string;
     photoCount: number;
+    aftermovieYoutubeId?: string;
 }
 
 interface RegistrationSettings {
@@ -83,7 +84,8 @@ export const websiteSettings: WebsiteSettings = {
         {
             slug: "winter-2025",
             description: "2025: Haunted edition",
-            photoCount: 30
+            photoCount: 30,
+            aftermovieYoutubeId: "RaM_pxesCcc?si=rsGEjH0zVlnNAJiy"
         },
     ]
 };
