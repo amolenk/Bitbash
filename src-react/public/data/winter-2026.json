@@ -144,17 +144,6 @@
       ]
     },
     {
-      "Id": "neha-lagoo-ratnakar",
-      "FullName": "Neha Lagoo Ratnakar",
-      "Bio": "Neha Lagoo Ratnakar is a tiny speaker with a big name and an even bigger message. Her talks are part wakeup call and part kick in the behind. \r\n\r\nNeha\u2019s bestselling book, Back on Your Feet (Goodreads 4.5, Amazon 4.7) has helped hundreds of women start their career comeback journey and she\u2019s spent hours directly coaching them. \r\n\r\nBut throughout her career spanning 8 countries, and her work as the Head of Education at a non-profit in Europe, she was shocked to hear that it was difficult for leaders to bridge the gender numbers despite their best intentions. \r\n\r\nSo Neha made it her mission to help organisations bridge this gap and support women on their journey. \r\n\r\nWhat she has to say may offend you, could provoke you, but will definitely make you think. If you\u2019re looking for a keynote speaker who can talk from authentic global experiences infused with actionable insights, then Neha is your choice. ",
-      "TagLine": "TEDx Speaker, Bestselling Author and Former Head of Education - LEAD Network Europe",
-      "IsTopSpeaker": false,
-      "ProfilePictureUrl": "img/winter-2026/speakers/neha-lagoo-ratnakar.jpg",
-      "sessions": [
-        "code-coach-conquer-level-up-your-facilitation-game"
-      ]
-    },
-    {
       "Id": "nico-vermeir",
       "FullName": "Nico Vermeir",
       "Bio": "Nico Vermeir is an application architect  at Inetum Belgium since 2010, where he has a strong focus on building and architecting modern applications.\r\nBeing a strong believer in the importance of communities he tries to share knowledge wherever he can, be it on Twitter, at a user group or conference. He has spoken on many international conferences such as NDC Oslo, NDC Sydney, NDC London, Swetugg, Build Stuff, DotNext.\r\nNico is a Microsoft MVP in Developer Technologies, crew member of Techorama BE and NL and crew member of VISUG, Belgium\u0027s largest .NET user group.\r\n\r\nIn his spare time he enjoys brewing (and tasting) beer, playing the guitar, riding his Harley-Davidson and doing Karate.",
@@ -234,7 +223,7 @@
   ],
   "Sessions": [
     {
-      "Id": "e0720a23-d85d-4f3d-97ba-36658ad000c1",
+      "Id": "28d6a5a7-3cd2-45c6-8018-91ea84d9a6f6",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-23T08:30:00",
@@ -289,21 +278,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "code-coach-conquer-level-up-your-facilitation-game",
-      "Title": "Code, Coach, Conquer: Level Up Your Facilitation Game!",
-      "Description": "This engaging workshop equips tech experts with practical techniques to deliver clearer, more impactful training sessions. Participants will learn simple strategies to break down complex concepts, engage their audience, and handle questions with confidence. Through interactive exercises, they will gain a framework for structuring training content and tips to keep learners engaged. By the end of the session, attendees will walk away with actionable insights and the confidence to elevate their next training session.",
-      "StartsAt": "2026-01-23T09:00:00",
-      "EndsAt": "2026-01-23T12:00:00",
-      "IsServiceSession": false,
-      "speakers": [
-        "neha-lagoo-ratnakar"
-      ],
-      "SessionFormat": "Half-day workshop",
-      "Level": "Introductory and overview",
-      "Room": "Room 4"
-    },
-    {
-      "Id": "6aa80dd8-ecdb-4da3-9b76-cb57c04a5958",
+      "Id": "28f6e875-534b-4617-87d3-1ebc19fc2f8b",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-23T12:00:00",
@@ -343,7 +318,7 @@
       "Room": "Room 4"
     },
     {
-      "Id": "fa277c86-2fc8-4265-93d3-e805c576798f",
+      "Id": "0c2b2777-fa6a-4b68-bf01-a7a1a40ef12a",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-24T08:30:00",
@@ -426,7 +401,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "2ceb3c3e-5780-4d48-9a65-dea563e96829",
+      "Id": "7e1014d5-8b40-4e26-a0d7-194c3ddc2418",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2026-01-24T11:05:00",
@@ -480,7 +455,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "a7d2fe81-3655-4e04-972c-fd901e7a32c7",
+      "Id": "7cf4dbfe-9bab-4864-b4d3-6cfe95eebc34",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-24T12:15:00",
@@ -534,7 +509,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "0edb53a9-f7aa-4615-bfee-7c3049082aef",
+      "Id": "453fe493-c19b-4934-b297-1f332b786f83",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2026-01-24T13:50:00",
