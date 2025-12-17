@@ -223,7 +223,7 @@
   ],
   "Sessions": [
     {
-      "Id": "28d6a5a7-3cd2-45c6-8018-91ea84d9a6f6",
+      "Id": "ec332c6d-c89c-40ef-97ac-ff6f77a9bade",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-23T08:30:00",
@@ -278,7 +278,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "28f6e875-534b-4617-87d3-1ebc19fc2f8b",
+      "Id": "3925ca5a-39e6-4f2c-827e-685f2dd3f4d6",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-23T12:00:00",
@@ -318,7 +318,7 @@
       "Room": "Room 4"
     },
     {
-      "Id": "0c2b2777-fa6a-4b68-bf01-a7a1a40ef12a",
+      "Id": "9410d8dc-d27b-4987-b323-fd3d517a5302",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-24T08:30:00",
@@ -401,7 +401,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "7e1014d5-8b40-4e26-a0d7-194c3ddc2418",
+      "Id": "fa80c7f0-6c6c-4a09-9b6c-ac4a8e553233",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2026-01-24T11:05:00",
@@ -455,7 +455,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "7cf4dbfe-9bab-4864-b4d3-6cfe95eebc34",
+      "Id": "52a3ad5c-dfff-4d13-ac65-8e23eec7734a",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-24T12:15:00",
@@ -509,7 +509,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "453fe493-c19b-4934-b297-1f332b786f83",
+      "Id": "a39e0c39-0259-4242-89ba-78a307e16e49",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2026-01-24T13:50:00",
@@ -537,7 +537,7 @@
     {
       "Id": "trust-as-the-new-currency-modern-data-platforms-and-ai",
       "Title": "Trust as the New Currency: Modern Data Platforms and AI",
-      "Description": "Explain how modern businesses rely on data-driven decisions and AI models, but adoption only happens when people trust the platform.\r\n\r\nSession will dive into the following points\r\n* Data driven decisions, data platforms,data products\r\n* Dimensions of trust in data platforms\r\n* How to build trust in your platform (people, process, tools and quality data)\r\n* Role of AI in data platforms\r\n* Wrap-up of trust as competitive advantage\r\n\r\nSession abastract is still work in progress but gives an overview of what this new session \r\n",
+      "Description": "Organizations rely more and more on data-driven decisions and AI models to compete, innovate, and scale. The AI adoption is rapidly growing, including autonomous AI agents that act on your data. As AI systems move from insight generation to decision-making and action, trust becomes the critical success factor.\r\n\r\nThis session explores how trust should be part of data platforms and is essential for scaling AI and AI agents responsibly. We examine why high-quality, well-governed data alone is no longer sufficient, and how trust must extend across data, models, agents, and outcomes. Attendees will learn how trust can be intentionally designed into data platforms through clear ownership, fit-for-purpose governance, automation, and transparency.\r\n \r\nIn this session we will dive into:\r\n* Data-driven decisions, modern data platforms, and data products\r\n* Why autonomous AI agents amplify the need for trust\r\n* How to build trust through people, process, tooling, and data quality\r\n* Key dimensions of trust in data platforms\r\n* Trust as a strategic and competitive advantage\r\n \r\nAnd of course how to get started!",
       "StartsAt": "2026-01-24T14:10:00",
       "EndsAt": "2026-01-24T15:00:00",
       "IsServiceSession": false,
