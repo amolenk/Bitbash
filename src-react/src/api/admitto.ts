@@ -112,7 +112,13 @@ export async function getAvailability(): Promise<Availability> {
         const errorData = await res.json();
         throw new Error(errorData?.detail || "Failed to fetch availability.");
     }
-    return (await res.json());
+    const availability = await res.json() as Availability;
+
+    // TEMP: Exclude the code-coach ticket type
+    availability.ticketTypes = availability.ticketTypes.filter(
+        t => t.slug !== 'code-coach-conquer-level-up-your-facilitation-game'
+    );
+    return availability;
 }
 
 export async function getTickets(publicId: string, signature: string): Promise<RegisteredTickets> {

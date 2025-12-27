@@ -6,25 +6,31 @@ import AgendaTabs from "./AgendaTabs";
 import SessionCard from "./SessionCard";
 import { websiteSettings } from "../../config/website-settings";
 import useSWR from "swr";
-import { useParams, useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 
 const fetcher = (url: string) => fetch(url).then(r => r.json());
 
 function parseDate(dateStr?: string): Date {
-    if (!dateStr) return new Date();
+    // If no date string provided, return default conference date (second day)
+    if (!dateStr)
+    {
+        return websiteSettings.currentEdition.conferenceDate;
+    }    
     const d = new Date(dateStr);
     return isNaN(d.getTime()) ? new Date() : d;
+}
+
+function setTimeZone(date: Date, tzOffset: string): Date {
+    var isoString = date.toISOString();
+    var timeZoneString = isoString.substring(0, isoString.length - 1) + tzOffset;
+    return new Date(timeZoneString);
 }
 
 export default function AgendaSection() {
 
     const searchParams = useSearchParams();
-    const params = useParams();
-    const router = useRouter();
 
     const edition = websiteSettings.currentEdition;
-
     const selectedDate = parseDate(searchParams.get("date") || undefined);
     const { data, error } = useSWR(`/data/${edition.slug}.json`, fetcher);
 
@@ -37,22 +43,14 @@ export default function AgendaSection() {
             data.Sessions
                 .filter((s: any) => s.StartsAt)
                 .map((s: any) => new Date(s.StartsAt.split('T')[0]))
-                .map((d: Date) => d.toISOString())
+                .map((d: Date) => setTimeZone(d, websiteSettings.currentEdition.schedule.timeZone).toISOString())
         )
     ) as string[]).map((d) => new Date(d)).sort((a, b) => a.getTime() - b.getTime());
 
-    // Clamp selectedDate to valid range
-    const clampedDate = (() => {
-        if (eventDates.length === 0) return new Date();
-        if (selectedDate < eventDates[0]) return eventDates[0];
-        if (selectedDate > eventDates[eventDates.length - 1]) return eventDates[eventDates.length - 1];
-        return selectedDate;
-    })();
-
     // Group sessions by start time for selected date
     const sessionsForDate = data.Sessions.filter((s: any) => {
-        const sessionDate = new Date(s.StartsAt?.split('T')[0]);
-        return sessionDate.getTime() === clampedDate.getTime();
+        const sessionDate = setTimeZone(new Date(s.StartsAt?.split('T')[0]), websiteSettings.currentEdition.schedule.timeZone);
+        return sessionDate.toISOString() === selectedDate.toISOString();
     });
 
     // Populate Speakers for each session
@@ -121,7 +119,7 @@ export default function AgendaSection() {
     return (
         <Section headerText="Agenda" sectionBackground={2}>
             {eventDates.length > 0 && (
-                <AgendaTabs dates={eventDates} selectedDate={clampedDate} />
+                <AgendaTabs dates={eventDates} selectedDate={selectedDate} />
             )}
             <div className="container mb-4">
                 {!edition.schedule.finalized && (

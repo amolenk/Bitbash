@@ -39,6 +39,7 @@ interface RegistrationSettings {
 interface ScheduleSettings {
     announced: boolean;
     finalized: boolean;
+    timeZone: string;
 }
 
 interface SpeakerSettings {
@@ -69,7 +70,8 @@ export const websiteSettings: WebsiteSettings = {
         },
         schedule: {
             announced: true,
-            finalized: true
+            finalized: true,
+            timeZone: "+01:00"
         },
         speakers: {
             announced: true
