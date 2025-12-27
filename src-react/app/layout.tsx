@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     siteName: "Bitbash",
     images: [
       {
-        url: "https://www.bitbash.nl/img/logo.png",
-        width: 2400,
-        height: 800,
+        url: "https://www.bitbash.nl/img/og-logo.png",
+        width: 1200,
+        height: 630,
         type: "image/png",
       },
     ],
