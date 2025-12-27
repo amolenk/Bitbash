@@ -113,7 +113,8 @@ export async function getAvailability(): Promise<Availability> {
         throw new Error(errorData?.detail || "Failed to fetch availability.");
     }
     const availability = await res.json() as Availability;
-    // Exclude the code-coach ticket type
+
+    // TEMP: Exclude the code-coach ticket type
     availability.ticketTypes = availability.ticketTypes.filter(
         t => t.slug !== 'code-coach-conquer-level-up-your-facilitation-game'
     );
