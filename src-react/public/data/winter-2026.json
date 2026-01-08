@@ -3,8 +3,8 @@
     {
       "Id": "barbara-forbes",
       "FullName": "Barbara Forbes",
-      "Bio": "Barbara Forbes is the Field CTO at OGD in the Netherlands, a Microsoft Azure MVP, Microsoft Certified Trainer (MCT), and a GitHub Star. She works at the intersection of strategy, technology, education, and development. Her technical focus is on the Microsoft Cloud Adoption Framework, Generative AI, Infrastructure as Code, PowerShell, and GitHub. \r\nBarbara loves teaching in an accessible manner; in person, as a teacher for LinkedIn Learning and as a frequent speaker at conferences and user groups. She is actively involved in the tech community, including being part of the organization of European events ",
-      "TagLine": "Field CTO @ OGD | Azure MVP | GitHub Star",
+      "Bio": "Barbara Forbes is an Azure Architect \u0026 consultant at Zure in the Netherlands, a Microsoft Azure MVP, Microsoft Certified Trainer (MCT), and a GitHub Star. She works at the intersection of technology, strategy, education, and development. Her focus is on the Microsoft Cloud Adoption Framework, Generative AI, Infrastructure as Code, PowerShell, and GitHub. \r\nBarbara loves explaining things in an accessible manner; in person, as a teacher for LinkedIn Learning and as a frequent speaker at conferences and user groups. She is actively involved in the tech community, including being part of the organization of European events ",
+      "TagLine": "Azure Architect @ Zure | Azure MVP | GitHub Star",
       "IsTopSpeaker": false,
       "ProfilePictureUrl": "img/winter-2026/speakers/barbara-forbes.jpg",
       "sessions": [
@@ -146,8 +146,8 @@
     {
       "Id": "nico-vermeir",
       "FullName": "Nico Vermeir",
-      "Bio": "Nico Vermeir is an application architect  at Inetum Belgium since 2010, where he has a strong focus on building and architecting modern applications.\r\nBeing a strong believer in the importance of communities he tries to share knowledge wherever he can, be it on Twitter, at a user group or conference. He has spoken on many international conferences such as NDC Oslo, NDC Sydney, NDC London, Swetugg, Build Stuff, DotNext.\r\nNico is a Microsoft MVP in Developer Technologies, crew member of Techorama BE and NL and crew member of VISUG, Belgium\u0027s largest .NET user group.\r\n\r\nIn his spare time he enjoys brewing (and tasting) beer, playing the guitar, riding his Harley-Davidson and doing Karate.",
-      "TagLine": "Application Architect .NET at Inetum",
+      "Bio": "Nico Vermeir is a Cloud Solution Architect at Microsoft, where he has a strong focus on application innovation and AI.\r\n\r\nBeing a strong believer in the importance of communities he tries to share knowledge wherever he can, be it on Twitter, at a user group or conference. He has spoken on many international conferences such as NDC Oslo, NDC Sydney, NDC London, Swetugg, Build Stuff, DotNext.\r\nNico is a former Microsoft MVP in Developer Technologies, crew member of Techorama BE and NL and crew member of VISUG, Belgium\u0027s largest .NET user group.\r\n\r\nIn his spare time he enjoys brewing (and tasting) beer, playing the guitar, riding his Harley-Davidson and doing Karate.",
+      "TagLine": "Cloud Solution Architect at Microsoft",
       "IsTopSpeaker": false,
       "ProfilePictureUrl": "img/winter-2026/speakers/nico-vermeir.png",
       "sessions": [
@@ -223,7 +223,7 @@
   ],
   "Sessions": [
     {
-      "Id": "ec332c6d-c89c-40ef-97ac-ff6f77a9bade",
+      "Id": "92b8b81f-0a73-409a-9246-5464ef632831",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-23T08:30:00",
@@ -278,7 +278,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "3925ca5a-39e6-4f2c-827e-685f2dd3f4d6",
+      "Id": "388d2826-4c5a-43e9-a4c5-8f355e44cbab",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-23T12:00:00",
@@ -318,7 +318,7 @@
       "Room": "Room 4"
     },
     {
-      "Id": "9410d8dc-d27b-4987-b323-fd3d517a5302",
+      "Id": "592ec79d-86dc-4476-8f0f-7e2a674a40b3",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-24T08:30:00",
@@ -401,7 +401,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "fa80c7f0-6c6c-4a09-9b6c-ac4a8e553233",
+      "Id": "db7c21b0-3a28-4604-af2f-16d7b015332e",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2026-01-24T11:05:00",
@@ -455,7 +455,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "52a3ad5c-dfff-4d13-ac65-8e23eec7734a",
+      "Id": "07bc0dbd-2876-4e13-a986-df1a0caf798c",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-24T12:15:00",
@@ -509,7 +509,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "a39e0c39-0259-4242-89ba-78a307e16e49",
+      "Id": "1fdb7c5f-7242-46c7-8b2d-52f8289b4786",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2026-01-24T13:50:00",
