@@ -8,10 +8,6 @@ export const metadata = {
 
 export default function CancelPage({ params }: { params: { publicId: string; signature: string } }) {
 
-    // Get params from the route
-    // This works in Next.js app router (server component)
-    // Params are passed as the second argument to the default export
-
     const { publicId, signature } = params;
     return (
         <MainLayout>

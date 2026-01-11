@@ -87,6 +87,18 @@ export async function cancel(publicId: string, signature: string) {
     }
 }
 
+export async function reconfirm(publicId: string, signature: string) {
+    const url = `${getTicketedEventUrl()}/public/${publicId}/reconfirm?signature=${signature}`;
+    const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+    });
+    if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData?.detail || "Reconfirmation failed.");
+    }
+}
+
 export async function verifyOtp(email: string, code: string) {
     const url = `${getTicketedEventUrl()}/public/verify`;
     const res = await fetch(url, {
