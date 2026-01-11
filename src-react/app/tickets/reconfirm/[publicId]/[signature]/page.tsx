@@ -24,12 +24,12 @@ export default async function ReconfirmPage({ params }: { params: { publicId: st
         <MainLayout>
             <Section headerText="Attendance Confirmation" sectionBackground={2}>
                 {success ? (
-                <div className="text-center">
+                <div className="text-light text-center">
                     <h2>Your attendance has been successfully reconfirmed!</h2>
                     <p className="lead mt-5">Thank you for confirming your attendance. We look forward to seeing you at Bitbash!</p>
                 </div>
                 ) : (
-                <div className="text-center">
+                <div className="text-light text-center">
                     <h2 className="text-danger">Reconfirmation Failed</h2>
                     <p className="lead mt-5">{errorMessage}</p>
                 </div>
