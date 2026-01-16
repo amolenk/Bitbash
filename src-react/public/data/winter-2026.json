@@ -223,7 +223,7 @@
   ],
   "Sessions": [
     {
-      "Id": "4ed12507-81fb-47c6-99ad-d6a8e9d436dd",
+      "Id": "193ccbe9-f2fc-4494-9c9d-18be3070cf2d",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-23T08:30:00",
@@ -278,7 +278,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "27234993-04c9-4be2-a23f-65d253d32890",
+      "Id": "de3ddd33-6afc-43a0-8e64-e4cb8a7f60a4",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-23T12:00:00",
@@ -318,7 +318,7 @@
       "Room": "Room 4"
     },
     {
-      "Id": "01e1147f-4c4f-43ad-97bd-0260476f5d94",
+      "Id": "420d7f55-a420-46ca-893b-54eb735f8fa0",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-24T08:30:00",
@@ -401,7 +401,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "8069a6cd-e8af-435a-9ef0-8b217bfc1eab",
+      "Id": "27588621-706b-43e4-9848-97ecebdd6a3c",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2026-01-24T11:05:00",
@@ -455,7 +455,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "7631825b-bad1-4470-8eee-cda97d1f1376",
+      "Id": "24b207a7-a1cd-4183-b8c1-2660f57c34a6",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-24T12:15:00",
@@ -509,7 +509,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "a152fe29-760f-4da5-a4fc-c5c29be08e0f",
+      "Id": "e723ca51-9c36-4bc4-b007-8f2ca92fc22f",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2026-01-24T13:50:00",
@@ -547,6 +547,18 @@
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
       "Room": "Room 2"
+    },
+    {
+      "Id": "73e83feb-b7d3-4ac7-b94c-f384573295ad",
+      "Title": "LEGO raffle",
+      "Description": null,
+      "StartsAt": "2026-01-24T15:00:00",
+      "EndsAt": "2026-01-24T15:15:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Room 1"
     }
   ]
 }
