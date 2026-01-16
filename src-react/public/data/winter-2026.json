@@ -223,7 +223,7 @@
   ],
   "Sessions": [
     {
-      "Id": "92b8b81f-0a73-409a-9246-5464ef632831",
+      "Id": "4ed12507-81fb-47c6-99ad-d6a8e9d436dd",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-23T08:30:00",
@@ -266,7 +266,7 @@
     {
       "Id": "building-your-first-mcp-server-from-concept-to-production",
       "Title": "Building Your First MCP Server: From Concept to Production",
-      "Description": "Model Context Protocol (MCP) is quickly becoming a standard for connecting AI assistants with external tools, services, and data sources. In this hands-on workshop, participants will learn how to implement, and deploy their own MCP server. We\u2019ll cover the fundamentals of the protocol, common use cases, and best practices for development. Through guided exercises, attendees will set up a server from scratch, integrate it with an chat client, and extend it with their MCP\u0027s functionality. By the end of the session, participants will walk away with both a working server and the practical knowledge to continue building MCP-powered solutions in their own environments.",
+      "Description": "Model Context Protocol (MCP) is quickly becoming a standard for connecting AI assistants with external tools, services, and data sources. In this hands-on workshop, participants will learn how to implement, and deploy their own MCP server. We\u2019ll cover the fundamentals of the protocol, common use cases, and best practices for development. Through guided exercises, attendees will set up a server from scratch, integrate it with an chat client, and extend it with their MCP\u0027s functionality. By the end of the session, participants will walk away with both a working server and the practical knowledge to continue building MCP-powered solutions in their own environments.\r\n\r\nPrerequisites\r\n\r\n- GitHub copilot or similar tool\r\n- IDE of choice",
       "StartsAt": "2026-01-23T09:00:00",
       "EndsAt": "2026-01-23T12:00:00",
       "IsServiceSession": false,
@@ -278,7 +278,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "388d2826-4c5a-43e9-a4c5-8f355e44cbab",
+      "Id": "27234993-04c9-4be2-a23f-65d253d32890",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-23T12:00:00",
@@ -318,7 +318,7 @@
       "Room": "Room 4"
     },
     {
-      "Id": "592ec79d-86dc-4476-8f0f-7e2a674a40b3",
+      "Id": "01e1147f-4c4f-43ad-97bd-0260476f5d94",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2026-01-24T08:30:00",
@@ -401,7 +401,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "db7c21b0-3a28-4604-af2f-16d7b015332e",
+      "Id": "8069a6cd-e8af-435a-9ef0-8b217bfc1eab",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2026-01-24T11:05:00",
@@ -455,7 +455,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "07bc0dbd-2876-4e13-a986-df1a0caf798c",
+      "Id": "7631825b-bad1-4470-8eee-cda97d1f1376",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2026-01-24T12:15:00",
@@ -509,7 +509,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "1fdb7c5f-7242-46c7-8b2d-52f8289b4786",
+      "Id": "a152fe29-760f-4da5-a4fc-c5c29be08e0f",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2026-01-24T13:50:00",
