@@ -1,9 +1,9 @@
 import EmailForm from "@/src/components/tickets/EmailForm";
-import MainLayout from "../../src/components/layout/MainLayout";
+import MainLayout from "../../../src/components/layout/MainLayout";
 import Section from "@/src/components/layout/Section";
 
 import { formatDate } from "@/src/utils/date-utils";
-import { websiteSettings } from "../../src/config/website-settings";
+import { websiteSettings } from "../../../src/config/website-settings";
 import { getAvailability } from "@/src/api/admitto";
 import ErrorCard from "@/src/components/common/ErrorCard";
 

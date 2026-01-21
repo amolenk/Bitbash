@@ -158,7 +158,7 @@ export default function UpdateRegistrationForm({ publicId, signature }: UpdateRe
                     {submittingError && <div className="text-danger mt-2">{submittingError}</div>}
 
                     <div className="text-center">
-                        <Link href={`/tickets/cancel/${publicId}/${signature}`} className="btn btn-danger mt-2 me-3">
+                        <Link href={`/app/(default)/tickets/cancel/${publicId}/${signature}`} className="btn btn-danger mt-2 me-3">
                             Cancel Registration
                         </Link>
                         <SpinningButton loading={submitting} disabled={!isFormValid()} className="mt-2">

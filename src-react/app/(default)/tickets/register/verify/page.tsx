@@ -1,5 +1,5 @@
-import OtpVerifyForm from "../../../../src/components/tickets/OtpVerifyForm";
-import MainLayout from "../../../../src/components/layout/MainLayout";
+import OtpVerifyForm from "../../../../../src/components/tickets/OtpVerifyForm";
+import MainLayout from "../../../../../src/components/layout/MainLayout";
 import Section from "@/src/components/layout/Section";
 import { Suspense } from "react";
 

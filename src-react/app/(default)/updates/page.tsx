@@ -1,5 +1,5 @@
 import HubSpotForm from "@/src/HubSpotForm";
-import MainLayout from "../../src/components/layout/MainLayout";
+import MainLayout from "../../../src/components/layout/MainLayout";
 import Section from "@/src/components/layout/Section";
 
 export const metadata = {

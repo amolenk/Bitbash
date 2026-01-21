@@ -40,12 +40,17 @@ interface ScheduleSettings {
     announced: boolean;
     finalized: boolean;
     timeZone: string;
+    upNext: UpNextSettings;
+}
+
+interface UpNextSettings {
+    delayInMinutes: number;
+    goodbyeMessage: string;
 }
 
 interface SpeakerSettings {
     announced: boolean;
 }
-
 
 export const websiteSettings: WebsiteSettings = {
     admitto: {
@@ -71,7 +76,12 @@ export const websiteSettings: WebsiteSettings = {
         schedule: {
             announced: true,
             finalized: true,
-            timeZone: "+01:00"
+            timeZone: "+01:00",
+            upNext:
+            {
+                delayInMinutes: 20,
+                goodbyeMessage: "Thanks for attending Bitbash 2026! See you next year!"
+            }
         },
         speakers: {
             announced: true

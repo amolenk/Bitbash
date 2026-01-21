@@ -1,4 +1,4 @@
-@import "@/public/aos/aos.css";
+@import "../../public/aos/aos.css";
 
 // Change Bootstrap's primary color (used for buttons, links, etc.)
 // $primary: #F924A1;
@@ -9,9 +9,9 @@ $info: #E459BB;
 
 $headings-font-family: 'Agdasima', sans-serif;
 
-@import "~bootstrap/scss/bootstrap";
-@import "@/public/bootstrap-icons/bootstrap-icons.min.css";
-@import "@/public/galleria/themes/twelve/galleria.twelve.min.css";
+@import "../../node_modules/.pnpm/bootstrap@5.3.8_@popperjs+core@2.11.8/node_modules/bootstrap/scss/bootstrap";
+@import "../../public/bootstrap-icons/bootstrap-icons.min.css";
+@import "../../public/galleria/themes/twelve/galleria.twelve.min.css";
 
 body {
     // background-color: #121838;
