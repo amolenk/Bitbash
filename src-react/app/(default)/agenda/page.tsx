@@ -1,5 +1,5 @@
-import { websiteSettings } from "../../src/config/website-settings";
-import MainLayout from "../../src/components/layout/MainLayout";
+import { websiteSettings } from "../../../src/config/website-settings";
+import MainLayout from "../../../src/components/layout/MainLayout";
 import AgendaSection from "@/src/components/sections/AgendaSection";
 import AgendaPendingSection from "@/src/components/sections/AgendaPendingSection";
 import { Suspense } from "react";
