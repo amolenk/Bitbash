@@ -47,6 +47,7 @@ export function UpNextSection({isTest}: { isTest: boolean }) {
     const edition = websiteSettings.currentEdition.slug;
 
     const [allSessions, setAllSessions] = useState<SessionWithSpeakers[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
     const [loadError, setLoadError] = useState<string | null>(null);
 
     // Test-mode index
@@ -61,10 +62,13 @@ export function UpNextSection({isTest}: { isTest: boolean }) {
 
         const fetchData = async () => {
             try {
-                const sessions = await getSessionCatalog(edition);
+                const response = await fetch(`/api/sessions/${edition}`);
+                if (!response.ok) throw new Error('Failed to fetch');
+                const sessions = await response.json() as SessionWithSpeakers[];
                 if (!cancelled) {
                     setAllSessions(sessions);
                     setLoadError(null);
+                    setLoading(false);
                 }
             } catch (e) {
                 if (!cancelled) {
@@ -126,6 +130,10 @@ export function UpNextSection({isTest}: { isTest: boolean }) {
     const groupToRender = isTest
         ? groups[testIndex]
         : nextGroup;
+
+    if (loading) {
+        return <div className="lead text-center text-light">Loading...</div>;
+    }
 
     if (loadError) {
         return <div className="lead text-center text-danger">{loadError}</div>;

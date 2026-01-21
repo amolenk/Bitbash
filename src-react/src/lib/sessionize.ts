@@ -89,13 +89,13 @@ function splitFullDaySessions(session: SessionWithSpeakers) {
         ...session,
         StartsAt: `${datePart}T09:00:00`,
         EndsAt: `${datePart}T12:00:00`,
-        Title: `${session.Title} (part 1)`
+        Title: `${session.Title}`
     });
     parts.push({
         ...session,
         StartsAt: `${datePart}T13:00:00`,
         EndsAt: `${datePart}T16:00:00`,
-        Title: `${session.Title} (part 2)`
+        Title: `${session.Title} (continued)`
     });
     return parts;
 }
