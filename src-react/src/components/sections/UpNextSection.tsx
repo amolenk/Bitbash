@@ -61,6 +61,8 @@ export function UpNextSection({isTest}: { isTest: boolean }) {
         let cancelled = false;
 
         const fetchData = async () => {
+
+            setLoadError('Going to load data!');
             try {
                 const response = await fetch(`/api/sessions/${edition}`);
                 if (!response.ok) throw new Error('Failed to fetch');
