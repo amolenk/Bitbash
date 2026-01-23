@@ -46,8 +46,6 @@ export async function getSessionCatalog(edition: string) {
         }
     });
 
-    console.log(normalized);
-
     return normalized;
 }
 

@@ -1,4 +1,3 @@
-import {UpNextSection} from "@/src/components/sections/UpNextSection";
 import {Metadata} from "next";
 import React from "react";
 
@@ -13,8 +12,9 @@ export default async function UpNextPage({searchParams}: {
     const {test} = await searchParams;
 
     return (
-        <UpNextSection
-            isTest={test || false}
-            />
+        <div>
+            <h1 className="text-light">Welcome to Bitbash 2026 🦕</h1>
+            <h2 className="text-light">Current time is {new Date().toLocaleTimeString()}</h2>
+        </div>
     );
 }
