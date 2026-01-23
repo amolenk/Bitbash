@@ -136,7 +136,7 @@ export function UpNextSection({isTest}: { isTest: boolean }) {
     }
 
     if (loading) {
-        return <div className="lead text-center text-light">Loading...</div>;
+        return <div className="lead text-center text-light">Loading... {new Date().toLocaleTimeString()}</div>;
     }
 
     if (!groupToRender || groupToRender.sessions.length === 0) {
