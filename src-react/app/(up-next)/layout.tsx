@@ -1,8 +1,6 @@
-import Footer from "@/src/components/layout/Footer";
-import styles from "@/src/components/layout/MainLayout.module.css";
 import type { Metadata } from "next";
-import Script from "next/script";
 import '@/app/(default)/global.scss';
+import styles from '@/app/(up-next)/layout.module.css';
 
 export const metadata: Metadata = {
   title: "Bitbash - Free two-day event covering the latest Microsoft technologies",
@@ -48,15 +46,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <main className={`${styles.main} d-flex flex-column min-vh-100`}>
+        <main className={`${styles.main} d-flex flex-column min-vh-100 justify-content-center`}>
           {children}
         </main>
-
-        {/* JavaScript libraries */}
-        <Script src="/aos/aos.js" strategy="beforeInteractive" />
-        <Script src="/jquery/jquery-3.7.1.min.js" strategy="beforeInteractive" />
-        <Script src="/galleria/galleria.min.js" strategy="beforeInteractive" />
-        <Script src="/galleria/themes/twelve/galleria.twelve.min.js" strategy="beforeInteractive" />
       </body>
     </html>
   );

@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'NeulandOpti';
+    src: url('/fonts/NeulandOpti-Light.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nextTimeSlot {
+    font-size: 3rem;
+    font-family: 'NeulandOpti', sans-serif;
+    font-weight: 900;
+    color: #cc0000;
+    text-shadow: -2px -2px 0 #FFD700, 2px -2px 0 #FFD700, -2px 2px 0 #FFD700, 2px 2px 0 #FFD700,
+    -3px 0 0 #FFD700, 3px 0 0 #FFD700, 0 -3px 0 #FFD700, 0 3px 0 #FFD700;
+    letter-spacing: 2px;
+}

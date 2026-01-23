@@ -1,6 +1,7 @@
 import UpNextCard from "@/src/components/sections/UpNextCard";
 import {getSessionCatalog, SessionWithSpeakers} from "@/src/lib/sessionize";
 import {websiteSettings} from "../../config/website-settings";
+import styles from "./UpNextSession.module.css";
 
 type SessionGroup = { startTime: Date; sessions: SessionWithSpeakers[] };
 
@@ -69,7 +70,7 @@ export async function UpNextSection() {
     return (
         <div className="container text-center">
             <div style={{padding: 64}}>
-                <h1 className="text-light mt-8 mb-8">
+                <h1 className={`${styles.nextTimeSlot} mt-8 mb-8`}>
                     Next sessions starting at {startLabel}
                 </h1>
             </div>
