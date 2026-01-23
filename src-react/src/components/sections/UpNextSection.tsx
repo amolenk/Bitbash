@@ -72,7 +72,7 @@ export function UpNextSection({isTest}: { isTest: boolean }) {
                 }
             } catch (e) {
                 if (!cancelled) {
-                    setLoadError("Failed to load sessions.");
+                    setLoadError("Failed to load sessions: " + (e as Error).message);
                 }
             }
         };
@@ -131,12 +131,12 @@ export function UpNextSection({isTest}: { isTest: boolean }) {
         ? groups[testIndex]
         : nextGroup;
 
-    if (loading) {
-        return <div className="lead text-center text-light">Loading...</div>;
-    }
-
     if (loadError) {
         return <div className="lead text-center text-danger">{loadError}</div>;
+    }
+
+    if (loading) {
+        return <div className="lead text-center text-light">Loading...</div>;
     }
 
     if (!groupToRender || groupToRender.sessions.length === 0) {
