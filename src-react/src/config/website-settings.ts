@@ -85,7 +85,7 @@ export const websiteSettings: WebsiteSettings = {
         registration: {
             opensAt: new Date("2025-09-20T12:00:00+02:00"),
             closesAt: new Date("2026-01-22T09:00:00+01:00"),
-            enabled: true,
+            enabled: false,
             isOpen: function () {
                 const now = new Date();
                 return this.enabled && now >= this.opensAt && now <= this.closesAt;
@@ -120,14 +120,19 @@ export const websiteSettings: WebsiteSettings = {
     pastEditions: [
         {
             slug: "winter-2024",
-            description: "2024: Far, Far Away edition",
+            description: "2024: Far, Far Away Edition",
             photoCount: 28
         },
         {
             slug: "winter-2025",
-            description: "2025: Haunted edition",
+            description: "2025: Haunted Edition",
             photoCount: 30,
             aftermovieYoutubeId: "RaM_pxesCcc?si=rsGEjH0zVlnNAJiy"
+        },
+        {
+            slug: "winter-2026",
+            description: "2026: Jurassic Edition",
+            photoCount: 81,
         },
     ]
 };
