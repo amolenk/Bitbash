@@ -133,6 +133,7 @@ export const websiteSettings: WebsiteSettings = {
             slug: "winter-2026",
             description: "2026: Jurassic Edition",
             photoCount: 81,
+            aftermovieYoutubeId: "GiZqIx8UB6g?si=BLxRYRczOKkD341Y"
         },
     ]
 };
