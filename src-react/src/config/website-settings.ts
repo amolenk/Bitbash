@@ -105,16 +105,7 @@ export const websiteSettings: WebsiteSettings = {
             announced: true
         },
         codeOfConduct: {
-            contacts: [
-                {
-                    name: "Manon van der Werff",
-                    phoneNumber: "06 44 07 64 39"
-                },
-                {
-                    name: "Sander Molenkamp",
-                    phoneNumber: "06 45 37 85 40"
-                }
-            ]
+            contacts: []
         }
     },
     pastEditions: [
@@ -133,7 +124,7 @@ export const websiteSettings: WebsiteSettings = {
             slug: "winter-2026",
             description: "2026: Jurassic Edition",
             photoCount: 81,
-            aftermovieYoutubeId: "GiZqIx8UB6g?si=BLxRYRczOKkD341Y"
+            aftermovieYoutubeId: "GaaDZF5TpDw?si=SlAI-fWYydJS9iEp"
         },
     ]
 };
