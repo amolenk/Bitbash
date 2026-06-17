@@ -4,7 +4,7 @@
     min-width: 320px;
     max-width: 2150px;
     background-attachment: fixed;
-    background-image: url("/img/hero-galaxy.png?v=20250716");
+    background-image: url("/img/hero-galaxy.png?v=2027");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -29,7 +29,7 @@
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 512px) {
     .hero {
         height: 667px;
         max-height: 667px;
@@ -38,7 +38,7 @@
 }
 
 .heroContainer {
-    background-image: url("/img/hero-foreground.png?v=20250716");
+    background-image: url("/img/hero-foreground.png?v=2027");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -56,16 +56,16 @@
 
 @media (max-width: 991px) {
     .heroContainer {
-        background-image: url("/img/hero-foreground-tablet.png?v=20250716");
+        background-image: url("/img/hero-foreground-tablet.png?v=2027");
         background-size: 992px 833px;
         height: 1000px;
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 512px) {
     .heroContainer {
-        background-image: url("/img/hero-foreground-mobile.png?v=20250716");
-        background-size: 414px 457px;
+        background-image: url("/img/hero-foreground-mobile.png?v=2027");
+        background-size: 512px 565px;
         height: 667px;
     }
 }
@@ -91,8 +91,8 @@
 .banner {
     left: 5%;
     position: absolute;
-    top: 175px;
-    width: 550px;
+    top: 150px;
+    width: min(75vw, 75vh);
 }
 
 @media (max-width: 991px) {
@@ -103,7 +103,7 @@
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 512px) {
     .banner {
         top: 110px;
     }

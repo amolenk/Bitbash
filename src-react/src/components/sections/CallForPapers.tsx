@@ -1,25 +1,16 @@
-import React from "react";
 import { websiteSettings } from "../../config/website-settings";
 
 export default function CallForPapers() {
+    const callForPapers = websiteSettings.currentEdition.callForPapers;
 
-    return null;
+    if (!callForPapers.isOpen() || !callForPapers.url) return null;
 
-//   const now = new Date();
-//   const open = new Date(websiteSettings.cfpOpenTime);
-//   const close = new Date(websiteSettings.cfpCloseTime);
-//   const isOpen = websiteSettings.sessionizeCfpLink && now >= open && now <= close;
-//   if (!isOpen) return null;
-//   return (
-//     <div className="row text-center my-4">
-//       <h2>Interested in speaking at Bitbash?</h2>
-//       <p>
-//         Our{' '}
-//         <a href={websiteSettings.sessionizeCfpLink} target="_blank" rel="noopener noreferrer">
-//           call for papers
-//         </a>{' '}
-//         is now open!
-//       </p>
-//     </div>
-//   );
+    return (
+        <div className="row text-light text-center">
+            <p className="lead text-light">Interested in speaking at Bitbash?</p>
+            <a href={callForPapers.url} target="_blank" rel="noopener noreferrer" className="lead">
+                Submit your proposal
+            </a>
+        </div>
+    );
 }
