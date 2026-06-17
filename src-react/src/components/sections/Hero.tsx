@@ -8,7 +8,7 @@ export default function Hero() {
       <div className={styles.heroContainer}>
         <img 
           className={`${styles.banner} pb-10`} 
-          src="/img/edition.png?v=20250716" 
+          src="/img/edition.png?v=2027" 
           alt={websiteSettings.currentEdition.description}
           data-aos="zoom-in" 
           data-aos-delay="100" 

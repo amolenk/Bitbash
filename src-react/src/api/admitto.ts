@@ -66,7 +66,7 @@ export async function requestOtp(email: string) {
     const url = `${getTicketedEventUrl()}/public/otp`;
     const res = await fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...getApiHeaders() },
         body: JSON.stringify({ email })
     });
     if (!res.ok) {
@@ -79,7 +79,7 @@ export async function cancel(publicId: string, signature: string) {
     const url = `${getTicketedEventUrl()}/public/${publicId}?signature=${signature}`;
     const res = await fetch(url, {
         method: "DELETE",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json", ...getApiHeaders() }
     });
     if (!res.ok) {
         const errorData = await res.json();
@@ -91,7 +91,7 @@ export async function reconfirm(publicId: string, signature: string) {
     const url = `${getTicketedEventUrl()}/public/${publicId}/reconfirm?signature=${signature}`;
     const res = await fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json", ...getApiHeaders() }
     });
     if (!res.ok) {
         const errorData = await res.json();
@@ -103,7 +103,7 @@ export async function verifyOtp(email: string, code: string) {
     const url = `${getTicketedEventUrl()}/public/verify`;
     const res = await fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...getApiHeaders() },
         body: JSON.stringify({ email, code })
     });
     if (!res.ok) {
@@ -118,7 +118,8 @@ export async function getAvailability(): Promise<Availability> {
     // Artificial delay for debugging
     // await new Promise(resolve => setTimeout(resolve, 1000));
     const res = await fetch(url, {
-        method: "GET"
+        method: "GET",
+        headers: { ...getApiHeaders() }
     });
     if (!res.ok) {
         const errorData = await res.json();
@@ -137,7 +138,7 @@ export async function getTickets(publicId: string, signature: string): Promise<R
     const url = `${getTicketedEventUrl()}/public/${publicId}/tickets?signature=${signature}`;
     // Artificial delay for debugging
     // await new Promise(resolve => setTimeout(resolve, 3000));
-    const res = await fetch(url);
+    const res = await fetch(url, { headers: { ...getApiHeaders() } });
     if (res.status === 404) {
         return { tickets: [] };
     }
@@ -162,7 +163,7 @@ export async function register(
     const url = `${getTicketedEventUrl()}/public/register`;
     const res = await fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...getApiHeaders() },
         body: JSON.stringify({
             email: email,
             firstName: firstName,
@@ -207,7 +208,7 @@ export async function changeTickets(
     const url = `${getTicketedEventUrl()}/public/${publicId}/tickets?signature=${signature}`;
     const res = await fetch(url, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...getApiHeaders() },
         body: JSON.stringify({
             requestedTickets: tickets
         })
@@ -234,8 +235,25 @@ export async function changeTickets(
     return true;
 }
 
-// Private helper: Returns the full ticketed event string, e.g. 'teams/bitbash/events/winter-2025'
+// Private helpers
+
+// Returns the base URL for Admitto API calls.
+// Server-side: direct upstream URL (with private API key in headers via getApiHeaders()).
+// Client-side: local Next.js proxy at /api/admitto (proxy adds the key server-side).
 function getTicketedEventUrl() {
     const settings = require("../config/website-settings").websiteSettings.admitto;
-    return `${settings.baseUrl}/teams/${settings.teamSlug}/events/${settings.eventSlug}`;
+    if (typeof window === "undefined") {
+        // Server: call Admitto directly; API key is added by getApiHeaders()
+        return `${settings.baseUrl}/teams/${settings.teamSlug}/events/${settings.eventSlug}`;
+    }
+    // Client: route through the Next.js proxy which adds the X-ApiKey header
+    return `/api/admitto/teams/${settings.teamSlug}/events/${settings.eventSlug}`;
+}
+
+// Returns the X-ApiKey header when running server-side and the env var is set.
+// Client-side calls go through the /api/admitto proxy which adds the key.
+function getApiHeaders(): Record<string, string> {
+    if (typeof window !== "undefined") return {};
+    const key = process.env.ADMITTO_API_KEY;
+    return key ? { "X-ApiKey": key } : {};
 }

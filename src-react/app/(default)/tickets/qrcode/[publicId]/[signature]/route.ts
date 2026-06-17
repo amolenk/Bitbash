@@ -13,9 +13,15 @@ export async function GET(
     const url = `${settings.baseUrl}/teams/${settings.teamSlug}/events/${settings.eventSlug}/public/${encodedPublicId}/qr-code?signature=${encodedSignature}`;
 
     // Fetch the QR code from the Admitto API
+    const apiKey = process.env.ADMITTO_API_KEY;
+    const fetchHeaders: Record<string, string> = {};
+    if (apiKey) {
+        fetchHeaders["X-ApiKey"] = apiKey;
+    }
+
     try
     {
-        const res = await fetch(url);
+        const res = await fetch(url, { headers: fetchHeaders });
         if (!res.ok) {
             console.error("Upstream error:", res.status, await res.text());
             return new Response("Failed to fetch QR code", { status: 502 });

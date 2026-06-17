@@ -50,12 +50,12 @@ export default function Countdown() {
     <div className={styles.countdown}>
       <img 
         className={styles.countdownImageBottom} 
-        src={`/img/countdown-egg.gif?time=${Date.now()}`} 
+        src="/img/countdown-theme.png?v=2027" 
         alt="Countdown background"
       />
       <img 
         className={styles.countdownImageMiddle} 
-        src="/img/countdown-bottom.png?v=20250716" 
+        src="/img/countdown-bottom.png?v=2027" 
         alt="Countdown layer"
       />
       <div className={styles.countdownText}>
@@ -63,7 +63,7 @@ export default function Countdown() {
       </div>
       <img 
         className={styles.countdownImageTop} 
-        src="/img/countdown-top.png?v=20250716" 
+        src="/img/countdown-top.png?v=2027" 
         alt="Countdown foreground"
       />
       <span className={styles.date}>

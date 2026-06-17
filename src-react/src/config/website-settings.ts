@@ -17,6 +17,7 @@ interface EditionSettings {
     workshopsDate: Date;
     conferenceDate: Date;
     registration: RegistrationSettings;
+    callForPapers: CallForPapersSettings;
     schedule: ScheduleSettings;
     speakers: SpeakerSettings;
     codeOfConduct: CodeOfConductSettings;
@@ -35,6 +36,14 @@ interface RegistrationSettings {
     opensAt: Date;
     closesAt: Date;
     enabled: boolean;
+
+    isOpen: () => boolean;
+}
+
+interface CallForPapersSettings {
+    opensAt: Date;
+    closesAt: Date;
+    url: string;
 
     isOpen: () => boolean;
 }
@@ -68,14 +77,14 @@ export const websiteSettings: WebsiteSettings = {
     admitto: {
         baseUrl: process.env.NEXT_PUBLIC_ADMITTO_URL || "https://admitto.sandermolenkamp.com",// "http://localhost:5100",
         teamSlug: "bitbash",
-        eventSlug: "bitbash-2026",
+        eventSlug: "bitbash-2027",
         mainConferenceTicketSlug: "conference"
     },
     currentEdition: {
-        slug: "winter-2026",
-        description: "Jurassic edition",
-        workshopsDate: new Date("2026-01-23T00:00:00+01:00"),
-        conferenceDate: new Date("2026-01-24T00:00:00+01:00"),
+        slug: "winter-2027",
+        description: "Rock 'n' Roll Edition",
+        workshopsDate: new Date("2027-01-22T00:00:00+01:00"),
+        conferenceDate: new Date("2027-01-23T00:00:00+01:00"),
         isCurrentlyTakingPlace: function () {
             const options = { timeZone: 'Europe/Amsterdam' };
             const today = (new Date()).toLocaleDateString('nl-NL', options);
@@ -83,26 +92,35 @@ export const websiteSettings: WebsiteSettings = {
                 || today === this.conferenceDate.toLocaleDateString('nl-NL', options);
         },
         registration: {
-            opensAt: new Date("2025-09-20T12:00:00+02:00"),
-            closesAt: new Date("2026-01-22T09:00:00+01:00"),
+            opensAt: new Date("2026-10-01T12:00:00+02:00"),
+            closesAt: new Date("2027-01-22T09:00:00+01:00"),
             enabled: false,
             isOpen: function () {
                 const now = new Date();
                 return this.enabled && now >= this.opensAt && now <= this.closesAt;
             }
         },
+        callForPapers: {
+            opensAt: new Date("2026-06-18T13:00:00+02:00"),
+            closesAt: new Date("2026-09-15T23:59:00+02:00"),
+            url: "https://sessionize.com/bitbash-2027",
+            isOpen: function () {
+                const now = new Date();
+                return now >= this.opensAt && now <= this.closesAt;
+            }
+        },
         schedule: {
-            announced: true,
-            finalized: true,
+            announced: false,
+            finalized: false,
             timeZone: "+01:00",
             upNext:
             {
                 delayInMinutes: 20,
-                goodbyeMessage: "Thanks for attending Bitbash 2026! See you next year!"
+                goodbyeMessage: "Thanks for attending Bitbash! See you next year!"
             }
         },
         speakers: {
-            announced: true
+            announced: false
         },
         codeOfConduct: {
             contacts: []
