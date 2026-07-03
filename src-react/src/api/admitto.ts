@@ -198,7 +198,7 @@ async function createError(res: Response): Promise<AdmittoError> {
         : null;
 
     return new AdmittoError(
-        stringValue(problem?.detail) || stringValue(problem?.title) || "The ticketing request failed.",
+        stringValue(problem?.detail) || stringValue(problem?.title) || `The ticketing request failed (HTTP ${res.status}).`,
         stringValue(problem?.code) || stringValue(problem?.errorCode)
     );
 }
