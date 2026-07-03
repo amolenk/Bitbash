@@ -51,10 +51,10 @@ export default async function TicketsPage() {
                 </MainLayout>
             )
         }
-    } catch {
+    } catch (error) {
         return (
             <MainLayout>
-                <ErrorCard error={'An error occurred while checking ticket availability.'} />
+                <ErrorCard error={'An error occurred while checking ticket availability: ' + error} />
             </MainLayout>
         )
     }
