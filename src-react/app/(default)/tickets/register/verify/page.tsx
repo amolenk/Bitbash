@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import OtpVerifyForm from "../../../../../src/components/tickets/OtpVerifyForm";
 import MainLayout from "../../../../../src/components/layout/MainLayout";
 import Section from "@/src/components/layout/Section";

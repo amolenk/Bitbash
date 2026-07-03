@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import MainLayout from "@/src/components/layout/MainLayout";
 import Section from "@/src/components/layout/Section";
 import UpdateRegistrationForm from "@/src/components/tickets/UpdateRegistrationForm";

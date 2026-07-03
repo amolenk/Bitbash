@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { admittoRequest, eventPath } from "@/src/lib/admitto.server";
 import MainLayout from "@/src/components/layout/MainLayout";
 import Section from "@/src/components/layout/Section";

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Section from "@/src/components/layout/Section";
 import MainLayout from "@/src/components/layout/MainLayout";
 
