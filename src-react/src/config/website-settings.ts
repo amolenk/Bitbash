@@ -78,7 +78,7 @@ export const websiteSettings: WebsiteSettings = {
                 || today === this.conferenceDate.toLocaleDateString('nl-NL', options);
         },
         registration: {
-            opensAt: new Date("2026-04-01T12:00:00+02:00"),
+            opensAt: new Date("2026-07-03T16:00:00+02:00"),
             closesAt: new Date("2027-01-22T09:00:00+01:00"),
             enabled: true,
             isOpen: function () {
