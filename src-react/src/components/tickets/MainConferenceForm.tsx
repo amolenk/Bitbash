@@ -1,42 +1,25 @@
 'use client'
 
-import { Availability, TicketTypeDto } from "@/src/api/admitto";
-import { websiteSettings } from "@/src/config/website-settings";
+import { Availability } from "@/src/api/admitto";
 import { formatDate } from "@/src/utils/date-utils";
-import { useState, useEffect } from 'react';
 
 interface MainConferenceFormProps {
     availability: Availability | null;
+    conferenceDate: string;
+    mainConferenceTicketTypeId: string;
     conferenceSelection: boolean | null;
     setConferenceSelection: React.Dispatch<React.SetStateAction<boolean | null>>;
     disabled: boolean;
 }
 
-export default function MainConferenceForm({ availability, conferenceSelection, setConferenceSelection, disabled }: MainConferenceFormProps) {
+export default function MainConferenceForm({ availability, conferenceDate, mainConferenceTicketTypeId, conferenceSelection, setConferenceSelection, disabled }: MainConferenceFormProps) {
 
-    // const [selected, setSelected] = useState<boolean | null>(null);
-    // const [choiceMade, setChoiceMade] = useState<boolean>(ticketSelections.includes('conference'));
-
-    const edition = websiteSettings.currentEdition;
-
-    const conferenceTicket = availability?.ticketTypes.find(t => t.slug === 'conference');
-
-    // const initialSelection = isExistingRegistration
-    //     ? (conferenceTicket && ticketSelections.includes(conferenceTicket.slug)) ?? null
-    //     : null;
-
-    // useEffect(() => {
-    //     setSelected(initialSelection);
-    // }, [initialSelection]);
-
-    // For both existing and new registrations, check if the ticket is in the selections array
-
-//    const isDisabled = conferenceTicket ? !conferenceTicket.hasCapacity || disabledTickets.has(conferenceTicket.slug) : true;
+    const conferenceTicket = availability?.ticketTypes.find(t => t.id === mainConferenceTicketTypeId);
 
     if (conferenceTicket ? !conferenceTicket.hasCapacity : true) {
         return (
             <div className="card h-100 shadow-sm mt-3 mb-4">
-                <div className="card-header text-center"><h3>Main Conference – {formatDate(edition.conferenceDate)} <span className="badge bg-danger ms-2">Sold Out</span></h3></div>
+                <div className="card-header text-center"><h3>Main Conference – {formatDate(new Date(conferenceDate))} <span className="badge bg-danger ms-2">Sold Out</span></h3></div>
                 <div className="card-body text-start mx-5">
                     <p>The main conference is currently fully booked.</p>
                 </div>
@@ -46,7 +29,7 @@ export default function MainConferenceForm({ availability, conferenceSelection, 
 
     return (
         <div className="card h-100 shadow-sm mt-3 mb-4">
-            <div className="card-header text-center"><h3>Main Conference – {formatDate(edition.conferenceDate)}</h3></div>
+            <div className="card-header text-center"><h3>Main Conference – {formatDate(new Date(conferenceDate))}</h3></div>
             <div className="card-body text-start mx-5">
                 <p>Join us for an inspiring day packed with 50-minute break-out sessions, networking opportunities, and engaging discussions.</p>
                 <p>Please indicate if you want to attend the main conference on <strong>Saturday</strong><span className="text-danger">*</span>:</p>

@@ -6,9 +6,9 @@ export const metadata = {
     title: "Ticket Cancellation | Bitbash"
 };
 
-export default function CancelPage({ params }: { params: { publicId: string; signature: string } }) {
+export default async function CancelPage({ params }: { params: Promise<{ registrationId: string }> }) {
 
-    const { publicId, signature } = params;
+    const { registrationId } = await params;
     return (
         <MainLayout>
             <Section headerText="Ticket Cancellation" sectionBackground={2}>
@@ -17,7 +17,7 @@ export default function CancelPage({ params }: { params: { publicId: string; sig
                         <div className="card h-100 shadow-sm">
                             <div className="card-header text-center"><h3>Confirm Cancellation</h3></div>
                             <div className="card-body center text-center">
-                                <CancelForm publicId={publicId} signature={signature} />
+                                <CancelForm registrationId={registrationId} />
                             </div>
                         </div>
                     </div>

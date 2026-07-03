@@ -22,15 +22,15 @@ export default function OtpVerifyForm() {
         const code = otp.join("");
         try {
             const verificationResult = await admittoVerifyOtp(email, code);
-            // If we received a publicId, the user already has tickets.
-            if (verificationResult.publicId) {
-                router.push(`/tickets/edit/${verificationResult.publicId}/${verificationResult.signature}?redirect=true`);
+            // If Admitto found an existing registration, let the attendee update it.
+            if (verificationResult.registrationId) {
+                router.push(`/tickets/edit/${verificationResult.registrationId}?redirect=true`);
             } else {
                 router.push(`/tickets/register?token=${encodeURIComponent(verificationResult.registrationToken)}&email=${encodeURIComponent(email)}`);
             }
-        } catch (err: any) {
+        } catch (err: unknown) {
             setLoading(false);
-            setError(err.message || "Verification failed. Please try again.");
+            setError(err instanceof Error ? err.message : "Verification failed. Please try again.");
         }
     };
  

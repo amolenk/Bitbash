@@ -1,14 +1,6 @@
 export interface WebsiteSettings {
-    admitto: AdmittoSettings;
     currentEdition: EditionSettings;
     pastEditions: PastEditionSettings[];
-}
-
-interface AdmittoSettings {
-    baseUrl: string;
-    teamSlug: string;
-    eventSlug: string;
-    mainConferenceTicketSlug: string;
 }
 
 interface EditionSettings {
@@ -74,12 +66,6 @@ interface SpeakerSettings {
 }
 
 export const websiteSettings: WebsiteSettings = {
-    admitto: {
-        baseUrl: process.env.NEXT_PUBLIC_ADMITTO_URL || "https://admitto.sandermolenkamp.com",// "http://localhost:5100",
-        teamSlug: "bitbash",
-        eventSlug: "bitbash-2027",
-        mainConferenceTicketSlug: "conference"
-    },
     currentEdition: {
         slug: "winter-2027",
         description: "Rock 'n' Roll Edition",
@@ -92,9 +78,9 @@ export const websiteSettings: WebsiteSettings = {
                 || today === this.conferenceDate.toLocaleDateString('nl-NL', options);
         },
         registration: {
-            opensAt: new Date("2026-10-01T12:00:00+02:00"),
+            opensAt: new Date("2026-04-01T12:00:00+02:00"),
             closesAt: new Date("2027-01-22T09:00:00+01:00"),
-            enabled: false,
+            enabled: true,
             isOpen: function () {
                 const now = new Date();
                 return this.enabled && now >= this.opensAt && now <= this.closesAt;

@@ -4,6 +4,17 @@ import React from "react";
 
 type AttendeeType = "professional" | "student";
 
+interface EmptyDetails {
+    firstName: string;
+    lastName: string;
+    attendeeType: "";
+    organization: string;
+    role: string;
+    institute: string;
+    studyProgram: string;
+    graduationDate: string;
+}
+
 interface ProfessionalDetails {
     firstName: string;
     lastName: string;
@@ -21,7 +32,7 @@ interface StudentDetails {
     graduationDate: string;
 }
 
-export type PersonalDetails = ProfessionalDetails | StudentDetails;
+export type PersonalDetails = EmptyDetails | ProfessionalDetails | StudentDetails;
 
 interface PersonalDetailsFormProps {
     details: PersonalDetails;

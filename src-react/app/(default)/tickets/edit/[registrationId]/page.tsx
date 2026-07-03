@@ -9,10 +9,10 @@ export const metadata = {
 export default async function UpdateRegistrationPage({
     params, searchParams
 }: {
-    params: Promise<{ publicId: string; signature: string }>,
+    params: Promise<{ registrationId: string }>,
     searchParams: Promise<{ redirect?: boolean; }>
 }) {
-    const { publicId, signature } = await params;
+    const { registrationId } = await params;
     const { redirect } = await searchParams;
 
     return (
@@ -23,7 +23,7 @@ export default async function UpdateRegistrationPage({
 
                         {redirect && <div className="alert alert-warning">We found an existing registration for this email.<br />You can update or cancel your registration below.</div>}
 
-                        <UpdateRegistrationForm publicId={publicId} signature={signature} />
+                        <UpdateRegistrationForm registrationId={registrationId} />
                     </div>
                 </div>
             </Section>

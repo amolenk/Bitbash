@@ -1,22 +1,18 @@
 'use client'
 
-import React, { useRef, useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import SpinningButton from "../common/SpinningButton";
 import Link from "next/link";
 import { cancel } from "@/src/api/admitto";
 
 interface CancelFormProps {
-    publicId: string,
-    signature: string
+    registrationId: string
 }
 
-export default function CancelForm({ publicId, signature }: CancelFormProps) {
+export default function CancelForm({ registrationId }: CancelFormProps) {
 
     const router = useRouter();
-    const params = useSearchParams();
-    const token = params.get("token") || "";
-    const email = params.get("email") || "";
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -27,11 +23,11 @@ export default function CancelForm({ publicId, signature }: CancelFormProps) {
         setError("");
 
         try {
-            await cancel(publicId, signature);
+            await cancel(registrationId);
             router.push("/tickets/cancel/confirmation");
-        } catch (err: any) {
+        } catch (err: unknown) {
             setLoading(false);
-            setError(err.message || "Registration failed. Please try again.");
+            setError(err instanceof Error ? err.message : "Registration failed. Please try again.");
         }
     };
 

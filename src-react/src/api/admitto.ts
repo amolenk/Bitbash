@@ -1,9 +1,9 @@
-// All Admitto API calls for Bitbash registration
-
-import { websiteSettings } from "../config/website-settings";
+// Browser-facing Bitbash ticket API calls. These call local Next.js routes;
+// the routes call Admitto server-side and add private API credentials.
 
 export class AdmittoError extends Error {
     code?: string;
+
     constructor(message: string, code?: string) {
         super(message);
         this.code = code;
@@ -11,142 +11,99 @@ export class AdmittoError extends Error {
 }
 
 export interface TicketTypeDto {
-    slug: string;
+    id: string;
     name: string;
-    slotNames: string[];
+    timeSlots: string[];
+    status: "available" | "waitlist" | "soldOut";
     hasCapacity: boolean;
 }
 
-export interface AdditionalDetailSchemaDto {
-    name: string;
-    maxLength: string;
-    isRequired: boolean;
-}
-
 export interface Availability {
-    registrationOpensAt?: string; // ISO Date string
-    registrationClosesAt?: string; // ISO Date string
+    registrationOpensAt?: string;
+    registrationClosesAt?: string;
     ticketTypes: TicketTypeDto[];
 }
 
-export interface RegisteredTickets {
+export interface RegistrationDetail {
+    id: string;
+    status: "registered" | "cancelled";
+    firstName: string;
+    lastName: string;
+    additionalDetails: Record<string, string>;
     tickets: string[];
 }
 
 export interface VerificationResult {
     registrationToken: string;
-    publicId?: string;
-    signature?: string;
+    registrationId?: string;
+    email: string;
+}
+
+export interface TicketSettings {
+    mainConferenceTicketTypeId: string;
+    workshopsDate: string;
+    conferenceDate: string;
+    registrationOpen: boolean;
 }
 
 export function isRegistrationOpen(availability: Availability): boolean {
-
     return !isBeforeRegistrationOpen(availability) && !isAfterRegistrationClosed(availability);
 }
 
 export function isBeforeRegistrationOpen(availability: Availability): boolean {
-
     const now = new Date().getTime();
     const opensAt = availability?.registrationOpensAt && new Date(availability.registrationOpensAt).getTime();
 
-    if (opensAt && now < opensAt) return true;
-    return false;
+    return !!opensAt && now < opensAt;
 }
 
 export function isAfterRegistrationClosed(availability: Availability): boolean {
-
     const now = new Date().getTime();
     const closesAt = availability?.registrationClosesAt && new Date(availability.registrationClosesAt).getTime();
 
-    if (closesAt && now > closesAt) return true;
-    return false;
+    return !!closesAt && now > closesAt;
+}
+
+export async function getTicketSettings(): Promise<TicketSettings> {
+    return await request<TicketSettings>("/api/tickets/settings");
 }
 
 export async function requestOtp(email: string) {
-    const url = `${getTicketedEventUrl()}/public/otp`;
-    const res = await fetch(url, {
+    await request<void>("/api/tickets/otp/request", {
         method: "POST",
-        headers: { "Content-Type": "application/json", ...getApiHeaders() },
         body: JSON.stringify({ email })
     });
-    if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData?.detail || "Verification request failed.");
-    }
 }
 
-export async function cancel(publicId: string, signature: string) {
-    const url = `${getTicketedEventUrl()}/public/${publicId}?signature=${signature}`;
-    const res = await fetch(url, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json", ...getApiHeaders() }
+export async function cancel(registrationId: string) {
+    await request<void>(`/api/tickets/registration/${encodeURIComponent(registrationId)}/cancel`, {
+        method: "POST"
     });
-    if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData?.detail || "Cancellation failed.");
-    }
 }
 
-export async function reconfirm(publicId: string, signature: string) {
-    const url = `${getTicketedEventUrl()}/public/${publicId}/reconfirm?signature=${signature}`;
-    const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", ...getApiHeaders() }
+export async function reconfirm(registrationId: string) {
+    await resendTicketEmail(registrationId);
+}
+
+export async function resendTicketEmail(registrationId: string) {
+    await request<void>(`/api/tickets/registration/${encodeURIComponent(registrationId)}/ticket-email/resend`, {
+        method: "POST"
     });
-    if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData?.detail || "Reconfirmation failed.");
-    }
 }
 
 export async function verifyOtp(email: string, code: string) {
-    const url = `${getTicketedEventUrl()}/public/verify`;
-    const res = await fetch(url, {
+    return await request<VerificationResult>("/api/tickets/otp/verify", {
         method: "POST",
-        headers: { "Content-Type": "application/json", ...getApiHeaders() },
         body: JSON.stringify({ email, code })
     });
-    if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData?.detail || "Verification failed.");
-    }
-    return await res.json() as VerificationResult;
 }
 
 export async function getAvailability(): Promise<Availability> {
-    const url = `${getTicketedEventUrl()}/public/availability`;
-    // Artificial delay for debugging
-    // await new Promise(resolve => setTimeout(resolve, 1000));
-    const res = await fetch(url, {
-        method: "GET",
-        headers: { ...getApiHeaders() }
-    });
-    if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData?.detail || "Failed to fetch availability.");
-    }
-    const availability = await res.json() as Availability;
-
-    // TEMP: Exclude the code-coach ticket type
-    availability.ticketTypes = availability.ticketTypes.filter(
-        t => t.slug !== 'code-coach-conquer-level-up-your-facilitation-game'
-    );
-    return availability;
+    return await request<Availability>("/api/tickets/availability");
 }
 
-export async function getTickets(publicId: string, signature: string): Promise<RegisteredTickets> {
-    const url = `${getTicketedEventUrl()}/public/${publicId}/tickets?signature=${signature}`;
-    // Artificial delay for debugging
-    // await new Promise(resolve => setTimeout(resolve, 3000));
-    const res = await fetch(url, { headers: { ...getApiHeaders() } });
-    if (res.status === 404) {
-        return { tickets: [] };
-    }
-    if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData?.detail || "Failed to fetch tickets.");
-    }
-    return await res.json();
+export async function getRegistration(registrationId: string): Promise<RegistrationDetail> {
+    return await request<RegistrationDetail>(`/api/tickets/registration/${encodeURIComponent(registrationId)}`);
 }
 
 export async function register(
@@ -157,103 +114,95 @@ export async function register(
     organization: string,
     role: string,
     graduationDate: string,
-    tickets: string[],
+    ticketTypeIds: string[],
     registrationToken: string) {
 
-    const url = `${getTicketedEventUrl()}/public/register`;
-    const res = await fetch(url, {
+    await request<void>("/api/tickets/register", {
         method: "POST",
-        headers: { "Content-Type": "application/json", ...getApiHeaders() },
         body: JSON.stringify({
-            email: email,
-            firstName: firstName,
-            lastName: lastName,
-            additionalDetails: [
-                { name: "AttendeeType", value: attendeeType },
-                { name: "Organization", value: organization },
-                { name: "Role", value: role },
-                { name: "GraduationDate", value: graduationDate }
-            ],
-            requestedTickets: tickets,
-            verificationToken: registrationToken
+            email,
+            firstName,
+            lastName,
+            ticketTypeIds,
+            registrationToken,
+            additionalDetails: {
+                "attendee-type": attendeeType,
+                organization,
+                role,
+                "graduation-date": graduationDate
+            }
         })
     });
-    if (!res.ok) {
-        const errorData = await res.json();
 
-        if (errorData?.errorCode === "validation") {
-
-            let errorString = "";
-            if (errorData && typeof errorData.errors === "object" && errorData.errors !== null) {
-                errorString = Object.values(errorData.errors)
-                    .flat()
-                    .map(String)
-                    .join(", ");
-            } else {
-                errorString = String(errorData.errors);
-            }
-            throw new AdmittoError(errorString, errorData.errorCode);
-        }
-
-        throw new AdmittoError(errorData?.detail || "Registration failed.", errorData?.errorCode);
-    }
     return true;
 }
 
-export async function changeTickets(
-    publicId: string,
-    signature: string,
-    tickets: string[]) {
+export async function updateRegistration(
+    registrationId: string,
+    firstName: string,
+    lastName: string,
+    attendeeType: string,
+    organization: string,
+    role: string,
+    graduationDate: string,
+    ticketTypeIds: string[]) {
 
-    const url = `${getTicketedEventUrl()}/public/${publicId}/tickets?signature=${signature}`;
-    const res = await fetch(url, {
+    await request<void>(`/api/tickets/registration/${encodeURIComponent(registrationId)}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json", ...getApiHeaders() },
         body: JSON.stringify({
-            requestedTickets: tickets
+            firstName,
+            lastName,
+            ticketTypeIds,
+            additionalDetails: {
+                "attendee-type": attendeeType,
+                organization,
+                role,
+                "graduation-date": graduationDate
+            }
         })
     });
-    if (!res.ok) {
-        const errorData = await res.json();
 
-        if (errorData?.errorCode === "validation") {
-
-            let errorString = "";
-            if (errorData && typeof errorData.errors === "object" && errorData.errors !== null) {
-                errorString = Object.values(errorData.errors)
-                    .flat()
-                    .map(String)
-                    .join(", ");
-            } else {
-                errorString = String(errorData.errors);
-            }
-            throw new AdmittoError(errorString, errorData.errorCode);
-        }
-
-        throw new AdmittoError(errorData?.detail || "Registration update failed.", errorData?.errorCode);
-    }
     return true;
 }
 
-// Private helpers
+async function request<T>(url: string, init?: RequestInit): Promise<T> {
+    const res = await fetch(url, {
+        ...init,
+        headers: {
+            "Content-Type": "application/json",
+            ...init?.headers
+        }
+    });
 
-// Returns the base URL for Admitto API calls.
-// Server-side: direct upstream URL (with private API key in headers via getApiHeaders()).
-// Client-side: local Next.js proxy at /api/admitto (proxy adds the key server-side).
-function getTicketedEventUrl() {
-    const settings = require("../config/website-settings").websiteSettings.admitto;
-    if (typeof window === "undefined") {
-        // Server: call Admitto directly; API key is added by getApiHeaders()
-        return `${settings.baseUrl}/teams/${settings.teamSlug}/events/${settings.eventSlug}`;
+    if (!res.ok) {
+        throw await createError(res);
     }
-    // Client: route through the Next.js proxy which adds the X-ApiKey header
-    return `/api/admitto/teams/${settings.teamSlug}/events/${settings.eventSlug}`;
+
+    if (res.status === 204) {
+        return undefined as T;
+    }
+
+    return await res.json() as T;
 }
 
-// Returns the X-ApiKey header when running server-side and the env var is set.
-// Client-side calls go through the /api/admitto proxy which adds the key.
-function getApiHeaders(): Record<string, string> {
-    if (typeof window !== "undefined") return {};
-    const key = process.env.ADMITTO_API_KEY;
-    return key ? { "X-ApiKey": key } : {};
+async function createError(res: Response): Promise<AdmittoError> {
+    let errorData: unknown = null;
+    try {
+        errorData = await res.json();
+    } catch {
+        // Use the generic message below when the response body is not JSON.
+    }
+
+    const problem = typeof errorData === "object" && errorData !== null
+        ? errorData as Record<string, unknown>
+        : null;
+
+    return new AdmittoError(
+        stringValue(problem?.detail) || stringValue(problem?.title) || "The ticketing request failed.",
+        stringValue(problem?.code) || stringValue(problem?.errorCode)
+    );
+}
+
+function stringValue(value: unknown): string | undefined {
+    return typeof value === "string" ? value : undefined;
 }

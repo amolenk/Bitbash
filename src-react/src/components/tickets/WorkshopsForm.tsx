@@ -2,34 +2,36 @@
 
 import { Availability, TicketTypeDto } from "@/src/api/admitto";
 import { formatDate } from "@/src/utils/date-utils";
-import { websiteSettings } from "@/src/config/website-settings";
 
 interface WorkshopsFormProps {
     availability: Availability | null;
+    workshopsDate: string;
     workshopSelections: string[];
     setWorkshopSelections: React.Dispatch<React.SetStateAction<string[]>>;
     disabled: boolean
 }
 
 export default function WorkshopsForm({ 
-    availability, workshopSelections, setWorkshopSelections, disabled
+    availability, workshopsDate, workshopSelections, setWorkshopSelections, disabled
 }: WorkshopsFormProps) {
 
-    const edition = websiteSettings.currentEdition;
+    const workshopTickets = availability?.ticketTypes.filter((t: TicketTypeDto) =>
+        t.timeSlots.includes("morning-workshop") || t.timeSlots.includes("afternoon-workshop")
+    ) ?? [];
 
     const getDisabledTickets = () => {
         const slotsTaken = new Set<string>();
-        const selected = availability?.ticketTypes.filter(t => workshopSelections.includes(t.slug));
+        const selected = availability?.ticketTypes.filter(t => workshopSelections.includes(t.id));
 
         selected?.forEach(ticket => {
-            ticket.slotNames.forEach(slot => slotsTaken.add(slot));
+            ticket.timeSlots.forEach(slot => slotsTaken.add(slot));
         });
 
         return new Set(
             availability?.ticketTypes
-                .filter(t => !workshopSelections.includes(t.slug))
-                .filter(t => t.slotNames.some(slot => slotsTaken.has(slot)))
-                .map(t => t.slug)
+                .filter(t => !workshopSelections.includes(t.id))
+                .filter(t => t.timeSlots.some(slot => slotsTaken.has(slot)))
+                .map(t => t.id)
         );
     };
 
@@ -37,7 +39,7 @@ export default function WorkshopsForm({
 
     return (
         <div className="card h-100 shadow-sm mb-4">
-            <div className="card-header text-center"><h3>Pre-conference Workshops – {formatDate(edition.workshopsDate)}</h3></div>
+            <div className="card-header text-center"><h3>Pre-conference Workshops – {formatDate(new Date(workshopsDate))}</h3></div>
             <div className="card-body mx-5">
                 <p>Interested in joining a workshop on <strong>Friday</strong>?</p>
                 <p>
@@ -53,15 +55,12 @@ export default function WorkshopsForm({
                 ) : (
                     <>
                         {(() => {
-                            const workshopTickets = availability.ticketTypes
-                                .filter((t: TicketTypeDto) => t.slotNames.includes("morning-workshop") || t.slotNames.includes("afternoon-workshop"));
-                            if (!workshopTickets) return null;
                             // Sort: morning first, then afternoon, then full-day
                             const sorted = [...workshopTickets].sort((a: TicketTypeDto, b: TicketTypeDto) => {
-                                const aMorning = a.slotNames.includes("morning-workshop");
-                                const aAfternoon = a.slotNames.includes("afternoon-workshop");
-                                const bMorning = b.slotNames.includes("morning-workshop");
-                                const bAfternoon = b.slotNames.includes("afternoon-workshop");
+                                const aMorning = a.timeSlots.includes("morning-workshop");
+                                const aAfternoon = a.timeSlots.includes("afternoon-workshop");
+                                const bMorning = b.timeSlots.includes("morning-workshop");
+                                const bAfternoon = b.timeSlots.includes("afternoon-workshop");
                                 // Full-day: both morning and afternoon
                                 const aFullDay = aMorning && aAfternoon;
                                 const bFullDay = bMorning && bAfternoon;
@@ -72,29 +71,29 @@ export default function WorkshopsForm({
                                 return 0;
                             });
                             return sorted.map((ticket: TicketTypeDto) => {
-                                const isMorning = ticket.slotNames.includes("morning-workshop");
-                                const isAfternoon = ticket.slotNames.includes("afternoon-workshop");
+                                const isMorning = ticket.timeSlots.includes("morning-workshop");
+                                const isAfternoon = ticket.timeSlots.includes("afternoon-workshop");
                                 let badgeText = "";
                                 if (isMorning && isAfternoon) badgeText = "Full-day";
                                 else if (isMorning) badgeText = "Morning";
                                 else if (isAfternoon) badgeText = "Afternoon";
                                 return (
-                                    <div key={ticket.slug} className="form-check text-start mb-2">
+                                    <div key={ticket.id} className="form-check text-start mb-2">
                                         <input
                                             className="form-check-input"
                                             type="checkbox"
-                                            id={ticket.slug}
-                                            checked={workshopSelections.includes(ticket.slug)}
-                                            disabled={disabledTickets.has(ticket.slug) || !ticket.hasCapacity || disabled}
+                                            id={ticket.id}
+                                            checked={workshopSelections.includes(ticket.id)}
+                                            disabled={disabledTickets.has(ticket.id) || !ticket.hasCapacity || disabled}
                                             onChange={() => {
                                                 setWorkshopSelections((tickets: string[]) =>
-                                                    tickets.includes(ticket.slug)
-                                                        ? tickets.filter((s: string) => s !== ticket.slug)
-                                                        : [...tickets, ticket.slug]
+                                                    tickets.includes(ticket.id)
+                                                        ? tickets.filter((s: string) => s !== ticket.id)
+                                                        : [...tickets, ticket.id]
                                                 );
                                             }}
                                         />
-                                        <label className="form-check-label ms-2" htmlFor={ticket.slug}>
+                                        <label className="form-check-label ms-2" htmlFor={ticket.id}>
                                             {ticket.name}
                                             {" "}
                                             {ticket.hasCapacity && <span className="badge text-bg-primary text-light ms-2">{badgeText}</span>}
@@ -104,11 +103,11 @@ export default function WorkshopsForm({
                                 );
                             });
                         })()}
-                        {availability.ticketTypes.filter((t: TicketTypeDto) =>
-                            t.slotNames.includes("morning-workshop") || t.slotNames.includes("afternoon-workshop")
-                        ).length === 0 && (
-                                <div className="text-muted">No workshops available at this time.</div>
-                            )}
+                        {workshopTickets.length === 0 && (
+                            <div className="alert alert-info text-start" role="status">
+                                Workshop tickets are not available yet. You can complete your registration now and update it once workshops become available.
+                            </div>
+                        )}
                     </>
                 )}
             </div>

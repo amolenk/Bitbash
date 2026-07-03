@@ -8,9 +8,8 @@ import PersonalDetailsForm, { PersonalDetails } from "./PersonalDetailsForm";
 import SpinningButton from "../common/SpinningButton";
 import WorkshopsForm from "./WorkshopsForm";
 
-import { AdmittoError, getAvailability, Availability, isBeforeRegistrationOpen, isAfterRegistrationClosed, register } from "../../api/admitto";
-import { websiteSettings } from "@/src/config/website-settings";
-import router, { useRouter } from "next/navigation";
+import { AdmittoError, getAvailability, Availability, isBeforeRegistrationOpen, isAfterRegistrationClosed, register, getTicketSettings, TicketSettings } from "../../api/admitto";
+import { useRouter } from "next/navigation";
 
 interface RegisterFormProps {
     email: string;
@@ -24,12 +23,13 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
     const [submitting, setSubmitting] = useState(false);
     const [submittingError, setSubmittingError] = useState("");
     const [availability, setAvailability] = useState<Availability | null>(null);
+    const [ticketSettings, setTicketSettings] = useState<TicketSettings | null>(null);
     const [conferenceSelection, setConferenceSelection] = useState<boolean | null>(null);
     const [workshopSelections, setWorkshopSelections] = useState<string[]>([]);
     const [details, setDetails] = useState<PersonalDetails>({
         firstName: "",
         lastName: "",
-        attendeeType: null as any, // Must be chosen in form
+        attendeeType: "",
         organization: "",
         role: "",
         institute: "",
@@ -43,11 +43,15 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
     useEffect(() => {
         async function fetchData() {
             try {
-                const availabilityResult = await getAvailability();
+                const [availabilityResult, ticketSettingsResult] = await Promise.all([
+                    getAvailability(),
+                    getTicketSettings()
+                ]);
                 setAvailability(availabilityResult);
+                setTicketSettings(ticketSettingsResult);
                 setLoading(false);
-            } catch (err: any) {
-                setLoadingError(err.message || "Could not fetch ticket availability.");
+            } catch (err: unknown) {
+                setLoadingError(err instanceof Error ? err.message : "Could not fetch ticket availability.");
                 setLoading(false);
             }
         }
@@ -68,8 +72,8 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
 
         try {
             const tickets = [...workshopSelections];
-            if (conferenceSelection) {
-                tickets.push(websiteSettings.admitto.mainConferenceTicketSlug);
+            if (conferenceSelection && ticketSettings?.mainConferenceTicketTypeId) {
+                tickets.push(ticketSettings.mainConferenceTicketTypeId);
             }
 
             if (details.attendeeType === "student") {
@@ -97,13 +101,13 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
             }
 
             router.push("/tickets/register/thankyou");
-        } catch (err: any) {
+        } catch (err: unknown) {
             if (err instanceof AdmittoError && err.code === "attendee.invalid_token") {
                 router.push("/tickets/register/expired");
             }
             else {
                 setSubmitting(false);
-                setSubmittingError(err.message || "Registration failed. Please try again.");
+                setSubmittingError(err instanceof Error ? err.message : "Registration failed. Please try again.");
             }
         }
     };
@@ -113,7 +117,7 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
         && (conferenceSelection === true || workshopSelections.length > 0);
 
     // Loading spinner
-    if (loading || email === "" || token === "") {
+    if (loading || email === "" || token === "" || !ticketSettings) {
         return (
             <div className="d-flex justify-content-center align-items-center">
                 <div className="spinner-border text-light" role="status">
@@ -129,7 +133,7 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
     }
 
     // Registration not yet open in website
-    if (!websiteSettings.currentEdition.registration.isOpen()) {
+    if (!ticketSettings.registrationOpen) {
         return (
             // TODO Create reusable Card component
             <div className="card h-100 shadow-sm">
@@ -166,6 +170,8 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
 
                 <MainConferenceForm
                     availability={availability}
+                    conferenceDate={ticketSettings.conferenceDate}
+                    mainConferenceTicketTypeId={ticketSettings.mainConferenceTicketTypeId}
                     conferenceSelection={conferenceSelection}
                     setConferenceSelection={setConferenceSelection}
                     disabled={submitting}
@@ -173,6 +179,7 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
 
                 <WorkshopsForm
                     availability={availability}
+                    workshopsDate={ticketSettings.workshopsDate}
                     workshopSelections={workshopSelections}
                     setWorkshopSelections={setWorkshopSelections}
                     disabled={submitting}

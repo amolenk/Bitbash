@@ -5,6 +5,7 @@ interface SpinningButtonProps {
     disabled?: boolean;
     type?: "button" | "submit" | "reset";
     className?: string;
+    onClick?: () => void;
     children: React.ReactNode;
 }
 
@@ -13,6 +14,7 @@ export default function SpinningButton({
     disabled,
     type = "submit",
     className = "",
+    onClick,
     children
 }: SpinningButtonProps) {
     const baseClass = "btn btn-primary text-light";
@@ -21,6 +23,7 @@ export default function SpinningButton({
             type={type}
             className={`${baseClass} ${className}`.trim()}
             disabled={loading || disabled}
+            onClick={onClick}
         >
             {loading && (
                 <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
