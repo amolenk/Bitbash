@@ -1,0 +1,270 @@
+{
+  "Speakers": [
+    {
+      "Id": "christian-peeters",
+      "FullName": "Christian Peeters",
+      "Bio": "Christian started in 2000 as a software developer. Seven years later he became a Microsoft Certified Trainer and has been teaching other developers ever since. Currently he is a Principal Cloud Architect at Betabit. A software development company specialized in building business critical applications in the cloud.",
+      "TagLine": "Principal Cloud Architect and Trainer @ Betabit",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/christian-peeters.jpg",
+      "sessions": [
+        "the-ragged-edge-keep-your-data-and-ai-close"
+      ]
+    },
+    {
+      "Id": "dennis-doomen",
+      "FullName": "Dennis Doomen",
+      "Bio": "Dennis is a Microsoft MVP and Principal Consultant at Dutch Microsoft consultancy firm Aviva Solutions. With 29 years of experience under his belt as a software architect and/or lead developer, he specializes in designing full-stack enterprise solutions based on .NET as well as providing coaching on all aspects of designing, building, documenting, deploying and maintaining software systems in an agile world. He is the author of several open-source projects, including Fluent Assertions, Pathy, Reflectify, PackageGuard, and several .NET Solution Templates, and has been maintaining coding guidelines for C# since 2001. You can find him on Twitter, Mastodon and BlueSky.",
+      "TagLine": "Hands-on architect in the .NET space with 29 years of experience on an everlasting quest for knowledge to build the right software the right way at the right time",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/dennis-doomen.jpg",
+      "sessions": [
+        "the-impact-and-relevance-of-code-reviews-on-software-quality"
+      ]
+    },
+    {
+      "Id": "eduard-keilholz",
+      "FullName": "Eduard Keilholz",
+      "Bio": "Eduard Keilholz is a seasoned software developer and cloud architect at 4Dotnet, where he specializes in Microsoft development and cloud technologies. With a passion for helping organizations build highly performant cloud software solutions, Eduard has made significant contributions in the field of cloud architecture.\r\n\r\nHe is the author of the book Azure Infrastructure as Code, which delves into infrastructure automation using Azure, and is a frequent international conference speaker. Eduard is also the founder of the DotnetFriday meetup platform, a community initiative hosted in the Netherlands that fosters collaboration and learning among .NET professionals.\r\n\r\nIn addition to his development and community activities, Eduard created SpreaView, a platform designed to give conference organizers and speakers deeper insights into their performance by automating speaker evaluations. His contributions to the Microsoft community have earned him the prestigious title of Microsoft MVP since 2020.",
+      "TagLine": "Cloud Solution Architect @ 4Dotnet | Book Author | International Conference Speaker | Founder of https://spreaview.com",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/eduard-keilholz.jpg",
+      "sessions": [
+        "mastering-aspire-in-the-agentic-engineering-era"
+      ]
+    },
+    {
+      "Id": "hanno-embregts",
+      "FullName": "Hanno Embregts",
+      "Bio": "Hanno Embregts is a Java Developer with a passion for learning, teaching and making music.\r\n\r\nIn his day-to-day job as a Teacher / Technology Advocate at Info Support, Hanno prefers work that is fast-paced and versatile. This is why he juggles Java development, software architecture, public speaking, leading Info Support\u2019s Speaker Community and teaching courses at Info Support\u2019s Knowledge Centre.\r\n\r\nHanno is a Java Champion, an Oracle ACE Pro and one of the leaders of the NLJUG (the Dutch Java User Group). Outside of work Hanno likes making music with his friends. He plays the flute, the guitar and he likes to sing.\r\n\r\nSoftware conferences are Hanno\u2019s favourite thing in the world, because they allow him to do the three things he loves most at the same time: learning new things, teaching others about stuff he discovered and yes: even making music from time to time!\r\n",
+      "TagLine": "Java Developer by day, musician by night. A bit of both at conferences.",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/hanno-embregts.jpg",
+      "sessions": [
+        "dont-let-agentic-ai-take-your-joy-of-coding"
+      ]
+    },
+    {
+      "Id": "hans-muns",
+      "FullName": "Hans Muns",
+      "Bio": "Hans Muns is a freelance Software Engineer and Microsoft Certified Trainer (MCT) at Backnook.\r\n\r\nAs a software engineer, Hans focuses on designing, building, and implementing software solutions mainly using the Microsoft technology stack, including .NET, C#, and Azure. He enjoys working on innovative projects that help customers address real-world challenges.\r\n\r\nIn addition to his engineering work, Hans is a Microsoft Certified Trainer, where he shares his knowledge and enthusiasm for technology with colleagues, peers, and customers, contributing to a supportive and collaborative learning environment.",
+      "TagLine": "Freelance .NET/Azure Engineer \u0026 Microsoft Certified Trainer @ Backnook",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/hans-muns.jpg",
+      "sessions": [
+        "how-i-migrated-a-production-blazor-app-in-under-40-hours-using-ai"
+      ]
+    },
+    {
+      "Id": "jurre-brandsen",
+      "FullName": "Jurre Brandsen",
+      "Bio": "Jurre is a Software Engineer at Info Support with a focus on AI augmented software engineering. With a solid foundation in machine learning, he explores how AI can practically assist developers, from improving workflows to supporting decision-making throughout the software lifecycle. Jurre enjoys exploring practical ways to make AI a natural part of everyday development, aiming for tools and techniques that feel intuitive and useful.",
+      "TagLine": "AI Champion \u0026 Software Engineer at Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/jurre-brandsen.jpg",
+      "sessions": [
+        "build-your-selfimproving-agent-harness-from-the-ground-up"
+      ]
+    },
+    {
+      "Id": "niels-tanis",
+      "FullName": "Niels Tanis",
+      "Bio": "Niels Tanis has got a background in .NET development, pentesting and security consultancy. He is Microsoft MVP and has been involved in breaking, defending and building secure applications. \r\nRight now he is a software security engineer at Tidalis and before that he was a security researcher at Veracode where he focussed on static analysis of a variant of languages. \r\nHe is married, father of two and lives in a small village just outside Amersfoort, The Netherlands.",
+      "TagLine": "Security Researcher \u0026 Software Security Engineer @ Tidalis | Microsoft MVP | International Conference Speaker",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/niels-tanis.jpg",
+      "sessions": [
+        "build-break-defend-repeat-automating-appsec-for-net-with-ai"
+      ]
+    },
+    {
+      "Id": "sander-molenkamp",
+      "FullName": "Sander Molenkamp",
+      "Bio": "Sander Molenkamp is a principal cloud architect and Microsoft Azure MVP with over 25 years of professional experience. He works for Info Support (http://www.infosupport.com) designing and developing customer solutions using cloud native architectures.\r\nSander is also an accomplished speaker, having shared his insights and expertise at numerous international conferences. He is passionate about technology and freely shares his knowledge through the dotnetFlix YouTube channel (www.youtube.com/dotnetflix).\r\nFurthermore, Sander actively contributes to the organization of multiple free community events, including the Dutch Azure Meetup, Azure Fest, and Bitbash.\r\nIn his free time, Sander enjoys traveling, is (still) learning to play the ukelele, and tinkers with technology and LEGO. He has also defeated the sword master of M\u00EAl\u00E9e Island\u2122\uFE0F.",
+      "TagLine": "Principal Cloud Architect @ Info Support \u0026 Microsoft Azure MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/sander-molenkamp.jpg",
+      "sessions": [
+        "mastering-aspire-in-the-agentic-engineering-era"
+      ]
+    },
+    {
+      "Id": "sander-ten-brinke",
+      "FullName": "Sander ten Brinke",
+      "Bio": "Sander ten Brinke is a Microsoft MVP (DevTech) and Senior Software Engineer at Arcady, a Dutch IT consultancy firm based in Zwolle. He loves working with .NET, Azure, DevOps and a whole lot more. He always stays up to date with all new technology and loves sharing his knowledge with everyone by speaking, blogging, podcasting and more!\r\n\r\nSander is an accomplished speaker, he has spoken at 40\u002B events, including meetups and big conferences like WeAreDevelopers World Congress 2024 and 2025 (15k attendees), NDC Oslo 2025,\r\nSwetugg 2026, NDC Copenhagen 2026, FutureTech and more! He was in the top 3% of the most active speakers on the Sessionize Platform in 2024 and 2025!",
+      "TagLine": "Senior Software Engineer @ Arcady | Microsoft MVP (Developer Technologies)",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/sander-ten-brinke.jpg",
+      "sessions": [
+        "apis-that-age-well"
+      ]
+    },
+    {
+      "Id": "thijs-baan",
+      "FullName": "Thijs Baan",
+      "Bio": "Thijs is an Applied Psychologist and Lead Engineer at Info Support. With a background in software engineering and psychology, he helps teams navigate complex technical challenges while understanding the human side of change and innovation. Pragmatic and structured in his approach, he is driven by a curiosity for the interaction between people and technology.",
+      "TagLine": "Applied Psychologist \u0026 Lead Engineer @Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/thijs-baan.jpg",
+      "sessions": [
+        "build-your-selfimproving-agent-harness-from-the-ground-up",
+        "cognitive-shift-how-agentic-ai-changes-the-way-we-think"
+      ]
+    },
+    {
+      "Id": "willem-meints",
+      "FullName": "Willem Meints",
+      "Bio": "Chief AI Architect at Info Support, helping engineering teams adopt agentic AI and build the platforms to support it. Author of Building Effective LLM-Based Applications with Semantic Kernel. Shares hands-on lessons from the field through his Beyond Autocomplete blog.",
+      "TagLine": "Chief AI Architect",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/willem-meints.jpg",
+      "sessions": [
+        "coding-with-opensource-llms"
+      ]
+    }
+  ],
+  "Sessions": [
+    {
+      "Id": "apis-that-age-well",
+      "Title": "APIs That Age Well",
+      "Description": "Almost all Web APIs evolve over time. New features are added, new clients start consuming them, the API design changes, and breaking changes are introduced. While natural, it can be frustrating for API developers and clients alike to deal with unclear design or unexpected breaking changes.\r\n\r\nThis workshop, built for .NET API developers, explores how OpenAPI provides the foundation for documenting, governing, and evolving APIs safely over time:\r\n\r\n- How do we communicate new features and the way we would like them to be used?\r\n- How do we deal with breaking changes, informing our clients of them, and detecting unintended ones? \r\n- And how do we make it easy for clients to use our API, given that they might use all kinds of programming languages?\r\n- Finally, how do we ensure that the API style matches the intent and standards of other teams, so we don\u0027t waste time on unnecessary discussions and rework?\r\n\r\nPutting all of this together, we end up with an API that ages well, one that is easy to use, easy to maintain, and easy to evolve.\r\n\r\nWe\u0027ll be using ASP.NET Core and Azure API Center, a registry for cataloging and governing APIs, to demonstrate these concepts, but these principles can be applied to any technology stack, thanks to the underlying specification that will power all of these concepts: OpenAPI. We\u0027ll be using open tooling and technologies like Swagger UI, Scalar, API Versioning, Spectral and oasdiff.\r\n\r\nWe\u0027ll start with a simple API and add different features to it, demonstrating the problems that arise and then solving them. By the end of the workshop, you\u0027ll have built an API that can survive years of change, featuring versioning, high-quality OpenAPI documentation, automated linting, breaking change detection, generated client SDKs, and cloud-based API governance.\r\n\r\nPrerequisites:\r\n\r\n- Your own laptop.\r\n- Internet access.\r\n- A GitHub account to host your repository and run GitHub Actions.\r\n  - You can also use GitLab or Azure DevOps if you prefer, but the workshop will be using GitHub.\r\n- A Code Editor.\r\n  - Visual Studio Code is recommended, but you can use any editor you like.\r\n- Docker or the latest .NET SDK with permission to install tools like Spectral and Oasdiff.\r\n- (Optional) A (free) Azure account (or an existing one) to use Azure API Center.\r\n  - If you can\u0027t use Azure, you can still follow along with the workshop and use local tools to achieve the same results.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "sander-ten-brinke"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "build-your-selfimproving-agent-harness-from-the-ground-up",
+      "Title": "Build Your Self-Improving Agent Harness From the Ground Up",
+      "Description": "Most agentic workflows don\u2019t fail because the model isn\u2019t capable enough, but because the environment around it is incomplete. Important context lives in someone\u2019s head, instructions are scattered, and the agent keeps making the same mistakes.\r\n\r\nIn this full-day workshop, you\u2019ll build an agent harness around a project we provide. You\u2019ll work with instructions, skills, agents, hooks, project knowledge, validation, and persistent context, and learn how these pieces work together to make an agent more reliable.\r\n\r\nThen we\u2019ll go one step further: making the harness you built in the morning continuously improve over time. You\u2019ll use it in practice, spot recurring friction, decide what is worth changing, and evolve the harness based on what you learn. You\u2019ll capture those decisions in an HDR and put the updated harness back to work to see whether it actually performs better.\r\n\r\nBy the end of the day, you\u2019ll have built an agent harness, created a continuous-improvement loop around it, and documented your first improvement as an HDR: Harness Decision Record. Not just a better harness, but one that can keep getting better.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "jurre-brandsen",
+        "thijs-baan"
+      ],
+      "SessionFormat": "Full-day workshop",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "build-break-defend-repeat-automating-appsec-for-net-with-ai",
+      "Title": "Build. Break. Defend. Repeat: Automating AppSec for .NET with AI",
+      "Description": "AI writes a lot of your code now, and some of it is vulnerable. Meanwhile, frontier models have started finding vulnerabilities autonomously and at scale. One recent run surfaced 23,000 of them across 1,000 open source projects, most absent from any CVE database. Attackers can now discover bugs at a speed no human AppSec team can match, so defence has to run at machine speed too. The catch: an LLM on its own hallucinates, and a rule-based security scanner on its own buries you in false positives. The useful combination is deterministic analysis for verifiable facts (call graphs, data flows, dependency trees, known CVEs) plus an LLM that understands what the code actually does. In this session we apply that combination to a real .NET application using AI agents with composable skills: threat modelling generated from the code itself, and CVE triage that checks whether vulnerable code is even reachable before you spend time on it. You\u0027ll see what works today, where it breaks, and how to fit it into your own workflow.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "niels-tanis"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "coding-with-opensource-llms",
+      "Title": "Coding with open-source LLMs",
+      "Description": "In previous years, most of the attention went to new releases of OpenAI and Claude models, but something remarkable is happening in the open-source world. More and more tools and models are becoming available that work so well you might actually be able to cancel your Claude and OpenAI subscriptions.\r\n\r\nIn this session, I\u0027ll show you how I now develop on a computer measuring just 50x50x5 cm, without sharing anything with the hyperscalers. We\u0027ll cover hosting models with vLLM and programming with open-source coding agents. I won\u0027t just show you the tools; I\u0027ll also show how my open-source workflow differs from my workflow with Claude Code, which I also use.\r\n\r\nFinally, we\u0027ll look at the opportunities and limitations of open-source LLMs. Who knows, this might be what convinces your manager to finally give open source a serious look!",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "willem-meints"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "cognitive-shift-how-agentic-ai-changes-the-way-we-think",
+      "Title": "Cognitive Shift: How Agentic AI Changes the Way We Think",
+      "Description": "Copilots and agentic AI are not only changing how we work as software engineers, but also how we think. In this session, we look beyond productivity claims and tool comparisons, and focus on the psychological side of AI Augmented Engineering. What happens to your attention, working memory, critical thinking, and mental models when AI starts to take over more of the writing, searching, and thinking?\r\n\r\nIn this talk, we explore why working with AI often feels faster and smoother, while at the same time creating new kinds of mental friction. As AI increasingly provides output, suggestions, and next steps, the role of the engineer shifts: from building things yourself to evaluating, choosing, checking, and steering. This directly affects focus, understanding, learning, debugging, and keeping track of context. Using recognizable real-world situations, we look at where AI creates mental space, where it adds cognitive load, and what this means for how engineers develop expertise.\r\n\r\nThis session gives you a practical psychological framework to use AI more consciously and effectively in your daily work. You\u2019ll learn how to recognize when AI improves speed, focus, and mental space, when it quietly adds extra cognitive load, and how to deal with that in a smart way. This helps you get more out of copilots and agents, without losing sharpness, understanding, and control, as AI becomes an increasingly essential part of engineering.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "thijs-baan"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "dont-let-agentic-ai-take-your-joy-of-coding",
+      "Title": "Don\u0027t Let Agentic AI Take Your Joy of Coding",
+      "Description": "What do you enjoy more in software development? The act of creating something, or the feeling you get when your creation is appreciated? If you\u0027re in the second category, this current age of agentic AI will probably fit you like a glove. You can produce more software than before and get more praise for it. But if you\u0027re in the first (like me), at the very least you\u0027ll have mixed feelings towards the agentic AI movement. Because how will you make sure AI doesn\u0027t take away the thing you love doing the most?\r\n\r\nIf you feel like this, you\u0027re certainly not alone. Across the globe, people who work in creative industries such as art, music or movies are standing up against AI. And it\u0027s not just because AI is threatening their job security, it\u0027s threatening their joy of doing it. And the absence of joy in the workplace can be a dangerous thing.\r\n\r\nSo if you\u0027ve ever been bereft of joy after a particularly intense day of babysitting AI agents, this talk is for you. What are signs that AI is taking (part of) your joy? Should you simply accept your fate, or can something be done about it? Should you stop using AI entirely, embrace it to the max or somewhere in-between? Join this session to get some answers.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "hanno-embregts"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "how-i-migrated-a-production-blazor-app-in-under-40-hours-using-ai",
+      "Title": "How I Migrated a Production Blazor App in Under 40 Hours Using AI",
+      "Description": "Most developers choose a Blazor component library at the start of a project and hope they made the right call. When they don\u2019t, they often realize too late that switching frameworks is painful, risky, and easy to postpone.\r\n\r\nIn this session, I\u2019ll show how I migrated a production Blazor app to a new component framework in under 40 hours using AI. This was not a toy demo or a theoretical experiment, but a real-world migration where AI helped accelerate repetitive work while I stayed in control of quality, consistency, and architectural decisions.\r\n\r\nI\u2019ll walk through how I prepared the project for AI-assisted migration, how I customized the AI with project-specific guidance, and how I used it throughout the process. Along the way, I\u2019ll share what worked well, where the approach broke down, and when manual fixes and human judgment were still essential.\r\n\r\nThis session is for developers who want to use AI for code modernization without blindly trusting it. You\u2019ll leave with practical techniques, realistic expectations, and a repeatable approach you can apply to Blazor migrations and other refactoring projects.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "hans-muns"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "mastering-aspire-in-the-agentic-engineering-era",
+      "Title": "Mastering Aspire in the Agentic Engineering Era",
+      "Description": "Aspire provides a powerful model for orchestrating distributed applications in local development, but its real strength lies in how it enables faster, more automated ways of building software.\r\n\r\nIn this full-day hands-on workshop, you\u2019ll learn how to design, build, and evolve Aspire-based systems using practical patterns from real-world development. Starting with the fundamentals, you\u2019ll incrementally expand an application with integrations, orchestration patterns, and testing strategies.\r\n\r\nThroughout the day, we connect these concepts to agentic engineering, showing how Aspire\u2019s CLI and MCP server enable automation, rapid iteration.\r\n\r\nBring your laptop\u2014this is a fully hands-on workshop. You\u2019ll work on a running sample application, continuously extending it with new capabilities and validating your changes along the way.\r\n\r\nYou will:\r\n- Build and run a distributed application with Aspire\r\n- Add and configure infrastructure such as databases and messaging\r\n- Apply orchestration patterns for reliable startup and execution\r\n- Extend the AppHost with custom \r\n- Test your application using integration tests\r\n- Use the Aspire CLI and MCP server to speed up development workflows\r\n\r\nBy the end of the day, you\u2019ll understand not just how Aspire works, but how to use it effectively in a high-speed, automation-first development environment.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "sander-molenkamp",
+        "eduard-keilholz"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "the-impact-and-relevance-of-code-reviews-on-software-quality",
+      "Title": "The impact and relevance of code reviews on software quality",
+      "Description": "Nobody writes perfect code, not even an AI. Yes, the code may do exactly what you had in mind and all your automated tests succeed, but it may still not be the right solution. Maybe you lost track of the big picture and ended up in a rabbit hole. Maybe refactorings and real functional changes got mixed up obscuring the history and making it harder for the next developer. Maybe your tests are not properly scoped, making it extremely painful to refactor the codebase in the future. And maybe you were a bit overzealous with those abstractions. \r\n\r\nAnd those are just a few examples of why professional software developers still need to do thorough peer reviews. And to help you with that, I\u0027ll use this talk to not only give you more reasons for scrutinizing your colleagues. I will also give you all the tools, tips and tricks that I use in both my professional client projects and my many open-source projects to make code reviews effective, worthwhile and fun. And yes, I will also show you how I use AI everywhere.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "dennis-doomen"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": null
+    },
+    {
+      "Id": "the-ragged-edge-keep-your-data-and-ai-close",
+      "Title": "The RAGged Edge: Keep your data and AI close",
+      "Description": "Concerned about data privacy or compliance? Don\u2019t want your sensitive information sent to external AI systems? This session is for you!\r\n\r\nWe\u2019ll explore retrieval-augmented generation (RAG), a method to enhance large language models (LLMs) with your specific, ever-changing data, without it ever leaving your systems.\r\n\r\nYou\u2019ll learn:\r\n\r\nWhat is a vector database?\r\nHow can you vectorize your own data?\r\nHow to integrate your existing data sources, like SQL databases, to enrich AI interactions.\r\nWe\u2019ll implement RAG step-by-step, running AI models locally (on the \u201Cedge\u201D) while maintaining full control over your data. By the end of the session, you\u2019ll know how to build an AI assistant that uses your private and volatile data, all without relying on external cloud services.\r\n\r\nOr isn\u0027t the cloud a scary thing? We rely on Azure for all our workloads, so let\u0027s also take a look on what the cloud can add to this equation.",
+      "StartsAt": null,
+      "EndsAt": null,
+      "IsServiceSession": false,
+      "speakers": [
+        "christian-peeters"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": null
+    }
+  ]
+}

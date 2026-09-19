@@ -63,6 +63,7 @@ interface CodeOfConductContactSettings {
 
 interface SpeakerSettings {
     announced: boolean;
+    finalized: boolean;
 }
 
 export const websiteSettings: WebsiteSettings = {
@@ -106,7 +107,8 @@ export const websiteSettings: WebsiteSettings = {
             }
         },
         speakers: {
-            announced: false
+            announced: true,
+            finalized: false
         },
         codeOfConduct: {
             contacts: []
