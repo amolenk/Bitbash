@@ -132,7 +132,7 @@ test.describe("waitlist-aware ticket selection and split submission", () => {
 
         await page.getByRole("button", { name: "Register" }).click();
 
-        await expect(page).toHaveURL(/\/tickets\/register\/thankyou$/);
+        await expect(page).toHaveURL(/\/tickets\/register\/thankyou/);
 
         expect(await admittoStub.getRegisterRequestCount()).toBe(1);
 

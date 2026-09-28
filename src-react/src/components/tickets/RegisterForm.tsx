@@ -100,15 +100,54 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
                     token);
             }
 
-            router.push("/tickets/register/thankyou");
+            // The confirmed/waitlisted split is already known here, at submit
+            // time, so the ticket type names for the confirmation page's
+            // itemized lists are passed along via URL query params rather
+            // than requiring the thank-you page to look anything up again.
+            const params = new URLSearchParams();
+            ticketTypeNames(registerTicketTypeIds).forEach(name => params.append("confirmed", name));
+            ticketTypeNames(waitlistTicketTypeIds).forEach(name => params.append("waitlisted", name));
+
+            router.push(`/tickets/register/thankyou?${params.toString()}`);
         } catch (err: unknown) {
             if (err instanceof AdmittoError && err.code === "attendee.invalid_token") {
                 router.push("/tickets/register/expired");
+            }
+            else if (err instanceof AdmittoError && err.code === "registration.ticket_state_conflict") {
+                await recoverFromTicketStateConflict();
             }
             else {
                 setSubmitting(false);
                 setSubmittingError(err instanceof Error ? err.message : "Registration failed. Please try again.");
             }
+        }
+    };
+
+    const ticketTypeNames = (ticketTypeIds: string[]): string[] =>
+        ticketTypeIds
+            .map(id => availability?.ticketTypes.find(t => t.id === id)?.name)
+            .filter((name): name is string => !!name);
+
+    // Availability shifted between page load and submit: the backend
+    // rejected the request because a ticket type's status no longer matches
+    // what was classified client-side. Refetch fresh availability, clear the
+    // conference/workshop selections back to unselected (personal details
+    // are left untouched), and ask the attendee to review and reselect.
+    const recoverFromTicketStateConflict = async () => {
+        setConferenceSelection(null);
+        setWorkshopSelections([]);
+
+        try {
+            setAvailability(await getAvailability());
+            setSubmittingError("Ticket availability changed while you were completing this form. Please review and reselect your tickets, then submit again.");
+        } catch {
+            // The stale availability we already have is now known to be
+            // wrong, and a retry would be classified against that same
+            // stale data — so surface this as a distinct, more serious
+            // failure rather than silently inviting another reselect.
+            setLoadingError("Could not refresh ticket availability after your selection changed. Please reload the page and try again.");
+        } finally {
+            setSubmitting(false);
         }
     };
 
