@@ -58,13 +58,6 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
         fetchData();
     }, []);
 
-    // Redirect if email or token is missing
-    useEffect(() => {
-        if (email === "" || token === "") {
-            router.push("/tickets/register/expired");
-        }
-    }, [email, token, router]);
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSubmitting(true);
@@ -117,7 +110,7 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
         && (conferenceSelection === true || workshopSelections.length > 0);
 
     // Loading spinner
-    if (loading || email === "" || token === "" || !ticketSettings) {
+    if (loading || !ticketSettings) {
         return (
             <div className="d-flex justify-content-center align-items-center">
                 <div className="spinner-border text-light" role="status">
