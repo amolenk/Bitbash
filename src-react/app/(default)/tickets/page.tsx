@@ -41,7 +41,7 @@ export default async function TicketsPage() {
         workshopsAvailable = visibleTicketTypes.some(ticketType =>
             ticketType.timeSlots.includes("morning-workshop") || ticketType.timeSlots.includes("afternoon-workshop")
         );
-        if (visibleTicketTypes.every(t => t.status !== "available")) {
+        if (visibleTicketTypes.every(t => t.status !== "available" && t.status !== "waitlist")) {
             return (
                 <MainLayout>
                     <Section headerText="Tickets" sectionBackground={2}>
