@@ -1,6 +1,17 @@
 {
   "Speakers": [
     {
+      "Id": "barbara-forbes",
+      "FullName": "Barbara Forbes",
+      "Bio": "Barbara Forbes is an Azure Architect \u0026 consultant at Zure in the Netherlands, a Microsoft Azure MVP, Microsoft Certified Trainer (MCT), and a GitHub Star. She works at the intersection of technology, strategy, education, and development. Her focus is on the Microsoft Cloud Adoption Framework, Generative AI, Infrastructure as Code, PowerShell, and GitHub. \r\nBarbara loves explaining things in an accessible manner; in person, as a teacher for LinkedIn Learning and as a frequent speaker at conferences and user groups. She is actively involved in the tech community, including being part of the organization of European events ",
+      "TagLine": "Azure Architect @ Zure | Azure MVP | GitHub Star",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/barbara-forbes.jpg",
+      "sessions": [
+        "customizing-github-copilot"
+      ]
+    },
+    {
       "Id": "christian-peeters",
       "FullName": "Christian Peeters",
       "Bio": "Christian started in 2000 as a software developer. Seven years later he became a Microsoft Certified Trainer and has been teaching other developers ever since. Currently he is a Principal Cloud Architect at Betabit. A software development company specialized in building business critical applications in the cloud.",
@@ -23,6 +34,17 @@
       ]
     },
     {
+      "Id": "denny-kaatman",
+      "FullName": "Denny Kaatman",
+      "Bio": "Hi, I\u0027m Denny Kaatman, an IT Consultant at Info Support in the Netherlands.\r\n\r\nTechnology has always been more than a profession to me, it\u0027s a way to explore ideas. I\u0027m fascinated by how AI is reshaping not only the software we build, but also the way we think, collaborate, and solve problems.\r\n\r\nI spend much of my time thinking about how AI will shape software engineering, human collaboration, privacy, and what it means to remain human in this world. ",
+      "TagLine": "IT Consultant at Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/denny-kaatman.jpg",
+      "sessions": [
+        "everyone-has-ai-few-teams-have-an-ai-workflow"
+      ]
+    },
+    {
       "Id": "eduard-keilholz",
       "FullName": "Eduard Keilholz",
       "Bio": "Eduard Keilholz is a seasoned software developer and cloud architect at 4Dotnet, where he specializes in Microsoft development and cloud technologies. With a passion for helping organizations build highly performant cloud software solutions, Eduard has made significant contributions in the field of cloud architecture.\r\n\r\nHe is the author of the book Azure Infrastructure as Code, which delves into infrastructure automation using Azure, and is a frequent international conference speaker. Eduard is also the founder of the DotnetFriday meetup platform, a community initiative hosted in the Netherlands that fosters collaboration and learning among .NET professionals.\r\n\r\nIn addition to his development and community activities, Eduard created SpreaView, a platform designed to give conference organizers and speakers deeper insights into their performance by automating speaker evaluations. His contributions to the Microsoft community have earned him the prestigious title of Microsoft MVP since 2020.",
@@ -31,6 +53,17 @@
       "ProfilePictureUrl": "img/winter-2027/speakers/eduard-keilholz.jpg",
       "sessions": [
         "mastering-aspire-in-the-agentic-engineering-era"
+      ]
+    },
+    {
+      "Id": "glenn-versweyveld",
+      "FullName": "Glenn Versweyveld",
+      "Bio": "I\u0027m interested in everything surrounding Microsoft and .NET in particular, for the moment working as a System Expert at Baliose Insurances.\r\nStill loves Windows Phone, but don\u0027t judge him for it :)\r\n\r\nCurrently Microsoft MVP in Developer Technologies and Pluralsight author.",
+      "TagLine": "\u0027SH10151\u0027 this is the serial number of our orbital gun",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/glenn-versweyveld.jpeg",
+      "sessions": [
+        "ai-for-cheap-bastards-tooling-agents-and-tricks-to-slash-your-llm-costs"
       ]
     },
     {
@@ -56,6 +89,39 @@
       ]
     },
     {
+      "Id": "henry-been",
+      "FullName": "Henry Been",
+      "Bio": "Henry Been is an independent architect and developer from The Netherlands. He enjoys working with software development teams to create and deliver software for the Azure cloud. His interests include Azure, Agile, DevOps, software architecture and the design and implementation of testable and maintainable software. Besides his work he is a speaker at international conferences, is the author of two books, and creates online training courses for Pluralsight and A Cloud Guru. For his work in the community, he has been awarded the Microsoft MVP Award since 2019. To follow Henry, you can go to his blog henrybeen.nl or look him up on LinkedIn: https://www.linkedin.com/in/henrybeen\r\n",
+      "TagLine": "DevOps \u0026 Azure Architect | Microsoft MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/henry-been.jpg",
+      "sessions": [
+        "decrypting-2000-years-of-encryption-history"
+      ]
+    },
+    {
+      "Id": "johnny-hooyberghs",
+      "FullName": "Johnny Hooyberghs",
+      "Bio": "Johnny Hooyberghs is a managing partner and consultant for Involved NV, part of the Cronos group, since 2014 focusing on software architecture, backend development and a Microsoft Most Valuable Professional for Azure and Developer Technologies since 2020. Prior to joining Involved as a consultant, he has had experience developing software for the health-care sector since 2008. Johnny has been passionate about software development using the .NET stack, cloud native development using the Microsoft Azure cloud stack and quantum computing. Johnny has spent 10 years of his free time teaching software development courses for the adult education institute CVO Antwerpen and has been enjoying public speaking these past 6 years. When Johnny is not working, he likes to spend his time on self-education, quantum computing, some casual video gaming, travelling the world and visiting as many theme parks as possible.",
+      "TagLine": "Passionate Developer at Involved and Microsoft MVP",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/johnny-hooyberghs.jpg",
+      "sessions": [
+        "what-is-new-in-net-and-c"
+      ]
+    },
+    {
+      "Id": "joran-bergfeld",
+      "FullName": "Joran Bergfeld",
+      "Bio": "Joran Bergfeld leads AI adoption for twenty critical-infrastructure accounts at Microsoft, after a decade that ran from Spring Boot payment platforms through engineering management at Devoteam to architecture and a transition to Quarkus at Red Hat. He builds agents on his own GPUs at home and writes about what breaks.",
+      "TagLine": "Solution Engineer at Microsoft",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/joran-bergfeld.jpg",
+      "sessions": [
+        "accountability-does-not-automate-inside-the-dark-software-factory"
+      ]
+    },
+    {
       "Id": "jurre-brandsen",
       "FullName": "Jurre Brandsen",
       "Bio": "Jurre is a Software Engineer at Info Support with a focus on AI augmented software engineering. With a solid foundation in machine learning, he explores how AI can practically assist developers, from improving workflows to supporting decision-making throughout the software lifecycle. Jurre enjoys exploring practical ways to make AI a natural part of everyday development, aiming for tools and techniques that feel intuitive and useful.",
@@ -64,6 +130,17 @@
       "ProfilePictureUrl": "img/winter-2027/speakers/jurre-brandsen.jpg",
       "sessions": [
         "build-your-selfimproving-agent-harness-from-the-ground-up"
+      ]
+    },
+    {
+      "Id": "lucia-condemoreno",
+      "FullName": "Luc\u00EDa Conde-Moreno",
+      "Bio": "Luc\u00EDa Conde-Moreno is Head of the AI Research Center at Info Support, where she also works as a consultant software engineer specializing in data and AI applications. She is known as a Jack Of All Trades by her colleagues, having worked in varied roles ranging from .NET or Java developer to data scientist or machine learning engineer. She has worked for different national and international clients, in diverse fields such as finance, health care, energy, or education. She is part of the AI Champions chapter for promoting AI-augmented engineering tools, and she is responsible for supervising internal research in subfields of AI like explainability or computer vision. When she is not working, she is busy switching across random hobbies, from filmmaking to DJing. She holds a MSc in Computer Science, and a BSc in Telecommunications Engineering.",
+      "TagLine": "Head of AI Research Center, Software Engineer @ Info Support B.V.",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/lucia-condemoreno.jpg",
+      "sessions": [
+        "from-hallucination-to-justification-handson-explainability-for-llms"
       ]
     },
     {
@@ -100,6 +177,17 @@
       ]
     },
     {
+      "Id": "tessel-haagen",
+      "FullName": "Tessel Haagen",
+      "Bio": "Tessel is a consultant in data \u0026 AI at Info Support, specialized in interpretable AI. In her daily work, she applies AI-augmented engineering to build and evaluate intelligent systems, or gives trainings about AI. She is known as an enthusiastic knowledge source and an insatiably curious lifelong learner. Outside of work, she channels her strategic thinking into board games (with a soft spot for complex strategy games) and escapes into fantasy novels. With an MSc in Artificial Intelligence, an MSc in Computer Science, and an MA in Linguistics, she combines a strong technical foundation with a deep interest in language and reasoning.",
+      "TagLine": "Consultant Data \u0026 AI and Trainer at Info Support B.V.",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/tessel-haagen.jpg",
+      "sessions": [
+        "from-hallucination-to-justification-handson-explainability-for-llms"
+      ]
+    },
+    {
       "Id": "thijs-baan",
       "FullName": "Thijs Baan",
       "Bio": "Thijs is an Applied Psychologist and Lead Engineer at Info Support. With a background in software engineering and psychology, he helps teams navigate complex technical challenges while understanding the human side of change and innovation. Pragmatic and structured in his approach, he is driven by a curiosity for the interaction between people and technology.",
@@ -112,6 +200,17 @@
       ]
     },
     {
+      "Id": "toon-vermeulen",
+      "FullName": "Toon Vermeulen",
+      "Bio": "Toon Vermeulen has been working in technology since 2019 and is currently part of Info Support International Group. He enjoys turning complex technical challenges into practical solutions, exploring new technologies, and sharing lessons learned from real-world projects.\r\n\r\nAs a speaker, Toon focuses on practical insights, honest experiences, and ideas that attendees can take back to their own teams and projects. He believes the best technology talks combine technical depth with real-world context and leave room for curiosity, discussion, and learning.\r\n\r\nOutside of work, family is an important part of Toon\u2019s life. He enjoys spending time with his family and values finding a good balance between technology, continuous learning, and the people who matter most.",
+      "TagLine": "Ai early adopter",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/toon-vermeulen.png",
+      "sessions": [
+        "first-waddle-in-huddle-your-first-steps-to-an-aisafe-development-environment"
+      ]
+    },
+    {
       "Id": "willem-meints",
       "FullName": "Willem Meints",
       "Bio": "Chief AI Architect at Info Support, helping engineering teams adopt agentic AI and build the platforms to support it. Author of Building Effective LLM-Based Applications with Semantic Kernel. Shares hands-on lessons from the field through his Beyond Autocomplete blog.",
@@ -121,29 +220,38 @@
       "sessions": [
         "coding-with-opensource-llms"
       ]
+    },
+    {
+      "Id": "yorrick-bakker",
+      "FullName": "Yorrick Bakker",
+      "Bio": "I\u0027m an IT Consultant from the Netherlands, interested in DevOps, value based engineering and AI.",
+      "TagLine": "IT Consultant @ Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/yorrick-bakker.jpg",
+      "sessions": [
+        "everyone-has-ai-few-teams-have-an-ai-workflow"
+      ]
     }
   ],
   "Sessions": [
     {
-      "Id": "apis-that-age-well",
-      "Title": "APIs That Age Well",
-      "Description": "Almost all Web APIs evolve over time. New features are added, new clients start consuming them, the API design changes, and breaking changes are introduced. While natural, it can be frustrating for API developers and clients alike to deal with unclear design or unexpected breaking changes.\r\n\r\nThis workshop, built for .NET API developers, explores how OpenAPI provides the foundation for documenting, governing, and evolving APIs safely over time:\r\n\r\n- How do we communicate new features and the way we would like them to be used?\r\n- How do we deal with breaking changes, informing our clients of them, and detecting unintended ones? \r\n- And how do we make it easy for clients to use our API, given that they might use all kinds of programming languages?\r\n- Finally, how do we ensure that the API style matches the intent and standards of other teams, so we don\u0027t waste time on unnecessary discussions and rework?\r\n\r\nPutting all of this together, we end up with an API that ages well, one that is easy to use, easy to maintain, and easy to evolve.\r\n\r\nWe\u0027ll be using ASP.NET Core and Azure API Center, a registry for cataloging and governing APIs, to demonstrate these concepts, but these principles can be applied to any technology stack, thanks to the underlying specification that will power all of these concepts: OpenAPI. We\u0027ll be using open tooling and technologies like Swagger UI, Scalar, API Versioning, Spectral and oasdiff.\r\n\r\nWe\u0027ll start with a simple API and add different features to it, demonstrating the problems that arise and then solving them. By the end of the workshop, you\u0027ll have built an API that can survive years of change, featuring versioning, high-quality OpenAPI documentation, automated linting, breaking change detection, generated client SDKs, and cloud-based API governance.\r\n\r\nPrerequisites:\r\n\r\n- Your own laptop.\r\n- Internet access.\r\n- A GitHub account to host your repository and run GitHub Actions.\r\n  - You can also use GitLab or Azure DevOps if you prefer, but the workshop will be using GitHub.\r\n- A Code Editor.\r\n  - Visual Studio Code is recommended, but you can use any editor you like.\r\n- Docker or the latest .NET SDK with permission to install tools like Spectral and Oasdiff.\r\n- (Optional) A (free) Azure account (or an existing one) to use Azure API Center.\r\n  - If you can\u0027t use Azure, you can still follow along with the workshop and use local tools to achieve the same results.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "sander-ten-brinke"
-      ],
-      "SessionFormat": "Half-day workshop",
-      "Level": "Intermediate",
-      "Room": null
+      "Id": "348ddcf7-d004-4a4d-b3d4-4bd9cd1b983b",
+      "Title": "Registration and Welcome",
+      "Description": null,
+      "StartsAt": "2027-01-22T08:30:00",
+      "EndsAt": "2027-01-22T09:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
     },
     {
       "Id": "build-your-selfimproving-agent-harness-from-the-ground-up",
       "Title": "Build Your Self-Improving Agent Harness From the Ground Up",
       "Description": "Most agentic workflows don\u2019t fail because the model isn\u2019t capable enough, but because the environment around it is incomplete. Important context lives in someone\u2019s head, instructions are scattered, and the agent keeps making the same mistakes.\r\n\r\nIn this full-day workshop, you\u2019ll build an agent harness around a project we provide. You\u2019ll work with instructions, skills, agents, hooks, project knowledge, validation, and persistent context, and learn how these pieces work together to make an agent more reliable.\r\n\r\nThen we\u2019ll go one step further: making the harness you built in the morning continuously improve over time. You\u2019ll use it in practice, spot recurring friction, decide what is worth changing, and evolve the harness based on what you learn. You\u2019ll capture those decisions in an HDR and put the updated harness back to work to see whether it actually performs better.\r\n\r\nBy the end of the day, you\u2019ll have built an agent harness, created a continuous-improvement loop around it, and documented your first improvement as an HDR: Harness Decision Record. Not just a better harness, but one that can keep getting better.",
-      "StartsAt": null,
-      "EndsAt": null,
+      "StartsAt": "2027-01-22T09:00:00",
+      "EndsAt": "2027-01-22T16:00:00",
       "IsServiceSession": false,
       "speakers": [
         "jurre-brandsen",
@@ -151,84 +259,14 @@
       ],
       "SessionFormat": "Full-day workshop",
       "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "build-break-defend-repeat-automating-appsec-for-net-with-ai",
-      "Title": "Build. Break. Defend. Repeat: Automating AppSec for .NET with AI",
-      "Description": "AI writes a lot of your code now, and some of it is vulnerable. Meanwhile, frontier models have started finding vulnerabilities autonomously and at scale. One recent run surfaced 23,000 of them across 1,000 open source projects, most absent from any CVE database. Attackers can now discover bugs at a speed no human AppSec team can match, so defence has to run at machine speed too. The catch: an LLM on its own hallucinates, and a rule-based security scanner on its own buries you in false positives. The useful combination is deterministic analysis for verifiable facts (call graphs, data flows, dependency trees, known CVEs) plus an LLM that understands what the code actually does. In this session we apply that combination to a real .NET application using AI agents with composable skills: threat modelling generated from the code itself, and CVE triage that checks whether vulnerable code is even reachable before you spend time on it. You\u0027ll see what works today, where it breaks, and how to fit it into your own workflow.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "niels-tanis"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "coding-with-opensource-llms",
-      "Title": "Coding with open-source LLMs",
-      "Description": "In previous years, most of the attention went to new releases of OpenAI and Claude models, but something remarkable is happening in the open-source world. More and more tools and models are becoming available that work so well you might actually be able to cancel your Claude and OpenAI subscriptions.\r\n\r\nIn this session, I\u0027ll show you how I now develop on a computer measuring just 50x50x5 cm, without sharing anything with the hyperscalers. We\u0027ll cover hosting models with vLLM and programming with open-source coding agents. I won\u0027t just show you the tools; I\u0027ll also show how my open-source workflow differs from my workflow with Claude Code, which I also use.\r\n\r\nFinally, we\u0027ll look at the opportunities and limitations of open-source LLMs. Who knows, this might be what convinces your manager to finally give open source a serious look!",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "willem-meints"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "cognitive-shift-how-agentic-ai-changes-the-way-we-think",
-      "Title": "Cognitive Shift: How Agentic AI Changes the Way We Think",
-      "Description": "Copilots and agentic AI are not only changing how we work as software engineers, but also how we think. In this session, we look beyond productivity claims and tool comparisons, and focus on the psychological side of AI Augmented Engineering. What happens to your attention, working memory, critical thinking, and mental models when AI starts to take over more of the writing, searching, and thinking?\r\n\r\nIn this talk, we explore why working with AI often feels faster and smoother, while at the same time creating new kinds of mental friction. As AI increasingly provides output, suggestions, and next steps, the role of the engineer shifts: from building things yourself to evaluating, choosing, checking, and steering. This directly affects focus, understanding, learning, debugging, and keeping track of context. Using recognizable real-world situations, we look at where AI creates mental space, where it adds cognitive load, and what this means for how engineers develop expertise.\r\n\r\nThis session gives you a practical psychological framework to use AI more consciously and effectively in your daily work. You\u2019ll learn how to recognize when AI improves speed, focus, and mental space, when it quietly adds extra cognitive load, and how to deal with that in a smart way. This helps you get more out of copilots and agents, without losing sharpness, understanding, and control, as AI becomes an increasingly essential part of engineering.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "thijs-baan"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "dont-let-agentic-ai-take-your-joy-of-coding",
-      "Title": "Don\u0027t Let Agentic AI Take Your Joy of Coding",
-      "Description": "What do you enjoy more in software development? The act of creating something, or the feeling you get when your creation is appreciated? If you\u0027re in the second category, this current age of agentic AI will probably fit you like a glove. You can produce more software than before and get more praise for it. But if you\u0027re in the first (like me), at the very least you\u0027ll have mixed feelings towards the agentic AI movement. Because how will you make sure AI doesn\u0027t take away the thing you love doing the most?\r\n\r\nIf you feel like this, you\u0027re certainly not alone. Across the globe, people who work in creative industries such as art, music or movies are standing up against AI. And it\u0027s not just because AI is threatening their job security, it\u0027s threatening their joy of doing it. And the absence of joy in the workplace can be a dangerous thing.\r\n\r\nSo if you\u0027ve ever been bereft of joy after a particularly intense day of babysitting AI agents, this talk is for you. What are signs that AI is taking (part of) your joy? Should you simply accept your fate, or can something be done about it? Should you stop using AI entirely, embrace it to the max or somewhere in-between? Join this session to get some answers.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "hanno-embregts"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
-    },
-    {
-      "Id": "how-i-migrated-a-production-blazor-app-in-under-40-hours-using-ai",
-      "Title": "How I Migrated a Production Blazor App in Under 40 Hours Using AI",
-      "Description": "Most developers choose a Blazor component library at the start of a project and hope they made the right call. When they don\u2019t, they often realize too late that switching frameworks is painful, risky, and easy to postpone.\r\n\r\nIn this session, I\u2019ll show how I migrated a production Blazor app to a new component framework in under 40 hours using AI. This was not a toy demo or a theoretical experiment, but a real-world migration where AI helped accelerate repetitive work while I stayed in control of quality, consistency, and architectural decisions.\r\n\r\nI\u2019ll walk through how I prepared the project for AI-assisted migration, how I customized the AI with project-specific guidance, and how I used it throughout the process. Along the way, I\u2019ll share what worked well, where the approach broke down, and when manual fixes and human judgment were still essential.\r\n\r\nThis session is for developers who want to use AI for code modernization without blindly trusting it. You\u2019ll leave with practical techniques, realistic expectations, and a repeatable approach you can apply to Blazor migrations and other refactoring projects.",
-      "StartsAt": null,
-      "EndsAt": null,
-      "IsServiceSession": false,
-      "speakers": [
-        "hans-muns"
-      ],
-      "SessionFormat": "Session",
-      "Level": "Intermediate",
-      "Room": null
+      "Room": "Room 1"
     },
     {
       "Id": "mastering-aspire-in-the-agentic-engineering-era",
       "Title": "Mastering Aspire in the Agentic Engineering Era",
       "Description": "Aspire provides a powerful model for orchestrating distributed applications in local development, but its real strength lies in how it enables faster, more automated ways of building software.\r\n\r\nIn this full-day hands-on workshop, you\u2019ll learn how to design, build, and evolve Aspire-based systems using practical patterns from real-world development. Starting with the fundamentals, you\u2019ll incrementally expand an application with integrations, orchestration patterns, and testing strategies.\r\n\r\nThroughout the day, we connect these concepts to agentic engineering, showing how Aspire\u2019s CLI and MCP server enable automation, rapid iteration.\r\n\r\nBring your laptop\u2014this is a fully hands-on workshop. You\u2019ll work on a running sample application, continuously extending it with new capabilities and validating your changes along the way.\r\n\r\nYou will:\r\n- Build and run a distributed application with Aspire\r\n- Add and configure infrastructure such as databases and messaging\r\n- Apply orchestration patterns for reliable startup and execution\r\n- Extend the AppHost with custom \r\n- Test your application using integration tests\r\n- Use the Aspire CLI and MCP server to speed up development workflows\r\n\r\nBy the end of the day, you\u2019ll understand not just how Aspire works, but how to use it effectively in a high-speed, automation-first development environment.",
-      "StartsAt": null,
-      "EndsAt": null,
+      "StartsAt": "2027-01-22T09:00:00",
+      "EndsAt": "2027-01-22T12:00:00",
       "IsServiceSession": false,
       "speakers": [
         "sander-molenkamp",
@@ -236,35 +274,305 @@
       ],
       "SessionFormat": "Half-day workshop",
       "Level": "Intermediate",
-      "Room": null
+      "Room": "Room 2"
     },
     {
-      "Id": "the-impact-and-relevance-of-code-reviews-on-software-quality",
-      "Title": "The impact and relevance of code reviews on software quality",
-      "Description": "Nobody writes perfect code, not even an AI. Yes, the code may do exactly what you had in mind and all your automated tests succeed, but it may still not be the right solution. Maybe you lost track of the big picture and ended up in a rabbit hole. Maybe refactorings and real functional changes got mixed up obscuring the history and making it harder for the next developer. Maybe your tests are not properly scoped, making it extremely painful to refactor the codebase in the future. And maybe you were a bit overzealous with those abstractions. \r\n\r\nAnd those are just a few examples of why professional software developers still need to do thorough peer reviews. And to help you with that, I\u0027ll use this talk to not only give you more reasons for scrutinizing your colleagues. I will also give you all the tools, tips and tricks that I use in both my professional client projects and my many open-source projects to make code reviews effective, worthwhile and fun. And yes, I will also show you how I use AI everywhere.",
-      "StartsAt": null,
-      "EndsAt": null,
+      "Id": "first-waddle-in-huddle-your-first-steps-to-an-aisafe-development-environment",
+      "Title": "First Waddle in Huddle: Your First Steps to an AI-Safe Development Environment",
+      "Description": "You want to use AI tooling in your development workflow, but how do you do that without giving it access to more than it actually needs?\r\n\r\nIn this hands-on workshop, we take our first waddle into Huddle \u2014 with your own project as the starting point. Instead of only talking about how Huddle works, we will look at what your project needs in order to run properly behind Huddle.\r\n\r\nTogether, we\u2019ll work through the practical steps and technical boundaries involved: containers, networking, sockets, Dev Containers, firewalling and any project-specific dependencies that may get in the way.\r\n\r\nThe goal is simple: **bring your project and leave with a clear path to getting it working behind Huddle.**\r\n\r\nAlong the way, you\u2019ll also build a better understanding of what Huddle does, why certain boundaries exist, and what you need to change or configure to make your development setup Huddle-ready and safer for AI-assisted development.\r\n\r\nExpect a practical workshop focused on real projects, real constraints and real troubleshooting.\r\n",
+      "StartsAt": "2027-01-22T09:00:00",
+      "EndsAt": "2027-01-22T12:00:00",
       "IsServiceSession": false,
       "speakers": [
-        "dennis-doomen"
+        "toon-vermeulen"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "06c2e5c5-fe57-4b27-b179-46547fcf9132",
+      "Title": "Lunch",
+      "Description": null,
+      "StartsAt": "2027-01-22T12:00:00",
+      "EndsAt": "2027-01-22T13:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "apis-that-age-well",
+      "Title": "APIs That Age Well",
+      "Description": "Almost all Web APIs evolve over time. New features are added, new clients start consuming them, the API design changes, and breaking changes are introduced. While natural, it can be frustrating for API developers and clients alike to deal with unclear design or unexpected breaking changes.\r\n\r\nThis workshop, built for .NET API developers, explores how OpenAPI provides the foundation for documenting, governing, and evolving APIs safely over time:\r\n\r\n- How do we communicate new features and the way we would like them to be used?\r\n- How do we deal with breaking changes, informing our clients of them, and detecting unintended ones? \r\n- And how do we make it easy for clients to use our API, given that they might use all kinds of programming languages?\r\n- Finally, how do we ensure that the API style matches the intent and standards of other teams, so we don\u0027t waste time on unnecessary discussions and rework?\r\n\r\nPutting all of this together, we end up with an API that ages well, one that is easy to use, easy to maintain, and easy to evolve.\r\n\r\nWe\u0027ll be using ASP.NET Core and Azure API Center, a registry for cataloging and governing APIs, to demonstrate these concepts, but these principles can be applied to any technology stack, thanks to the underlying specification that will power all of these concepts: OpenAPI. We\u0027ll be using open tooling and technologies like Swagger UI, Scalar, API Versioning, Spectral and oasdiff.\r\n\r\nWe\u0027ll start with a simple API and add different features to it, demonstrating the problems that arise and then solving them. By the end of the workshop, you\u0027ll have built an API that can survive years of change, featuring versioning, high-quality OpenAPI documentation, automated linting, breaking change detection, generated client SDKs, and cloud-based API governance.\r\n\r\nPrerequisites:\r\n\r\n- Your own laptop.\r\n- Internet access.\r\n- A GitHub account to host your repository and run GitHub Actions.\r\n  - You can also use GitLab or Azure DevOps if you prefer, but the workshop will be using GitHub.\r\n- A Code Editor.\r\n  - Visual Studio Code is recommended, but you can use any editor you like.\r\n- Docker or the latest .NET SDK with permission to install tools like Spectral and Oasdiff.\r\n- (Optional) A (free) Azure account (or an existing one) to use Azure API Center.\r\n  - If you can\u0027t use Azure, you can still follow along with the workshop and use local tools to achieve the same results.",
+      "StartsAt": "2027-01-22T13:00:00",
+      "EndsAt": "2027-01-22T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "sander-ten-brinke"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "from-hallucination-to-justification-handson-explainability-for-llms",
+      "Title": "From Hallucination to Justification: Hands-On Explainability for LLMs",
+      "Description": "Human beings are biased and often wrong. AI learns from human-created data. Therefore, AI is biased and often wrong. This has been a critical problem across machine learning applications in the last years. To break open the black box of AI models, and understand how they make decisions, the concept of explainability was introduced.\r\n\r\nThen, LLMs entered the chat. They answer our questions confidently and with a beautiful prose, even when they are making up data. Explainability then becomes essential to trust -or not- their output. But when the existing explainable AI methods cannot be directly applied to these models, what do we do?\r\n\r\nIn this workshop, we will delve into explainability and its importance in the current context of LLMs and agents. Starting from traditional ML to then focus on LLMs, we will cover the different methods that can be implemented, from well-known ones to novel proposals stemming from our internal research. We will also introduce research-proven prompting strategies, tips, and tricks to integrate explanations on third-party LLM services that are not natively explainable.\r\n\r\nThrough guided exercises, you will get to peek under the hood of AI models, LLMs\u0027 behavior, and agents reasoning, by trying out these different techniques, and seeing their benefits and limitations first-hand. You will experience the risks and challenges that generative AI and agentic AI bring when implementing explainability, and learn practical ways to tackle them.",
+      "StartsAt": "2027-01-22T13:00:00",
+      "EndsAt": "2027-01-22T16:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "tessel-haagen",
+        "lucia-condemoreno"
+      ],
+      "SessionFormat": "Half-day workshop",
+      "Level": "Intermediate",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "7dcef355-b5e8-44cc-9369-c9fd16bd42fe",
+      "Title": "Registration and Welcome",
+      "Description": null,
+      "StartsAt": "2027-01-23T08:30:00",
+      "EndsAt": "2027-01-23T09:15:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "dont-let-agentic-ai-take-your-joy-of-coding",
+      "Title": "Don\u0027t Let Agentic AI Take Your Joy of Coding",
+      "Description": "What do you enjoy more in software development? The act of creating something, or the feeling you get when your creation is appreciated? If you\u0027re in the second category, this current age of agentic AI will probably fit you like a glove. You can produce more software than before and get more praise for it. But if you\u0027re in the first (like me), at the very least you\u0027ll have mixed feelings towards the agentic AI movement. Because how will you make sure AI doesn\u0027t take away the thing you love doing the most?\r\n\r\nIf you feel like this, you\u0027re certainly not alone. Across the globe, people who work in creative industries such as art, music or movies are standing up against AI. And it\u0027s not just because AI is threatening their job security, it\u0027s threatening their joy of doing it. And the absence of joy in the workplace can be a dangerous thing.\r\n\r\nSo if you\u0027ve ever been bereft of joy after a particularly intense day of babysitting AI agents, this talk is for you. What are signs that AI is taking (part of) your joy? Should you simply accept your fate, or can something be done about it? Should you stop using AI entirely, embrace it to the max or somewhere in-between? Join this session to get some answers.",
+      "StartsAt": "2027-01-23T09:15:00",
+      "EndsAt": "2027-01-23T10:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "hanno-embregts"
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": null
+      "Room": "Room 1"
+    },
+    {
+      "Id": "build-break-defend-repeat-automating-appsec-for-net-with-ai",
+      "Title": "Build. Break. Defend. Repeat: Automating AppSec for .NET with AI",
+      "Description": "AI writes a lot of your code now, and some of it is vulnerable. Meanwhile, frontier models have started finding vulnerabilities autonomously and at scale. One recent run surfaced 23,000 of them across 1,000 open source projects, most absent from any CVE database. Attackers can now discover bugs at a speed no human AppSec team can match, so defence has to run at machine speed too. The catch: an LLM on its own hallucinates, and a rule-based security scanner on its own buries you in false positives. The useful combination is deterministic analysis for verifiable facts (call graphs, data flows, dependency trees, known CVEs) plus an LLM that understands what the code actually does. In this session we apply that combination to a real .NET application using AI agents with composable skills: threat modelling generated from the code itself, and CVE triage that checks whether vulnerable code is even reachable before you spend time on it. You\u0027ll see what works today, where it breaks, and how to fit it into your own workflow.",
+      "StartsAt": "2027-01-23T09:15:00",
+      "EndsAt": "2027-01-23T10:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "niels-tanis"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "coding-with-opensource-llms",
+      "Title": "Coding with open-source LLMs",
+      "Description": "In previous years, most of the attention went to new releases of OpenAI and Claude models, but something remarkable is happening in the open-source world. More and more tools and models are becoming available that work so well you might actually be able to cancel your Claude and OpenAI subscriptions.\r\n\r\nIn this session, I\u0027ll show you how I now develop on a computer measuring just 50x50x5 cm, without sharing anything with the hyperscalers. We\u0027ll cover hosting models with vLLM and programming with open-source coding agents. I won\u0027t just show you the tools; I\u0027ll also show how my open-source workflow differs from my workflow with Claude Code, which I also use.\r\n\r\nFinally, we\u0027ll look at the opportunities and limitations of open-source LLMs. Who knows, this might be what convinces your manager to finally give open source a serious look!",
+      "StartsAt": "2027-01-23T10:15:00",
+      "EndsAt": "2027-01-23T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "willem-meints"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "customizing-github-copilot",
+      "Title": "Customizing GitHub Copilot",
+      "Description": "You already use GitHub Copilot. But out of the box, it barely knows you.\r\nThis session is about closing that gap. We\u0027ll look at the ways Copilot can be shaped to fit how you actually work: custom instructions that stop you from repeating yourself, agents and skills that extend what it can do, and picking the right model for the task instead of defaulting to whatever\u0027s on screen.\r\n\r\nThrough live demos, you\u0027ll see what changes when Copilot stops being a generic assistant and starts behaving like a coworker who knows your codebase, your conventions, and your standards.\r\nYou\u0027ll walk away with practical knowledge for deciding what to customize, when it\u0027s worth the effort, and which tools and models actually earn their place in your workflow.\r\n\r\nLet\u0027s stop explaining the same context over and over, and start building an assistant that remembers.",
+      "StartsAt": "2027-01-23T10:15:00",
+      "EndsAt": "2027-01-23T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "barbara-forbes"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "how-i-migrated-a-production-blazor-app-in-under-40-hours-using-ai",
+      "Title": "How I Migrated a Production Blazor App in Under 40 Hours Using AI",
+      "Description": "Most developers choose a Blazor component library at the start of a project and hope they made the right call. When they don\u2019t, they often realize too late that switching frameworks is painful, risky, and easy to postpone.\r\n\r\nIn this session, I\u2019ll show how I migrated a production Blazor app to a new component framework in under 40 hours using AI. This was not a toy demo or a theoretical experiment, but a real-world migration where AI helped accelerate repetitive work while I stayed in control of quality, consistency, and architectural decisions.\r\n\r\nI\u2019ll walk through how I prepared the project for AI-assisted migration, how I customized the AI with project-specific guidance, and how I used it throughout the process. Along the way, I\u2019ll share what worked well, where the approach broke down, and when manual fixes and human judgment were still essential.\r\n\r\nThis session is for developers who want to use AI for code modernization without blindly trusting it. You\u2019ll leave with practical techniques, realistic expectations, and a repeatable approach you can apply to Blazor migrations and other refactoring projects.",
+      "StartsAt": "2027-01-23T10:15:00",
+      "EndsAt": "2027-01-23T11:05:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "hans-muns"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "d788a1a2-8465-4e43-b599-3272ea184269",
+      "Title": "Coffee Break",
+      "Description": null,
+      "StartsAt": "2027-01-23T11:05:00",
+      "EndsAt": "2027-01-23T11:25:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "what-is-new-in-net-and-c",
+      "Title": "What is new in .NET and C#?",
+      "Description": "November 2026 marked the release of .NET 11 and C# 15. In this session, I will talk about what is new in the latest version of .NET and what the future will bring for the .NET platform in general. Expect a number of new .NET 11 and C# 15 features and examples of those features.",
+      "StartsAt": "2027-01-23T11:25:00",
+      "EndsAt": "2027-01-23T12:15:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "johnny-hooyberghs"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "cognitive-shift-how-agentic-ai-changes-the-way-we-think",
+      "Title": "Cognitive Shift: How Agentic AI Changes the Way We Think",
+      "Description": "Copilots and agentic AI are not only changing how we work as software engineers, but also how we think. In this session, we look beyond productivity claims and tool comparisons, and focus on the psychological side of AI Augmented Engineering. What happens to your attention, working memory, critical thinking, and mental models when AI starts to take over more of the writing, searching, and thinking?\r\n\r\nIn this talk, we explore why working with AI often feels faster and smoother, while at the same time creating new kinds of mental friction. As AI increasingly provides output, suggestions, and next steps, the role of the engineer shifts: from building things yourself to evaluating, choosing, checking, and steering. This directly affects focus, understanding, learning, debugging, and keeping track of context. Using recognizable real-world situations, we look at where AI creates mental space, where it adds cognitive load, and what this means for how engineers develop expertise.\r\n\r\nThis session gives you a practical psychological framework to use AI more consciously and effectively in your daily work. You\u2019ll learn how to recognize when AI improves speed, focus, and mental space, when it quietly adds extra cognitive load, and how to deal with that in a smart way. This helps you get more out of copilots and agents, without losing sharpness, understanding, and control, as AI becomes an increasingly essential part of engineering.",
+      "StartsAt": "2027-01-23T11:25:00",
+      "EndsAt": "2027-01-23T12:15:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "thijs-baan"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
     },
     {
       "Id": "the-ragged-edge-keep-your-data-and-ai-close",
       "Title": "The RAGged Edge: Keep your data and AI close",
       "Description": "Concerned about data privacy or compliance? Don\u2019t want your sensitive information sent to external AI systems? This session is for you!\r\n\r\nWe\u2019ll explore retrieval-augmented generation (RAG), a method to enhance large language models (LLMs) with your specific, ever-changing data, without it ever leaving your systems.\r\n\r\nYou\u2019ll learn:\r\n\r\nWhat is a vector database?\r\nHow can you vectorize your own data?\r\nHow to integrate your existing data sources, like SQL databases, to enrich AI interactions.\r\nWe\u2019ll implement RAG step-by-step, running AI models locally (on the \u201Cedge\u201D) while maintaining full control over your data. By the end of the session, you\u2019ll know how to build an AI assistant that uses your private and volatile data, all without relying on external cloud services.\r\n\r\nOr isn\u0027t the cloud a scary thing? We rely on Azure for all our workloads, so let\u0027s also take a look on what the cloud can add to this equation.",
-      "StartsAt": null,
-      "EndsAt": null,
+      "StartsAt": "2027-01-23T11:25:00",
+      "EndsAt": "2027-01-23T12:15:00",
       "IsServiceSession": false,
       "speakers": [
         "christian-peeters"
       ],
       "SessionFormat": "Session",
       "Level": "Intermediate",
-      "Room": null
+      "Room": "Room 3"
+    },
+    {
+      "Id": "94d0d6cc-3908-4180-bf1c-ee5abb38c80d",
+      "Title": "Lunch",
+      "Description": null,
+      "StartsAt": "2027-01-23T12:15:00",
+      "EndsAt": "2027-01-23T13:00:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "accountability-does-not-automate-inside-the-dark-software-factory",
+      "Title": "Accountability Does Not Automate: Inside the Dark Software Factory",
+      "Description": "In China there are car factories which are lights off for a big part of the production line. Perhaps this could be the future of the software lifecycle once we infuse AI into the picture. \r\n\r\nShipping software is three jobs: decide what to build, build it, and operate it in production. We automated the middle one and called it a revolution. This session argues that the other two can technically be automated right now.\r\n\r\nA dark software factory is the concept of the car factories in China, plotted on the software lifecycle. How we can take signals from the outside world, from our product and from our users to distill meaning and synthesize intent, which can be turned into specifications for our coding agents to turn into code. Finally, we have out of the box SRE Agents which can ensure our production platform is monitored around the clock. \r\n\r\nHowever, there is still accountability in all this for us engineers, which is the part the AI hype misses. Lisanne Bainbridge wrote it down in 1983: automate every task you know how to automate, and what you hand the human is precisely the set you could not. In August 2025 a Miami jury put two thirds of the liability for an Autopilot death on the man who admitted he wasn\u0027t driving. Combine the two, and you\u0027ll see what we need to take that accountability for our software. It\u0027s just in a different way than before. ",
+      "StartsAt": "2027-01-23T13:00:00",
+      "EndsAt": "2027-01-23T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "joran-bergfeld"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "the-impact-and-relevance-of-code-reviews-on-software-quality",
+      "Title": "The impact and relevance of code reviews on software quality",
+      "Description": "Nobody writes perfect code, not even an AI. Yes, the code may do exactly what you had in mind and all your automated tests succeed, but it may still not be the right solution. Maybe you lost track of the big picture and ended up in a rabbit hole. Maybe refactorings and real functional changes got mixed up obscuring the history and making it harder for the next developer. Maybe your tests are not properly scoped, making it extremely painful to refactor the codebase in the future. And maybe you were a bit overzealous with those abstractions. \r\n\r\nAnd those are just a few examples of why professional software developers still need to do thorough peer reviews. And to help you with that, I\u0027ll use this talk to not only give you more reasons for scrutinizing your colleagues. I will also give you all the tools, tips and tricks that I use in both my professional client projects and my many open-source projects to make code reviews effective, worthwhile and fun. And yes, I will also show you how I use AI everywhere.",
+      "StartsAt": "2027-01-23T13:00:00",
+      "EndsAt": "2027-01-23T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "dennis-doomen"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "everyone-has-ai-few-teams-have-an-ai-workflow",
+      "Title": "Everyone Has AI. Few Teams Have an AI Workflow.",
+      "Description": "Important: We would like to give this session with 3 speakers. Denny Kaatman, Yorrick Bakker and Quinten Deconinck. \r\n\r\nDescription:\r\nFive engineers worth of work. A team of just 2.5 FTE. A hard deadline.\r\n\r\nWe chose a different path.\r\n\r\nHow do you deliver in a world where AI is evolving at breakneck speed? Is AI-assisted development enough, or do you need a fundamentally different way of working?\r\n\r\nThose questions became the starting point of our journey. Rather than using AI as a coding assistant, we developed an AI-driven workflow that became part of our daily software development process.\r\n\r\nIn this session, we\u0027ll take you behind the scenes of that journey. We\u0027ll share the workflow we developed, where it succeeded, where it failed, and what we learned from using it every single day on a real project under real deadlines.\r\n\r\nThis isn\u0027t another talk about clever prompts or AI magic tricks. It\u0027s a workflow that development teams can adopt to make AI a true teammate. Not just a coding assistant.\r\n",
+      "StartsAt": "2027-01-23T13:00:00",
+      "EndsAt": "2027-01-23T13:50:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "denny-kaatman",
+        "yorrick-bakker"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Introductory and overview",
+      "Room": "Room 3"
+    },
+    {
+      "Id": "5064ddce-7ae2-45d6-9cb5-03f07f448bfb",
+      "Title": "Break",
+      "Description": null,
+      "StartsAt": "2027-01-23T13:50:00",
+      "EndsAt": "2027-01-23T14:10:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Nexus"
+    },
+    {
+      "Id": "ai-for-cheap-bastards-tooling-agents-and-tricks-to-slash-your-llm-costs",
+      "Title": "AI for Cheap Bastards: Tooling, Agents, and Tricks to Slash Your LLM Costs",
+      "Description": "AI is amazing, but let\u2019s be honest: most teams are accidentally burning money faster than a GPU can overheat. This talk is for the unapologetically frugal engineer who wants powerful AI systems without the invoice-induced heart attack. Instead of obsessing over inference parameters, we\u2019ll dive into the real cost killers \u2014 and the tooling that lets you dodge them.\r\nYou\u2019ll learn how to shape agent behavior so they stop hallucinating expensive tool calls, how to use smart proxies and token\u2011reducers to shrink prompts before they ever hit a model, and how to pick the right orchestration tools to avoid paying for unnecessary context churn. We\u2019ll explore caching layers, workflow pruning, model routing, and agent\u2011side optimizations that deliver big savings with minimal effort.",
+      "StartsAt": "2027-01-23T14:10:00",
+      "EndsAt": "2027-01-23T15:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "glenn-versweyveld"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 1"
+    },
+    {
+      "Id": "decrypting-2000-years-of-encryption-history",
+      "Title": "Decrypting 2,000 years of encryption history",
+      "Description": "How the hell do you keep something secret when you can\u0027t trust the road (or network)?\r\n\r\nFor 2,000 years, we\u0027ve been inventing increasingly clever ways to solve that problem. From Caesar\u0027s cipher and Enigma to AES and public-key cryptography. But how does all that really work? In this talk, we\u0027ll follow the theory that got us here, and see how those ideas turned into the cryptography we actually use today.\r\n\r\nWe\u0027ll also see that encryption is only half the problem. How do we securely share data with someone we\u0027ve never met? How do we know it\u0027s really them? Keys need exchanging. Identities need proving. And even perfect cryptography is useless if you screw up the implementation. And to make things worse, quantum computers may eventually break some of the mathematics underpinning it all.\r\n\r\nJoin Henry for a short, slightly historical tour of how we learned to keep things secret.",
+      "StartsAt": "2027-01-23T14:10:00",
+      "EndsAt": "2027-01-23T15:00:00",
+      "IsServiceSession": false,
+      "speakers": [
+        "henry-been"
+      ],
+      "SessionFormat": "Session",
+      "Level": "Intermediate",
+      "Room": "Room 2"
+    },
+    {
+      "Id": "5626b4a8-5a0d-4984-a4c5-a517a1c441a2",
+      "Title": "LEGO Raffle",
+      "Description": null,
+      "StartsAt": "2027-01-23T15:00:00",
+      "EndsAt": "2027-01-23T15:15:00",
+      "IsServiceSession": true,
+      "speakers": [],
+      "SessionFormat": null,
+      "Level": null,
+      "Room": "Room 1"
     }
   ]
 }

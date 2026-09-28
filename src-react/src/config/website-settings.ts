@@ -97,8 +97,8 @@ export const websiteSettings: WebsiteSettings = {
             }
         },
         schedule: {
-            announced: false,
-            finalized: false,
+            announced: true,
+            finalized: true,
             timeZone: "+01:00",
             upNext:
             {
@@ -108,7 +108,7 @@ export const websiteSettings: WebsiteSettings = {
         },
         speakers: {
             announced: true,
-            finalized: false
+            finalized: true
         },
         codeOfConduct: {
             contacts: []
