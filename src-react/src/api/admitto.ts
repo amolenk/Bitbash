@@ -46,6 +46,29 @@ export interface TicketSettings {
     registrationOpen: boolean;
 }
 
+// Pure client-side classification of a selected ticket-type-id list, based
+// on each ticket type's status as last fetched. The backend remains the
+// source of truth and will reject (with a conflict) any request whose
+// classification no longer matches reality by the time it's processed.
+export function splitTicketSelectionsByStatus(
+    availability: Availability | null,
+    selectedTicketTypeIds: string[]
+): { registerTicketTypeIds: string[]; waitlistTicketTypeIds: string[] } {
+    const registerTicketTypeIds: string[] = [];
+    const waitlistTicketTypeIds: string[] = [];
+
+    selectedTicketTypeIds.forEach(ticketTypeId => {
+        const ticketType = availability?.ticketTypes.find(t => t.id === ticketTypeId);
+        if (ticketType?.status === "waitlist") {
+            waitlistTicketTypeIds.push(ticketTypeId);
+        } else {
+            registerTicketTypeIds.push(ticketTypeId);
+        }
+    });
+
+    return { registerTicketTypeIds, waitlistTicketTypeIds };
+}
+
 export function isRegistrationOpen(availability: Availability): boolean {
     return !isBeforeRegistrationOpen(availability) && !isAfterRegistrationClosed(availability);
 }
@@ -115,6 +138,7 @@ export async function register(
     role: string,
     graduationDate: string,
     ticketTypeIds: string[],
+    waitlistTicketTypeIds: string[],
     registrationToken: string) {
 
     await request<void>("/api/tickets/register", {
@@ -124,6 +148,7 @@ export async function register(
             firstName,
             lastName,
             ticketTypeIds,
+            waitlistTicketTypeIds,
             registrationToken,
             additionalDetails: {
                 "attendee-type": attendeeType,

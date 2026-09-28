@@ -23,12 +23,22 @@ let state = {
     // "success" (default) returns 204. Anything else returns an error
     // problem-details body with the given status/code/detail.
     registerResponse: { mode: "success" },
+    // The most recent POST /registrations request body, so a test can
+    // assert on exactly what the app sent (e.g. the confirmed vs. waitlist
+    // ticket-type-id split) without reaching into app internals.
+    lastRegisterRequest: null,
+    // How many POST /registrations calls have been received since the last
+    // reset, so a test can assert a mixed confirmed/waitlist submission
+    // produced exactly one request rather than two separate ones.
+    registerRequestCount: 0,
 };
 
 function resetState() {
     state = {
         ticketTypes: defaultTicketTypes,
         registerResponse: { mode: "success" },
+        lastRegisterRequest: null,
+        registerRequestCount: 0,
     };
 }
 
@@ -81,6 +91,14 @@ const server = createServer(async (req, res) => {
             return sendJson(res, 204, undefined);
         }
 
+        if (url.pathname === "/__control__/last-register-request" && req.method === "GET") {
+            return sendJson(res, 200, state.lastRegisterRequest);
+        }
+
+        if (url.pathname === "/__control__/register-request-count" && req.method === "GET") {
+            return sendJson(res, 200, { count: state.registerRequestCount });
+        }
+
         // Real Admitto-shaped endpoints, e.g. /api/events/:slug/ticket-types
         const ticketTypesMatch = url.pathname.match(/^\/api\/events\/[^/]+\/ticket-types$/);
         if (ticketTypesMatch && req.method === "GET") {
@@ -89,7 +107,8 @@ const server = createServer(async (req, res) => {
 
         const registrationsMatch = url.pathname.match(/^\/api\/events\/[^/]+\/registrations$/);
         if (registrationsMatch && req.method === "POST") {
-            await readJsonBody(req); // drain body, content not asserted on here
+            state.lastRegisterRequest = await readJsonBody(req);
+            state.registerRequestCount += 1;
             const outcome = state.registerResponse;
             if (outcome.mode === "success") {
                 return sendJson(res, 204, undefined);

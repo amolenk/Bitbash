@@ -8,7 +8,7 @@ import PersonalDetailsForm, { PersonalDetails } from "./PersonalDetailsForm";
 import SpinningButton from "../common/SpinningButton";
 import WorkshopsForm from "./WorkshopsForm";
 
-import { AdmittoError, getAvailability, Availability, isBeforeRegistrationOpen, isAfterRegistrationClosed, register, getTicketSettings, TicketSettings } from "../../api/admitto";
+import { AdmittoError, getAvailability, Availability, isBeforeRegistrationOpen, isAfterRegistrationClosed, register, getTicketSettings, TicketSettings, splitTicketSelectionsByStatus } from "../../api/admitto";
 import { useRouter } from "next/navigation";
 
 interface RegisterFormProps {
@@ -69,6 +69,11 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
                 tickets.push(ticketSettings.mainConferenceTicketTypeId);
             }
 
+            // Split the selected ticket types into confirmed vs. waitlist
+            // buckets based on each ticket type's current status, and send
+            // both lists in the same single registration request.
+            const { registerTicketTypeIds, waitlistTicketTypeIds } = splitTicketSelectionsByStatus(availability, tickets);
+
             if (details.attendeeType === "student") {
                 await register(
                     email,
@@ -78,7 +83,8 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
                     details.institute,
                     details.studyProgram,
                     details.graduationDate,
-                    tickets,
+                    registerTicketTypeIds,
+                    waitlistTicketTypeIds,
                     token);
             } else {
                 await register(
@@ -89,7 +95,8 @@ export default function RegisterForm({ email, token }: RegisterFormProps) {
                     details.organization,
                     details.role,
                     "",
-                    tickets,
+                    registerTicketTypeIds,
+                    waitlistTicketTypeIds,
                     token);
             }
 

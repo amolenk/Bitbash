@@ -34,6 +34,23 @@ export const admittoStub = {
             body: JSON.stringify(response),
         });
     },
+
+    // Returns the request body of the most recent POST /registrations call
+    // received by the stub (or null if none has happened since the last
+    // reset), so a test can assert on exactly what the app sent.
+    async getLastRegisterRequest(): Promise<Record<string, unknown> | null> {
+        const res = await fetch(`${stubBaseURL}/__control__/last-register-request`);
+        return await res.json();
+    },
+
+    // Returns how many POST /registrations calls the stub has received
+    // since the last reset, so a test can assert a mixed confirmed/waitlist
+    // submission produced exactly one request.
+    async getRegisterRequestCount(): Promise<number> {
+        const res = await fetch(`${stubBaseURL}/__control__/register-request-count`);
+        const body = await res.json() as { count: number };
+        return body.count;
+    },
 };
 
 export const defaultConferenceTicketType: StubTicketType = {
