@@ -1,4 +1,6 @@
 import Section from "@/src/components/layout/Section";
+import TicketOutcomeSummary from "@/src/components/tickets/TicketOutcomeSummary";
+import { toStringList } from "@/src/utils/search-params";
 import MainLayout from "../../../../../src/components/layout/MainLayout";
 
 export const metadata = {
@@ -8,10 +10,12 @@ export const metadata = {
 export default async function UpdatedPage({
     searchParams
 }: {
-    searchParams: Promise<{ ticketsChanged?: string }>
+    searchParams: Promise<{ ticketsChanged?: string; confirmed?: string | string[]; waitlisted?: string | string[]; }>
 }) {
-    const { ticketsChanged } = await searchParams;
+    const { ticketsChanged, confirmed, waitlisted } = await searchParams;
     const ticketEmailSent = ticketsChanged === "true";
+    const confirmedTicketNames = toStringList(confirmed);
+    const waitlistedTicketNames = toStringList(waitlisted);
 
     return (
         <MainLayout>
@@ -26,6 +30,11 @@ export default async function UpdatedPage({
                     ) : (
                         <p className="lead mt-5">Your registration details have been saved.</p>
                     )}
+
+                    <TicketOutcomeSummary
+                        confirmedTicketNames={confirmedTicketNames}
+                        waitlistedTicketNames={waitlistedTicketNames}
+                    />
                 </div>
             </Section>
         </MainLayout>

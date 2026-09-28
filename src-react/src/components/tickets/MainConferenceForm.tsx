@@ -11,9 +11,13 @@ interface MainConferenceFormProps {
     conferenceSelection: boolean | null;
     setConferenceSelection: React.Dispatch<React.SetStateAction<boolean | null>>;
     disabled: boolean;
+    // Only set on the edit form, for an attendee who currently holds an
+    // active waitlist entry (rather than a confirmed ticket) for the main
+    // conference ticket type.
+    queuePosition?: number;
 }
 
-export default function MainConferenceForm({ availability, conferenceDate, mainConferenceTicketTypeId, conferenceSelection, setConferenceSelection, disabled }: MainConferenceFormProps) {
+export default function MainConferenceForm({ availability, conferenceDate, mainConferenceTicketTypeId, conferenceSelection, setConferenceSelection, disabled, queuePosition }: MainConferenceFormProps) {
 
     const conferenceTicket = availability?.ticketTypes.find(t => t.id === mainConferenceTicketTypeId);
     const isWaitlist = conferenceTicket?.status === "waitlist";
@@ -24,6 +28,11 @@ export default function MainConferenceForm({ availability, conferenceDate, mainC
                 <div className="card-header text-center"><h3>Main Conference – {formatDate(new Date(conferenceDate))} <span className="badge bg-danger ms-2">Sold Out</span></h3></div>
                 <div className="card-body text-start mx-5">
                     <p>The main conference is currently fully booked.</p>
+                    {queuePosition !== undefined && (
+                        <p className="text-info" data-testid="conference-queue-position">
+                            Your current queue position: #{queuePosition}
+                        </p>
+                    )}
                 </div>
             </div>
         );
@@ -40,6 +49,11 @@ export default function MainConferenceForm({ availability, conferenceDate, mainC
             <div className="card-body text-start mx-5">
                 <p>Join us for an inspiring day packed with 50-minute break-out sessions, networking opportunities, and engaging discussions.</p>
                 {isWaitlist && <p>{WAITLIST_EXPLANATION}</p>}
+                {queuePosition !== undefined && (
+                    <p className="text-info" data-testid="conference-queue-position">
+                        Your current queue position: #{queuePosition}
+                    </p>
+                )}
                 <p>Please indicate if you want to attend the main conference on <strong>Saturday</strong><span className="text-danger">*</span>:</p>
                 <div className="form-group mb-3">
                     <div className="form-check form-check-inline">

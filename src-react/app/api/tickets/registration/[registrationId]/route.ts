@@ -17,7 +17,11 @@ export async function GET(
             firstName: registration.firstName,
             lastName: registration.lastName,
             additionalDetails: registration.additionalDetails,
-            tickets: registration.ticketTypeIds
+            tickets: registration.ticketTypeIds,
+            waitlistedTickets: (registration.waitlistedTickets || []).map(waitlisted => ({
+                id: waitlisted.ticketTypeId,
+                position: waitlisted.position
+            }))
         });
     } catch (error) {
         return toProblemResponse(error);
@@ -32,13 +36,18 @@ export async function PUT(
         const { registrationId } = await context.params;
         const body = await req.json();
 
+        // Mirrors the create-registration split shape: the same
+        // registerable/waitlistable classification applied at create time is
+        // applied here, so a single update can move ticket types between
+        // confirmed and waitlisted in either direction.
         await admittoRequest<void>(eventPath(`/registrations/${encodeURIComponent(registrationId)}`), {
             method: "PUT",
             body: {
                 firstName: body.firstName,
                 lastName: body.lastName,
                 additionalDetails: body.additionalDetails || null,
-                ticketTypeIds: body.ticketTypeIds || []
+                registerTicketTypeIds: body.ticketTypeIds || [],
+                waitlistTicketTypeIds: body.waitlistTicketTypeIds || []
             }
         });
 

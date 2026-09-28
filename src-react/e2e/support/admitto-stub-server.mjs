@@ -31,6 +31,16 @@ let state = {
     // reset, so a test can assert a mixed confirmed/waitlist submission
     // produced exactly one request rather than two separate ones.
     registerRequestCount: 0,
+    // The registration returned by GET /registrations/:id for the edit flow.
+    // null means "not found" (404), mirroring a stale/unknown edit link.
+    registration: null,
+    // Controls the response to the next PUT /registrations/:id call(s).
+    updateResponse: { mode: "success" },
+    // The most recent PUT /registrations/:id request body.
+    lastUpdateRequest: null,
+    // How many PUT /registrations/:id calls have been received since the
+    // last reset.
+    updateRequestCount: 0,
 };
 
 function resetState() {
@@ -39,6 +49,10 @@ function resetState() {
         registerResponse: { mode: "success" },
         lastRegisterRequest: null,
         registerRequestCount: 0,
+        registration: null,
+        updateResponse: { mode: "success" },
+        lastUpdateRequest: null,
+        updateRequestCount: 0,
     };
 }
 
@@ -99,6 +113,26 @@ const server = createServer(async (req, res) => {
             return sendJson(res, 200, { count: state.registerRequestCount });
         }
 
+        if (url.pathname === "/__control__/registration" && req.method === "PUT") {
+            const body = await readJsonBody(req);
+            state.registration = body || null;
+            return sendJson(res, 204, undefined);
+        }
+
+        if (url.pathname === "/__control__/update-response" && req.method === "PUT") {
+            const body = await readJsonBody(req);
+            state.updateResponse = body || { mode: "success" };
+            return sendJson(res, 204, undefined);
+        }
+
+        if (url.pathname === "/__control__/last-update-request" && req.method === "GET") {
+            return sendJson(res, 200, state.lastUpdateRequest);
+        }
+
+        if (url.pathname === "/__control__/update-request-count" && req.method === "GET") {
+            return sendJson(res, 200, { count: state.updateRequestCount });
+        }
+
         // Real Admitto-shaped endpoints, e.g. /api/events/:slug/ticket-types
         const ticketTypesMatch = url.pathname.match(/^\/api\/events\/[^/]+\/ticket-types$/);
         if (ticketTypesMatch && req.method === "GET") {
@@ -110,6 +144,29 @@ const server = createServer(async (req, res) => {
             state.lastRegisterRequest = await readJsonBody(req);
             state.registerRequestCount += 1;
             const outcome = state.registerResponse;
+            if (outcome.mode === "success") {
+                return sendJson(res, 204, undefined);
+            }
+            return sendJson(res, outcome.status || 400, {
+                detail: outcome.detail || "Request rejected.",
+                code: outcome.code,
+            });
+        }
+
+        // Self-service registration read/update, e.g.
+        // /api/events/:slug/registrations/:registrationId
+        const registrationMatch = url.pathname.match(/^\/api\/events\/[^/]+\/registrations\/([^/]+)$/);
+        if (registrationMatch && req.method === "GET") {
+            if (!state.registration) {
+                return sendJson(res, 404, { detail: "Registration not found." });
+            }
+            return sendJson(res, 200, state.registration);
+        }
+
+        if (registrationMatch && req.method === "PUT") {
+            state.lastUpdateRequest = await readJsonBody(req);
+            state.updateRequestCount += 1;
+            const outcome = state.updateResponse;
             if (outcome.mode === "success") {
                 return sendJson(res, 204, undefined);
             }

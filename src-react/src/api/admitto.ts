@@ -24,6 +24,14 @@ export interface Availability {
     ticketTypes: TicketTypeDto[];
 }
 
+// A ticket type the registration's email currently holds an active waitlist
+// entry for (as opposed to a confirmed ticket), with that entry's current
+// position in the per-ticket-type waitlist queue.
+export interface WaitlistedTicket {
+    id: string;
+    position: number;
+}
+
 export interface RegistrationDetail {
     id: string;
     status: "registered" | "cancelled";
@@ -31,6 +39,7 @@ export interface RegistrationDetail {
     lastName: string;
     additionalDetails: Record<string, string>;
     tickets: string[];
+    waitlistedTickets: WaitlistedTicket[];
 }
 
 export interface VerificationResult {
@@ -67,6 +76,97 @@ export function splitTicketSelectionsByStatus(
     });
 
     return { registerTicketTypeIds, waitlistTicketTypeIds };
+}
+
+// Classifies a selected ticket-type-id list for an update-registration
+// submission. Unlike a fresh create-registration submission, an edit can
+// resubmit ticket types the attendee already holds: those keep whatever
+// classification they already had (confirmed stays confirmed, waitlisted
+// stays waitlisted) even if the ticket type's public status has since
+// shifted, so simply re-saving the form (or changing an unrelated field)
+// never silently demotes or promotes an untouched selection. Only ticket
+// types newly added to the selection — the ones actually being switched —
+// are classified by their current status, mirroring create's
+// classification.
+export function classifyTicketSelectionsForUpdate(
+    availability: Availability | null,
+    selectedTicketTypeIds: string[],
+    originallyConfirmedTicketTypeIds: string[],
+    originallyWaitlistedTicketTypeIds: string[]
+): { registerTicketTypeIds: string[]; waitlistTicketTypeIds: string[] } {
+    const newTicketTypeIds = selectedTicketTypeIds.filter(id =>
+        !originallyConfirmedTicketTypeIds.includes(id) && !originallyWaitlistedTicketTypeIds.includes(id)
+    );
+    const { registerTicketTypeIds: newlyRegisteredIds, waitlistTicketTypeIds: newlyWaitlistedIds } =
+        splitTicketSelectionsByStatus(availability, newTicketTypeIds);
+
+    return {
+        registerTicketTypeIds: [
+            ...selectedTicketTypeIds.filter(id => originallyConfirmedTicketTypeIds.includes(id)),
+            ...newlyRegisteredIds
+        ],
+        waitlistTicketTypeIds: [
+            ...selectedTicketTypeIds.filter(id => originallyWaitlistedTicketTypeIds.includes(id)),
+            ...newlyWaitlistedIds
+        ]
+    };
+}
+
+// Resolves a list of ticket-type ids to their display names as of the last
+// fetched availability, dropping any id that no longer matches a known
+// ticket type. Shared by both the create and update confirmation flows so
+// their itemized confirmed/waitlisted lists are built identically.
+export function ticketTypeNames(availability: Availability | null, ticketTypeIds: string[]): string[] {
+    return ticketTypeIds
+        .map(id => availability?.ticketTypes.find(t => t.id === id)?.name)
+        .filter((name): name is string => !!name);
+}
+
+// Builds the confirmed/waitlisted URL query params for a submission
+// outcome, resolving ticket-type ids to display names as of the last
+// fetched availability. Shared by the create and update forms so the
+// confirmation page's itemized lists are built identically from either.
+export function ticketOutcomeSearchParams(
+    availability: Availability | null,
+    registerTicketTypeIds: string[],
+    waitlistTicketTypeIds: string[]
+): URLSearchParams {
+    const params = new URLSearchParams();
+    ticketTypeNames(availability, registerTicketTypeIds).forEach(name => params.append("confirmed", name));
+    ticketTypeNames(availability, waitlistTicketTypeIds).forEach(name => params.append("waitlisted", name));
+    return params;
+}
+
+// Availability shifted between page load and submit: the backend rejected
+// the request because a ticket type's status no longer matches what was
+// classified client-side. Refetch fresh availability, clear the
+// conference/workshop selections back to unselected (personal details are
+// left untouched), and ask the attendee to review and reselect. Shared by
+// both the create and update forms so a stale ticket-state conflict is
+// recovered from identically on either.
+export async function recoverFromTicketStateConflict(handlers: {
+    setConferenceSelection: (value: boolean | null) => void;
+    setWorkshopSelections: (value: string[]) => void;
+    setAvailability: (value: Availability) => void;
+    setSubmittingError: (value: string) => void;
+    setLoadingError: (value: string) => void;
+    setSubmitting: (value: boolean) => void;
+}): Promise<void> {
+    handlers.setConferenceSelection(null);
+    handlers.setWorkshopSelections([]);
+
+    try {
+        handlers.setAvailability(await getAvailability());
+        handlers.setSubmittingError("Ticket availability changed while you were completing this form. Please review and reselect your tickets, then submit again.");
+    } catch {
+        // The stale availability we already have is now known to be wrong,
+        // and a retry would be classified against that same stale data —
+        // so surface this as a distinct, more serious failure rather than
+        // silently inviting another reselect.
+        handlers.setLoadingError("Could not refresh ticket availability after your selection changed. Please reload the page and try again.");
+    } finally {
+        handlers.setSubmitting(false);
+    }
 }
 
 export function isRegistrationOpen(availability: Availability): boolean {
@@ -170,7 +270,8 @@ export async function updateRegistration(
     organization: string,
     role: string,
     graduationDate: string,
-    ticketTypeIds: string[]) {
+    ticketTypeIds: string[],
+    waitlistTicketTypeIds: string[]) {
 
     await request<void>(`/api/tickets/registration/${encodeURIComponent(registrationId)}`, {
         method: "PUT",
@@ -178,6 +279,7 @@ export async function updateRegistration(
             firstName,
             lastName,
             ticketTypeIds,
+            waitlistTicketTypeIds,
             additionalDetails: {
                 "attendee-type": attendeeType,
                 organization,

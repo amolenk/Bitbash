@@ -9,7 +9,11 @@ interface WorkshopsFormProps {
     workshopsDate: string;
     workshopSelections: string[];
     setWorkshopSelections: React.Dispatch<React.SetStateAction<string[]>>;
-    disabled: boolean
+    disabled: boolean;
+    // Only set on the edit form: current queue position, per ticket-type id,
+    // for any workshop the attendee currently holds an active waitlist
+    // entry for (rather than a confirmed ticket).
+    queuePositions?: Record<string, number>;
 }
 
 // Sort within a group: full-day tickets first, then morning, then afternoon.
@@ -40,7 +44,7 @@ function timeSlotBadgeText(ticket: TicketTypeDto): string {
 }
 
 export default function WorkshopsForm({
-    availability, workshopsDate, workshopSelections, setWorkshopSelections, disabled
+    availability, workshopsDate, workshopSelections, setWorkshopSelections, disabled, queuePositions
 }: WorkshopsFormProps) {
 
     const workshopTickets = availability?.ticketTypes.filter((t: TicketTypeDto) =>
@@ -72,6 +76,7 @@ export default function WorkshopsForm({
     const renderTicket = (ticket: TicketTypeDto) => {
         const isSoldOut = ticket.status === "soldOut";
         const isWaitlist = ticket.status === "waitlist";
+        const queuePosition = queuePositions?.[ticket.id];
 
         return (
             <div key={ticket.id} className="form-check text-start mb-2">
@@ -96,6 +101,11 @@ export default function WorkshopsForm({
                     {isWaitlist && <span className="badge bg-warning text-dark ms-2">Waitlist Open</span>}
                     {isSoldOut && <span className="badge bg-danger ms-2">Sold Out</span>}
                 </label>
+                {queuePosition !== undefined && (
+                    <div className="text-info small ms-4" data-testid={`workshop-queue-position-${ticket.id}`}>
+                        Your current queue position: #{queuePosition}
+                    </div>
+                )}
             </div>
         );
     };

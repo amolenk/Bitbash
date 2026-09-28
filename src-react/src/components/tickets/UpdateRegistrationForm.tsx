@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { getAvailability, Availability, getRegistration, isAfterRegistrationClosed, updateRegistration, getTicketSettings, TicketSettings, resendTicketEmail } from "../../api/admitto";
+import { AdmittoError, getAvailability, Availability, getRegistration, isAfterRegistrationClosed, updateRegistration, getTicketSettings, TicketSettings, resendTicketEmail, classifyTicketSelectionsForUpdate, ticketOutcomeSearchParams, recoverFromTicketStateConflict } from "../../api/admitto";
 import SpinningButton from "../common/SpinningButton";
 import WorkshopsForm from "./WorkshopsForm";
 import MainConferenceForm from "./MainConferenceForm";
@@ -58,6 +58,9 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
     const [originalConferenceSelection, setOriginalConferenceSelection] = useState<boolean | null>(null);
     const [workshopSelections, setWorkshopSelections] = useState<string[]>([]);
     const [originalWorkshopSelections, setOriginalWorkshopSelections] = useState<string[]>([]);
+    const [waitlistPositions, setWaitlistPositions] = useState<Record<string, number>>({});
+    const [originallyConfirmedTicketTypeIds, setOriginallyConfirmedTicketTypeIds] = useState<string[]>([]);
+    const [originallyWaitlistedTicketTypeIds, setOriginallyWaitlistedTicketTypeIds] = useState<string[]>([]);
     const [details, setDetails] = useState<PersonalDetails>(emptyDetails);
     const [originalDetails, setOriginalDetails] = useState<PersonalDetails>(emptyDetails);
 
@@ -73,42 +76,49 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
                     getTicketSettings()
                 ]);
 
-                // If we have existing tickets, ensure those ticket types have hasCapacity=true
-                if (registrationResult.tickets.length > 0 && availabilityResult.ticketTypes) {
-                    registrationResult.tickets.forEach(existingTicketTypeId => {
-                        const ticketType = availabilityResult.ticketTypes.find(t => t.id === existingTicketTypeId);
-                        if (ticketType && ticketType.hasCapacity === false) {
-                            ticketType.hasCapacity = true;
-                        }
-                    });
-                }
-
                 setAvailability(availabilityResult);
                 setTicketSettings(ticketSettingsResult);
 
                 if (registrationResult.status === "cancelled") {
                     setCancelled(true);
-                } else if (registrationResult.tickets.length > 0) {
-
-                    // Set conferenceSelection based on whether main conference ticket is in registrationResult
-                    setConferenceSelection(registrationResult.tickets.includes(ticketSettingsResult.mainConferenceTicketTypeId));
-                    setOriginalConferenceSelection(registrationResult.tickets.includes(ticketSettingsResult.mainConferenceTicketTypeId));
-
-                    // Set workshopSelections based on registrationResult
-                    const workshopTickets = registrationResult.tickets.filter(t => t !== ticketSettingsResult.mainConferenceTicketTypeId);
-                    setWorkshopSelections(workshopTickets);
-                    setOriginalWorkshopSelections(workshopTickets);
-
-                    // Set personal details based on registrationResult
-                    const personalDetails = toPersonalDetails(
-                        registrationResult.firstName,
-                        registrationResult.lastName,
-                        registrationResult.additionalDetails || {}
-                    );
-                    setDetails(personalDetails);
-                    setOriginalDetails(personalDetails);
                 } else {
-                    setLoadingError("No existing registration found with the provided link.");
+                    // A registration the attendee currently holds is either
+                    // confirmed or waitlisted per ticket type; both count as
+                    // "held" for the purposes of initializing the form's
+                    // selections (this is also what allows an attendee who is
+                    // purely on a waitlist, holding no confirmed ticket at
+                    // all, to still reach and use this edit form).
+                    const waitlistedTicketTypeIds = registrationResult.waitlistedTickets.map(waitlisted => waitlisted.id);
+                    const heldTicketTypeIds = [...registrationResult.tickets, ...waitlistedTicketTypeIds];
+
+                    if (heldTicketTypeIds.length === 0) {
+                        setLoadingError("No existing registration found with the provided link.");
+                    } else {
+                        // Set conferenceSelection based on whether the main conference ticket is currently held
+                        const hasConferenceTicket = heldTicketTypeIds.includes(ticketSettingsResult.mainConferenceTicketTypeId);
+                        setConferenceSelection(hasConferenceTicket);
+                        setOriginalConferenceSelection(hasConferenceTicket);
+
+                        // Set workshopSelections based on the currently held ticket types
+                        const workshopTickets = heldTicketTypeIds.filter(t => t !== ticketSettingsResult.mainConferenceTicketTypeId);
+                        setWorkshopSelections(workshopTickets);
+                        setOriginalWorkshopSelections(workshopTickets);
+
+                        setWaitlistPositions(
+                            Object.fromEntries(registrationResult.waitlistedTickets.map(waitlisted => [waitlisted.id, waitlisted.position]))
+                        );
+                        setOriginallyConfirmedTicketTypeIds(registrationResult.tickets);
+                        setOriginallyWaitlistedTicketTypeIds(waitlistedTicketTypeIds);
+
+                        // Set personal details based on registrationResult
+                        const personalDetails = toPersonalDetails(
+                            registrationResult.firstName,
+                            registrationResult.lastName,
+                            registrationResult.additionalDetails || {}
+                        );
+                        setDetails(personalDetails);
+                        setOriginalDetails(personalDetails);
+                    }
                 }
 
                 setLoading(false);
@@ -131,6 +141,17 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
                 tickets.push(ticketSettings.mainConferenceTicketTypeId);
             }
 
+            // Classify the selected ticket types for the update request.
+            // Ticket types the attendee already held (confirmed or
+            // waitlisted) keep that same classification even if their
+            // public status has since shifted, so re-saving the form never
+            // silently demotes or promotes an untouched selection — only a
+            // newly added ticket type gets classified by its current
+            // status, mirroring create's classification.
+            const { registerTicketTypeIds, waitlistTicketTypeIds } = classifyTicketSelectionsForUpdate(
+                availability, tickets, originallyConfirmedTicketTypeIds, originallyWaitlistedTicketTypeIds
+            );
+
             // Admitto only sends a new ticket email when the ticket selection actually changes.
             const ticketsChanged = originalConferenceSelection !== conferenceSelection
                 || !arraysEqual(originalWorkshopSelections, workshopSelections);
@@ -144,7 +165,8 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
                     details.institute,
                     details.studyProgram,
                     details.graduationDate,
-                    tickets);
+                    registerTicketTypeIds,
+                    waitlistTicketTypeIds);
             } else {
                 await updateRegistration(
                     registrationId,
@@ -154,13 +176,32 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
                     details.organization,
                     details.role,
                     "",
-                    tickets);
+                    registerTicketTypeIds,
+                    waitlistTicketTypeIds);
             }
 
-            router.push(`/tickets/register/updated?ticketsChanged=${ticketsChanged}`);
+            // The confirmed/waitlisted split is already known here, at
+            // submit time, so the ticket type names for the confirmation
+            // page's itemized lists are passed along via URL query params
+            // rather than requiring that page to look anything up again.
+            const params = ticketOutcomeSearchParams(availability, registerTicketTypeIds, waitlistTicketTypeIds);
+            params.set("ticketsChanged", String(ticketsChanged));
+
+            router.push(`/tickets/register/updated?${params.toString()}`);
         } catch (err: unknown) {
-            setSubmitting(false);
-            setSubmittingError(err instanceof Error ? err.message : "Registration update failed. Please try again.");
+            if (err instanceof AdmittoError && err.code === "registration.ticket_state_conflict") {
+                await recoverFromTicketStateConflict({
+                    setConferenceSelection,
+                    setWorkshopSelections,
+                    setAvailability,
+                    setSubmittingError,
+                    setLoadingError,
+                    setSubmitting
+                });
+            } else {
+                setSubmitting(false);
+                setSubmittingError(err instanceof Error ? err.message : "Registration update failed. Please try again.");
+            }
         }
     };
 
@@ -242,6 +283,7 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
                     conferenceSelection={conferenceSelection}
                     setConferenceSelection={setConferenceSelection}
                     disabled={submitting}
+                    queuePosition={waitlistPositions[ticketSettings.mainConferenceTicketTypeId]}
                 />
 
                 <WorkshopsForm
@@ -250,6 +292,7 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
                     workshopSelections={workshopSelections}
                     setWorkshopSelections={setWorkshopSelections}
                     disabled={submitting}
+                    queuePositions={waitlistPositions}
                 />
 
                 <PersonalDetailsForm

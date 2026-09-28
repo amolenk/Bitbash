@@ -18,6 +18,10 @@ export interface PartnerRegistrationDetailDto {
     ticketTypeIds: string[];
     tickets: { id: string; name: string }[];
     additionalDetails: Record<string, string>;
+    // Ticket types the registration's email currently holds an active
+    // waitlist entry for, alongside the confirmed ticketTypeIds above, each
+    // with that entry's current queue position.
+    waitlistedTickets: { ticketTypeId: string; position: number }[];
 }
 
 export class AdmittoPartnerError extends Error {
