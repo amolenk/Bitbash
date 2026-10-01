@@ -175,6 +175,41 @@ test.describe("edit flow gets waitlist switching", () => {
         expect(lastRequest?.waitlistTicketTypeIds).toEqual([]);
     });
 
+    test("an attendee confirmed for a workshop that has since gone fully sold out (no waitlist) can still deselect it to switch to a different, currently-available overlapping-timeslot workshop", async ({ page }) => {
+        // The attendee confirmed "Morning Session A" earlier. Other
+        // attendees have since filled it completely (no waitlist left
+        // either), so it now reports as soldOut. The attendee should still
+        // be able to give it up in favor of a different, currently
+        // available, overlapping-timeslot workshop.
+        await admittoStub.setTicketTypes([
+            { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
+            { id: "workshop-confirmed", name: "Morning Session A", timeSlots: ["morning-workshop"], status: "soldOut" },
+            { id: "workshop-available-target", name: "Morning Session B", timeSlots: ["morning-workshop"], status: "available" }
+        ]);
+        await admittoStub.setRegistration({
+            ...baseRegistration,
+            ticketTypeIds: ["workshop-confirmed"],
+            tickets: [{ id: "workshop-confirmed", name: "Morning Session A" }],
+            waitlistedTickets: []
+        });
+
+        await page.goto(EDIT_URL);
+
+        await expect(page.getByLabel("Morning Session A")).toBeChecked();
+        await expect(page.getByLabel("Morning Session A")).toBeEnabled();
+
+        await page.getByLabel("Morning Session A").uncheck();
+        await page.getByLabel("Morning Session B").check();
+
+        await page.getByRole("button", { name: "Update Registration" }).click();
+
+        await expect(page).toHaveURL(/\/tickets\/register\/updated/);
+
+        const lastRequest = await admittoStub.getLastUpdateRequest();
+        expect(lastRequest?.registerTicketTypeIds).toEqual(["workshop-available-target"]);
+        expect(lastRequest?.waitlistTicketTypeIds).toEqual([]);
+    });
+
     test("a stale ticket-state conflict on update clears ticket selections and shows a reselect message, while keeping personal details filled in", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },

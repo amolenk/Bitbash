@@ -77,6 +77,16 @@ export default function WorkshopsForm({
         const isSoldOut = ticket.status === "soldOut";
         const isWaitlist = ticket.status === "waitlist";
         const queuePosition = queuePositions?.[ticket.id];
+        const isSelected = workshopSelections.includes(ticket.id);
+
+        // A ticket type the attendee already holds (confirmed or
+        // waitlisted) can go fully sold out — no longer even accepting
+        // waitlist joins — by the time they revisit their registration.
+        // It must stay checkable-off even then, so an attendee can still
+        // give it up in favor of a different, currently available or
+        // waitlisted, overlapping-timeslot selection; only an unselected
+        // sold-out ticket is blocked from being newly picked.
+        const isDisabled = (isSoldOut && !isSelected) || disabledTickets.has(ticket.id) || disabled;
 
         return (
             <div key={ticket.id} className="form-check text-start mb-2">
@@ -84,8 +94,8 @@ export default function WorkshopsForm({
                     className="form-check-input"
                     type="checkbox"
                     id={ticket.id}
-                    checked={workshopSelections.includes(ticket.id)}
-                    disabled={isSoldOut || disabledTickets.has(ticket.id) || disabled}
+                    checked={isSelected}
+                    disabled={isDisabled}
                     onChange={() => {
                         setWorkshopSelections((tickets: string[]) =>
                             tickets.includes(ticket.id)
