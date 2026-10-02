@@ -72,6 +72,9 @@ export default function RegisterForm({ email, token, initialCouponCode }: Regist
             if (conferenceSelection && ticketSettings?.mainConferenceTicketTypeId) {
                 tickets.push(ticketSettings.mainConferenceTicketTypeId);
             }
+            const couponCodeForSubmission = couponCode && tickets.some(id => couponAllowedTicketTypeIds.includes(id))
+                ? couponCode
+                : undefined;
 
             // Split the selected ticket types into confirmed vs. waitlist
             // buckets based on each ticket type's current status, and send
@@ -92,7 +95,7 @@ export default function RegisterForm({ email, token, initialCouponCode }: Regist
                     registerTicketTypeIds,
                     waitlistTicketTypeIds,
                     token,
-                    couponCode ?? undefined);
+                    couponCodeForSubmission);
             } else {
                 await register(
                     email,
@@ -105,7 +108,7 @@ export default function RegisterForm({ email, token, initialCouponCode }: Regist
                     registerTicketTypeIds,
                     waitlistTicketTypeIds,
                     token,
-                    couponCode ?? undefined);
+                    couponCodeForSubmission);
             }
 
             // The confirmed/waitlisted split is already known here, at submit
@@ -190,11 +193,10 @@ export default function RegisterForm({ email, token, initialCouponCode }: Regist
                         setCouponCode(code);
                         setAppliedCoupon(coupon);
                     }}
-                    onRemove={() => {
+                    onClear={() => {
                         setCouponCode(null);
                         setAppliedCoupon(null);
                     }}
-                    disabled={submitting}
                     initialCouponCode={initialCouponCode}
                 />
 

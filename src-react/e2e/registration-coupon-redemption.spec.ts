@@ -7,7 +7,7 @@ const EDIT_URL = `/tickets/edit/${REGISTRATION_ID}`;
 const REGISTER_URL = "/tickets/register?email=attendee%40example.com&token=valid-token";
 const COUPON_CODE = "11111111-1111-1111-1111-111111111111";
 
-const baseRegistration: Omit<StubRegistration, "ticketTypeIds" | "tickets" | "waitlistedTickets"> = {
+const baseRegistration: Omit<StubRegistration, "ticketTypeIds" | "tickets" | "waitlistedTicketTypes"> = {
     id: REGISTRATION_ID,
     email: "attendee@example.com",
     firstName: "Ada",
@@ -17,7 +17,8 @@ const baseRegistration: Omit<StubRegistration, "ticketTypeIds" | "tickets" | "wa
         "attendee-type": "professional",
         organization: "Analytical Engines Inc.",
         role: "Engineer"
-    }
+    },
+    offeredTicketTypes: []
 };
 
 test.describe("coupon redemption on the edit flow", () => {
@@ -34,7 +35,7 @@ test.describe("coupon redemption on the edit flow", () => {
             ...baseRegistration,
             ticketTypeIds: ["conference-ticket"],
             tickets: [{ id: "conference-ticket", name: "Conference" }],
-            waitlistedTickets: []
+            waitlistedTicketTypes: []
         });
         await admittoStub.setCouponResponse({
             mode: "success",
@@ -42,17 +43,11 @@ test.describe("coupon redemption on the edit flow", () => {
             allowedTicketTypes: [{ id: "workshop-vip", name: "VIP Session" }]
         });
 
-        await page.goto(EDIT_URL);
-
-        // Before redeeming the coupon, the workshop is shown as sold out
-        // and cannot be selected.
-        await expect(page.getByRole("heading", { name: "Sold Out", exact: true })).toBeVisible();
-        await expect(page.getByLabel("VIP Session")).toBeDisabled();
-
-        await page.getByLabel("Coupon code").fill(COUPON_CODE);
-        await page.getByRole("button", { name: "Apply Coupon" }).click();
+        await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
         await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
+        await expect(page.getByLabel("Coupon code")).not.toBeVisible();
+        await expect(page.getByRole("button", { name: "Apply Coupon" })).not.toBeVisible();
         await expect(page.getByText("Unlocked by Coupon")).toBeVisible();
 
         await expect(page.getByLabel("VIP Session")).toBeEnabled();
@@ -80,7 +75,7 @@ test.describe("coupon redemption on the edit flow", () => {
             ...baseRegistration,
             ticketTypeIds: [],
             tickets: [],
-            waitlistedTickets: [{ ticketTypeId: "conference-ticket", position: 7 }]
+            waitlistedTicketTypes: [{ ticketTypeId: "conference-ticket", position: 7 }]
         });
         await admittoStub.setCouponResponse({
             mode: "success",
@@ -89,8 +84,6 @@ test.describe("coupon redemption on the edit flow", () => {
         });
 
         await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
-
-        await expect(page.getByLabel("Yes, join the waitlist")).toBeChecked();
 
         await expect(page.getByTestId("coupon-applied-message")).toContainText("Conference");
         await expect(page.getByTestId("coupon-waitlist-confirmation-message")).toContainText("Conference");
@@ -111,6 +104,42 @@ test.describe("coupon redemption on the edit flow", () => {
         expect(lastRequest?.waitlistTicketTypeIds).toEqual([]);
     });
 
+    test("an outstanding waitlist offer is preselected and redeemed by its URL coupon", async ({ page }) => {
+        await admittoStub.setTicketTypes([
+            { id: "conference-ticket", name: "Conference", timeSlots: [], status: "waitlist" }
+        ]);
+        await admittoStub.setRegistration({
+            ...baseRegistration,
+            status: "waitlisted",
+            ticketTypeIds: [],
+            tickets: [],
+            waitlistedTicketTypes: [],
+            offeredTicketTypes: [{ ticketTypeId: "conference-ticket", expiresAt: "2026-12-01T12:00:00Z" }]
+        });
+        await admittoStub.setCouponResponse({
+            mode: "success",
+            status: "active",
+            allowedTicketTypes: [{ id: "conference-ticket", name: "Conference" }]
+        });
+
+        await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
+
+        await expect(page.getByTestId("outstanding-offer")).toContainText("Conference");
+        await expect(page.getByTestId("outstanding-offer")).toContainText("coupon link");
+        await expect(page.getByTestId("coupon-applied-message")).toContainText("Conference");
+        await expect(page.getByLabel("Yes, I want to attend")).toBeChecked();
+        await expect(page.getByRole("button", { name: "Update Registration" })).toBeEnabled();
+
+        await page.getByRole("button", { name: "Update Registration" }).click();
+
+        await expect(page).toHaveURL(/\/tickets\/register\/updated/);
+
+        const lastRequest = await admittoStub.getLastUpdateRequest();
+        expect(lastRequest?.couponCode).toBe(COUPON_CODE);
+        expect(lastRequest?.registerTicketTypeIds).toEqual(["conference-ticket"]);
+        expect(lastRequest?.waitlistTicketTypeIds).toEqual([]);
+    });
+
     test("an unknown coupon code shows an error and does not unlock anything", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
@@ -120,7 +149,7 @@ test.describe("coupon redemption on the edit flow", () => {
             ...baseRegistration,
             ticketTypeIds: ["conference-ticket"],
             tickets: [{ id: "conference-ticket", name: "Conference" }],
-            waitlistedTickets: []
+            waitlistedTicketTypes: []
         });
         await admittoStub.setCouponResponse({
             mode: "error",
@@ -129,12 +158,9 @@ test.describe("coupon redemption on the edit flow", () => {
             detail: "Coupon not found."
         });
 
-        await page.goto(EDIT_URL);
+        await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
-        await page.getByLabel("Coupon code").fill(COUPON_CODE);
-        await page.getByRole("button", { name: "Apply Coupon" }).click();
-
-        await expect(page.getByTestId("coupon-error")).toContainText("couldn't find a coupon");
+        await expect(page.getByTestId("coupon-error")).toContainText("couldn't find the coupon");
         await expect(page.getByLabel("VIP Session")).toBeDisabled();
     });
 
@@ -147,7 +173,7 @@ test.describe("coupon redemption on the edit flow", () => {
             ...baseRegistration,
             ticketTypeIds: ["conference-ticket"],
             tickets: [{ id: "conference-ticket", name: "Conference" }],
-            waitlistedTickets: []
+            waitlistedTicketTypes: []
         });
         await admittoStub.setCouponResponse({
             mode: "success",
@@ -155,13 +181,62 @@ test.describe("coupon redemption on the edit flow", () => {
             allowedTicketTypes: [{ id: "workshop-vip", name: "VIP Session" }]
         });
 
-        await page.goto(EDIT_URL);
-
-        await page.getByLabel("Coupon code").fill(COUPON_CODE);
-        await page.getByRole("button", { name: "Apply Coupon" }).click();
+        await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
         await expect(page.getByTestId("coupon-error")).toContainText("already been used");
         await expect(page.getByLabel("VIP Session")).toBeDisabled();
+    });
+
+    test("an expired coupon shows an error and does not unlock anything", async ({ page }) => {
+        await admittoStub.setTicketTypes([
+            { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
+            { id: "workshop-vip", name: "VIP Session", timeSlots: ["morning-workshop"], status: "soldOut" }
+        ]);
+        await admittoStub.setRegistration({
+            ...baseRegistration,
+            ticketTypeIds: ["conference-ticket"],
+            tickets: [{ id: "conference-ticket", name: "Conference" }],
+            waitlistedTicketTypes: []
+        });
+        await admittoStub.setCouponResponse({
+            mode: "success",
+            status: "expired",
+            allowedTicketTypes: [{ id: "workshop-vip", name: "VIP Session" }]
+        });
+
+        await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
+
+        await expect(page.getByTestId("coupon-error")).toContainText("has expired");
+        await expect(page.getByLabel("VIP Session")).toBeDisabled();
+    });
+
+    test("does not redeem a URL coupon when no unlocked ticket remains selected", async ({ page }) => {
+        await admittoStub.setTicketTypes([
+            { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
+            { id: "workshop-vip", name: "VIP Session", timeSlots: ["morning-workshop"], status: "soldOut" }
+        ]);
+        await admittoStub.setRegistration({
+            ...baseRegistration,
+            ticketTypeIds: ["conference-ticket"],
+            tickets: [{ id: "conference-ticket", name: "Conference" }],
+            waitlistedTicketTypes: []
+        });
+        await admittoStub.setCouponResponse({
+            mode: "success",
+            status: "active",
+            allowedTicketTypes: [{ id: "workshop-vip", name: "VIP Session" }]
+        });
+
+        await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
+
+        await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
+        await expect(page.getByRole("button", { name: "Update Registration" })).toBeDisabled();
+
+        await page.getByLabel("First name").fill("Grace");
+        await page.getByRole("button", { name: "Update Registration" }).click();
+
+        await expect(page).toHaveURL(/\/tickets\/register\/updated/);
+        expect((await admittoStub.getLastUpdateRequest())?.couponCode).toBeNull();
     });
 });
 
@@ -181,14 +256,11 @@ test.describe("coupon redemption on the registration flow", () => {
             allowedTicketTypes: [{ id: "workshop-vip", name: "VIP Session" }]
         });
 
-        await page.goto(REGISTER_URL);
-
-        await expect(page.getByLabel("VIP Session")).toBeDisabled();
-
-        await page.getByLabel("Coupon code").fill(COUPON_CODE);
-        await page.getByRole("button", { name: "Apply Coupon" }).click();
+        await page.goto(`${REGISTER_URL}&coupon=${COUPON_CODE}`);
 
         await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
+        await expect(page.getByLabel("Coupon code")).not.toBeVisible();
+        await expect(page.getByRole("button", { name: "Apply Coupon" })).not.toBeVisible();
         await expect(page.getByText("Unlocked by Coupon")).toBeVisible();
 
         await page.getByLabel("VIP Session").check();
@@ -211,7 +283,7 @@ test.describe("coupon redemption on the registration flow", () => {
         await expect(page.getByRole("heading", { name: "Waitlisted" })).not.toBeVisible();
     });
 
-    test("a coupon in the registration URL is applied automatically", async ({ page }) => {
+    test("a coupon in the registration URL is shown as an unlock note", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "soldOut" },
             { id: "workshop-vip", name: "VIP Session", timeSlots: ["morning-workshop"], status: "soldOut" }
@@ -224,9 +296,36 @@ test.describe("coupon redemption on the registration flow", () => {
 
         await page.goto(`${REGISTER_URL}&coupon=${COUPON_CODE}`);
 
-        await expect(page.getByLabel("Coupon code")).toHaveValue(COUPON_CODE);
         await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
+        await expect(page.getByLabel("Coupon code")).not.toBeVisible();
+        await expect(page.getByRole("button", { name: "Apply Coupon" })).not.toBeVisible();
         await expect(page.getByLabel("VIP Session")).toBeEnabled();
+    });
+
+    test("does not redeem a URL coupon when the attendee selects only regular tickets", async ({ page }) => {
+        await admittoStub.setTicketTypes([
+            { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
+            { id: "workshop-vip", name: "VIP Session", timeSlots: ["morning-workshop"], status: "soldOut" }
+        ]);
+        await admittoStub.setCouponResponse({
+            mode: "success",
+            status: "active",
+            allowedTicketTypes: [{ id: "workshop-vip", name: "VIP Session" }]
+        });
+
+        await page.goto(`${REGISTER_URL}&coupon=${COUPON_CODE}`);
+
+        await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
+        await page.getByLabel("Yes, I want to attend").check();
+        await page.getByLabel("First name").fill("Ada");
+        await page.getByLabel("Last name").fill("Lovelace");
+        await page.getByLabel("I am a").selectOption("professional");
+        await page.getByLabel("Organization / Company").fill("Analytical Engines Inc.");
+        await page.getByLabel("Your role or job title").fill("Engineer");
+        await page.getByRole("button", { name: "Register" }).click();
+
+        await expect(page).toHaveURL(/\/tickets\/register\/thankyou/);
+        expect((await admittoStub.getLastRegisterRequest())?.couponCode).toBeNull();
     });
 
     test("preserves a coupon through the email OTP flow", async ({ page }) => {
@@ -256,16 +355,18 @@ test.describe("coupon redemption on the registration flow", () => {
     test("limits a closed registration flow to ticket types covered by a valid URL coupon", async ({ page }) => {
         await page.addInitScript(() => {
             const RealDate = Date;
-            class ClosedRegistrationDate extends RealDate {
-                constructor(...args: ConstructorParameters<DateConstructor>) {
-                    super(...(args.length === 0 ? ["2027-02-01T12:00:00.000Z"] : args));
+            const ClosedRegistrationDate = new Proxy(RealDate, {
+                construct(target, args) {
+                    return Reflect.construct(target, args.length === 0 ? ["2027-02-01T12:00:00.000Z"] : args);
+                },
+                get(target, property, receiver) {
+                    if (property === "now") {
+                        return () => new RealDate("2027-02-01T12:00:00.000Z").getTime();
+                    }
+                    return Reflect.get(target, property, receiver);
                 }
-
-                static now() {
-                    return new RealDate("2027-02-01T12:00:00.000Z").getTime();
-                }
-            }
-            window.Date = ClosedRegistrationDate as DateConstructor;
+            });
+            window.Date = ClosedRegistrationDate as unknown as DateConstructor;
         });
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },

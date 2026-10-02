@@ -32,14 +32,20 @@ export interface WaitlistedTicket {
     position: number;
 }
 
+export interface OfferedTicket {
+    id: string;
+    expiresAt: string;
+}
+
 export interface RegistrationDetail {
     id: string;
-    status: "registered" | "cancelled";
+    status: "registered" | "cancelled" | "waitlisted";
     firstName: string;
     lastName: string;
     additionalDetails: Record<string, string>;
     tickets: string[];
     waitlistedTickets: WaitlistedTicket[];
+    offeredTickets: OfferedTicket[];
 }
 
 export interface VerificationResult {

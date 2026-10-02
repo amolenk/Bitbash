@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { AdmittoError, getAvailability, Availability, getRegistration, isBeforeRegistrationOpen, isAfterRegistrationClosed, updateRegistration, getTicketSettings, TicketSettings, resendTicketEmail, classifyTicketSelectionsForUpdate, ticketOutcomeSearchParams, recoverFromTicketStateConflict, applyCouponToAvailability, CouponDetails } from "../../api/admitto";
+import { AdmittoError, getAvailability, Availability, getRegistration, isBeforeRegistrationOpen, isAfterRegistrationClosed, updateRegistration, getTicketSettings, TicketSettings, resendTicketEmail, classifyTicketSelectionsForUpdate, ticketOutcomeSearchParams, recoverFromTicketStateConflict, applyCouponToAvailability, CouponDetails, OfferedTicket } from "../../api/admitto";
 import SpinningButton from "../common/SpinningButton";
 import WorkshopsForm from "./WorkshopsForm";
 import MainConferenceForm, { isMainConferenceSelectable } from "./MainConferenceForm";
@@ -61,6 +61,7 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
     const [workshopSelections, setWorkshopSelections] = useState<string[]>([]);
     const [originalWorkshopSelections, setOriginalWorkshopSelections] = useState<string[]>([]);
     const [waitlistPositions, setWaitlistPositions] = useState<Record<string, number>>({});
+    const [offeredTickets, setOfferedTickets] = useState<OfferedTicket[]>([]);
     const [originallyConfirmedTicketTypeIds, setOriginallyConfirmedTicketTypeIds] = useState<string[]>([]);
     const [originallyWaitlistedTicketTypeIds, setOriginallyWaitlistedTicketTypeIds] = useState<string[]>([]);
     const [details, setDetails] = useState<PersonalDetails>(emptyDetails);
@@ -93,11 +94,13 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
                     // purely on a waitlist, holding no confirmed ticket at
                     // all, to still reach and use this edit form).
                     const waitlistedTicketTypeIds = registrationResult.waitlistedTickets.map(waitlisted => waitlisted.id);
-                    const heldTicketTypeIds = [...registrationResult.tickets, ...waitlistedTicketTypeIds];
+                    const offeredTicketTypeIds = registrationResult.offeredTickets.map(offered => offered.id);
+                    const heldTicketTypeIds = [...registrationResult.tickets, ...waitlistedTicketTypeIds, ...offeredTicketTypeIds];
 
                     if (heldTicketTypeIds.length === 0) {
                         setLoadingError("No existing registration found with the provided link.");
                     } else {
+                        setOfferedTickets(registrationResult.offeredTickets);
                         // Set conferenceSelection based on whether the main conference ticket is currently held
                         const hasConferenceTicket = heldTicketTypeIds.includes(ticketSettingsResult.mainConferenceTicketTypeId);
                         setConferenceSelection(hasConferenceTicket);
@@ -157,6 +160,9 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
             if (conferenceSelection && ticketSettings?.mainConferenceTicketTypeId) {
                 tickets.push(ticketSettings.mainConferenceTicketTypeId);
             }
+            const couponCodeForSubmission = couponCode && tickets.some(id => couponAllowedTicketTypeIds.includes(id))
+                ? couponCode
+                : undefined;
 
             // Classify the selected ticket types for the update request.
             // Ticket types the attendee already held (confirmed or
@@ -175,12 +181,16 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
             const couponConfirmsWaitlistedTicket = couponAllowedTicketTypeIds.some(id =>
                 originallyWaitlistedTicketTypeIds.includes(id) && tickets.includes(id)
             );
+            const couponConfirmsOfferedTicket = couponAllowedTicketTypeIds.some(id =>
+                offeredTickets.some(offered => offered.id === id) && tickets.includes(id)
+            );
 
             // Admitto sends a ticket email when a coupon confirms a held
             // waitlist entry, even if the attendee did not change a control.
             const ticketsChanged = originalConferenceSelection !== conferenceSelection
                 || !arraysEqual(originalWorkshopSelections, workshopSelections)
-                || couponConfirmsWaitlistedTicket;
+                || couponConfirmsWaitlistedTicket
+                || couponConfirmsOfferedTicket;
 
             if (details.attendeeType === "student") {
                 await updateRegistration(
@@ -193,7 +203,7 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
                     details.graduationDate,
                     registerTicketTypeIds,
                     waitlistTicketTypeIds,
-                    couponCode ?? undefined);
+                    couponCodeForSubmission);
             } else {
                 await updateRegistration(
                     registrationId,
@@ -205,7 +215,7 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
                     "",
                     registerTicketTypeIds,
                     waitlistTicketTypeIds,
-                    couponCode ?? undefined);
+                    couponCodeForSubmission);
             }
 
             // The confirmed/waitlisted split is already known here, at
@@ -258,21 +268,26 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
 
     const conferenceTicket = effectiveAvailability?.ticketTypes.find(t => t.id === ticketSettings?.mainConferenceTicketTypeId);
     const mainConferenceSelectable = isMainConferenceSelectable(conferenceTicket, originalConferenceSelection === true);
+    const selectedTicketTypeIds = [
+        ...workshopSelections,
+        ...(conferenceSelection && ticketSettings ? [ticketSettings.mainConferenceTicketTypeId] : [])
+    ];
+    const selectedOfferedTicketTypeIds = selectedTicketTypeIds.filter(id => offeredTickets.some(offered => offered.id === id));
+    const selectedOffersAreUnlocked = selectedOfferedTicketTypeIds.every(id => couponAllowedTicketTypeIds.includes(id));
+    const offeredTicketNames = offeredTickets
+        .map(offered => availability?.ticketTypes.find(ticketType => ticketType.id === offered.id)?.name)
+        .filter((name): name is string => !!name);
 
     const isFormValid = () =>
         (formRef.current?.checkValidity() ?? false)
         && (!publicRegistrationClosed || !!appliedCoupon)
         && (!mainConferenceSelectable || conferenceSelection !== null)
         && (conferenceSelection === true || workshopSelections.length > 0)
+        && selectedOffersAreUnlocked
         && (originalConferenceSelection !== conferenceSelection
             || !arraysEqual(originalWorkshopSelections, workshopSelections)
             || JSON.stringify(details) !== JSON.stringify(originalDetails)
-            // A newly applied coupon is itself a change worth submitting,
-            // even when it doesn't flip an already-"yes"/already-held
-            // selection — e.g. an attendee already on the waitlist for a
-            // ticket type applies a coupon that unlocks it, without
-            // touching the Yes/No choice they'd already made.
-            || couponCode !== null);
+            || couponAllowedTicketTypeIds.some(id => selectedTicketTypeIds.includes(id)));
 
     // Loading spinner
     if (loading || !ticketSettings) {
@@ -315,20 +330,25 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
         <div className="mx-auto">
             <form ref={formRef} onSubmit={handleSubmit} className="ticket-form">
 
+                {offeredTickets.length > 0 && (
+                    <div className="alert alert-info" data-testid="outstanding-offer">
+                        A spot has been reserved for {offeredTicketNames.join(", ") || "your selected ticket"}. Use the coupon link from your offer email to confirm it.
+                    </div>
+                )}
+
                 <CouponRedemptionForm
                     appliedCoupon={appliedCoupon}
                     onApply={(code, coupon) => {
                         setCouponCode(code);
                         setAppliedCoupon(coupon);
                     }}
-                    onRemove={() => {
+                    onClear={() => {
                         setCouponCode(null);
                         setAppliedCoupon(null);
                     }}
-                    disabled={submitting}
                     initialCouponCode={initialCouponCode}
                     confirmationTicketNames={couponAllowedTicketTypeIds
-                        .filter(id => originallyWaitlistedTicketTypeIds.includes(id))
+                        .filter(id => originallyWaitlistedTicketTypeIds.includes(id) || offeredTickets.some(offered => offered.id === id))
                         .filter(id => workshopSelections.includes(id)
                             || (conferenceSelection && id === ticketSettings.mainConferenceTicketTypeId))
                         .map(id => availability?.ticketTypes.find(ticketType => ticketType.id === id)?.name)

@@ -26,11 +26,12 @@ export interface StubRegistration {
     email: string;
     firstName: string;
     lastName: string;
-    status: "registered" | "cancelled";
+    status: "registered" | "cancelled" | "waitlisted";
     ticketTypeIds: string[];
     tickets: { id: string; name: string }[];
     additionalDetails: Record<string, string>;
-    waitlistedTickets: { ticketTypeId: string; position: number }[];
+    waitlistedTicketTypes: { ticketTypeId: string; position: number }[];
+    offeredTicketTypes: { ticketTypeId: string; expiresAt: string }[];
 }
 
 // The stub's response to the next GET /coupons/:code call(s). "success"
