@@ -140,6 +140,26 @@ test.describe("coupon redemption on the edit flow", () => {
         expect(lastRequest?.waitlistTicketTypeIds).toEqual([]);
     });
 
+    test("an outstanding offer does not block edits when the link has no coupon", async ({ page }) => {
+        await admittoStub.setTicketTypes([
+            { id: "conference-ticket", name: "Conference", timeSlots: [], status: "waitlist" }
+        ]);
+        await admittoStub.setRegistration({
+            ...baseRegistration,
+            status: "waitlisted",
+            ticketTypeIds: [],
+            tickets: [],
+            waitlistedTicketTypes: [],
+            offeredTicketTypes: [{ ticketTypeId: "conference-ticket", expiresAt: "2026-12-01T12:00:00Z" }]
+        });
+
+        await page.goto(EDIT_URL);
+
+        await expect(page.getByTestId("outstanding-offer")).toBeVisible();
+        await page.getByLabel("First name").fill("Grace");
+        await expect(page.getByRole("button", { name: "Update Registration" })).toBeEnabled();
+    });
+
     test("an unknown coupon code shows an error and does not unlock anything", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },

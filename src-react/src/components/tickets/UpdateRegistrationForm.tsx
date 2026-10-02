@@ -273,7 +273,8 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
         ...(conferenceSelection && ticketSettings ? [ticketSettings.mainConferenceTicketTypeId] : [])
     ];
     const selectedOfferedTicketTypeIds = selectedTicketTypeIds.filter(id => offeredTickets.some(offered => offered.id === id));
-    const selectedOffersAreUnlocked = selectedOfferedTicketTypeIds.every(id => couponAllowedTicketTypeIds.includes(id));
+    const selectedOffersAreUnlocked = !initialCouponCode
+        || selectedOfferedTicketTypeIds.every(id => couponAllowedTicketTypeIds.includes(id));
     const offeredTicketNames = offeredTickets
         .map(offered => availability?.ticketTypes.find(ticketType => ticketType.id === offered.id)?.name)
         .filter((name): name is string => !!name);
