@@ -24,10 +24,6 @@ interface MainConferenceFormProps {
     conferenceSelection: boolean | null;
     setConferenceSelection: React.Dispatch<React.SetStateAction<boolean | null>>;
     disabled: boolean;
-    // Only set on the edit form, for an attendee who currently holds an
-    // active waitlist entry (rather than a confirmed ticket) for the main
-    // conference ticket type.
-    queuePosition?: number;
     // Only set on the edit form: whether the attendee already held the main
     // conference ticket type (confirmed or waitlisted) when the form
     // loaded. If the ticket type has since gone fully sold out, this keeps
@@ -39,12 +35,12 @@ interface MainConferenceFormProps {
     // coupon covering the main conference ticket type: `availability` is
     // expected to already report this ticket type's status as "available"
     // (see applyCouponToAvailability), so this only controls whether the
-    // "Unlocked by Coupon" badge and explanation are shown.
+    // "Unlocked by Coupon" badge is shown.
     couponUnlocked?: boolean;
     couponOnlyTicketTypeIds?: string[];
 }
 
-export default function MainConferenceForm({ availability, conferenceDate, mainConferenceTicketTypeId, conferenceSelection, setConferenceSelection, disabled, queuePosition, wasOriginallyRegistered, couponUnlocked, couponOnlyTicketTypeIds }: MainConferenceFormProps) {
+export default function MainConferenceForm({ availability, conferenceDate, mainConferenceTicketTypeId, conferenceSelection, setConferenceSelection, disabled, wasOriginallyRegistered, couponUnlocked, couponOnlyTicketTypeIds }: MainConferenceFormProps) {
 
     const conferenceTicket = availability?.ticketTypes.find(t => t.id === mainConferenceTicketTypeId);
     const isWaitlist = conferenceTicket?.status === "waitlist";
@@ -57,11 +53,6 @@ export default function MainConferenceForm({ availability, conferenceDate, mainC
                 <div className="card-header text-center"><h3>Main Conference – {formatDate(new Date(conferenceDate))} <span className="badge bg-danger ms-2">Sold Out</span></h3></div>
                 <div className="card-body text-start mx-5">
                     <p>The main conference is currently fully booked.</p>
-                    {queuePosition !== undefined && (
-                        <p className="text-info" data-testid="conference-queue-position">
-                            Your current queue position: #{queuePosition}
-                        </p>
-                    )}
                 </div>
             </div>
         );
@@ -81,12 +72,6 @@ export default function MainConferenceForm({ availability, conferenceDate, mainC
                 <p>Join us for an inspiring day packed with 50-minute break-out sessions, networking opportunities, and engaging discussions.</p>
                 {isWaitlist && <p>{WAITLIST_EXPLANATION}</p>}
                 {isSoldOut && <p>This is now fully sold out, but since you already hold a spot, you can keep it or give it up.</p>}
-                {couponUnlocked && <p>Your coupon grants you a ticket for the main conference, even though it&apos;s otherwise full.</p>}
-                {queuePosition !== undefined && (
-                    <p className="text-info" data-testid="conference-queue-position">
-                        Your current queue position: #{queuePosition}
-                    </p>
-                )}
                 <p>Please indicate if you want to attend the main conference on <strong>Saturday</strong><span className="text-danger">*</span>:</p>
                 <div className="form-group mb-3">
                     <div className="form-check form-check-inline">

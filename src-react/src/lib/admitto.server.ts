@@ -24,14 +24,18 @@ export interface PartnerRegistrationDetailDto {
     email: string;
     firstName: string;
     lastName: string;
-    status: "registered" | "cancelled";
+    status: "registered" | "cancelled" | "waitlisted";
     ticketTypeIds: string[];
     tickets: { id: string; name: string }[];
     additionalDetails: Record<string, string>;
     // Ticket types the registration's email currently holds an active
     // waitlist entry for, alongside the confirmed ticketTypeIds above, each
     // with that entry's current queue position.
-    waitlistedTickets: { ticketTypeId: string; position: number }[];
+    waitlistedTicketTypes: { ticketTypeId: string; position: number }[];
+    // Ticket types currently reserved by an unredeemed waitlist coupon.
+    // The coupon code itself is deliberately only supplied in the attendee's
+    // offer email, so it cannot be redeemed from this response alone.
+    offeredTicketTypes: { ticketTypeId: string; expiresAt: string }[];
 }
 
 export class AdmittoPartnerError extends Error {

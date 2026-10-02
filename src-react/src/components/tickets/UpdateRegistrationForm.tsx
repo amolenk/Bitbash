@@ -60,7 +60,6 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
     const [originalConferenceSelection, setOriginalConferenceSelection] = useState<boolean | null>(null);
     const [workshopSelections, setWorkshopSelections] = useState<string[]>([]);
     const [originalWorkshopSelections, setOriginalWorkshopSelections] = useState<string[]>([]);
-    const [waitlistPositions, setWaitlistPositions] = useState<Record<string, number>>({});
     const [offeredTickets, setOfferedTickets] = useState<OfferedTicket[]>([]);
     const [originallyConfirmedTicketTypeIds, setOriginallyConfirmedTicketTypeIds] = useState<string[]>([]);
     const [originallyWaitlistedTicketTypeIds, setOriginallyWaitlistedTicketTypeIds] = useState<string[]>([]);
@@ -111,9 +110,6 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
                         setWorkshopSelections(workshopTickets);
                         setOriginalWorkshopSelections(workshopTickets);
 
-                        setWaitlistPositions(
-                            Object.fromEntries(registrationResult.waitlistedTickets.map(waitlisted => [waitlisted.id, waitlisted.position]))
-                        );
                         setOriginallyConfirmedTicketTypeIds(registrationResult.tickets);
                         setOriginallyWaitlistedTicketTypeIds(waitlistedTicketTypeIds);
 
@@ -333,12 +329,11 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
 
                 {offeredTickets.length > 0 && (
                     <div className="alert alert-info" data-testid="outstanding-offer">
-                        A spot has been reserved for {offeredTicketNames.join(", ") || "your selected ticket"}. Use the coupon link from your offer email to confirm it.
+                        A spot has been reserved for {offeredTicketNames.join(", ") || "your selected ticket"}.
                     </div>
                 )}
 
                 <CouponRedemptionForm
-                    appliedCoupon={appliedCoupon}
                     onApply={(code, coupon) => {
                         setCouponCode(code);
                         setAppliedCoupon(coupon);
@@ -348,12 +343,6 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
                         setAppliedCoupon(null);
                     }}
                     initialCouponCode={initialCouponCode}
-                    confirmationTicketNames={couponAllowedTicketTypeIds
-                        .filter(id => originallyWaitlistedTicketTypeIds.includes(id) || offeredTickets.some(offered => offered.id === id))
-                        .filter(id => workshopSelections.includes(id)
-                            || (conferenceSelection && id === ticketSettings.mainConferenceTicketTypeId))
-                        .map(id => availability?.ticketTypes.find(ticketType => ticketType.id === id)?.name)
-                        .filter((name): name is string => !!name)}
                 />
 
                 <MainConferenceForm
@@ -363,7 +352,6 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
                     conferenceSelection={conferenceSelection}
                     setConferenceSelection={setConferenceSelection}
                     disabled={submitting || (publicRegistrationClosed && !appliedCoupon)}
-                    queuePosition={waitlistPositions[ticketSettings.mainConferenceTicketTypeId]}
                     wasOriginallyRegistered={originalConferenceSelection === true}
                     couponUnlocked={couponAllowedTicketTypeIds.includes(ticketSettings.mainConferenceTicketTypeId)}
                     couponOnlyTicketTypeIds={couponOnlySelection ? couponAllowedTicketTypeIds : undefined}
@@ -375,7 +363,6 @@ export default function UpdateRegistrationForm({ registrationId, initialCouponCo
                     workshopSelections={workshopSelections}
                     setWorkshopSelections={setWorkshopSelections}
                     disabled={submitting || (publicRegistrationClosed && !appliedCoupon)}
-                    queuePositions={waitlistPositions}
                     originalWorkshopSelections={originalWorkshopSelections}
                     couponUnlockedTicketTypeIds={couponAllowedTicketTypeIds}
                     couponOnlyTicketTypeIds={couponOnlySelection ? couponAllowedTicketTypeIds : undefined}

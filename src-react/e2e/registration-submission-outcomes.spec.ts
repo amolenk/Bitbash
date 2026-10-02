@@ -30,8 +30,11 @@ test.describe("submission outcomes clearly communicated (create flow)", () => {
         await expect(page).toHaveURL(/\/tickets\/register\/thankyou/);
         await expect(page.getByRole("heading", { name: "Registration Received" })).toBeVisible();
 
-        await expect(page.getByRole("heading", { name: "Confirmed" })).toBeVisible();
-        await expect(page.getByText("Conference", { exact: true })).toBeVisible();
+        const confirmedCard = page.getByTestId("confirmed-tickets");
+        await expect(confirmedCard.getByRole("heading", { name: "Confirmed", level: 2 })).toBeVisible();
+        await expect(confirmedCard.getByText("Conference", { exact: true })).toHaveClass(/fs-5/);
+        await expect(page.getByText("If you don't receive an email shortly, please check your spam folder.")).toBeVisible();
+        await expect(confirmedCard.getByText("If you don't receive an email shortly, please check your spam folder.")).toHaveCount(0);
         await expect(page.getByRole("heading", { name: "Waitlisted" })).not.toBeVisible();
     });
 
@@ -48,9 +51,27 @@ test.describe("submission outcomes clearly communicated (create flow)", () => {
         await expect(page).toHaveURL(/\/tickets\/register\/thankyou/);
         await expect(page.getByRole("heading", { name: "Registration Received" })).toBeVisible();
 
-        await expect(page.getByRole("heading", { name: "Waitlisted" })).toBeVisible();
-        await expect(page.getByText("Conference", { exact: true })).toBeVisible();
+        const waitlistedCard = page.getByTestId("waitlisted-tickets");
+        await expect(waitlistedCard.getByRole("heading", { name: "Waitlisted", level: 2 })).toBeVisible();
+        await expect(waitlistedCard.getByText("Conference", { exact: true })).toHaveClass(/fs-5/);
         await expect(page.getByRole("heading", { name: "Confirmed" })).not.toBeVisible();
+
+        // A waitlist-only registration must retain the same personal details
+        // payload as a confirmed registration.
+        expect(await admittoStub.getLastRegisterRequest()).toEqual({
+            email: "attendee@example.com",
+            firstName: "Ada",
+            lastName: "Lovelace",
+            registerTicketTypeIds: [],
+            waitlistTicketTypeIds: ["conference-ticket"],
+            couponCode: null,
+            additionalDetails: {
+                "attendee-type": "professional",
+                organization: "Analytical Engines Inc.",
+                role: "Engineer",
+                "graduation-date": ""
+            }
+        });
     });
 
     test("a mixed submission lands on a confirmation page with the same neutral headline and both itemizations correctly split", async ({ page }) => {
@@ -129,4 +150,21 @@ test.describe("submission outcomes clearly communicated (create flow)", () => {
         await expect(page.getByLabel("Organization / Company")).toHaveValue("Analytical Engines Inc.");
         await expect(page.getByLabel("Your role or job title")).toHaveValue("Engineer");
     });
+});
+
+test("the registration update confirmation uses the same outcome cards", async ({ page }) => {
+    await page.goto("/tickets/register/updated?confirmed=Conference&waitlisted=Workshop%20One&ticketsChanged=true");
+
+    const confirmedCard = page.getByTestId("confirmed-tickets");
+    await expect(confirmedCard.getByRole("heading", { name: "Confirmed", level: 2 })).toBeVisible();
+    await expect(confirmedCard.getByText("Conference", { exact: true })).toHaveClass(/fs-5/);
+
+    const waitlistedCard = page.getByTestId("waitlisted-tickets");
+    await expect(waitlistedCard.getByRole("heading", { name: "Waitlisted", level: 2 })).toBeVisible();
+    await expect(waitlistedCard.getByText("Workshop One", { exact: true })).toHaveClass(/fs-5/);
+
+    const spamWarning = page.getByText("If you don't receive an email shortly, please check your spam folder.");
+    await expect(spamWarning).toBeVisible();
+    await expect(confirmedCard.getByText("If you don't receive an email shortly, please check your spam folder.")).toHaveCount(0);
+    await expect(waitlistedCard.getByText("If you don't receive an email shortly, please check your spam folder.")).toHaveCount(0);
 });

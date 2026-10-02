@@ -5,7 +5,7 @@ import { admittoStub, StubRegistration } from "./support/admittoStub";
 const REGISTRATION_ID = "reg-123";
 const EDIT_URL = `/tickets/edit/${REGISTRATION_ID}`;
 
-const baseRegistration: Omit<StubRegistration, "ticketTypeIds" | "tickets" | "waitlistedTickets"> = {
+const baseRegistration: Omit<StubRegistration, "ticketTypeIds" | "tickets" | "waitlistedTicketTypes"> = {
     id: REGISTRATION_ID,
     email: "attendee@example.com",
     firstName: "Ada",
@@ -15,7 +15,8 @@ const baseRegistration: Omit<StubRegistration, "ticketTypeIds" | "tickets" | "wa
         "attendee-type": "professional",
         organization: "Analytical Engines Inc.",
         role: "Engineer"
-    }
+    },
+    offeredTicketTypes: []
 };
 
 test.describe("edit flow gets waitlist switching", () => {
@@ -23,7 +24,7 @@ test.describe("edit flow gets waitlist switching", () => {
         await admittoStub.reset();
     });
 
-    test("an attendee purely on a waitlist (no confirmed ticket at all) can still reach and use the edit form, and sees their queue position", async ({ page }) => {
+    test("an attendee purely on a waitlist (no confirmed ticket at all) can still reach and use the edit form", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "waitlist" }
         ]);
@@ -31,7 +32,7 @@ test.describe("edit flow gets waitlist switching", () => {
             ...baseRegistration,
             ticketTypeIds: [],
             tickets: [],
-            waitlistedTickets: [{ ticketTypeId: "conference-ticket", position: 3 }]
+            waitlistedTicketTypes: [{ ticketTypeId: "conference-ticket", position: 3 }]
         });
 
         await page.goto(EDIT_URL);
@@ -40,15 +41,14 @@ test.describe("edit flow gets waitlist switching", () => {
         await expect(page.getByText("Waitlist Open")).toBeVisible();
         await expect(page.getByLabel("Yes, join the waitlist")).toBeChecked();
 
-        // Current queue position is displayed.
-        await expect(page.getByTestId("conference-queue-position")).toContainText("#3");
+        await expect(page.getByText(/queue position/i)).not.toBeVisible();
 
         // Personal details were preloaded from the registration.
         await expect(page.getByLabel("First name")).toHaveValue("Ada");
         await expect(page.getByLabel("Last name")).toHaveValue("Lovelace");
     });
 
-    test("the edit form renders the same three-group workshop presentation and shows a workshop queue position", async ({ page }) => {
+    test("the edit form renders the same three-group workshop presentation without a queue position", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
             { id: "workshop-available", name: "Available Session", timeSlots: ["morning-workshop"], status: "available" },
@@ -59,7 +59,7 @@ test.describe("edit flow gets waitlist switching", () => {
             ...baseRegistration,
             ticketTypeIds: [],
             tickets: [],
-            waitlistedTickets: [{ ticketTypeId: "workshop-waitlist", position: 5 }]
+            waitlistedTicketTypes: [{ ticketTypeId: "workshop-waitlist", position: 5 }]
         });
 
         await page.goto(EDIT_URL);
@@ -69,7 +69,7 @@ test.describe("edit flow gets waitlist switching", () => {
         await expect(page.getByRole("heading", { name: "Sold Out", exact: true })).toBeVisible();
 
         await expect(page.getByLabel("Waitlisted Session")).toBeChecked();
-        await expect(page.getByTestId("workshop-queue-position-workshop-waitlist")).toContainText("#5");
+        await expect(page.getByText(/queue position/i)).not.toBeVisible();
     });
 
     test("an attendee currently confirmed for a ticket type can switch to a different, currently-waitlisted ticket type instead", async ({ page }) => {
@@ -82,7 +82,7 @@ test.describe("edit flow gets waitlist switching", () => {
             ...baseRegistration,
             ticketTypeIds: ["workshop-confirmed"],
             tickets: [{ id: "workshop-confirmed", name: "Morning Session A" }],
-            waitlistedTickets: []
+            waitlistedTicketTypes: []
         });
 
         await page.goto(EDIT_URL);
@@ -118,7 +118,7 @@ test.describe("edit flow gets waitlist switching", () => {
             ...baseRegistration,
             ticketTypeIds: [],
             tickets: [],
-            waitlistedTickets: [{ ticketTypeId: "workshop-waitlisted", position: 2 }]
+            waitlistedTicketTypes: [{ ticketTypeId: "workshop-waitlisted", position: 2 }]
         });
 
         await page.goto(EDIT_URL);
@@ -156,7 +156,7 @@ test.describe("edit flow gets waitlist switching", () => {
             ...baseRegistration,
             ticketTypeIds: ["conference-ticket"],
             tickets: [{ id: "conference-ticket", name: "Conference" }],
-            waitlistedTickets: []
+            waitlistedTicketTypes: []
         });
 
         await page.goto(EDIT_URL);
@@ -190,7 +190,7 @@ test.describe("edit flow gets waitlist switching", () => {
             ...baseRegistration,
             ticketTypeIds: ["workshop-confirmed"],
             tickets: [{ id: "workshop-confirmed", name: "Morning Session A" }],
-            waitlistedTickets: []
+            waitlistedTicketTypes: []
         });
 
         await page.goto(EDIT_URL);
@@ -210,6 +210,84 @@ test.describe("edit flow gets waitlist switching", () => {
         expect(lastRequest?.waitlistTicketTypeIds).toEqual([]);
     });
 
+    test("an attendee confirmed for a workshop that has since gone fully sold out can deselect it and then reselect it again in the same session", async ({ page }) => {
+        // Regression test: unchecking an already-held sold-out workshop
+        // must not permanently lock it out — it has to stay checkable so
+        // the attendee can change their mind and keep their original spot.
+        await admittoStub.setTicketTypes([
+            { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
+            { id: "workshop-confirmed", name: "Morning Session A", timeSlots: ["morning-workshop"], status: "soldOut" }
+        ]);
+        await admittoStub.setRegistration({
+            ...baseRegistration,
+            ticketTypeIds: ["workshop-confirmed"],
+            tickets: [{ id: "workshop-confirmed", name: "Morning Session A" }],
+            waitlistedTicketTypes: []
+        });
+
+        await page.goto(EDIT_URL);
+
+        await expect(page.getByLabel("Morning Session A")).toBeChecked();
+
+        await page.getByLabel("Morning Session A").uncheck();
+        await expect(page.getByLabel("Morning Session A")).not.toBeChecked();
+        await expect(page.getByLabel("Morning Session A")).toBeEnabled();
+
+        await page.getByLabel("Morning Session A").check();
+        await expect(page.getByLabel("Morning Session A")).toBeChecked();
+
+        // Touch an unrelated field so the otherwise fully-reverted form is
+        // still considered "changed" and submittable.
+        await page.getByLabel("Organization / Company").fill("Analytical Engines Inc. (updated)");
+
+        await page.getByRole("button", { name: "Update Registration" }).click();
+
+        await expect(page).toHaveURL(/\/tickets\/register\/updated/);
+
+        const lastRequest = await admittoStub.getLastUpdateRequest();
+        expect(lastRequest?.registerTicketTypeIds).toEqual(["workshop-confirmed"]);
+        expect(lastRequest?.waitlistTicketTypeIds).toEqual([]);
+    });
+
+    test("an attendee registered for a main conference ticket that has since gone fully sold out can deselect it and then reselect it again in the same session", async ({ page }) => {
+        // Regression test: the main conference section used to collapse to
+        // a static sold-out message with no Yes/No controls at all once the
+        // ticket type went soldOut, even for an attendee already holding
+        // that ticket — so there was no way to even see, let alone toggle,
+        // their own existing pick.
+        await admittoStub.setTicketTypes([
+            { id: "conference-ticket", name: "Conference", timeSlots: [], status: "soldOut" }
+        ]);
+        await admittoStub.setRegistration({
+            ...baseRegistration,
+            ticketTypeIds: ["conference-ticket"],
+            tickets: [{ id: "conference-ticket", name: "Conference" }],
+            waitlistedTicketTypes: []
+        });
+
+        await page.goto(EDIT_URL);
+
+        await expect(page.getByLabel("Yes, keep my spot")).toBeChecked();
+
+        await page.getByLabel("No, give up my spot").check();
+        await expect(page.getByLabel("Yes, keep my spot")).not.toBeChecked();
+
+        await page.getByLabel("Yes, keep my spot").check();
+        await expect(page.getByLabel("Yes, keep my spot")).toBeChecked();
+
+        // Touch an unrelated field so the otherwise fully-reverted form is
+        // still considered "changed" and submittable.
+        await page.getByLabel("Organization / Company").fill("Analytical Engines Inc. (updated)");
+
+        await page.getByRole("button", { name: "Update Registration" }).click();
+
+        await expect(page).toHaveURL(/\/tickets\/register\/updated/);
+
+        const lastRequest = await admittoStub.getLastUpdateRequest();
+        expect(lastRequest?.registerTicketTypeIds).toEqual(["conference-ticket"]);
+        expect(lastRequest?.waitlistTicketTypeIds).toEqual([]);
+    });
+
     test("a stale ticket-state conflict on update clears ticket selections and shows a reselect message, while keeping personal details filled in", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
@@ -219,7 +297,7 @@ test.describe("edit flow gets waitlist switching", () => {
             ...baseRegistration,
             ticketTypeIds: ["conference-ticket"],
             tickets: [{ id: "conference-ticket", name: "Conference" }],
-            waitlistedTickets: []
+            waitlistedTicketTypes: []
         });
 
         await page.goto(EDIT_URL);

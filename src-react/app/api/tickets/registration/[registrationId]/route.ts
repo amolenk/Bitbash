@@ -18,9 +18,13 @@ export async function GET(
             lastName: registration.lastName,
             additionalDetails: registration.additionalDetails,
             tickets: registration.ticketTypeIds,
-            waitlistedTickets: (registration.waitlistedTickets || []).map(waitlisted => ({
+            waitlistedTickets: registration.waitlistedTicketTypes.map(waitlisted => ({
                 id: waitlisted.ticketTypeId,
                 position: waitlisted.position
+            })),
+            offeredTickets: registration.offeredTicketTypes.map(offered => ({
+                id: offered.ticketTypeId,
+                expiresAt: offered.expiresAt
             }))
         });
     } catch (error) {

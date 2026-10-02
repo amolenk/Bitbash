@@ -188,7 +188,6 @@ export default function RegisterForm({ email, token, initialCouponCode }: Regist
             <form ref={formRef} onSubmit={handleSubmit} className="ticket-form">
 
                 <CouponRedemptionForm
-                    appliedCoupon={appliedCoupon}
                     onApply={(code, coupon) => {
                         setCouponCode(code);
                         setAppliedCoupon(coupon);

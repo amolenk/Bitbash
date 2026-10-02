@@ -45,9 +45,7 @@ test.describe("coupon redemption on the edit flow", () => {
 
         await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
-        await expect(page.getByLabel("Coupon code")).not.toBeVisible();
-        await expect(page.getByRole("button", { name: "Apply Coupon" })).not.toBeVisible();
+        await expect(page.getByRole("heading", { name: /^Coupon$/ })).not.toBeVisible();
         await expect(page.getByText("Unlocked by Coupon")).toBeVisible();
 
         await expect(page.getByLabel("VIP Session")).toBeEnabled();
@@ -85,8 +83,7 @@ test.describe("coupon redemption on the edit flow", () => {
 
         await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-applied-message")).toContainText("Conference");
-        await expect(page.getByTestId("coupon-waitlist-confirmation-message")).toContainText("Conference");
+        await expect(page.getByRole("heading", { name: /^Coupon$/ })).not.toBeVisible();
 
         // The Main Conference card now presents as a normal available
         // ticket (no more "Waitlist Open"), with the coupon badge instead.
@@ -125,8 +122,8 @@ test.describe("coupon redemption on the edit flow", () => {
         await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
         await expect(page.getByTestId("outstanding-offer")).toContainText("Conference");
-        await expect(page.getByTestId("outstanding-offer")).toContainText("coupon link");
-        await expect(page.getByTestId("coupon-applied-message")).toContainText("Conference");
+        await expect(page.getByTestId("outstanding-offer")).not.toContainText(/coupon/i);
+        await expect(page.getByRole("heading", { name: /^Coupon$/ })).not.toBeVisible();
         await expect(page.getByLabel("Yes, I want to attend")).toBeChecked();
         await expect(page.getByRole("button", { name: "Update Registration" })).toBeEnabled();
 
@@ -160,7 +157,7 @@ test.describe("coupon redemption on the edit flow", () => {
         await expect(page.getByRole("button", { name: "Update Registration" })).toBeEnabled();
     });
 
-    test("an unknown coupon code shows an error and does not unlock anything", async ({ page }) => {
+    test("an unknown coupon code does not unlock anything or show a coupon card", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
             { id: "workshop-vip", name: "VIP Session", timeSlots: ["morning-workshop"], status: "soldOut" }
@@ -180,11 +177,11 @@ test.describe("coupon redemption on the edit flow", () => {
 
         await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-error")).toContainText("couldn't find the coupon");
+        await expect(page.getByRole("heading", { name: "Coupon" })).not.toBeVisible();
         await expect(page.getByLabel("VIP Session")).toBeDisabled();
     });
 
-    test("an already-redeemed coupon shows an error and does not unlock anything", async ({ page }) => {
+    test("an already-redeemed coupon does not unlock anything or show a coupon card", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
             { id: "workshop-vip", name: "VIP Session", timeSlots: ["morning-workshop"], status: "soldOut" }
@@ -203,11 +200,11 @@ test.describe("coupon redemption on the edit flow", () => {
 
         await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-error")).toContainText("already been used");
+        await expect(page.getByRole("heading", { name: "Coupon" })).not.toBeVisible();
         await expect(page.getByLabel("VIP Session")).toBeDisabled();
     });
 
-    test("an expired coupon shows an error and does not unlock anything", async ({ page }) => {
+    test("an expired coupon does not unlock anything or show a coupon card", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "available" },
             { id: "workshop-vip", name: "VIP Session", timeSlots: ["morning-workshop"], status: "soldOut" }
@@ -226,7 +223,7 @@ test.describe("coupon redemption on the edit flow", () => {
 
         await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-error")).toContainText("has expired");
+        await expect(page.getByRole("heading", { name: "Coupon" })).not.toBeVisible();
         await expect(page.getByLabel("VIP Session")).toBeDisabled();
     });
 
@@ -249,7 +246,7 @@ test.describe("coupon redemption on the edit flow", () => {
 
         await page.goto(`${EDIT_URL}?coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
+        await expect(page.getByRole("heading", { name: "Coupon" })).not.toBeVisible();
         await expect(page.getByRole("button", { name: "Update Registration" })).toBeDisabled();
 
         await page.getByLabel("First name").fill("Grace");
@@ -278,9 +275,7 @@ test.describe("coupon redemption on the registration flow", () => {
 
         await page.goto(`${REGISTER_URL}&coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
-        await expect(page.getByLabel("Coupon code")).not.toBeVisible();
-        await expect(page.getByRole("button", { name: "Apply Coupon" })).not.toBeVisible();
+        await expect(page.getByRole("heading", { name: "Coupon" })).not.toBeVisible();
         await expect(page.getByText("Unlocked by Coupon")).toBeVisible();
 
         await page.getByLabel("VIP Session").check();
@@ -303,7 +298,7 @@ test.describe("coupon redemption on the registration flow", () => {
         await expect(page.getByRole("heading", { name: "Waitlisted" })).not.toBeVisible();
     });
 
-    test("a coupon in the registration URL is shown as an unlock note", async ({ page }) => {
+    test("a coupon in the registration URL unlocks its ticket without a coupon card", async ({ page }) => {
         await admittoStub.setTicketTypes([
             { id: "conference-ticket", name: "Conference", timeSlots: [], status: "soldOut" },
             { id: "workshop-vip", name: "VIP Session", timeSlots: ["morning-workshop"], status: "soldOut" }
@@ -316,9 +311,7 @@ test.describe("coupon redemption on the registration flow", () => {
 
         await page.goto(`${REGISTER_URL}&coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
-        await expect(page.getByLabel("Coupon code")).not.toBeVisible();
-        await expect(page.getByRole("button", { name: "Apply Coupon" })).not.toBeVisible();
+        await expect(page.getByRole("heading", { name: "Coupon" })).not.toBeVisible();
         await expect(page.getByLabel("VIP Session")).toBeEnabled();
     });
 
@@ -335,7 +328,7 @@ test.describe("coupon redemption on the registration flow", () => {
 
         await page.goto(`${REGISTER_URL}&coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
+        await expect(page.getByRole("heading", { name: "Coupon" })).not.toBeVisible();
         await page.getByLabel("Yes, I want to attend").check();
         await page.getByLabel("First name").fill("Ada");
         await page.getByLabel("Last name").fill("Lovelace");
@@ -369,7 +362,7 @@ test.describe("coupon redemption on the registration flow", () => {
         await page.getByRole("button", { name: "Verify email" }).click();
 
         await expect(page).toHaveURL(new RegExp(`/tickets/register\\?token=otp-token&email=attendee%40example.com&coupon=${COUPON_CODE}`));
-        await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
+        await expect(page.getByRole("heading", { name: "Coupon" })).not.toBeVisible();
     });
 
     test("limits a closed registration flow to ticket types covered by a valid URL coupon", async ({ page }) => {
@@ -401,7 +394,7 @@ test.describe("coupon redemption on the registration flow", () => {
 
         await page.goto(`${REGISTER_URL}&coupon=${COUPON_CODE}`);
 
-        await expect(page.getByTestId("coupon-applied-message")).toContainText("VIP Session");
+        await expect(page.getByRole("heading", { name: "Coupon" })).not.toBeVisible();
         await expect(page.getByLabel("VIP Session")).toBeEnabled();
         await expect(page.getByLabel("General Session")).toBeDisabled();
         await expect(page.getByRole("heading", { name: /Main Conference.*Sold Out/ })).toBeVisible();

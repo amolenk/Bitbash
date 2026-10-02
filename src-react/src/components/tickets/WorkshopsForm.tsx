@@ -10,10 +10,6 @@ interface WorkshopsFormProps {
     workshopSelections: string[];
     setWorkshopSelections: React.Dispatch<React.SetStateAction<string[]>>;
     disabled: boolean;
-    // Only set on the edit form: current queue position, per ticket-type id,
-    // for any workshop the attendee currently holds an active waitlist
-    // entry for (rather than a confirmed ticket).
-    queuePositions?: Record<string, number>;
     // Only set on the edit form: the workshop ticket-type ids the attendee
     // already held (confirmed or waitlisted) when the form loaded. A sold-out
     // workshop stays checkable for these ids even after being unchecked, so
@@ -57,7 +53,7 @@ function timeSlotBadgeText(ticket: TicketTypeDto): string {
 }
 
 export default function WorkshopsForm({
-    availability, workshopsDate, workshopSelections, setWorkshopSelections, disabled, queuePositions, originalWorkshopSelections, couponUnlockedTicketTypeIds, couponOnlyTicketTypeIds
+    availability, workshopsDate, workshopSelections, setWorkshopSelections, disabled, originalWorkshopSelections, couponUnlockedTicketTypeIds, couponOnlyTicketTypeIds
 }: WorkshopsFormProps) {
 
     const workshopTickets = availability?.ticketTypes.filter((t: TicketTypeDto) =>
@@ -90,7 +86,6 @@ export default function WorkshopsForm({
         const isSoldOut = ticket.status === "soldOut";
         const isWaitlist = ticket.status === "waitlist";
         const isCouponUnlocked = couponUnlockedTicketTypeIds?.includes(ticket.id) ?? false;
-        const queuePosition = queuePositions?.[ticket.id];
         const isSelected = workshopSelections.includes(ticket.id);
         const wasOriginallyHeld = originalWorkshopSelections?.includes(ticket.id) ?? false;
         const isCouponRestricted = couponOnlyTicketTypeIds !== undefined && !couponOnlyTicketTypeIds.includes(ticket.id);
@@ -133,11 +128,6 @@ export default function WorkshopsForm({
                     {isSoldOut && <span className="badge bg-danger ms-2">Sold Out</span>}
                     {isCouponUnlocked && <span className="badge bg-success ms-2">Unlocked by Coupon</span>}
                 </label>
-                {queuePosition !== undefined && (
-                    <div className="text-info small ms-4" data-testid={`workshop-queue-position-${ticket.id}`}>
-                        Your current queue position: #{queuePosition}
-                    </div>
-                )}
             </div>
         );
     };

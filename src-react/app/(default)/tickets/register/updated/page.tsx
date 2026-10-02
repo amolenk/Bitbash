@@ -23,10 +23,7 @@ export default async function UpdatedPage({
                 <div className="text-light text-center">
                     <h2>Your registration has been updated!</h2>
                     {ticketEmailSent ? (
-                        <>
-                            <p className="lead mt-5">Because your tickets changed, we&apos;ve sent you a new ticket email.</p>
-                            <p className="mt-5">If you don&apos;t receive an email shortly, please check your spam folder.</p>
-                        </>
+                        <p className="lead mt-5">Because your tickets changed, we&apos;ve sent you a new ticket email.</p>
                     ) : (
                         <p className="lead mt-5">Your registration details have been saved.</p>
                     )}
@@ -35,6 +32,8 @@ export default async function UpdatedPage({
                         confirmedTicketNames={confirmedTicketNames}
                         waitlistedTicketNames={waitlistedTicketNames}
                     />
+
+                    {ticketEmailSent && <p className="mt-5">If you don&apos;t receive an email shortly, please check your spam folder.</p>}
                 </div>
             </Section>
         </MainLayout>
