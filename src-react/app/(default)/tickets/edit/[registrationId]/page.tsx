@@ -12,10 +12,10 @@ export default async function UpdateRegistrationPage({
     params, searchParams
 }: {
     params: Promise<{ registrationId: string }>,
-    searchParams: Promise<{ redirect?: boolean; }>
+    searchParams: Promise<{ redirect?: boolean; coupon?: string; }>
 }) {
     const { registrationId } = await params;
-    const { redirect } = await searchParams;
+    const { redirect, coupon } = await searchParams;
 
     return (
         <MainLayout>
@@ -25,7 +25,7 @@ export default async function UpdateRegistrationPage({
 
                         {redirect && <div className="alert alert-warning">We found an existing registration for this email.<br />You can update or cancel your registration below.</div>}
 
-                        <UpdateRegistrationForm registrationId={registrationId} />
+                        <UpdateRegistrationForm registrationId={registrationId} initialCouponCode={coupon} />
                     </div>
                 </div>
             </Section>

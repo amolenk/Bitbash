@@ -41,6 +41,11 @@ let state = {
     // How many PUT /registrations/:id calls have been received since the
     // last reset.
     updateRequestCount: 0,
+    // Controls the response to the next GET /coupons/:code call(s).
+    // "success" (default) returns a coupon with the given status/allowed
+    // ticket types/expiry. Anything else returns an error problem-details
+    // body with the given status/code/detail (e.g. a not-found coupon).
+    couponResponse: { mode: "success", status: "active", allowedTicketTypes: [], expiresAt: null },
 };
 
 function resetState() {
@@ -53,6 +58,7 @@ function resetState() {
         updateResponse: { mode: "success" },
         lastUpdateRequest: null,
         updateRequestCount: 0,
+        couponResponse: { mode: "success", status: "active", allowedTicketTypes: [], expiresAt: null },
     };
 }
 
@@ -133,6 +139,22 @@ const server = createServer(async (req, res) => {
             return sendJson(res, 200, { count: state.updateRequestCount });
         }
 
+        if (url.pathname === "/__control__/coupon-response" && req.method === "PUT") {
+            const body = await readJsonBody(req);
+            state.couponResponse = body || { mode: "success", status: "active", allowedTicketTypes: [], expiresAt: null };
+            return sendJson(res, 204, undefined);
+        }
+
+        const otpRequestMatch = url.pathname.match(/^\/api\/events\/[^/]+\/otp\/request$/);
+        if (otpRequestMatch && req.method === "POST") {
+            return sendJson(res, 204, undefined);
+        }
+
+        const otpVerifyMatch = url.pathname.match(/^\/api\/events\/[^/]+\/otp\/verify$/);
+        if (otpVerifyMatch && req.method === "POST") {
+            return sendJson(res, 200, { token: "otp-token" });
+        }
+
         // Real Admitto-shaped endpoints, e.g. /api/events/:slug/ticket-types
         const ticketTypesMatch = url.pathname.match(/^\/api\/events\/[^/]+\/ticket-types$/);
         if (ticketTypesMatch && req.method === "GET") {
@@ -169,6 +191,23 @@ const server = createServer(async (req, res) => {
             const outcome = state.updateResponse;
             if (outcome.mode === "success") {
                 return sendJson(res, 204, undefined);
+            }
+            return sendJson(res, outcome.status || 400, {
+                detail: outcome.detail || "Request rejected.",
+                code: outcome.code,
+            });
+        }
+
+        // Public coupon lookup, e.g. /api/events/:slug/coupons/:couponCode
+        const couponMatch = url.pathname.match(/^\/api\/events\/[^/]+\/coupons\/([^/]+)$/);
+        if (couponMatch && req.method === "GET") {
+            const outcome = state.couponResponse;
+            if (outcome.mode === "success") {
+                return sendJson(res, 200, {
+                    status: outcome.status,
+                    allowedTicketTypes: outcome.allowedTicketTypes,
+                    expiresAt: outcome.expiresAt ?? null,
+                });
             }
             return sendJson(res, outcome.status || 400, {
                 detail: outcome.detail || "Request rejected.",

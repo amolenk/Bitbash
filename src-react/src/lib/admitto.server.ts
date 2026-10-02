@@ -9,6 +9,16 @@ export interface PublicTicketTypeDto {
     status: "available" | "waitlist" | "soldOut";
 }
 
+// A coupon bypasses capacity (and, for waitlist-issued coupons, the
+// registration window) for a specific email and a specific set of ticket
+// types. Looked up publicly by code so the self-service edit form can
+// validate and preview one before the attendee submits an update with it.
+export interface PublicCouponDetailsDto {
+    status: "active" | "redeemed" | "expired";
+    allowedTicketTypes: { id: string; name: string }[];
+    expiresAt: string | null;
+}
+
 export interface PartnerRegistrationDetailDto {
     id: string;
     email: string;

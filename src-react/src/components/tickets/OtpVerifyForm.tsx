@@ -10,6 +10,7 @@ export default function OtpVerifyForm() {
     const router = useRouter();
     const params = useSearchParams();
     const email = params.get("email") || "";
+    const couponCode = params.get("coupon");
     const [otp, setOtp] = useState(["", "", "", "", "", ""]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -24,9 +25,16 @@ export default function OtpVerifyForm() {
             const verificationResult = await admittoVerifyOtp(email, code);
             // If Admitto found an existing registration, let the attendee update it.
             if (verificationResult.registrationId) {
-                router.push(`/tickets/edit/${verificationResult.registrationId}?redirect=true`);
+                const redirectParams = new URLSearchParams({ redirect: "true" });
+                if (couponCode) redirectParams.set("coupon", couponCode);
+                router.push(`/tickets/edit/${verificationResult.registrationId}?${redirectParams.toString()}`);
             } else {
-                router.push(`/tickets/register?token=${encodeURIComponent(verificationResult.registrationToken)}&email=${encodeURIComponent(email)}`);
+                const registerParams = new URLSearchParams({
+                    token: verificationResult.registrationToken,
+                    email
+                });
+                if (couponCode) registerParams.set("coupon", couponCode);
+                router.push(`/tickets/register?${registerParams.toString()}`);
             }
         } catch (err: unknown) {
             setLoading(false);

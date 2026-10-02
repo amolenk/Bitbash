@@ -2,16 +2,18 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { AdmittoError, getAvailability, Availability, getRegistration, isAfterRegistrationClosed, updateRegistration, getTicketSettings, TicketSettings, resendTicketEmail, classifyTicketSelectionsForUpdate, ticketOutcomeSearchParams, recoverFromTicketStateConflict } from "../../api/admitto";
+import { AdmittoError, getAvailability, Availability, getRegistration, isBeforeRegistrationOpen, isAfterRegistrationClosed, updateRegistration, getTicketSettings, TicketSettings, resendTicketEmail, classifyTicketSelectionsForUpdate, ticketOutcomeSearchParams, recoverFromTicketStateConflict, applyCouponToAvailability, CouponDetails } from "../../api/admitto";
 import SpinningButton from "../common/SpinningButton";
 import WorkshopsForm from "./WorkshopsForm";
-import MainConferenceForm from "./MainConferenceForm";
+import MainConferenceForm, { isMainConferenceSelectable } from "./MainConferenceForm";
 import PersonalDetailsForm, { PersonalDetails } from "./PersonalDetailsForm";
+import CouponRedemptionForm from "./CouponRedemptionForm";
 import Link from "next/link";
 import ErrorCard from "../common/ErrorCard";
 
 interface UpdateRegistrationFormProps {
     registrationId: string;
+    initialCouponCode?: string;
 }
 
 const emptyDetails: PersonalDetails = {
@@ -42,7 +44,7 @@ function toPersonalDetails(firstName: string, lastName: string, additionalDetail
     return { firstName, lastName, attendeeType: "", organization, role, institute: "", studyProgram: "", graduationDate };
 }
 
-export default function UpdateRegistrationForm({ registrationId }: UpdateRegistrationFormProps) {
+export default function UpdateRegistrationForm({ registrationId, initialCouponCode }: UpdateRegistrationFormProps) {
 
     const [loading, setLoading] = useState(true);
     const [loadingError, setLoadingError] = useState("");
@@ -63,6 +65,8 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
     const [originallyWaitlistedTicketTypeIds, setOriginallyWaitlistedTicketTypeIds] = useState<string[]>([]);
     const [details, setDetails] = useState<PersonalDetails>(emptyDetails);
     const [originalDetails, setOriginalDetails] = useState<PersonalDetails>(emptyDetails);
+    const [couponCode, setCouponCode] = useState<string | null>(null);
+    const [appliedCoupon, setAppliedCoupon] = useState<CouponDetails | null>(null);
 
     const formRef = useRef<HTMLFormElement>(null);
     const router = useRouter();
@@ -130,6 +134,19 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
         fetchData();
     }, [registrationId]);
 
+    // Ticket types a redeemed coupon covers are treated as "available" for
+    // this attendee's own selection, regardless of their real public
+    // status — this is what lets a VIP coupon unlock a ticket type that's
+    // otherwise sold out or waitlist-only. Everything downstream (the
+    // Main Conference/Workshops forms' selectability, and this form's own
+    // confirmed/waitlisted classification at submit time) is driven off
+    // this effective availability rather than the raw fetched one.
+    const couponAllowedTicketTypeIds = appliedCoupon?.allowedTicketTypes.map(t => t.id) ?? [];
+    const publicRegistrationClosed = !ticketSettings?.registrationOpen
+        || !!(availability && (isBeforeRegistrationOpen(availability) || isAfterRegistrationClosed(availability)));
+    const couponOnlySelection = publicRegistrationClosed && !!appliedCoupon;
+    const effectiveAvailability = applyCouponToAvailability(availability, couponAllowedTicketTypeIds, couponOnlySelection);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setSubmitting(true);
@@ -147,14 +164,23 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
             // public status has since shifted, so re-saving the form never
             // silently demotes or promotes an untouched selection — only a
             // newly added ticket type gets classified by its current
-            // status, mirroring create's classification.
+            // status, mirroring create's classification. A ticket type a
+            // redeemed coupon covers is classified as confirmed (never
+            // waitlisted), since the effective availability already
+            // reports it as "available".
             const { registerTicketTypeIds, waitlistTicketTypeIds } = classifyTicketSelectionsForUpdate(
-                availability, tickets, originallyConfirmedTicketTypeIds, originallyWaitlistedTicketTypeIds
+                effectiveAvailability, tickets, originallyConfirmedTicketTypeIds, originallyWaitlistedTicketTypeIds, couponAllowedTicketTypeIds
             );
 
-            // Admitto only sends a new ticket email when the ticket selection actually changes.
+            const couponConfirmsWaitlistedTicket = couponAllowedTicketTypeIds.some(id =>
+                originallyWaitlistedTicketTypeIds.includes(id) && tickets.includes(id)
+            );
+
+            // Admitto sends a ticket email when a coupon confirms a held
+            // waitlist entry, even if the attendee did not change a control.
             const ticketsChanged = originalConferenceSelection !== conferenceSelection
-                || !arraysEqual(originalWorkshopSelections, workshopSelections);
+                || !arraysEqual(originalWorkshopSelections, workshopSelections)
+                || couponConfirmsWaitlistedTicket;
 
             if (details.attendeeType === "student") {
                 await updateRegistration(
@@ -166,7 +192,8 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
                     details.studyProgram,
                     details.graduationDate,
                     registerTicketTypeIds,
-                    waitlistTicketTypeIds);
+                    waitlistTicketTypeIds,
+                    couponCode ?? undefined);
             } else {
                 await updateRegistration(
                     registrationId,
@@ -177,14 +204,15 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
                     details.role,
                     "",
                     registerTicketTypeIds,
-                    waitlistTicketTypeIds);
+                    waitlistTicketTypeIds,
+                    couponCode ?? undefined);
             }
 
             // The confirmed/waitlisted split is already known here, at
             // submit time, so the ticket type names for the confirmation
             // page's itemized lists are passed along via URL query params
             // rather than requiring that page to look anything up again.
-            const params = ticketOutcomeSearchParams(availability, registerTicketTypeIds, waitlistTicketTypeIds);
+            const params = ticketOutcomeSearchParams(effectiveAvailability, registerTicketTypeIds, waitlistTicketTypeIds);
             params.set("ticketsChanged", String(ticketsChanged));
 
             router.push(`/tickets/register/updated?${params.toString()}`);
@@ -228,12 +256,23 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
         return aSorted.every((val, idx) => val === bSorted[idx]);
     }
 
+    const conferenceTicket = effectiveAvailability?.ticketTypes.find(t => t.id === ticketSettings?.mainConferenceTicketTypeId);
+    const mainConferenceSelectable = isMainConferenceSelectable(conferenceTicket, originalConferenceSelection === true);
+
     const isFormValid = () =>
         (formRef.current?.checkValidity() ?? false)
+        && (!publicRegistrationClosed || !!appliedCoupon)
+        && (!mainConferenceSelectable || conferenceSelection !== null)
         && (conferenceSelection === true || workshopSelections.length > 0)
         && (originalConferenceSelection !== conferenceSelection
             || !arraysEqual(originalWorkshopSelections, workshopSelections)
-            || JSON.stringify(details) !== JSON.stringify(originalDetails));
+            || JSON.stringify(details) !== JSON.stringify(originalDetails)
+            // A newly applied coupon is itself a change worth submitting,
+            // even when it doesn't flip an already-"yes"/already-held
+            // selection — e.g. an attendee already on the waitlist for a
+            // ticket type applies a coupon that unlocks it, without
+            // touching the Yes/No choice they'd already made.
+            || couponCode !== null);
 
     // Loading spinner
     if (loading || !ticketSettings) {
@@ -262,7 +301,7 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
     }
 
     // Registration already closed
-    if (availability && isAfterRegistrationClosed(availability)) {
+    if (publicRegistrationClosed && !initialCouponCode) {
         return (
             <div className="card h-100 shadow-sm">
                 <div className="card-header text-center"><h3>Registration is closed</h3></div>
@@ -276,23 +315,49 @@ export default function UpdateRegistrationForm({ registrationId }: UpdateRegistr
         <div className="mx-auto">
             <form ref={formRef} onSubmit={handleSubmit} className="ticket-form">
 
+                <CouponRedemptionForm
+                    appliedCoupon={appliedCoupon}
+                    onApply={(code, coupon) => {
+                        setCouponCode(code);
+                        setAppliedCoupon(coupon);
+                    }}
+                    onRemove={() => {
+                        setCouponCode(null);
+                        setAppliedCoupon(null);
+                    }}
+                    disabled={submitting}
+                    initialCouponCode={initialCouponCode}
+                    confirmationTicketNames={couponAllowedTicketTypeIds
+                        .filter(id => originallyWaitlistedTicketTypeIds.includes(id))
+                        .filter(id => workshopSelections.includes(id)
+                            || (conferenceSelection && id === ticketSettings.mainConferenceTicketTypeId))
+                        .map(id => availability?.ticketTypes.find(ticketType => ticketType.id === id)?.name)
+                        .filter((name): name is string => !!name)}
+                />
+
                 <MainConferenceForm
-                    availability={availability}
+                    availability={effectiveAvailability}
                     conferenceDate={ticketSettings.conferenceDate}
                     mainConferenceTicketTypeId={ticketSettings.mainConferenceTicketTypeId}
                     conferenceSelection={conferenceSelection}
                     setConferenceSelection={setConferenceSelection}
-                    disabled={submitting}
+                    disabled={submitting || (publicRegistrationClosed && !appliedCoupon)}
                     queuePosition={waitlistPositions[ticketSettings.mainConferenceTicketTypeId]}
+                    wasOriginallyRegistered={originalConferenceSelection === true}
+                    couponUnlocked={couponAllowedTicketTypeIds.includes(ticketSettings.mainConferenceTicketTypeId)}
+                    couponOnlyTicketTypeIds={couponOnlySelection ? couponAllowedTicketTypeIds : undefined}
                 />
 
                 <WorkshopsForm
-                    availability={availability}
+                    availability={effectiveAvailability}
                     workshopsDate={ticketSettings.workshopsDate}
                     workshopSelections={workshopSelections}
                     setWorkshopSelections={setWorkshopSelections}
-                    disabled={submitting}
+                    disabled={submitting || (publicRegistrationClosed && !appliedCoupon)}
                     queuePositions={waitlistPositions}
+                    originalWorkshopSelections={originalWorkshopSelections}
+                    couponUnlockedTicketTypeIds={couponAllowedTicketTypeIds}
+                    couponOnlyTicketTypeIds={couponOnlySelection ? couponAllowedTicketTypeIds : undefined}
                 />
 
                 <PersonalDetailsForm

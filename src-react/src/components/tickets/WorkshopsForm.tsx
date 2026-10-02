@@ -14,6 +14,19 @@ interface WorkshopsFormProps {
     // for any workshop the attendee currently holds an active waitlist
     // entry for (rather than a confirmed ticket).
     queuePositions?: Record<string, number>;
+    // Only set on the edit form: the workshop ticket-type ids the attendee
+    // already held (confirmed or waitlisted) when the form loaded. A sold-out
+    // workshop stays checkable for these ids even after being unchecked, so
+    // toggling it off and back on within the same edit session keeps working —
+    // not just the one-way "give it up" path.
+    originalWorkshopSelections?: string[];
+    // Only set on the edit form: workshop ticket-type ids covered by a
+    // coupon the attendee has applied. `availability` is expected to
+    // already report these ids' status as "available" (see
+    // applyCouponToAvailability), so this only controls the "Unlocked by
+    // Coupon" badge.
+    couponUnlockedTicketTypeIds?: string[];
+    couponOnlyTicketTypeIds?: string[];
 }
 
 // Sort within a group: full-day tickets first, then morning, then afternoon.
@@ -44,7 +57,7 @@ function timeSlotBadgeText(ticket: TicketTypeDto): string {
 }
 
 export default function WorkshopsForm({
-    availability, workshopsDate, workshopSelections, setWorkshopSelections, disabled, queuePositions
+    availability, workshopsDate, workshopSelections, setWorkshopSelections, disabled, queuePositions, originalWorkshopSelections, couponUnlockedTicketTypeIds, couponOnlyTicketTypeIds
 }: WorkshopsFormProps) {
 
     const workshopTickets = availability?.ticketTypes.filter((t: TicketTypeDto) =>
@@ -76,17 +89,25 @@ export default function WorkshopsForm({
     const renderTicket = (ticket: TicketTypeDto) => {
         const isSoldOut = ticket.status === "soldOut";
         const isWaitlist = ticket.status === "waitlist";
+        const isCouponUnlocked = couponUnlockedTicketTypeIds?.includes(ticket.id) ?? false;
         const queuePosition = queuePositions?.[ticket.id];
         const isSelected = workshopSelections.includes(ticket.id);
+        const wasOriginallyHeld = originalWorkshopSelections?.includes(ticket.id) ?? false;
+        const isCouponRestricted = couponOnlyTicketTypeIds !== undefined && !couponOnlyTicketTypeIds.includes(ticket.id);
 
-        // A ticket type the attendee already holds (confirmed or
+        // A ticket type the attendee already held (confirmed or
         // waitlisted) can go fully sold out — no longer even accepting
         // waitlist joins — by the time they revisit their registration.
-        // It must stay checkable-off even then, so an attendee can still
-        // give it up in favor of a different, currently available or
-        // waitlisted, overlapping-timeslot selection; only an unselected
-        // sold-out ticket is blocked from being newly picked.
-        const isDisabled = (isSoldOut && !isSelected) || disabledTickets.has(ticket.id) || disabled;
+        // It must stay checkable for that attendee even then, both to give
+        // it up in favor of a different, currently available or waitlisted,
+        // overlapping-timeslot selection, and to toggle it back on within
+        // the same edit session (hence checking originally-held status
+        // rather than current selection, which would re-lock it the moment
+        // it's unchecked). Only a sold-out ticket the attendee never held
+        // is blocked from being newly picked.
+        const isDisabled = isCouponRestricted
+            ? !isSelected || disabled
+            : (isSoldOut && !wasOriginallyHeld) || disabledTickets.has(ticket.id) || disabled;
 
         return (
             <div key={ticket.id} className="form-check text-start mb-2">
@@ -110,6 +131,7 @@ export default function WorkshopsForm({
                     {!isSoldOut && <span className="badge text-bg-primary text-light ms-2">{timeSlotBadgeText(ticket)}</span>}
                     {isWaitlist && <span className="badge bg-warning text-dark ms-2">Waitlist Open</span>}
                     {isSoldOut && <span className="badge bg-danger ms-2">Sold Out</span>}
+                    {isCouponUnlocked && <span className="badge bg-success ms-2">Unlocked by Coupon</span>}
                 </label>
                 {queuePosition !== undefined && (
                     <div className="text-info small ms-4" data-testid={`workshop-queue-position-${ticket.id}`}>

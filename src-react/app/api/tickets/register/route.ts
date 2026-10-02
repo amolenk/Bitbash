@@ -12,6 +12,7 @@ export async function POST(req: Request) {
                 lastName: body.lastName,
                 registerTicketTypeIds: body.ticketTypeIds || [],
                 waitlistTicketTypeIds: body.waitlistTicketTypeIds || [],
+                couponCode: body.couponCode || null,
                 additionalDetails: body.additionalDetails || null
             }
         });

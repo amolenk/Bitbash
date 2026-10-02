@@ -13,10 +13,10 @@ export const metadata = {
 export default async function RegisterPage({
     searchParams,
 }: {
-    searchParams: Promise<{ email?: string; token?: string; }>
+    searchParams: Promise<{ email?: string; token?: string; coupon?: string; }>
 }) {
 
-    const { email, token } = await searchParams;
+    const { email, token, coupon } = await searchParams;
 
     // No valid email/token pair (stale bookmark, back button, edited URL):
     // send the attendee straight back to the start of the flow, silently.
@@ -29,7 +29,7 @@ export default async function RegisterPage({
             <Section headerText="Registration" sectionBackground={2}>
                 <div className="row justify-content-center mb-5">
                     <div className="col-lg-9">
-                        <RegisterForm email={email} token={token} />
+                        <RegisterForm email={email} token={token} initialCouponCode={coupon} />
                     </div>
                 </div>
             </Section>

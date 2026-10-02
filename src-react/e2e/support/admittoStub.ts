@@ -33,6 +33,19 @@ export interface StubRegistration {
     waitlistedTickets: { ticketTypeId: string; position: number }[];
 }
 
+// The stub's response to the next GET /coupons/:code call(s). "success"
+// returns a coupon with the given status/allowed ticket types/expiry.
+// Anything else returns an error problem-details body with the given
+// status/code/detail (e.g. a not-found coupon).
+export type StubCouponResponse =
+    | {
+        mode: "success";
+        status: "active" | "redeemed" | "expired";
+        allowedTicketTypes: { id: string; name: string }[];
+        expiresAt?: string | null;
+    }
+    | { mode: "error"; status: number; code?: string; detail?: string };
+
 export const admittoStub = {
     async reset(): Promise<void> {
         await fetch(`${stubBaseURL}/__control__/reset`, { method: "POST" });
@@ -106,6 +119,17 @@ export const admittoStub = {
         const res = await fetch(`${stubBaseURL}/__control__/update-request-count`);
         const body = await res.json() as { count: number };
         return body.count;
+    },
+
+    // Configures the stub's response to the next GET /coupons/:code
+    // call(s), so a test can simulate a valid, expired, already-redeemed,
+    // or not-found coupon without a real coupon-issuing round trip.
+    async setCouponResponse(response: StubCouponResponse): Promise<void> {
+        await fetch(`${stubBaseURL}/__control__/coupon-response`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(response),
+        });
     },
 };
 

@@ -55,6 +55,16 @@ export interface TicketSettings {
     registrationOpen: boolean;
 }
 
+// A coupon bypasses capacity for a specific set of ticket types, e.g. a
+// VIP invitation for a ticket type that's otherwise waitlist or sold out.
+// "active" is the only status that can still be redeemed; "redeemed" and
+// "expired" are shown so the attendee understands why it no longer works.
+export interface CouponDetails {
+    status: "active" | "redeemed" | "expired";
+    allowedTicketTypes: { id: string; name: string }[];
+    expiresAt: string | null;
+}
+
 // Pure client-side classification of a selected ticket-type-id list, based
 // on each ticket type's status as last fetched. The backend remains the
 // source of truth and will reject (with a conflict) any request whose
@@ -88,27 +98,69 @@ export function splitTicketSelectionsByStatus(
 // types newly added to the selection — the ones actually being switched —
 // are classified by their current status, mirroring create's
 // classification.
+//
+// A ticket type covered by an applied coupon is the one deliberate
+// exception to "preserve original classification": selecting it signals
+// the attendee wants to redeem the coupon for it, so it's always
+// reclassified fresh by its current (coupon-overridden, "available")
+// status — landing it in the confirmed list — even if it was already
+// held as waitlisted (or, degenerately, already confirmed) before.
+// Otherwise an attendee who was already waitlisted for exactly the ticket
+// type their coupon unlocks could resubmit their unchanged "yes" and stay
+// waitlisted forever, since nothing about their selection would look new.
 export function classifyTicketSelectionsForUpdate(
     availability: Availability | null,
     selectedTicketTypeIds: string[],
     originallyConfirmedTicketTypeIds: string[],
-    originallyWaitlistedTicketTypeIds: string[]
+    originallyWaitlistedTicketTypeIds: string[],
+    couponAllowedTicketTypeIds: string[] = []
 ): { registerTicketTypeIds: string[]; waitlistTicketTypeIds: string[] } {
-    const newTicketTypeIds = selectedTicketTypeIds.filter(id =>
-        !originallyConfirmedTicketTypeIds.includes(id) && !originallyWaitlistedTicketTypeIds.includes(id)
-    );
+    const isPreservedHold = (id: string) =>
+        !couponAllowedTicketTypeIds.includes(id)
+        && (originallyConfirmedTicketTypeIds.includes(id) || originallyWaitlistedTicketTypeIds.includes(id));
+
+    const newTicketTypeIds = selectedTicketTypeIds.filter(id => !isPreservedHold(id));
     const { registerTicketTypeIds: newlyRegisteredIds, waitlistTicketTypeIds: newlyWaitlistedIds } =
         splitTicketSelectionsByStatus(availability, newTicketTypeIds);
 
     return {
         registerTicketTypeIds: [
-            ...selectedTicketTypeIds.filter(id => originallyConfirmedTicketTypeIds.includes(id)),
+            ...selectedTicketTypeIds.filter(id => originallyConfirmedTicketTypeIds.includes(id) && isPreservedHold(id)),
             ...newlyRegisteredIds
         ],
         waitlistTicketTypeIds: [
-            ...selectedTicketTypeIds.filter(id => originallyWaitlistedTicketTypeIds.includes(id)),
+            ...selectedTicketTypeIds.filter(id => originallyWaitlistedTicketTypeIds.includes(id) && isPreservedHold(id)),
             ...newlyWaitlistedIds
         ]
+    };
+}
+
+// Overrides the status of whichever ticket types a redeemed coupon covers
+// to "available" in a copy of the fetched availability, regardless of
+// their real status — this is what lets an attendee select a ticket type
+// that's genuinely sold out or waitlist-only elsewhere, because a valid
+// coupon bypasses the normal capacity/registerable check for exactly those
+// ids. Downstream status-based logic (selectability, classification into
+// confirmed vs. waitlisted) then falls out for free: a coupon-covered id
+// behaves exactly like any other available ticket type.
+export function applyCouponToAvailability(
+    availability: Availability | null,
+    couponAllowedTicketTypeIds: string[],
+    restrictToCouponTicketTypes = false
+): Availability | null {
+    if (!availability || (couponAllowedTicketTypeIds.length === 0 && !restrictToCouponTicketTypes)) {
+        return availability;
+    }
+
+    return {
+        ...availability,
+        ticketTypes: availability.ticketTypes.map(ticketType =>
+            couponAllowedTicketTypeIds.includes(ticketType.id)
+                ? { ...ticketType, status: "available", hasCapacity: true }
+                : restrictToCouponTicketTypes
+                    ? { ...ticketType, status: "soldOut", hasCapacity: false }
+                    : ticketType
+        )
     };
 }
 
@@ -229,6 +281,14 @@ export async function getRegistration(registrationId: string): Promise<Registrat
     return await request<RegistrationDetail>(`/api/tickets/registration/${encodeURIComponent(registrationId)}`);
 }
 
+// Looks up a coupon by its code so it can be validated and previewed
+// before the attendee submits a registration that redeems it. Throws an
+// AdmittoError (e.g. code "coupon.not_found") when the code doesn't match
+// any coupon for this event.
+export async function lookupCoupon(couponCode: string): Promise<CouponDetails> {
+    return await request<CouponDetails>(`/api/tickets/coupons/${encodeURIComponent(couponCode)}`);
+}
+
 export async function register(
     email: string,
     firstName: string,
@@ -239,7 +299,8 @@ export async function register(
     graduationDate: string,
     ticketTypeIds: string[],
     waitlistTicketTypeIds: string[],
-    registrationToken: string) {
+    registrationToken: string,
+    couponCode?: string) {
 
     await request<void>("/api/tickets/register", {
         method: "POST",
@@ -250,6 +311,7 @@ export async function register(
             ticketTypeIds,
             waitlistTicketTypeIds,
             registrationToken,
+            couponCode: couponCode || undefined,
             additionalDetails: {
                 "attendee-type": attendeeType,
                 organization,
@@ -271,7 +333,8 @@ export async function updateRegistration(
     role: string,
     graduationDate: string,
     ticketTypeIds: string[],
-    waitlistTicketTypeIds: string[]) {
+    waitlistTicketTypeIds: string[],
+    couponCode?: string) {
 
     await request<void>(`/api/tickets/registration/${encodeURIComponent(registrationId)}`, {
         method: "PUT",
@@ -280,6 +343,7 @@ export async function updateRegistration(
             lastName,
             ticketTypeIds,
             waitlistTicketTypeIds,
+            couponCode: couponCode || undefined,
             additionalDetails: {
                 "attendee-type": attendeeType,
                 organization,

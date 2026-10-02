@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import SpinningButton from "../common/SpinningButton";
 import { requestOtp } from "../../api/admitto";
 
-export default function EmailForm() {
+export default function EmailForm({ couponCode }: { couponCode?: string }) {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -18,11 +18,13 @@ export default function EmailForm() {
         setError("");
         try {
             await requestOtp(email);
-            router.push(`/tickets/register/verify?email=${encodeURIComponent(email)}`);
+            const params = new URLSearchParams({ email });
+            if (couponCode) params.set("coupon", couponCode);
+            router.push(`/tickets/register/verify?${params.toString()}`);
         }
-        catch (err: any) {
+        catch (err: unknown) {
             setLoading(false);
-            setError(err.message || "Verification request failed. Please try again.");
+            setError(err instanceof Error ? err.message : "Verification request failed. Please try again.");
         }
     };
 

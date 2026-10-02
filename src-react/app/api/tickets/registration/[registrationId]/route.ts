@@ -40,6 +40,10 @@ export async function PUT(
         // registerable/waitlistable classification applied at create time is
         // applied here, so a single update can move ticket types between
         // confirmed and waitlisted in either direction.
+        //
+        // couponCode, when present, redeems a coupon against whichever
+        // newly-confirmed ticket type ids it covers, bypassing the normal
+        // registerable/capacity check for just those ids.
         await admittoRequest<void>(eventPath(`/registrations/${encodeURIComponent(registrationId)}`), {
             method: "PUT",
             body: {
@@ -47,7 +51,8 @@ export async function PUT(
                 lastName: body.lastName,
                 additionalDetails: body.additionalDetails || null,
                 registerTicketTypeIds: body.ticketTypeIds || [],
-                waitlistTicketTypeIds: body.waitlistTicketTypeIds || []
+                waitlistTicketTypeIds: body.waitlistTicketTypeIds || [],
+                couponCode: body.couponCode || null
             }
         });
 

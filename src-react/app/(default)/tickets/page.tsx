@@ -14,13 +14,18 @@ export const metadata = {
     title: "Tickets | Bitbash"
 };
 
-export default async function TicketsPage() {
+export default async function TicketsPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ coupon?: string }>;
+}) {
 
     const edition = websiteSettings.currentEdition;
+    const { coupon } = await searchParams;
     let workshopsAvailable = false;
 
     // Registration closed
-    if (!edition.registration.isOpen()) {
+    if (!coupon && !edition.registration.isOpen()) {
         return (
             <MainLayout>
                 <Section headerText="Tickets" sectionBackground={2}>
@@ -41,7 +46,7 @@ export default async function TicketsPage() {
         workshopsAvailable = visibleTicketTypes.some(ticketType =>
             ticketType.timeSlots.includes("morning-workshop") || ticketType.timeSlots.includes("afternoon-workshop")
         );
-        if (visibleTicketTypes.every(t => t.status !== "available" && t.status !== "waitlist")) {
+        if (!coupon && visibleTicketTypes.every(t => t.status !== "available" && t.status !== "waitlist")) {
             return (
                 <MainLayout>
                     <Section headerText="Tickets" sectionBackground={2}>
@@ -121,7 +126,7 @@ export default async function TicketsPage() {
                                         Workshop tickets are not available yet. You can register for the main conference now and update your registration once workshops become available.
                                     </div>
                                 )}
-                                <EmailForm />
+                                <EmailForm couponCode={coupon} />
                             </div>
                         </div>
                     </div>
