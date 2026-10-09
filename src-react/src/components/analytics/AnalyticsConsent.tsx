@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { analyticsSettings } from "@/src/config/analytics-settings";
+import { websiteSettings } from "@/src/config/website-settings";
 import styles from "./AnalyticsConsent.module.css";
 
 export const COOKIE_PREFERENCES_EVENT = "bitbash:open-cookie-preferences";
 
+const analyticsSettings = websiteSettings.analytics;
 const consentCookieMaxAge = 60 * 60 * 24 * analyticsSettings.consentDurationDays;
 
 type Consent = "granted" | "denied";
@@ -125,12 +126,12 @@ export default function AnalyticsConsent({ children }: Readonly<{ children: Reac
                         role="dialog"
                         aria-labelledby="cookie-preferences-title"
                     >
-                        <h2 id="cookie-preferences-title">Cookie preferences</h2>
-                        <p>
-                            Bitbash uses optional analytics cookies to understand website traffic, campaigns and registrations.
-                            You can change your choice at any time.
-                        </p>
-                        <p><Link href="/privacy">Read our privacy and cookie policy</Link>.</p>
+                        <div className={styles.copy}>
+                            <h2 id="cookie-preferences-title">Cookie preferences</h2>
+                            <p>
+                                Bitbash uses optional analytics cookies to understand website traffic and registrations. You can change your choice at any time. <Link href="/privacy">Read our privacy and cookie policy</Link>.
+                            </p>
+                        </div>
                         <div className={styles.actions}>
                             <button className="btn btn-primary" type="button" onClick={() => chooseConsent("denied")}>
                                 Reject analytics

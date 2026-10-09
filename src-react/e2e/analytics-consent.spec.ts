@@ -1,8 +1,9 @@
 import { expect, test } from "@playwright/test";
 
 import { admittoStub } from "./support/admittoStub";
-import { analyticsSettings } from "../src/config/analytics-settings";
+import { websiteSettings } from "../src/config/website-settings";
 
+const analyticsSettings = websiteSettings.analytics;
 const googleTagUrl = `https://www.googletagmanager.com/gtag/js?id=${analyticsSettings.measurementId}`;
 const registerUrl = "/tickets/register?email=attendee%40example.com&token=valid-token";
 

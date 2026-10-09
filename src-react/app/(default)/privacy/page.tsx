@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 
 import Section from "@/src/components/layout/Section";
 import MainLayout from "@/src/components/layout/MainLayout";
-import { analyticsSettings } from "@/src/config/analytics-settings";
+import { websiteSettings } from "@/src/config/website-settings";
+
+const analyticsSettings = websiteSettings.analytics;
 
 export const metadata: Metadata = {
     title: "Privacy & Cookies | Bitbash",

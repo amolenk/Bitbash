@@ -1,6 +1,14 @@
 export interface WebsiteSettings {
     currentEdition: EditionSettings;
     pastEditions: PastEditionSettings[];
+    analytics: AnalyticsSettings;
+}
+
+interface AnalyticsSettings {
+    measurementId: string;
+    consentCookieName: string;
+    consentDurationDays: number;
+    eventDataRetentionMonths: number;
 }
 
 interface EditionSettings {
@@ -67,6 +75,12 @@ interface SpeakerSettings {
 }
 
 export const websiteSettings: WebsiteSettings = {
+    analytics: {
+        measurementId: "G-KZWM1BBHB7",
+        consentCookieName: "bitbash-analytics-consent",
+        consentDurationDays: 183,
+        eventDataRetentionMonths: 14,
+    },
     currentEdition: {
         slug: "winter-2027",
         description: "Rock 'n' Roll Edition",

@@ -1,27 +1,44 @@
 .backdrop {
-    background: #121838;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 .75rem .75rem;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
     z-index: 2000;
 }
 
 .banner {
     background: #121838;
     border: 1px solid #269bb9;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
     color: white;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
     margin: 0 auto;
-    max-width: 720px;
-    padding: 1.5rem;
+    max-width: 1120px;
+    padding: .75rem 1rem;
+    pointer-events: auto;
     width: 100%;
 }
 
-.banner h2 {
-    font-family: Agdasima, sans-serif;
-    font-size: 2rem;
+.copy {
+    flex: 1;
+    min-width: 0;
 }
 
-.banner a {
+.copy h2 {
+    font-family: Agdasima, sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.copy p {
+    margin: .15rem 0 0;
+}
+
+.copy a {
     color: white;
 }
 
@@ -29,10 +46,22 @@
     display: flex;
     flex-wrap: wrap;
     gap: .75rem;
+    flex: 0 0 auto;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+    .backdrop {
+        padding: 0;
+    }
+
+    .banner {
+        align-items: stretch;
+        flex-direction: column;
+        gap: .75rem;
+        padding: 1rem;
+    }
+
     .actions > * {
-        flex: 1 1 100%;
+        flex: 1;
     }
 }
