@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CookiePreferencesButton from "../analytics/CookiePreferencesButton";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -21,6 +22,8 @@ export default function Footer() {
           <i className={`bi bi-peace ${styles.footerIcon}`}></i>
           Code of Conduct
         </Link>
+        <Link href="/privacy">Privacy &amp; cookies</Link>
+        <CookiePreferencesButton />
       </p>
     </footer>
   );

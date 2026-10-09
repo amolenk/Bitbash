@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import AnalyticsConsent from "@/src/components/analytics/AnalyticsConsent";
+import CookiePreferencesButton from "@/src/components/analytics/CookiePreferencesButton";
 import '@/app/(default)/global.scss';
 import styles from '@/app/(up-next)/layout.module.css';
 
@@ -46,9 +48,14 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <main className={`${styles.main} d-flex flex-column min-vh-100 justify-content-center`}>
-          {children}
-        </main>
+        <AnalyticsConsent>
+          <main className={`${styles.main} d-flex flex-column min-vh-100 justify-content-center`}>
+            {children}
+          </main>
+          <footer className={styles.footer}>
+            <CookiePreferencesButton />
+          </footer>
+        </AnalyticsConsent>
       </body>
     </html>
   );

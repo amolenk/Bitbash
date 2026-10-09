@@ -8,6 +8,7 @@ import PersonalDetailsForm, { PersonalDetails } from "./PersonalDetailsForm";
 import SpinningButton from "../common/SpinningButton";
 import WorkshopsForm from "./WorkshopsForm";
 import CouponRedemptionForm from "./CouponRedemptionForm";
+import { trackRegistrationComplete } from "../analytics/AnalyticsConsent";
 
 import { AdmittoError, getAvailability, Availability, isBeforeRegistrationOpen, isAfterRegistrationClosed, register, getTicketSettings, TicketSettings, splitTicketSelectionsByStatus, ticketOutcomeSearchParams, recoverFromTicketStateConflict, applyCouponToAvailability, CouponDetails } from "../../api/admitto";
 import { useRouter } from "next/navigation";
@@ -110,6 +111,8 @@ export default function RegisterForm({ email, token, initialCouponCode }: Regist
                     token,
                     couponCodeForSubmission);
             }
+
+            trackRegistrationComplete();
 
             // The confirmed/waitlisted split is already known here, at submit
             // time, so the ticket type names for the confirmation page's

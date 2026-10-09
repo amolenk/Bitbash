@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import AnalyticsConsent from "@/src/components/analytics/AnalyticsConsent";
 import '@/app/(default)/global.scss';
 
 export const metadata: Metadata = {
@@ -46,7 +47,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <AnalyticsConsent>{children}</AnalyticsConsent>
         
         {/* JavaScript libraries */}
         <Script src="/aos/aos.js" strategy="beforeInteractive" />
