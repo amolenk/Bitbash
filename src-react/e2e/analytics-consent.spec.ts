@@ -29,7 +29,7 @@ test.describe("analytics consent", () => {
         await expect(banner).toBeVisible();
         await expect(googleTagRequests).toBe(0);
 
-        await banner.getByRole("button", { name: "Accept analytics" }).click();
+        await banner.getByRole("button", { name: "Accept" }).click();
         await expect.poll(() => googleTagRequests).toBe(1);
         await expect.poll(async () => page.context().cookies()).toContainEqual(expect.objectContaining({
             name: analyticsSettings.consentCookieName,
@@ -38,7 +38,7 @@ test.describe("analytics consent", () => {
 
         await page.getByRole("button", { name: "Cookie preferences" }).click();
         await expect(banner).toBeVisible();
-        await banner.getByRole("button", { name: "Reject analytics" }).click();
+        await banner.getByRole("button", { name: "Reject" }).click();
         await expect.poll(async () => page.context().cookies()).toContainEqual(expect.objectContaining({
             name: analyticsSettings.consentCookieName,
             value: "denied",

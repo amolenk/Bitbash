@@ -134,10 +134,10 @@ export default function AnalyticsConsent({ children }: Readonly<{ children: Reac
                         </div>
                         <div className={styles.actions}>
                             <button className="btn btn-primary" type="button" onClick={() => chooseConsent("denied")}>
-                                Reject analytics
+                                Reject
                             </button>
                             <button className="btn btn-primary" type="button" onClick={() => chooseConsent("granted")}>
-                                Accept analytics
+                                Accept
                             </button>
                         </div>
                     </section>
