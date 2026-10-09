@@ -4,14 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { analyticsSettings } from "@/src/config/analytics-settings";
 import styles from "./AnalyticsConsent.module.css";
 
-export const GOOGLE_ANALYTICS_MEASUREMENT_ID = "G-KZWM1BBHB7";
-export const ANALYTICS_READY_EVENT = "bitbash:analytics-ready";
 export const COOKIE_PREFERENCES_EVENT = "bitbash:open-cookie-preferences";
 
-const consentCookieName = "bitbash-analytics-consent";
-const consentCookieMaxAge = 60 * 60 * 24 * 183;
+const consentCookieMaxAge = 60 * 60 * 24 * analyticsSettings.consentDurationDays;
 
 type Consent = "granted" | "denied";
 
@@ -19,13 +17,14 @@ declare global {
     interface Window {
         dataLayer?: unknown[][];
         gtag?: (...args: unknown[]) => void;
+        [key: `ga-disable-${string}`]: boolean | undefined;
     }
 }
 
 function readConsent(): Consent | null {
     const value = document.cookie
         .split("; ")
-        .find(cookie => cookie.startsWith(`${consentCookieName}=`))
+        .find(cookie => cookie.startsWith(`${analyticsSettings.consentCookieName}=`))
         ?.split("=")[1];
 
     return value === "granted" || value === "denied" ? value : null;
@@ -37,35 +36,43 @@ export function hasAnalyticsConsent() {
 
 export function trackRegistrationComplete() {
     if (hasAnalyticsConsent() && window.gtag) {
-        window.gtag("event", "registration_complete");
+        window.gtag("event", "registration_complete", analyticsPageParameters());
     }
 }
 
 function saveConsent(consent: Consent) {
-    document.cookie = `${consentCookieName}=${consent}; Max-Age=${consentCookieMaxAge}; Path=/; SameSite=Lax`;
+    document.cookie = `${analyticsSettings.consentCookieName}=${consent}; Max-Age=${consentCookieMaxAge}; Path=/; SameSite=Lax`;
 }
 
 function removeGoogleAnalyticsCookies() {
-    for (const name of ["_ga", `_ga_${GOOGLE_ANALYTICS_MEASUREMENT_ID.slice(2)}`]) {
-        document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax`;
+    for (const name of ["_ga", `_ga_${analyticsSettings.measurementId.slice(2)}`]) {
+        for (const domain of ["", "; Domain=.bitbash.nl"]) {
+            document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax${domain}`;
+        }
     }
+}
+
+function analyticsPageParameters() {
+    const pageUrl = new URL(window.location.pathname, window.location.origin).href;
+    return { page_location: pageUrl, page_path: window.location.pathname };
 }
 
 function configureGoogleAnalytics() {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || ((...args: unknown[]) => window.dataLayer?.push(args));
     window.gtag("js", new Date());
-    window.gtag("config", GOOGLE_ANALYTICS_MEASUREMENT_ID, { send_page_view: false });
+    window.gtag("config", analyticsSettings.measurementId, {
+        send_page_view: false,
+        cookie_domain: "bitbash.nl",
+    });
 
     if (!document.getElementById("google-analytics")) {
         const script = document.createElement("script");
         script.id = "google-analytics";
         script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_MEASUREMENT_ID}`;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsSettings.measurementId}`;
         document.head.append(script);
     }
-
-    window.dispatchEvent(new Event(ANALYTICS_READY_EVENT));
 }
 
 export default function AnalyticsConsent({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -87,19 +94,20 @@ export default function AnalyticsConsent({ children }: Readonly<{ children: Reac
             return;
         }
 
-        const disableKey = `ga-disable-${GOOGLE_ANALYTICS_MEASUREMENT_ID}`;
+        const disableKey = `ga-disable-${analyticsSettings.measurementId}`;
+        const googleAnalyticsWindow = window as unknown as Record<string, boolean | undefined>;
         if (consent === "granted") {
-            window[disableKey as keyof Window] = false as never;
+            googleAnalyticsWindow[disableKey] = false;
             configureGoogleAnalytics();
         } else if (consent === "denied") {
-            window[disableKey as keyof Window] = true as never;
+            googleAnalyticsWindow[disableKey] = true;
             removeGoogleAnalyticsCookies();
         }
     }, [consent, hasReadConsent]);
 
     useEffect(() => {
         if (consent === "granted" && window.gtag) {
-            window.gtag("event", "page_view", { page_path: pathname });
+            window.gtag("event", "page_view", analyticsPageParameters());
         }
     }, [consent, pathname]);
 
@@ -124,7 +132,7 @@ export default function AnalyticsConsent({ children }: Readonly<{ children: Reac
                         </p>
                         <p><Link href="/privacy">Read our privacy and cookie policy</Link>.</p>
                         <div className={styles.actions}>
-                            <button className="btn btn-outline-light" type="button" onClick={() => chooseConsent("denied")}>
+                            <button className="btn btn-primary" type="button" onClick={() => chooseConsent("denied")}>
                                 Reject analytics
                             </button>
                             <button className="btn btn-primary" type="button" onClick={() => chooseConsent("granted")}>

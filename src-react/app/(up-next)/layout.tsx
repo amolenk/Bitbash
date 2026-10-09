@@ -47,9 +47,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className={styles.body}>
         <AnalyticsConsent>
-          <main className={`${styles.main} d-flex flex-column min-vh-100 justify-content-center`}>
+          <main className={`${styles.main} d-flex flex-column justify-content-center`}>
             {children}
           </main>
           <footer className={styles.footer}>

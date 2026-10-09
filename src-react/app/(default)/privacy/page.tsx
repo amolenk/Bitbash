@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Section from "@/src/components/layout/Section";
 import MainLayout from "@/src/components/layout/MainLayout";
+import { analyticsSettings } from "@/src/config/analytics-settings";
 
 export const metadata: Metadata = {
     title: "Privacy & Cookies | Bitbash",
@@ -19,10 +20,10 @@ export default function PrivacyPage() {
 
                     <h2>Analytics cookies</h2>
                     <p>With your permission, Bitbash uses Google Analytics 4 to measure website traffic, campaign channels and sources, and completed registrations. Google Analytics may provide aggregated demographic and interest reporting when Google Signals is enabled. We do not send registration form data to Google Analytics.</p>
-                    <p>Google Analytics uses the <code>_ga</code> and <code>_ga_KZWM1BBHB7</code> cookies. Analytics event data is retained in Google Analytics for 14 months.</p>
+                    <p>Google Analytics uses the <code>_ga</code> and <code>_ga_{analyticsSettings.measurementId.slice(2)}</code> cookies. Analytics event data is retained in Google Analytics for {analyticsSettings.eventDataRetentionMonths} months.</p>
 
                     <h2>Your choice</h2>
-                    <p>Google Analytics is not loaded until you accept analytics cookies. Your choice is stored in the <code>bitbash-analytics-consent</code> cookie for six months. You can withdraw or change consent at any time through the Cookie preferences control in the footer. Withdrawing consent stops further analytics measurement and removes the Google Analytics cookies set by this site.</p>
+                    <p>Google Analytics is not loaded until you accept analytics cookies. Your choice is stored in the <code>{analyticsSettings.consentCookieName}</code> cookie for six months. You can withdraw or change consent at any time through the Cookie preferences control in the footer. Withdrawing consent stops further analytics measurement and removes the Google Analytics cookies set by this site.</p>
 
                     <h2>Google</h2>
                     <p>Google Analytics is provided by Google. For details of Google&apos;s processing, see the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>

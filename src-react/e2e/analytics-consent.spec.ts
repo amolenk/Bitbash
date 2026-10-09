@@ -1,12 +1,21 @@
 import { expect, test } from "@playwright/test";
 
 import { admittoStub } from "./support/admittoStub";
+import { analyticsSettings } from "../src/config/analytics-settings";
 
-const googleTagUrl = "https://www.googletagmanager.com/gtag/js?id=G-KZWM1BBHB7";
+const googleTagUrl = `https://www.googletagmanager.com/gtag/js?id=${analyticsSettings.measurementId}`;
 const registerUrl = "/tickets/register?email=attendee%40example.com&token=valid-token";
 
 test.describe("analytics consent", () => {
     test("does not load Google Analytics until accepted and lets visitors change their choice", async ({ page }) => {
+        await page.context().addCookies([
+            {
+                name: "_ga",
+                value: "existing-analytics-cookie",
+                domain: "127.0.0.1",
+                path: "/",
+            },
+        ]);
         let googleTagRequests = 0;
         await page.route(googleTagUrl, async route => {
             googleTagRequests += 1;
@@ -22,7 +31,7 @@ test.describe("analytics consent", () => {
         await banner.getByRole("button", { name: "Accept analytics" }).click();
         await expect.poll(() => googleTagRequests).toBe(1);
         await expect.poll(async () => page.context().cookies()).toContainEqual(expect.objectContaining({
-            name: "bitbash-analytics-consent",
+            name: analyticsSettings.consentCookieName,
             value: "granted",
         }));
 
@@ -30,8 +39,11 @@ test.describe("analytics consent", () => {
         await expect(banner).toBeVisible();
         await banner.getByRole("button", { name: "Reject analytics" }).click();
         await expect.poll(async () => page.context().cookies()).toContainEqual(expect.objectContaining({
-            name: "bitbash-analytics-consent",
+            name: analyticsSettings.consentCookieName,
             value: "denied",
+        }));
+        await expect.poll(async () => page.context().cookies()).not.toContainEqual(expect.objectContaining({
+            name: "_ga",
         }));
     });
 
@@ -39,7 +51,7 @@ test.describe("analytics consent", () => {
         await admittoStub.reset();
         await page.context().addCookies([
             {
-                name: "bitbash-analytics-consent",
+                name: analyticsSettings.consentCookieName,
                 value: "granted",
                 domain: "127.0.0.1",
                 path: "/",
@@ -58,16 +70,15 @@ test.describe("analytics consent", () => {
         await page.getByLabel("Your role or job title").fill("Engineer");
         await page.getByRole("button", { name: "Register" }).click();
 
-        await expect.poll(async () => page.evaluate(() => window.dataLayer)).toContainEqual([
-            "event",
-            "registration_complete",
-        ]);
+        await expect.poll(async () => page.evaluate(() => window.dataLayer?.some(event =>
+            event[0] === "event" && event[1] === "registration_complete",
+        ) ?? false)).toBe(true);
     });
 
     test("does not record registration completion for a direct thank-you page visit", async ({ page }) => {
         await page.context().addCookies([
             {
-                name: "bitbash-analytics-consent",
+                name: analyticsSettings.consentCookieName,
                 value: "granted",
                 domain: "127.0.0.1",
                 path: "/",
@@ -80,9 +91,8 @@ test.describe("analytics consent", () => {
         await page.goto("/tickets/register/thankyou");
         await page.waitForTimeout(250);
 
-        await expect(page.evaluate(() => window.dataLayer)).resolves.not.toContainEqual([
-            "event",
-            "registration_complete",
-        ]);
+        await expect(page.evaluate(() => window.dataLayer?.some(event =>
+            event[0] === "event" && event[1] === "registration_complete",
+        ) ?? false)).resolves.toBe(false);
     });
 });
