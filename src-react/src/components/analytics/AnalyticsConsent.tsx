@@ -60,7 +60,11 @@ function analyticsPageParameters() {
 
 function configureGoogleAnalytics() {
     window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || ((...args: unknown[]) => window.dataLayer?.push(args));
+    // gtag.js only processes `arguments` objects; plain arrays pushed to the dataLayer are ignored.
+    window.gtag = window.gtag || function gtag() {
+        // eslint-disable-next-line prefer-rest-params
+        window.dataLayer?.push(arguments as unknown as unknown[]);
+    };
     window.gtag("js", new Date());
     window.gtag("config", analyticsSettings.measurementId, {
         send_page_view: false,

@@ -74,6 +74,11 @@ test.describe("analytics consent", () => {
         await expect.poll(async () => page.evaluate(() => window.dataLayer?.some(event =>
             event[0] === "event" && event[1] === "registration_complete",
         ) ?? false)).toBe(true);
+
+        // gtag.js ignores dataLayer entries that are not `arguments` objects.
+        await expect(page.evaluate(() => window.dataLayer?.every(event =>
+            Object.prototype.toString.call(event) === "[object Arguments]",
+        ) ?? false)).resolves.toBe(true);
     });
 
     test("does not record registration completion for a direct thank-you page visit", async ({ page }) => {
