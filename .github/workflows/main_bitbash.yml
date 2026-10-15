@@ -37,9 +37,11 @@ jobs:
         run: |
           mkdir deploy
           cp -r src-react/.next deploy/.next
+          rm -rf deploy/.next/cache   # build cache only; not needed at runtime
           cp -r src-react/public deploy/public
           cp src-react/package.json deploy/package.json
           cp src-react/pnpm-lock.yaml deploy/pnpm-lock.yaml
+          cp src-react/pnpm-workspace.yaml deploy/pnpm-workspace.yaml
           cp src-react/server.js deploy/server.js
           cp src-react/web.config deploy/web.config
           ls -la deploy
@@ -51,18 +53,80 @@ jobs:
           path: deploy
           include-hidden-files: true
 
-  deploy:
-    runs-on: ubuntu-latest
+  # Installs production dependencies on Windows (the App Service platform), so native
+  # modules such as sharp match the server, and smoke tests the result before deploying.
+  package:
+    runs-on: windows-latest
     needs: build
     permissions:
-      id-token: write
       contents: read
+    defaults:
+      run:
+        shell: bash
+        working-directory: deploy
 
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: node-app
+          path: deploy
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      # Hoisted linker: a flat node_modules with real folders instead of links, so it survives zipping.
+      - name: Install production dependencies
+        run: pnpm install --prod --frozen-lockfile --config.node-linker=hoisted
+
+      - name: Smoke test
+        run: |
+          # Log outside the package: Windows locks files that are still open.
+          PORT=3000 node server.js > ../server.log 2>&1 &
+          server=$!
+          trap 'kill $server 2>/dev/null || true' EXIT
+          for i in $(seq 60); do curl -sf -o /dev/null http://localhost:3000/ && break; sleep 1; done
+
+          html=$(curl -sf http://localhost:3000/) || { echo "Home page failed"; cat ../server.log; exit 1; }
+          for asset in $(echo "$html" | grep -oE '/_next/static/[^"]+\.css' | sort -u); do
+            curl -sf -o /dev/null "http://localhost:3000$asset" || { echo "Missing stylesheet $asset"; exit 1; }
+          done
+
+          type=$(curl -sf -o /dev/null -w '%{content_type}' -H 'Accept: image/webp' \
+            'http://localhost:3000/_next/image?url=%2Fimg%2Flogo.png&w=384&q=75')
+          [ "$type" = "image/webp" ] || { echo "Image optimization not working (got '$type')"; cat ../server.log; exit 1; }
+
+          kill $server
+          rm -rf .next/cache
+
+      - name: Create deploy package
+        run: 7z a -tzip -bso0 ../deploy.zip .next *
+
+      - name: Upload deploy package
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-package
+          path: deploy.zip
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: package
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Download deploy package
+        uses: actions/download-artifact@v4
+        with:
+          name: deploy-package
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -71,8 +135,13 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0CDF13863F864737BAA85ED774CDDE16 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1665A5DF244F4B9CB8B30A081640BC52 }}
 
+      # clean: replace wwwroot with exactly this package. Incremental deploys left stale
+      # same-size .next files behind, breaking styling.
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'bitbash'
-          package: .
+          package: deploy.zip
+          type: ZIP
+          clean: true
+          restart: true
