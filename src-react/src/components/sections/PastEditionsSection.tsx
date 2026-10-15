@@ -27,7 +27,9 @@ export default function PastEditionsSection() {
                     
                 {editionData.aftermovieYoutubeId && (
                     <div className="row justify-content-center mb-4">
-                        <AftermoviePlayer youtubeId={editionData.aftermovieYoutubeId} />
+                        <div className="col-auto">
+                            <AftermoviePlayer youtubeId={editionData.aftermovieYoutubeId} />
+                        </div>
                     </div>
                 )}
 
