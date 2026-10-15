@@ -29,7 +29,7 @@
 }
 
 .copy h2 {
-    font-family: Agdasima, sans-serif;
+    font-family: var(--font-agdasima), sans-serif;
     font-size: 1.6rem;
     margin: 0;
 }

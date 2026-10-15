@@ -3,3 +3,11 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 
+
+# Next.js pins a vulnerable postcss version.
+overrides:
+  postcss: ^8.5.23
+
+# eslint-config-next (via FlatCompat) resolves its plugins from the project root.
+publicHoistPattern:
+  - '*eslint*'

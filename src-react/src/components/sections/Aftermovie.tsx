@@ -1,11 +1,11 @@
-import { websiteSettings } from "../../config/website-settings";
-import styles from "./Aftermovie.module.css";
+// import { websiteSettings } from "../../config/website-settings";
+// import styles from "./Aftermovie.module.css";
 
 interface AftermovieProps {
   edition: string;
 }
 
-export default function Aftermovie({ edition }: AftermovieProps) {
+export default function Aftermovie(_props: AftermovieProps) {
 
     return null;
     

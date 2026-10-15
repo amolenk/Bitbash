@@ -3,6 +3,7 @@ import SpeakerBioSection from "@/src/components/sections/SpeakerBioSection";
 import SpeakerSessionsSection from "@/src/components/sections/SpeakerSessionsSection";
 import { websiteSettings } from "@/src/config/website-settings";
 import MainLayout from "@/src/components/layout/MainLayout";
+import type { SessionizeData } from "@/src/lib/sessionize";
 
 export const metadata = {
     title: "Speaker Details | Bitbash"
@@ -14,15 +15,15 @@ export default async function SpeakerDetailPage({
     params: Promise<{ edition: string; speakerId: string; }>
 }) {
 
-    let { edition, speakerId } = await params;
-    edition = edition ?? websiteSettings.currentEdition.slug;
+    const { edition: editionParam, speakerId } = await params;
+    const edition = editionParam ?? websiteSettings.currentEdition.slug;
 
     try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/data/${edition}.json`);
         if (!response.ok) throw new Error('Failed to fetch');
-        const data = await response.json();
+        const data: SessionizeData = await response.json();
 
-        const speaker = data.Speakers.find((s: any) => s.Id === speakerId);
+        const speaker = data.Speakers.find((s) => s.Id === speakerId);
         if (!speaker) return <div>Speaker not found.</div>;
 
         return (
@@ -41,7 +42,7 @@ export default async function SpeakerDetailPage({
                 />
             </MainLayout>
         );
-    } catch (error) {
+    } catch {
         return <div>Failed to load speaker.</div>;
     }
 }

@@ -6,7 +6,7 @@ export default function NotFoundPage() {
     <MainLayout>
         <Section headerText="Page Not Found" sectionBackground={2}>
             <div className="text-light text-center">
-                <h2>Oops! We couldn't find that page.</h2>
+                <h2>Oops! We couldn&apos;t find that page.</h2>
             </div>
         </Section>
     </MainLayout>

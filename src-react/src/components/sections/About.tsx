@@ -1,7 +1,6 @@
+import Link from "next/link";
 import { websiteSettings } from "../../config/website-settings";
 import Section from "../layout/Section";
-import Aftermovie from "./Aftermovie";
-import Galleria from "./Galleria";
 import styles from "./About.module.css";
 
 export default function About() {
@@ -30,9 +29,9 @@ export default function About() {
                 <p>Don&apos;t miss out on this opportunity to learn and network with like-minded professionals. See you at the event!</p>
                 <p className="text-center">
                 {showTicketLink && (
-                    <a href="/tickets" className="btn btn-secondary btn-lg text-light mt-3">
+                    <Link href="/tickets" className="btn btn-secondary btn-lg text-light mt-3">
                         Register now
-                    </a>
+                    </Link>
                 )}
                 </p>
             </div>

@@ -7,8 +7,14 @@ import SessionCard from "./SessionCard";
 import { websiteSettings } from "../../config/website-settings";
 import useSWR from "swr";
 import { useSearchParams } from "next/navigation";
+import type { SessionizeData, SessionizeSession, SessionizeSpeaker } from "@/src/lib/sessionize";
 
-const fetcher = (url: string) => fetch(url).then(r => r.json());
+type AgendaSession = SessionizeSession & {
+    Speakers?: SessionizeSpeaker[];
+    slotNames?: string[];
+};
+
+const fetcher = (url: string): Promise<SessionizeData> => fetch(url).then(r => r.json());
 
 function parseDate(dateStr?: string): Date {
     // If no date string provided, return default conference date (second day)
@@ -21,8 +27,8 @@ function parseDate(dateStr?: string): Date {
 }
 
 function setTimeZone(date: Date, tzOffset: string): Date {
-    var isoString = date.toISOString();
-    var timeZoneString = isoString.substring(0, isoString.length - 1) + tzOffset;
+    const isoString = date.toISOString();
+    const timeZoneString = isoString.substring(0, isoString.length - 1) + tzOffset;
     return new Date(timeZoneString);
 }
 
@@ -41,39 +47,39 @@ export default function AgendaSection() {
     const eventDates: Date[] = (Array.from(
         new Set(
             data.Sessions
-                .filter((s: any) => s.StartsAt)
-                .map((s: any) => new Date(s.StartsAt.split('T')[0]))
-                .map((d: Date) => setTimeZone(d, websiteSettings.currentEdition.schedule.timeZone).toISOString())
+                .filter((s) => s.StartsAt)
+                .map((s) => new Date(s.StartsAt!.split('T')[0]))
+                .map((d) => setTimeZone(d, websiteSettings.currentEdition.schedule.timeZone).toISOString())
         )
-    ) as string[]).map((d) => new Date(d)).sort((a, b) => a.getTime() - b.getTime());
+    )).map((d) => new Date(d)).sort((a, b) => a.getTime() - b.getTime());
 
     // Group sessions by start time for selected date
-    const sessionsForDate = data.Sessions.filter((s: any) => {
-        const sessionDate = setTimeZone(new Date(s.StartsAt?.split('T')[0]), websiteSettings.currentEdition.schedule.timeZone);
+    const sessionsForDate = data.Sessions.filter((s) => {
+        const sessionDate = setTimeZone(new Date(s.StartsAt?.split('T')[0] ?? ''), websiteSettings.currentEdition.schedule.timeZone);
         return sessionDate.toISOString() === selectedDate.toISOString();
     });
 
     // Populate Speakers for each session
-    const sessionsWithSpeakers = sessionsForDate.map((session: any) => {
+    const sessionsWithSpeakers = sessionsForDate.map((session): AgendaSession => {
         if (session.speakers && Array.isArray(session.speakers)) {
             return {
                 ...session,
                 Speakers: session.speakers
-                    .map((speakerId: string) => data.Speakers.find((sp: any) => sp.Id === speakerId))
-                    .filter(Boolean)
+                    .map((speakerId: string) => data.Speakers.find((sp) => sp.Id === speakerId))
+                    .filter((sp): sp is SessionizeSpeaker => Boolean(sp))
             };
         }
         return session;
     });
 
     // Split full-day workshops into morning and afternoon
-    const finalSessions: any[] = [];
-    sessionsWithSpeakers.forEach((session: any) => {
+    const finalSessions: AgendaSession[] = [];
+    sessionsWithSpeakers.forEach((session) => {
 
         if (session.SessionFormat === "Full-day workshop")
         {
             // Split into morning and afternoon
-            const datePart = session.StartsAt.split("T")[0];
+            const datePart = session.StartsAt!.split("T")[0];
             finalSessions.push({
                 ...session,
                 StartsAt: `${datePart}T09:00:00`,
@@ -106,14 +112,14 @@ export default function AgendaSection() {
         return 0;
     });
 
-    const slots: [string, any[]][] = Array.from(
-        finalSessions.reduce((acc: Map<string, any[]>, session: any) => {
+    const slots: [string, AgendaSession[]][] = Array.from(
+        finalSessions.reduce((acc, session) => {
             if (!session.StartsAt || !session.EndsAt) return acc;
             const key = `${session.StartsAt.split('T')[1]}-${session.EndsAt.split('T')[1]}`;
             if (!acc.has(key)) acc.set(key, []);
             acc.get(key)!.push(session);
             return acc;
-        }, new Map<string, any[]>())
+        }, new Map<string, AgendaSession[]>())
     );
 
     return (
@@ -127,7 +133,7 @@ export default function AgendaSection() {
                         <h2 className="text-light">The agenda is still being finalized, and session times are subject to change.</h2>
                     </div>
                 )}
-                {slots.map(([slotKey, slotSessions]: [string, any[]]) => {
+                {slots.map(([slotKey, slotSessions]) => {
                     const [start, end] = slotKey.split('-');
                     return (
                         <React.Fragment key={slotKey}>
@@ -135,7 +141,7 @@ export default function AgendaSection() {
                                 <h2 className="text-light">{`${start.slice(0, 5)} - ${end.slice(0, 5)}`}</h2>
                             </div>
                             <div className="d-flex flex-row flex-wrap justify-content-center gap-2">
-                                {slotSessions.map((session: any) => (
+                                {slotSessions.map((session) => (
 
                                     <SessionCard key={session.Id} session={session} />
                                 ))}

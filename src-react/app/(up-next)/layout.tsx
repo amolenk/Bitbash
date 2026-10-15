@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
+import { agdasima, montserrat } from "@/app/fonts";
 import AnalyticsConsent from "@/src/components/analytics/AnalyticsConsent";
 import CookiePreferencesButton from "@/src/components/analytics/CookiePreferencesButton";
+// Vendor CSS is imported here rather than via Sass @import: Sass may prepend a BOM to
+// its output, which makes Turbopack reject plain CSS @import rules.
+import '@/public/aos/aos.css';
+import '@/public/bootstrap-icons/bootstrap-icons.min.css';
+import '@/public/galleria/themes/twelve/galleria.twelve.min.css';
 import '@/app/(default)/global.scss';
 import styles from '@/app/(up-next)/layout.module.css';
 
@@ -35,18 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        {/* Google Fonts */}
-        <link
-          href="https://fonts.googleapis.com/css?family=Agdasima:400,700"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Montserrat:600"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${agdasima.variable} ${montserrat.variable}`}>
       <body className={styles.body}>
         <AnalyticsConsent>
           <main className={`${styles.main} d-flex flex-column justify-content-center`}>

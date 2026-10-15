@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Section from "../layout/Section";
+import infoSupportLogo from "@/public/img/info-support.png";
 import styles from "./Venue.module.css";
 
 export default function Venue() {
@@ -20,7 +22,7 @@ export default function Venue() {
         <div className={`col-lg-4 ${styles.venueInfo}`}>
           <div className="row justify-content-center">
             <div className={`${styles.info} col-11 col-lg-8 position-relative`}>
-              <img className={styles.logo} src="/img/info-support.png" alt="Info Support" />
+              <Image className={styles.logo} src={infoSupportLogo} sizes="(max-width: 991px) 400px, 27vw" alt="Info Support" />
               <p className="lead text-light">Kruisboog 42, 3905 TG</p>
               <p className="lead text-light">Veenendaal, The Netherlands</p>
             </div>

@@ -3,9 +3,11 @@
 import Section from "../layout/Section";
 import { websiteSettings } from "../../config/website-settings";
 import useSWR from 'swr';
+import Link from "next/link";
 import SpeakerCard from "./SpeakerCard";
+import type { SessionizeData } from "@/src/lib/sessionize";
 
-const fetcher = (url: string) => fetch(url).then(r => r.json());
+const fetcher = (url: string): Promise<SessionizeData> => fetch(url).then(r => r.json());
 
 function shuffle<T>(array: T[]): T[] {
   const arr = [...array];
@@ -26,14 +28,14 @@ export default function SpeakerHighlights() {
   return (
     <Section headerText="Speakers" extraClass="text-light" sectionBackground={3} fadeUp={true}>
       <div className="row">
-        {speakers.slice(0, 3).map((speaker: any) => (
+        {speakers.slice(0, 3).map((speaker) => (
           <div key={speaker.Id} className="col-md-4 d-flex justify-content-center">
             <SpeakerCard speaker={speaker} />
           </div>
         ))}
       </div>
       <div className="row">
-        {speakers.slice(3, 6).map((speaker: any) => (
+        {speakers.slice(3, 6).map((speaker) => (
           <div key={speaker.Id} className="col-md-4 d-flex justify-content-center">
             <SpeakerCard speaker={speaker} />
           </div>
@@ -41,9 +43,9 @@ export default function SpeakerHighlights() {
       </div>
       <div className="row">
         <div className="col d-flex justify-content-center">
-          <a href="/speakers" className="btn btn-primary text-light">
+          <Link href="/speakers" className="btn btn-primary text-light">
             See all {speakers.length} speakers
-          </a>
+          </Link>
         </div>
       </div>
     </Section>

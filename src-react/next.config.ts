@@ -1,13 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-
-    eslint: {
-    // ⚠️ WARNING: This allows production builds to successfully complete
-    // even if your project has ESLint errors.
-    // TODO Fix the damn errors and remove this hack
-    ignoreDuringBuilds: true,
+  sassOptions: {
+    // Bootstrap 5 still relies on Sass features deprecated in Dart Sass; it has to be
+    // loaded with @import for variable overrides to work.
+    quietDeps: true,
+    silenceDeprecations: ["import", "legacy-js-api"],
   },
 };
 

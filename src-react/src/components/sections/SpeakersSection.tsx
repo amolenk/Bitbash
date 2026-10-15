@@ -5,8 +5,9 @@ import Section from "../layout/Section";
 import SpeakerCard from "./SpeakerCard";
 import { websiteSettings } from "../../config/website-settings";
 import useSWR from "swr";
+import type { SessionizeData } from "@/src/lib/sessionize";
 
-const fetcher = (url: string) => fetch(url).then(r => r.json());
+const fetcher = (url: string): Promise<SessionizeData> => fetch(url).then(r => r.json());
 
 export default function SpeakersSection({ edition }: { edition?: string }) {
 
@@ -28,7 +29,7 @@ export default function SpeakersSection({ edition }: { edition?: string }) {
                     </div>
                 )}
                 <div className="row justify-content-center p-2">
-                    {data.Speakers.map((speaker: any) => (
+                    {data.Speakers.map((speaker) => (
                         <div key={speaker.Id} className="col-md-4 d-flex justify-content-center">
                             <SpeakerCard speaker={speaker} edition={edition} />
                         </div>

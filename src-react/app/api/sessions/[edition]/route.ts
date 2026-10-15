@@ -10,9 +10,10 @@ export async function GET(
     try {
         const sessions = await getSessionCatalog(edition);
         return NextResponse.json(sessions);
-    } catch (error: any) {
+    } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
         return NextResponse.json(
-            { error: `Failed to fetch sessions: ${error.message}` },
+            { error: `Failed to fetch sessions: ${message}` },
             { status: 500 }
         );
     }

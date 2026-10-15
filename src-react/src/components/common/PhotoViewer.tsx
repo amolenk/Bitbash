@@ -2,6 +2,21 @@
 
 import React, { useEffect, useRef } from 'react';
 
+interface GalleriaInstance {
+    destroy?: () => void;
+}
+
+interface GalleriaStatic {
+    run(target: HTMLElement | string, options: object): void;
+    get?: (index: number) => GalleriaInstance | undefined;
+}
+
+declare global {
+    interface Window {
+        Galleria: GalleriaStatic;
+    }
+}
+
 interface PhotoViewerProps {
     editionSlug: string;
     photoCount: number;
@@ -49,7 +64,7 @@ export default function PhotoViewer({
                 const selectorOrElement = containerRef.current || '.galleria';
 
                 // run Galleria on the element (Galleria.run accepts selector or DOM element)
-                (window as any).Galleria.run(selectorOrElement, {
+                window.Galleria.run(selectorOrElement, {
                     dataSource: data,
                     imageCrop: true
                 });
@@ -64,14 +79,14 @@ export default function PhotoViewer({
             mounted = false;
             // try to destroy any running instance to avoid leaks
             try {
-                const G = (window as any).Galleria;
+                const G = window.Galleria;
                 if (G && typeof G.get === 'function') {
                     const inst = G.get(0);
                     if (inst && typeof inst.destroy === 'function') {
                         inst.destroy();
                     }
                 }
-            } catch (e) {
+            } catch {
                 // ignore
             }
         };

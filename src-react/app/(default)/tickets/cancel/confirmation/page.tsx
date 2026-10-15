@@ -12,7 +12,7 @@ export default function CancellationConfirmationPage() {
     <MainLayout>
         <Section headerText="Registration Cancelled" sectionBackground={2}>
             <div className="text-light text-center">
-                <h2>We're sorry to see you go!</h2>
+                <h2>We&apos;re sorry to see you go!</h2>
                 <p className="lead mt-5">Your registration has been successfully cancelled.</p>
             </div>
         </Section>

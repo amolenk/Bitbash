@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import { speakerPhotoSrc } from "@/src/lib/sessionize";
 import styles from "./SpeakerCard.module.css";
 import { websiteSettings } from "../../config/website-settings";
 
@@ -22,9 +24,10 @@ export default function SpeakerCard({ speaker, edition }: { speaker: Speaker, ed
     >
       <div className="text-center">
         <div className={styles.speakerPhoto}>
-          <img
-            loading="lazy"
-            src={`/${speaker.ProfilePictureUrl}`}
+          <Image
+            width={128}
+            height={128}
+            src={speakerPhotoSrc(speaker.ProfilePictureUrl)}
             alt={`Photo of ${speaker.FullName}`}
             className={styles.speakerPhotoImg}
           />

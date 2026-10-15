@@ -12,6 +12,7 @@
 }
 
 .organizerItem .organizer img {
+    width: auto;
     height: 100%;
     transform: translateX(-50%);
     margin-left: 50%;

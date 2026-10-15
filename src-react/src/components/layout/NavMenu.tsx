@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from "./NavMenu.module.css";
 import { usePathname } from "next/navigation";
+import logo from "@/public/img/logo.png";
 
 export default function NavMenu() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,7 +32,7 @@ export default function NavMenu() {
       <div className="container-fluid container-xxl align-items-center">
         <div className={styles.logoMobile}>
           <Link href="/" passHref>
-            <img src="/img/logo.png" alt="Home" title="" />
+            <Image src={logo} sizes="(max-width: 414px) 250px, 350px" priority alt="Home" />
           </Link>
         </div>
         <nav 
@@ -46,7 +48,7 @@ export default function NavMenu() {
             <li><Link className={`${styles.navLink} nav-link ${pathname === "/speakers" ? styles.active : ""}`} href="/speakers">Speakers</Link></li>
             <li className={styles.logo}>
               <Link href="/">
-                <img src="/img/logo.png" alt="Logo" title="" />
+                <Image src={logo} sizes="400px" priority alt="Logo" />
               </Link>
             </li>
             <li><Link className={`${styles.navLink} nav-link ${pathname === "/tickets" ? styles.active : ""}`} href="/tickets">Tickets</Link></li>

@@ -1,9 +1,9 @@
-interface SessionizeData {
+export interface SessionizeData {
     Speakers: SessionizeSpeaker[];
     Sessions: SessionizeSession[];
 }
 
-interface SessionizeSpeaker {
+export interface SessionizeSpeaker {
     Id: string;
     FullName: string;
     Bio: string;
@@ -12,7 +12,7 @@ interface SessionizeSpeaker {
     sessions: string[];
 }
 
-interface SessionizeSession {
+export interface SessionizeSession {
     Id: string;
     Title: string;
     Description?: string;
@@ -27,6 +27,11 @@ interface SessionizeSession {
 
 export interface SessionWithSpeakers extends SessionizeSession {
     Speakers: SessionizeSpeaker[];
+}
+
+// Sessionize data stores profile pictures relative to the site root, without a leading slash.
+export function speakerPhotoSrc(profilePictureUrl: string) {
+    return profilePictureUrl.startsWith("/") ? profilePictureUrl : `/${profilePictureUrl}`;
 }
 
 export async function getSessionCatalog(edition: string) {

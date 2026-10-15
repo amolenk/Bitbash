@@ -42,7 +42,7 @@
     bottom: 50px;
     left: 220px;
     font-size: 62px;
-    font-family: Montserrat;
+    font-family: var(--font-montserrat);
     font-weight: 600;
     color: black;
     transform: scale(1, 2.5);
@@ -65,7 +65,7 @@
 .date {
     display: block;
     position: absolute;
-    font-family: "Agdasima", sans-serif;
+    font-family: var(--font-agdasima), sans-serif;
     font-size: 55px;
     top: 110px;
     right: 58px;

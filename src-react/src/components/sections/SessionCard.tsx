@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import { speakerPhotoSrc } from "@/src/lib/sessionize";
 import styles from "./SessionCard.module.css";
 import { websiteSettings } from "../../config/website-settings";
 
@@ -11,7 +13,7 @@ interface Speaker {
 interface Session {
     Id: string;
     Title: string;
-    Room: string;
+    Room?: string;
     IsServiceSession?: boolean;
     Speakers?: Speaker[];
     SessionFormat?: string;
@@ -44,9 +46,10 @@ export default function SessionCard({ session, edition }: { session: Session, ed
                 <h4 className={`${styles.cardTitle} mb-4`}>{session.Title}</h4>
                 {session.Speakers && session.Speakers.map(speaker => (
                     <p key={speaker.Id}>
-                        <img
-                            loading="lazy"
-                            src={speaker.ProfilePictureUrl}
+                        <Image
+                            width={32}
+                            height={32}
+                            src={speakerPhotoSrc(speaker.ProfilePictureUrl)}
                             className={styles.speakerPhoto}
                             alt={`Photo of ${speaker.FullName}`}
                         />

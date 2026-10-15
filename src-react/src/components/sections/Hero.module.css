@@ -93,6 +93,7 @@
     position: absolute;
     top: 150px;
     width: min(75vw, 75vh);
+    height: auto;
 }
 
 @media (max-width: 991px) {

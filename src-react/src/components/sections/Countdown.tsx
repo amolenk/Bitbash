@@ -1,8 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { websiteSettings } from "../../config/website-settings";
 import styles from "./Countdown.module.css";
+import countdownTheme from "@/public/img/countdown-theme.png";
+import countdownBottom from "@/public/img/countdown-bottom.png";
+import countdownTop from "@/public/img/countdown-top.png";
+
+const imageSizes = "(max-width: 991px) 350px, 550px";
 
 export default function Countdown() {
   const [days, setDays] = useState(0);
@@ -36,34 +42,38 @@ export default function Countdown() {
   const conferenceDate = new Date(websiteSettings.currentEdition.conferenceDate);
   
   const formatDate = () => {
-    const options: Intl.DateTimeFormatOptions = { month: 'short', timeZone: 'Europe/Amsterdam' };
-    const monthName = preConDate.toLocaleDateString('en-US', options);
+    // Format in the event's time zone; getDate() etc. would use the visitor's time zone.
+    const format = (date: Date, options: Intl.DateTimeFormatOptions) =>
+      date.toLocaleDateString('en-US', { ...options, timeZone: 'Europe/Amsterdam' });
     return (
       <>
-        <span className={styles.dateDays}>{preConDate.getDate()}/{conferenceDate.getDate()}</span>
-        <span className={styles.dateMonthYear}> {monthName} {preConDate.getFullYear()}</span>
+        <span className={styles.dateDays}>{format(preConDate, { day: 'numeric' })}/{format(conferenceDate, { day: 'numeric' })}</span>
+        <span className={styles.dateMonthYear}> {format(preConDate, { month: 'short' })} {format(preConDate, { year: 'numeric' })}</span>
       </>
     );
   };
 
   return (
     <div className={styles.countdown}>
-      <img 
-        className={styles.countdownImageBottom} 
-        src="/img/countdown-theme.png?v=2027" 
+      <Image
+        className={styles.countdownImageBottom}
+        src={countdownTheme}
+        sizes={imageSizes}
         alt="Countdown background"
       />
-      <img 
-        className={styles.countdownImageMiddle} 
-        src="/img/countdown-bottom.png?v=2027" 
+      <Image
+        className={styles.countdownImageMiddle}
+        src={countdownBottom}
+        sizes={imageSizes}
         alt="Countdown layer"
       />
       <div className={styles.countdownText}>
         <span id="days">{days}</span>
       </div>
-      <img 
-        className={styles.countdownImageTop} 
-        src="/img/countdown-top.png?v=2027" 
+      <Image
+        className={styles.countdownImageTop}
+        src={countdownTop}
+        sizes={imageSizes}
         alt="Countdown foreground"
       />
       <span className={styles.date}>

@@ -5,7 +5,11 @@ import styles from "./HubSpotForm.module.css";
 
 declare global {
     interface Window {
-        hbspt?: any;
+        hbspt?: {
+            forms: {
+                create(options: { region: string; portalId: string; formId: string; target: string }): void;
+            };
+        };
     }
 }
 

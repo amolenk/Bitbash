@@ -1,5 +1,6 @@
-import {SessionWithSpeakers} from "@/src/lib/sessionize";
 import React from "react";
+import Image from "next/image";
+import { SessionWithSpeakers, speakerPhotoSrc } from "@/src/lib/sessionize";
 import styles from "./UpNextCard.module.css";
 
 export default function UpNextCard({session}: { session: SessionWithSpeakers }) {
@@ -14,9 +15,10 @@ export default function UpNextCard({session}: { session: SessionWithSpeakers }) 
                 <h1 className={`${styles.cardTitle} mb-4`}>{session.Title}</h1>
                 {session.Speakers && session.Speakers.map(speaker => (
                     <h1 key={speaker.Id}>
-                        <img
-                            loading="lazy"
-                            src={speaker.ProfilePictureUrl}
+                        <Image
+                            width={128}
+                            height={128}
+                            src={speakerPhotoSrc(speaker.ProfilePictureUrl)}
                             className={styles.speakerPhoto}
                             alt={`Photo of ${speaker.FullName}`}
                         />
