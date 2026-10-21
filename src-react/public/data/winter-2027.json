@@ -235,7 +235,7 @@
   ],
   "Sessions": [
     {
-      "Id": "348ddcf7-d004-4a4d-b3d4-4bd9cd1b983b",
+      "Id": "829e40d1-a324-41d4-88d0-0da2ee35d6e4",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2027-01-22T08:30:00",
@@ -291,7 +291,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "06c2e5c5-fe57-4b27-b179-46547fcf9132",
+      "Id": "4a82b7c9-b95b-49a9-8f1f-54964d8d61a2",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2027-01-22T12:00:00",
@@ -332,7 +332,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "7dcef355-b5e8-44cc-9369-c9fd16bd42fe",
+      "Id": "ac6ccc2d-b5fd-48a9-bf9a-6ee9a6976c85",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2027-01-23T08:30:00",
@@ -414,7 +414,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "d788a1a2-8465-4e43-b599-3272ea184269",
+      "Id": "40e68fdc-f0f6-47e4-9597-ff0e3c9014ea",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2027-01-23T11:05:00",
@@ -468,7 +468,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "94d0d6cc-3908-4180-bf1c-ee5abb38c80d",
+      "Id": "9ebe0175-b21f-4b01-97ca-bc7182f216d2",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2027-01-23T12:15:00",
@@ -510,7 +510,7 @@
     {
       "Id": "everyone-has-ai-few-teams-have-an-ai-workflow",
       "Title": "Everyone Has AI. Few Teams Have an AI Workflow.",
-      "Description": "Important: We would like to give this session with 3 speakers. Denny Kaatman, Yorrick Bakker and Quinten Deconinck. \r\n\r\nDescription:\r\nFive engineers worth of work. A team of just 2.5 FTE. A hard deadline.\r\n\r\nWe chose a different path.\r\n\r\nHow do you deliver in a world where AI is evolving at breakneck speed? Is AI-assisted development enough, or do you need a fundamentally different way of working?\r\n\r\nThose questions became the starting point of our journey. Rather than using AI as a coding assistant, we developed an AI-driven workflow that became part of our daily software development process.\r\n\r\nIn this session, we\u0027ll take you behind the scenes of that journey. We\u0027ll share the workflow we developed, where it succeeded, where it failed, and what we learned from using it every single day on a real project under real deadlines.\r\n\r\nThis isn\u0027t another talk about clever prompts or AI magic tricks. It\u0027s a workflow that development teams can adopt to make AI a true teammate. Not just a coding assistant.\r\n",
+      "Description": "Five engineers worth of work. A team of just 2.5 FTE. A hard deadline.\r\n\r\nWe chose a different path.\r\n\r\nHow do you deliver in a world where AI is evolving at breakneck speed? Is AI-assisted development enough, or do you need a fundamentally different way of working?\r\n\r\nThose questions became the starting point of our journey. Rather than using AI as a coding assistant, we developed an AI-driven workflow that became part of our daily software development process.\r\n\r\nIn this session, we\u0027ll take you behind the scenes of that journey. We\u0027ll share the workflow we developed, where it succeeded, where it failed, and what we learned from using it every single day on a real project under real deadlines.\r\n\r\nThis isn\u0027t another talk about clever prompts or AI magic tricks. It\u0027s a workflow that development teams can adopt to make AI a true teammate. Not just a coding assistant.\r\n",
       "StartsAt": "2027-01-23T13:00:00",
       "EndsAt": "2027-01-23T13:50:00",
       "IsServiceSession": false,
@@ -523,7 +523,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "5064ddce-7ae2-45d6-9cb5-03f07f448bfb",
+      "Id": "536d5481-91df-49d7-a577-c0124c9f9afe",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2027-01-23T13:50:00",
@@ -563,7 +563,7 @@
       "Room": "Room 2"
     },
     {
-      "Id": "5626b4a8-5a0d-4984-a4c5-a517a1c441a2",
+      "Id": "4a4b5967-7624-43d1-9e6a-ba7825b0d420",
       "Title": "LEGO Raffle",
       "Description": null,
       "StartsAt": "2027-01-23T15:00:00",
