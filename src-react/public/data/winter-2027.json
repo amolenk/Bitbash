@@ -155,6 +155,17 @@
       ]
     },
     {
+      "Id": "quinten-deconinck",
+      "FullName": "Quinten Deconinck",
+      "Bio": "Hi, I am Quinten Deconinck, an IT Consultant at Info Support in Belgium.\r\n\r\nI am fascinated by how AI is shaping our software development world and spend most of my time trying to improve the new agentic software development lifecycle.\r\n",
+      "TagLine": "IT Consultant at Info Support",
+      "IsTopSpeaker": false,
+      "ProfilePictureUrl": "img/winter-2027/speakers/quinten-deconinck.jpg",
+      "sessions": [
+        "everyone-has-ai-few-teams-have-an-ai-workflow"
+      ]
+    },
+    {
       "Id": "sander-molenkamp",
       "FullName": "Sander Molenkamp",
       "Bio": "Sander Molenkamp is a principal cloud architect and Microsoft Azure MVP with over 25 years of professional experience. He works for Info Support (http://www.infosupport.com) designing and developing customer solutions using cloud native architectures.\r\nSander is also an accomplished speaker, having shared his insights and expertise at numerous international conferences. He is passionate about technology and freely shares his knowledge through the dotnetFlix YouTube channel (www.youtube.com/dotnetflix).\r\nFurthermore, Sander actively contributes to the organization of multiple free community events, including the Dutch Azure Meetup, Azure Fest, and Bitbash.\r\nIn his free time, Sander enjoys traveling, is (still) learning to play the ukelele, and tinkers with technology and LEGO. He has also defeated the sword master of M\u00EAl\u00E9e Island\u2122\uFE0F.",
@@ -235,7 +246,7 @@
   ],
   "Sessions": [
     {
-      "Id": "829e40d1-a324-41d4-88d0-0da2ee35d6e4",
+      "Id": "5e4952d8-4837-4d92-af8d-4dc9ce24316d",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2027-01-22T08:30:00",
@@ -291,7 +302,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "4a82b7c9-b95b-49a9-8f1f-54964d8d61a2",
+      "Id": "2b87cb97-9751-4b1d-873c-c9bf803ab7df",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2027-01-22T12:00:00",
@@ -332,7 +343,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "ac6ccc2d-b5fd-48a9-bf9a-6ee9a6976c85",
+      "Id": "8807f8b7-46e3-426a-8f38-40c16824757c",
       "Title": "Registration and Welcome",
       "Description": null,
       "StartsAt": "2027-01-23T08:30:00",
@@ -414,7 +425,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "40e68fdc-f0f6-47e4-9597-ff0e3c9014ea",
+      "Id": "8329b766-0312-4ffc-a7de-8481f5066a88",
       "Title": "Coffee Break",
       "Description": null,
       "StartsAt": "2027-01-23T11:05:00",
@@ -468,7 +479,7 @@
       "Room": "Room 3"
     },
     {
-      "Id": "9ebe0175-b21f-4b01-97ca-bc7182f216d2",
+      "Id": "85119b8f-f3c1-4011-a3ef-08e7537e6420",
       "Title": "Lunch",
       "Description": null,
       "StartsAt": "2027-01-23T12:15:00",
@@ -516,14 +527,15 @@
       "IsServiceSession": false,
       "speakers": [
         "denny-kaatman",
-        "yorrick-bakker"
+        "yorrick-bakker",
+        "quinten-deconinck"
       ],
       "SessionFormat": "Session",
       "Level": "Introductory and overview",
       "Room": "Room 3"
     },
     {
-      "Id": "536d5481-91df-49d7-a577-c0124c9f9afe",
+      "Id": "f49ed14e-b9a4-4515-a5c3-4d6bf6ce598f",
       "Title": "Break",
       "Description": null,
       "StartsAt": "2027-01-23T13:50:00",
@@ -563,7 +575,7 @@
       "Room": "Room 2"
     },
     {
-      "Id": "4a4b5967-7624-43d1-9e6a-ba7825b0d420",
+      "Id": "8945433d-5c1c-4eb2-83b2-aa848437df47",
       "Title": "LEGO Raffle",
       "Description": null,
       "StartsAt": "2027-01-23T15:00:00",
